@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxrdpo22t70"]
+
+[ext_resource type="Script" uid="uid://b8mnitthgljq6" path="res://player_controller/player_fps_controller.gd" id="1_u1320"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_437ux"]
+
+[node name="PlayerFpsController" type="CharacterBody3D"]
+script = ExtResource("1_u1320")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_437ux")
+debug_color = Color(1, 0.0117647, 0.027451, 1)
+
+[node name="Neck" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="FpsCamera" type="Camera3D" parent="Neck"]
+unique_name_in_owner = true
