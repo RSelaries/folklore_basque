@@ -9,3 +9,4 @@
 - [*Hand - Low Poly*](https://skfb.ly/6S7Vq) by Enalya
 - [*Low Poly Head Shaped Pen Rack for 3D Print*](https://skfb.ly/6UB7V) by Tuna Bozankaya
 - [*Free* Quick terrain test"](https://skfb.ly/DXJZ) by Kris Teper
+- [Old Oil Lamp](https://skfb.ly/6WVIo) by LACooper

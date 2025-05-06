@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnxb8rqttypyy"]
+
+[ext_resource type="Script" uid="uid://doyhsxonsvq0k" path="res://assets/scripts/spatial_audio_stream_player_3d.gd" id="1_kwcqy"]
+
+[node name="SpatialAudioStreamPlayer3D" type="AudioStreamPlayer3D"]
+script = ExtResource("1_kwcqy")
+
+[node name="DownRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+target_position = Vector3(100, 0, 0)
+collision_mask = 8
+
+[node name="UpRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+target_position = Vector3(100, 0, 0)
+collision_mask = 8
+
+[node name="ForwardRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(100, 0, 0)
+collision_mask = 8
+
+[node name="ForwardLeftRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+target_position = Vector3(100, 0, 0)
+collision_mask = 8
+
+[node name="ForwardRightRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 0, 0)
+target_position = Vector3(100, 0, 0)
+collision_mask = 8
+
+[node name="BackwardRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+target_position = Vector3(100, 0, 0)
+collision_mask = 8
+
+[node name="BackwardLeftRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+target_position = Vector3(100, 0, 0)
+collision_mask = 8
+
+[node name="BackwardRightCast" type="RayCast3D" parent="."]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0, 0)
+target_position = Vector3(100, 0, 0)
+collision_mask = 8
+
+[node name="LeftRayCast" type="RayCast3D" parent="."]
+target_position = Vector3(100, 0, 0)
+collision_mask = 8
+
+[node name="RightRayCast" type="RayCast3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+target_position = Vector3(100, 0, 0)
+collision_mask = 8
+
+[node name="PlayerRayCast" type="RayCast3D" parent="."]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, 100)

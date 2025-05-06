@@ -26,5 +26,4 @@ void fragment() {
 	vec4 color = texture(texture_albedo, uv);
 	
 	ALBEDO = color.rgb;
-	ALPHA = opacity;
 }

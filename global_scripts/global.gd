@@ -4,14 +4,14 @@ extends Node
 
 const rng_seed: int = 69420
 
-var RNG: RandomNumberGenerator
+@onready var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 
 func _ready() -> void:
-	RNG = RandomNumberGenerator.new()
-	RNG.seed = rng_seed
+	rng.seed = rng_seed
 	
-	_add_fps_counter()
+	if not Engine.is_editor_hint():
+		_add_fps_counter()
 
 
 func _add_fps_counter() -> void:

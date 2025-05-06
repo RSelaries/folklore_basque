@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
 
-void fragment() {<
+void fragment() {
 	COLOR = texture(TEXTURE, UV);
 }
