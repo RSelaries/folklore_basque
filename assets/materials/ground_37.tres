@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bxgs087qdp22e"]
 
-[ext_resource type="Texture2D" uid="uid://cbawhxi5cjyc" path="res://assets/textures/Ground037_1K-PNG_Color.png" id="1_4hmiq"]
-[ext_resource type="Texture2D" uid="uid://dwpli26iv1r0g" path="res://assets/textures/Ground037_1K-PNG_NormalGL.png" id="2_v7iv1"]
+[ext_resource type="Texture2D" uid="uid://cbawhxi5cjyc" path="res://assets/textures/material_textures/Ground037_1K-PNG_Color.png" id="1_4hmiq"]
+[ext_resource type="Texture2D" uid="uid://dwpli26iv1r0g" path="res://assets/textures/material_textures/Ground037_1K-PNG_NormalGL.png" id="2_v7iv1"]
 
 [resource]
 albedo_color = Color(0.645206, 0.756472, 0.593929, 1)

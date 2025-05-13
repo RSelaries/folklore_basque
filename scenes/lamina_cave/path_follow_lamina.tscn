@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://qpu2bnf7ibj3"]
+
+[ext_resource type="PackedScene" uid="uid://cjxi6ecex4610" path="res://assets/scenes/characters/lamina.tscn" id="1_3i6tn"]
+[ext_resource type="Script" uid="uid://cmqhhkcnn38e2" path="res://scenes/lamina_cave/path_follow_lamina.gd" id="1_5ory0"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_pmwg4"]
+viewport_path = NodePath("Laminak2/SubViewport")
+
+[node name="PathFollowLamina" type="PathFollow3D"]
+transform = Transform3D(0.473047, 0.167919, 0.86484, -0.0176661, 0.983231, -0.181243, -0.880851, 0.070459, 0.468084, 0, 0, 0)
+script = ExtResource("1_5ory0")
+speed = 3.0
+
+[node name="Laminak2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.0389159, 0, -0.160345, -0.00146322, 0.164993, 0.000355124, 0.160339, 0.0015057, -0.0389143, -0.0135651, 0.755051, -0.139183)
+billboard = 2
+shaded = true
+alpha_cut = 2
+texture = SubResource("ViewportTexture_pmwg4")
+
+[node name="SubViewport" type="SubViewport" parent="Laminak2"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(612, 1420)
+
+[node name="Lamina" parent="Laminak2/SubViewport" instance=ExtResource("1_3i6tn")]
+position = Vector2(0, 292.715)
+
+[node name="UpperArmLeft" parent="Laminak2/SubViewport/Lamina/Skeleton2D/Hip/Torso/ForearmLeft" index="0"]
+scale = Vector2(0.999999, 0.999999)
+
+[node name="ForearmRight" parent="Laminak2/SubViewport/Lamina/Skeleton2D/Hip/Torso" index="2"]
+scale = Vector2(0.999999, 0.999999)
+
+[node name="UpperArmRight" parent="Laminak2/SubViewport/Lamina/Skeleton2D/Hip/Torso/ForearmRight" index="0"]
+scale = Vector2(0.999998, 0.999998)
+
+[editable path="Laminak2/SubViewport/Lamina"]

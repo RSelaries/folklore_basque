@@ -1,0 +1,12 @@
+[gd_resource type="QuadMesh" load_steps=2 format=3 uid="uid://b56tkc6qi2fx4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lxu8"]
+resource_name = "FirefliesPass1"
+transparency = 1
+vertex_color_use_as_albedo = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 16.0
+
+[resource]
+material = SubResource("StandardMaterial3D_1lxu8")
+size = Vector2(0.05, 0.05)

@@ -77,11 +77,11 @@ func _on_update_raycast_distance(raycast: RayCast3D, raycast_id: int) -> void:
 
 
 func _on_update_spatial_audio(player: Node3D) -> void:
-	_on_update_reverb(player)
+	_on_update_reverb()
 	_on_update_lowpass_filter(player)
 
 
-func _on_update_reverb(player: Node3D) -> void:
+func _on_update_reverb() -> void:
 	if _reverb_effect != null:
 		# Find reverb parameters
 		var room_size: float = 0.0

@@ -13,6 +13,7 @@ var index: float = 0.0
 func _process(delta: float) -> void:
 	index += delta * flicker_speed
 	
-	var sampled_noise: float = (abs(noise_texture.noise.get_noise_1d(index)) * max_light_energy) + min_light_energy
-	
-	light_energy = sampled_noise
+	if noise_texture and noise_texture.noise:
+		var sampled_noise: float = (abs(noise_texture.noise.get_noise_1d(index)) * max_light_energy) + min_light_energy
+		
+		light_energy = sampled_noise

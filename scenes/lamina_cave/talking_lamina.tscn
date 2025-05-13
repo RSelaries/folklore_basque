@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://dxvobutkh34vc"]
+
+[ext_resource type="Script" uid="uid://ixcqhlgxykbk" path="res://scenes/lamina_cave/talking_lamina.gd" id="1_5ionl"]
+[ext_resource type="PackedScene" uid="uid://cjxi6ecex4610" path="res://assets/scenes/characters/lamina.tscn" id="2_xl5wf"]
+[ext_resource type="Shader" uid="uid://dtwrbcc6nl1ht" path="res://assets/shaders/2d_outline.gdshader" id="3_4d6hx"]
+[ext_resource type="Script" uid="uid://c2h1lcu4el041" path="res://scenes/lamina_cave/lamina_dialogue_manager.tres.gd" id="4_xl5wf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5ionl"]
+viewport_path = NodePath("LaminaSprite/SpriteSubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y44jr"]
+shader = ExtResource("3_4d6hx")
+shader_parameter/color = Color(0.909764, 0.699548, 0, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = false
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_q08s0"]
+height = 1.40295
+radius = 0.213867
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xl5wf"]
+viewport_path = NodePath("DialogueManager/Sprite3D/SubViewport")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xl5wf"]
+
+[node name="TalkingLamina" type="StaticBody3D"]
+collision_layer = 2
+script = ExtResource("1_5ionl")
+
+[node name="LaminaSprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.165, 0, 0, 0, 0.165, 0, 0, 0, 0.165, 0, 0, 0)
+billboard = 2
+shaded = true
+alpha_cut = 1
+texture = SubResource("ViewportTexture_5ionl")
+
+[node name="SpriteSubViewport" type="SubViewport" parent="LaminaSprite"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(612, 1150)
+
+[node name="Lamina" parent="LaminaSprite/SpriteSubViewport" instance=ExtResource("2_xl5wf")]
+unique_name_in_owner = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_y44jr")
+position = Vector2(0, 17.475)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.200989, 0)
+shape = SubResource("CylinderShape3D_q08s0")
+
+[node name="DialogueManager" type="Node3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_xl5wf")
+
+[node name="Sprite3D" type="Sprite3D" parent="DialogueManager"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0.33073)
+billboard = 2
+shaded = true
+texture = SubResource("ViewportTexture_xl5wf")
+
+[node name="SubViewport" type="SubViewport" parent="DialogueManager/Sprite3D"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1080, 500)
+
+[node name="DialogueLabel" type="RichTextLabel" parent="DialogueManager/Sprite3D/SubViewport"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(0.909804, 0.698039, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.255, 0.228, 0.102, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 25
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 80
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 80
+theme_override_font_sizes/bold_font_size = 80
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xl5wf")
+bbcode_enabled = true
+text = "TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogueSkipTimer" type="Timer" parent="DialogueManager"]
+unique_name_in_owner = true
+one_shot = true
+
+[connection signal="timeout" from="DialogueManager/DialogueSkipTimer" to="DialogueManager" method="_on_dialogue_skip_timer_timeout"]

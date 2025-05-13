@@ -14,14 +14,6 @@ uniform vec3 sway_direction = vec3(1.0, 0.0, 0.0);
 
 // Base color of the material (includes alpha)
 uniform vec4 albedo_color : source_color = vec4(1.0, 1.0, 1.0, 1.0);
-// 0 = non-metal, 1 = full metal
-uniform float metallic : hint_range(0.0, 1.0) = 0.0;
-// 0 = smooth mirror, 1 = fully rough
-uniform float roughness : hint_range(0.0, 1.0) = 1.0;
-// Strength of specular reflection for non-metallic surfaces
-uniform float specular : hint_range(0.0, 1.0) = 0.5;
-// Controls transparency
-uniform float opacity : hint_range(0.0, 1.0) = 1.0;
 
 
 void vertex() {
@@ -38,7 +30,4 @@ void vertex() {
 
 void fragment() {
     ALBEDO = albedo_color.rgb;
-    METALLIC = metallic;
-    ROUGHNESS = roughness;
-    SPECULAR = specular;
 }

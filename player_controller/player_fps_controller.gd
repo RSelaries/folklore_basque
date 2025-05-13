@@ -1,3 +1,4 @@
+class_name PlayerFpsController
 extends CharacterBody3D
 
 
@@ -10,15 +11,20 @@ const JUMP_VELOCITY = 4.5
 
 @onready var neck: Node3D = %Neck
 @onready var fps_camera: Camera3D = %FpsCamera
+@onready var interaction_raycast: RayCast3D = %InteractionRaycast
+
+
+var currently_focused_node: Node3D
+
+
+func _ready() -> void:
+	PlayerState.player_scene = self
 
 
 func _unhandled_input(event: InputEvent) -> void:
 	# Capture mouse on left click, release on 'escape' pressed
-	if event is InputEventMouseButton:
-		var mouse_button_event: InputEventMouseButton = event
-		if mouse_button_event.button_index == 1:
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-			#fps_camera.make_current()
+	if event is InputEventMouseButton and event.button_index == 1:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	elif event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
@@ -29,7 +35,13 @@ func _unhandled_input(event: InputEvent) -> void:
 		neck.rotate_y( -event_mouse_motion.relative.x * mouse_sensitivity * 0.01)
 		fps_camera.rotate_x( -event_mouse_motion.relative.y * mouse_sensitivity * 0.01)
 		fps_camera.rotation.x = clamp(fps_camera.rotation.x, deg_to_rad(-90), deg_to_rad(85) )
-
+	
+	# Handling interact
+	if event.is_action_pressed("interact"):
+		if interaction_raycast.get_collider():
+			var collider: Node3D = interaction_raycast.get_collider()
+			if collider.has_method("interact"):
+				collider.interact()
 
 
 func _physics_process(delta: float) -> void:
@@ -38,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("fps_movement_jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -52,3 +64,32 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, walking_speed)
 
 	move_and_slide()
+
+
+func _process(_delta: float) -> void:
+	_check_for_interaction()
+
+
+func _check_for_interaction() -> void:
+	if not interaction_raycast.get_collider():
+		if currently_focused_node and "focused" in currently_focused_node:
+			currently_focused_node.focused = false
+			currently_focused_node = null
+		
+		PlayerState.interaction = PlayerState.Interactions.NONE
+		return
+	
+	var collider: Node3D = interaction_raycast.get_collider()
+	
+	if collider == currently_focused_node:
+		return
+	else:
+		if currently_focused_node and "focused" in currently_focused_node:
+			currently_focused_node.focused = false
+		
+		currently_focused_node = collider
+	
+	if "focused" in collider:
+		collider.focused = true
+	else:
+		PlayerState.interaction = PlayerState.Interactions.NONE

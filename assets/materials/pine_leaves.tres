@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c8y868inmsiok"]
 
-[ext_resource type="Texture2D" uid="uid://cltbx8difia0p" path="res://assets/textures/pine_leaves.png" id="1_mwvir"]
+[ext_resource type="Texture2D" uid="uid://cltbx8difia0p" path="res://assets/textures/material_textures/pine_leaves.png" id="1_mwvir"]
 
 [resource]
 transparency = 2
