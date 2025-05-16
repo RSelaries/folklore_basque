@@ -1,12 +1,15 @@
-[gd_scene load_steps=24 format=3 uid="uid://bd4yhstgm0r78"]
+[gd_scene load_steps=27 format=3 uid="uid://bd4yhstgm0r78"]
 
 [ext_resource type="Script" uid="uid://cm0l6toys2u7k" path="res://scenes/lamina_cave/lamina_cave.gd" id="1_cq7p8"]
 [ext_resource type="PackedScene" uid="uid://c31cgejswlpdt" path="res://assets/terrain/other_cave.glb" id="1_dk6l8"]
 [ext_resource type="Material" uid="uid://2hajamul5kbx" path="res://assets/materials/rock_2.tres" id="2_3gnyr"]
 [ext_resource type="LightmapGIData" uid="uid://b0hdkd6i33f5r" path="res://scenes/lamina_cave/lightmap_gi_data.tres" id="3_v8w2x"]
 [ext_resource type="Script" uid="uid://de0eihsidytpi" path="res://assets/scripts/flickering_light.gd" id="4_tcolr"]
-[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/PlayerFpsController.tscn" id="5_r4hxv"]
+[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_fps_controller/player_fps_controller.tscn" id="5_r4hxv"]
 [ext_resource type="PackedScene" uid="uid://dxvobutkh34vc" path="res://scenes/lamina_cave/talking_lamina.tscn" id="7_cq7p8"]
+[ext_resource type="AudioStream" uid="uid://dy647odbkfqwe" path="res://assets/audio/sound_effects/concrete_footstep.mp3" id="9_q08s0"]
+[ext_resource type="Script" uid="uid://xegvgmrulr2u" path="res://scenes/lamina_cave/lamina_walk_audio_stream.gd" id="10_y44jr"]
+[ext_resource type="AudioStream" uid="uid://h1nkymdnbvhu" path="res://assets/audio/sound_effects/looping_fire_sound_effect.wav" id="11_gm58v"]
 [ext_resource type="Shader" uid="uid://bonaulx70xij0" path="res://assets/shaders/psx_dithering.gdshader" id="14_po7wh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3gnyr"]
@@ -143,7 +146,7 @@ metadata/_edit_group_ = true
 [node name="OmniLight3D2" type="OmniLight3D" parent="PlayerFpsController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.590583, 0)
 light_color = Color(0.927925, 0.625136, 0.402088, 1)
-light_energy = 3.05918
+light_energy = 2.24826
 light_indirect_energy = 3.0
 shadow_enabled = true
 omni_range = 19.9829
@@ -163,10 +166,10 @@ draw_pass_1 = SubResource("QuadMesh_ke6yo")
 [node name="OmniLight3D" type="OmniLight3D" parent="FireParticles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258984, 0)
 light_color = Color(0.952701, 0.616865, 0.286273, 1)
-light_energy = 7.11835
+light_energy = 5.49653
 light_indirect_energy = 3.0
 shadow_enabled = true
-omni_range = 19.9829
+omni_range = 103.829
 script = ExtResource("4_tcolr")
 min_light_energy = 5.0
 max_light_energy = 8.0
@@ -199,5 +202,105 @@ debug_color = Color(0.478, 0.348, 1, 0.157)
 transform = Transform3D(0.429786, 0.902931, 3.94684e-08, 0, -4.37114e-08, 1, 0.902931, -0.429786, -1.87866e-08, -0.748074, 0, -2.77375)
 shape = SubResource("WorldBoundaryShape3D_q08s0")
 debug_color = Color(0.478, 0.348, 1, 0.157)
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="LaminaWalkingSound" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.2792, -4.24613, 30.2497)
+stream = ExtResource("9_q08s0")
+volume_db = -30.577
+unit_size = 100.0
+bus = &"LaminaWalk"
+parameters/looping = true
+script = ExtResource("10_y44jr")
+
+[node name="LaminaWalkingSound2" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.3145, -4.24613, 30.6543)
+stream = ExtResource("9_q08s0")
+volume_db = -30.577
+unit_size = 100.0
+bus = &"LaminaWalk"
+parameters/looping = true
+script = ExtResource("10_y44jr")
+
+[node name="LaminaWalkingSound3" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.3096, -4.24613, 31.1283)
+stream = ExtResource("9_q08s0")
+volume_db = -30.577
+unit_size = 100.0
+bus = &"LaminaWalk"
+parameters/looping = true
+script = ExtResource("10_y44jr")
+
+[node name="LaminaWalkingSound4" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.4928, -4.24613, 31.5938)
+stream = ExtResource("9_q08s0")
+volume_db = -30.577
+unit_size = 100.0
+bus = &"LaminaWalk"
+parameters/looping = true
+script = ExtResource("10_y44jr")
+
+[node name="LaminaWalkingSound5" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.4334, -4.24613, 32.1542)
+stream = ExtResource("9_q08s0")
+volume_db = -30.577
+unit_size = 100.0
+bus = &"LaminaWalk"
+parameters/looping = true
+script = ExtResource("10_y44jr")
+
+[node name="LaminaWalkingSound6" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.369, -4.24613, 32.8898)
+stream = ExtResource("9_q08s0")
+volume_db = -30.577
+unit_size = 100.0
+bus = &"LaminaWalk"
+parameters/looping = true
+script = ExtResource("10_y44jr")
+
+[node name="LaminaWalkingSound7" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.4176, -4.24613, 29.8367)
+stream = ExtResource("9_q08s0")
+volume_db = -30.577
+unit_size = 100.0
+bus = &"LaminaWalk"
+parameters/looping = true
+script = ExtResource("10_y44jr")
+
+[node name="LaminaWalkingSound8" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.6815, -4.24613, 29.7017)
+stream = ExtResource("9_q08s0")
+volume_db = -30.577
+unit_size = 100.0
+bus = &"LaminaWalk"
+parameters/looping = true
+script = ExtResource("10_y44jr")
+
+[node name="LaminaWalkingSound9" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.0034, -4.24613, 29.8537)
+stream = ExtResource("9_q08s0")
+volume_db = -30.577
+unit_size = 100.0
+bus = &"LaminaWalk"
+parameters/looping = true
+script = ExtResource("10_y44jr")
+
+[node name="LaminaWalkingSound10" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.1707, -4.24613, 29.989)
+stream = ExtResource("9_q08s0")
+volume_db = -30.577
+unit_size = 100.0
+bus = &"LaminaWalk"
+parameters/looping = true
+script = ExtResource("10_y44jr")
+
+[node name="FireSound" type="AudioStreamPlayer3D" parent="Sounds"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.8743, -4.72442, 26.8263)
+stream = ExtResource("11_gm58v")
+volume_db = -5.0
+unit_size = 10.76
+autoplay = true
+bus = &"LaminaWalk"
 
 [editable path="OtherCave"]

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Folklore Basque"
-run/main_scene="uid://bd4yhstgm0r78"
+run/main_scene="uid://ddu6id7p0oit"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="uid://b1hhl7ihm3kyi"
 
 [autoload]
 

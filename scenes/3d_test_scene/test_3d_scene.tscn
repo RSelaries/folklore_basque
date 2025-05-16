@@ -1,8 +1,8 @@
 [gd_scene load_steps=40 format=3 uid="uid://b3rt6q0416s0"]
 
 [ext_resource type="Script" uid="uid://cdq0whek0islp" path="res://scenes/3d_test_scene/test_3d_scene.gd" id="1_rp5pb"]
+[ext_resource type="Texture2D" uid="uid://bmrj2p7v3jdlj" path="res://assets/textures/hdri_mountains.jpg" id="2_me6r3"]
 [ext_resource type="Texture2D" uid="uid://rc74nc1iwgcf" path="res://assets/textures/material_textures/terrain.jpg" id="2_poeqp"]
-[ext_resource type="Texture2D" uid="uid://cas4sgaokmgam" path="res://assets/textures/hdri_sky.hdr" id="2_rp5pb"]
 [ext_resource type="ArrayMesh" uid="uid://4oqbggvpawd3" path="res://assets/meshes/terrain.obj" id="2_vyv7f"]
 [ext_resource type="Shader" uid="uid://bmxvix81wblkm" path="res://assets/shaders/warp_distort.gdshader" id="3_cv26l"]
 [ext_resource type="PackedScene" uid="uid://bahtu3qj4vf2t" path="res://assets/scenes/3d_scenes/random_tree.tscn" id="4_5ud02"]
@@ -17,12 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://b45bsyaqegsk7" path="res://assets/sprites/recherches_graphiques/visage_collage/nez.png" id="13_ytbul"]
 [ext_resource type="Texture2D" uid="uid://dw0ym0db28ewe" path="res://assets/sprites/recherches_graphiques/visage_collage/levre_inf_2.png" id="14_4h8li"]
 [ext_resource type="Texture2D" uid="uid://dl5ybbbqicde4" path="res://assets/sprites/recherches_graphiques/visage_collage/levre_sup_2.png" id="15_l8do3"]
-[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/PlayerFpsController.tscn" id="16_jus0k"]
+[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_fps_controller/player_fps_controller.tscn" id="16_jus0k"]
 [ext_resource type="Shader" uid="uid://ba2ax8lys3gqf" path="res://assets/shaders/milk_outside_spatial.gdshader" id="19_236cj"]
 [ext_resource type="AudioStream" uid="uid://comp4fpoal73k" path="res://assets/audio/musics/water_planet.mp3" id="20_236cj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mioed"]
-panorama = ExtResource("2_rp5pb")
+panorama = ExtResource("2_me6r3")
 
 [sub_resource type="Sky" id="Sky_umvoe"]
 sky_material = SubResource("PanoramaSkyMaterial_mioed")
@@ -137,9 +137,7 @@ environment = SubResource("Environment_poeqp")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.857814, 0.115616, -0.500788, -0.0175873, 0.980403, 0.196218, 0.51366, -0.159511, 0.843036, 0, 66.4095, 0)
 light_color = Color(0.564598, 0.783898, 0.83754, 1)
-light_energy = 0.5
 shadow_enabled = true
-directional_shadow_max_distance = 50.0
 
 [node name="Terrain" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -530.51, 39.8157, 484.1)

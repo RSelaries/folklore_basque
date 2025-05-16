@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dh6wuc2vwox0v"]
+
+[ext_resource type="Texture2D" uid="uid://cpa3lapdaacwv" path="res://assets/terrain/terrain_3_Image_0.jpg" id="1_2hafk"]
+[ext_resource type="Texture2D" uid="uid://blgwbwblxxwcy" path="res://assets/textures/material_textures/terrain_3_nrm.jpg" id="2_jhitl"]
+
+[resource]
+albedo_texture = ExtResource("1_2hafk")
+normal_enabled = true
+normal_texture = ExtResource("2_jhitl")

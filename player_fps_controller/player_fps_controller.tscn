@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxrdpo22t70"]
+
+[ext_resource type="Script" uid="uid://b8mnitthgljq6" path="res://player_fps_controller/player_fps_controller.gd" id="1_u1320"]
+[ext_resource type="Script" uid="uid://3yknytbo607o" path="res://player_fps_controller/player_crosshair.gd" id="2_tg4jx"]
+[ext_resource type="Texture2D" uid="uid://003k7vn73fce" path="res://assets/textures/gui_textures/talk.png" id="3_7lkqh"]
+[ext_resource type="Texture2D" uid="uid://cdytimu6xxbh5" path="res://assets/textures/gui_textures/hand.png" id="4_ekll3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_437ux"]
+
+[node name="PlayerFpsController" type="CharacterBody3D"]
+script = ExtResource("1_u1320")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_437ux")
+debug_color = Color(1, 0.0117647, 0.027451, 1)
+
+[node name="Neck" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="FpsCamera" type="Camera3D" parent="Neck"]
+unique_name_in_owner = true
+
+[node name="InteractionRaycast" type="RayCast3D" parent="Neck/FpsCamera"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0001688, -1.19209e-07, 0.00521612)
+target_position = Vector3(0, 0, -2.5)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="PlayerCrosshair" type="CanvasLayer" parent="."]
+script = ExtResource("2_tg4jx")
+
+[node name="CrosshairContainer" type="CenterContainer" parent="PlayerCrosshair"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="None" type="ColorRect" parent="PlayerCrosshair/CrosshairContainer"]
+custom_minimum_size = Vector2(2, 2)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Speek" type="TextureRect" parent="PlayerCrosshair/CrosshairContainer"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("3_7lkqh")
+
+[node name="Use" type="TextureRect" parent="PlayerCrosshair/CrosshairContainer"]
+visible = false
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture = ExtResource("4_ekll3")

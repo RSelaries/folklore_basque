@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddu6id7p0oit"]
+[gd_scene load_steps=6 format=3 uid="uid://ddu6id7p0oit"]
+
+[ext_resource type="Material" uid="uid://bde8kf2tiwrlk" path="res://assets/materials/prototype.tres" id="1_7favp"]
+[ext_resource type="PackedScene" uid="uid://peqs75d3c71i" path="res://player_tps_controller/player_tps_controller.tscn" id="2_od80u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7favp"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -12,6 +15,10 @@ sky_material = SubResource("ProceduralSkyMaterial_7favp")
 background_mode = 2
 sky = SubResource("Sky_od80u")
 tonemap_mode = 2
+fog_mode = 1
+fog_sun_scatter = 0.16
+fog_density = 1.0
+fog_depth_curve = 0.466517
 
 [node name="MovementTest1" type="Node3D"]
 
@@ -24,8 +31,30 @@ shadow_enabled = true
 
 [node name="Floor" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+material_override = ExtResource("1_7favp")
 use_collision = true
 size = Vector3(1000, 0.5, 1000)
 
+[node name="PlayerTpsController" parent="." instance=ExtResource("2_od80u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Camera3D" parent="PlayerTpsController/YRotation/XRotation" index="0"]
+far = 10.0
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6801, 5.93457, -13.2559)
+size = Vector3(11.4364, 12.8691, 10.731)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2757, 5.31519, -2.0047)
+size = Vector3(8.82465, 11.6304, 10.731)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.70783, 4.2533, 8.57025)
+size = Vector3(9.3757, 9.50659, 9.599)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.0916, 6.422, 20.2801)
+size = Vector3(11.5526, 13.844, 13.2314)
+
+[editable path="PlayerTpsController"]

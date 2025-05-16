@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://b34nuooo7qyin"]
+
+[ext_resource type="PackedScene" uid="uid://dfxdueiethwlj" path="res://assets/terrain/terrain_3.glb" id="1_nsspk"]
+[ext_resource type="Texture2D" uid="uid://bmrj2p7v3jdlj" path="res://assets/textures/hdri_mountains.jpg" id="1_tdv7n"]
+[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_fps_controller/player_fps_controller.tscn" id="2_1x2yb"]
+[ext_resource type="Shader" uid="uid://bonaulx70xij0" path="res://assets/shaders/psx_dithering.gdshader" id="4_1ha4h"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1ha4h"]
+panorama = ExtResource("1_tdv7n")
+
+[sub_resource type="Sky" id="Sky_6qr2i"]
+sky_material = SubResource("PanoramaSkyMaterial_1ha4h")
+
+[sub_resource type="Environment" id="Environment_1ha4h"]
+background_mode = 2
+sky = SubResource("Sky_6qr2i")
+ambient_light_source = 1
+ambient_light_color = Color(0.150887, 0.167748, 0.0120865, 1)
+reflected_light_source = 1
+tonemap_mode = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6qr2i"]
+shader = ExtResource("4_1ha4h")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 2
+
+[node name="Prototype1" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.810042, -0.507814, 0.293185, 0, 0.499998, 0.866027, -0.586372, -0.701518, 0.405019, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1ha4h")
+
+[node name="terrain_3" parent="." instance=ExtResource("1_nsspk")]
+
+[node name="PlayerFpsController" parent="." instance=ExtResource("2_1x2yb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.915983, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_6qr2i")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
