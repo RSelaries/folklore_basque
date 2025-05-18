@@ -1,7 +1,6 @@
 shader_type spatial;
 
 
-
 // Maximum sway offset
 uniform float sway_amount : hint_range(0.0, 1.0) = 0.1;
 // Controls how tightly sway oscillates over the mesh's Y axis

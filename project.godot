@@ -32,7 +32,7 @@ window/per_pixel_transparency/allowed=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dreadpon.spatial_gardener/plugin.cfg")
+enabled=PackedStringArray("res://addons/dreadpon.spatial_gardener/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [file_customization]
 
@@ -41,9 +41,9 @@ folder_colors={
 "res://addons/": "gray",
 "res://assets/": "green",
 "res://classes/": "red",
-"res://gardener_work_dir/": "gray",
 "res://global_scripts/": "red",
-"res://scenes/": "blue"
+"res://scenes/": "blue",
+"res://scenes/mari_cave/gardener/": "gray"
 }
 
 [global_group]

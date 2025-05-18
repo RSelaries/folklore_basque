@@ -1,9 +1,10 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dh6wuc2vwox0v"]
 
-[ext_resource type="Texture2D" uid="uid://cpa3lapdaacwv" path="res://assets/terrain/terrain_3_Image_0.jpg" id="1_2hafk"]
+[ext_resource type="Texture2D" uid="uid://bq0xemja0n6n0" path="res://assets/textures/material_textures/terrain_3.png" id="1_jhitl"]
 [ext_resource type="Texture2D" uid="uid://blgwbwblxxwcy" path="res://assets/textures/material_textures/terrain_3_nrm.jpg" id="2_jhitl"]
 
 [resource]
-albedo_texture = ExtResource("1_2hafk")
+albedo_color = Color(0.787245, 0.80113, 0.873004, 1)
+albedo_texture = ExtResource("1_jhitl")
 normal_enabled = true
 normal_texture = ExtResource("2_jhitl")
