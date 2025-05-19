@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://peqs75d3c71i"]
+
+[ext_resource type="Script" uid="uid://6e8n43wv5wsq" path="res://player_controller/player_tps_controller/player_tps_controller.gd" id="1_mo82a"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_od80u"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_filuv"]
+
+[node name="PlayerTpsController" type="CharacterBody3D"]
+script = ExtResource("1_mo82a")
+
+[node name="YRotation" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66238, 0)
+
+[node name="XRotation" type="Node3D" parent="YRotation"]
+unique_name_in_owner = true
+
+[node name="Camera3D" type="Camera3D" parent="YRotation/XRotation"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.551)
+size = 5.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_od80u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_filuv")

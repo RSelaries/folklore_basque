@@ -98,7 +98,7 @@ static func adapt_theme(theme:Theme) -> Theme:
 	
 	# InspectorPanelContainer -> PanelContainer
 	var InspectorPanelContainer_stylebox := Tree_panel.duplicate(true)
-	InspectorPanelContainer_stylebox.draw_center = true
+	#InspectorPanelContainer_stylebox.draw_center = true
 	editor_theme.set_theme_item(Theme.DATA_TYPE_STYLEBOX, "panel", "InspectorPanelContainer", InspectorPanelContainer_stylebox)
 	editor_theme.set_type_variation("InspectorPanelContainer", "PanelContainer")
 	

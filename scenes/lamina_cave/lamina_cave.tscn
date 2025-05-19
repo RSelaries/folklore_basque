@@ -5,7 +5,7 @@
 [ext_resource type="Material" uid="uid://2hajamul5kbx" path="res://assets/materials/rock_2.tres" id="2_3gnyr"]
 [ext_resource type="LightmapGIData" uid="uid://b0hdkd6i33f5r" path="res://scenes/lamina_cave/lightmap_gi_data.tres" id="3_v8w2x"]
 [ext_resource type="Script" uid="uid://de0eihsidytpi" path="res://assets/scripts/flickering_light.gd" id="4_tcolr"]
-[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_fps_controller/player_fps_controller.tscn" id="5_r4hxv"]
+[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/player_fps_controller/player_fps_controller.tscn" id="5_r4hxv"]
 [ext_resource type="PackedScene" uid="uid://dxvobutkh34vc" path="res://scenes/lamina_cave/talking_lamina.tscn" id="7_cq7p8"]
 [ext_resource type="AudioStream" uid="uid://dy647odbkfqwe" path="res://assets/audio/sound_effects/concrete_footstep.mp3" id="9_q08s0"]
 [ext_resource type="Script" uid="uid://xegvgmrulr2u" path="res://scenes/lamina_cave/lamina_walk_audio_stream.gd" id="10_y44jr"]

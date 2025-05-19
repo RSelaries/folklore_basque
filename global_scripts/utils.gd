@@ -58,3 +58,10 @@ func hsv_to_rgb(hsv: Vector3) -> Color:
 			r = 0; g = 0; b = 0
 
 	return Color(r + m, g + m, b + m)
+
+
+func get_all_children(in_node: Node, arr: Array[Node] = []):
+	arr.push_back(in_node)
+	for child in in_node.get_children():
+		arr = get_all_children(child,arr)
+	return arr

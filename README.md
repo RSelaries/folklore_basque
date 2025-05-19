@@ -16,7 +16,17 @@
 - [Trees Low Poly](https://skfb.ly/6YpAS) by Igor_K
 - [Cypress tree](https://skfb.ly/6U9rz) by ElectroNick
 - [Pine_Tree](https://skfb.ly/oHxEX) by JAdams
-- [Free Tree 1](https://skfb.ly/6SUAC) by Giimann   
+- [Free Tree 1](https://skfb.ly/6SUAC) by Giimann
+- [Realistic Sheep 3D Model](https://skfb.ly/pvzNw) by WildMesh 3D Free
+- [Tramain House 1 \[France\]](https://skfb.ly/6WTWW) by Lost Gecko
+- [Fumay House 1 \[France\]](https://skfb.ly/6RYXT) by Lost Gecko
+- [Rouen House 1 \[France\]](https://skfb.ly/6Cyn8) by Lost Gecko
+- [Troyes House 1 \[France\]](https://skfb.ly/6B6yz) by Lost Gecko
+- [St. Guevroc Chapel](https://skfb.ly/6SQqK) by Loïc Norgeot
+- [Winchelsea New Gate](https://skfb.ly/o9IuN) by artfletch
+- [Troyes House 2 \[France\]](https://skfb.ly/6WWEr) by Lost Gecko
+- [Dijon Shop 2 \[France\]](https://skfb.ly/6C7OK) by Lost Gecko
+- [Angers Shop 1 \[France\]](https://skfb.ly/6WW66) by Lost Gecko
 
 ## Sounds
 

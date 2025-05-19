@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmwptdgcghl0i"
-path.s3tc="res://.godot/imported/Ground_81_2k_packed_albedo_height.png-ddbc1cca4ff151f4c454a7cbc72a5679.s3tc.ctex"
+uid="uid://chtpko861he68"
+path.bptc="res://.godot/imported/Ground_81_2k_packed_albedo_height.png-ddbc1cca4ff151f4c454a7cbc72a5679.bptc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,12 +12,12 @@ metadata={
 [deps]
 
 source_file="res://assets/textures/material_textures/ground_81/Ground_81_2k_packed_albedo_height.png"
-dest_files=["res://.godot/imported/Ground_81_2k_packed_albedo_height.png-ddbc1cca4ff151f4c454a7cbc72a5679.s3tc.ctex"]
+dest_files=["res://.godot/imported/Ground_81_2k_packed_albedo_height.png-ddbc1cca4ff151f4c454a7cbc72a5679.bptc.ctex"]
 
 [params]
 
 compress/mode=2
-compress/high_quality=false
+compress/high_quality=true
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=2

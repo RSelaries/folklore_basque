@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://b45bsyaqegsk7" path="res://assets/sprites/recherches_graphiques/visage_collage/nez.png" id="13_ytbul"]
 [ext_resource type="Texture2D" uid="uid://dw0ym0db28ewe" path="res://assets/sprites/recherches_graphiques/visage_collage/levre_inf_2.png" id="14_4h8li"]
 [ext_resource type="Texture2D" uid="uid://dl5ybbbqicde4" path="res://assets/sprites/recherches_graphiques/visage_collage/levre_sup_2.png" id="15_l8do3"]
-[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_fps_controller/player_fps_controller.tscn" id="16_jus0k"]
+[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/player_fps_controller/player_fps_controller.tscn" id="16_jus0k"]
 [ext_resource type="Shader" uid="uid://ba2ax8lys3gqf" path="res://assets/shaders/milk_outside_spatial.gdshader" id="19_236cj"]
 [ext_resource type="AudioStream" uid="uid://comp4fpoal73k" path="res://assets/audio/musics/water_planet.mp3" id="20_236cj"]
 

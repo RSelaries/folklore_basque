@@ -1,0 +1,38 @@
+~ start
+if DialogueState.shepherd.greeted
+	Berger: Rebonjour !
+else
+	Berger: Bien le bonjour monsieur !
+Berger: Je ne crois pas vous avoir déjà vu, venez-vous du [color=violet]village[/color] plus loin ?
+=> questions
+
+~ questions
+if not DialogueState.shepherd.greeted
+	set DialogueState.shepherd.greeted = true
+	- "Non mais je m'y dirigeais."
+		Berger: Bonne visite de ce beau village alors ! Je n'y vit pas mais en ai entendu beaucoup de bien.
+		- Poser d'autres question
+			=> questions
+		- Arrêter la conversation
+			=> END!
+	- "Non je viens par rapport à une histoire de disparition." => personne_disparue
+	- "Connaissez-vous la personne récemment disparue ?" => personne_disparue
+	- Arrêter la conversation
+		=> END!
+else
+	- "Connaissez-vous la personne récemment disparue ?" => personne_disparue
+	- Arrêter la conversation
+		=> END!
+	=> END
+=> END
+
+~ personne_disparue
+Berger: Quelqu'un est porté disparu !?
+Berger: Je n'en ai pas entendu parlé, mais je peux vous révéler quelque chose :
+Berger: Depuis quelques semaines certains de mes moutons disparaissent étrangement.
+Berger: Je suis persuadé qu'il sagit du [wave][color=blue]basajaun[/color][/wave] !
+Berger: Malheureusement je ne peux pas vous en dire plus. Mais vous pourrez peut être avoir plus d'information de quelqu'un du village.
+- "Merci pour cette information"
+- Finir la conversation
+	=> END!
+=> END

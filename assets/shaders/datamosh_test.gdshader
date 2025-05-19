@@ -12,7 +12,7 @@ void fragment() {
 
 	vec4 current = texture(TEXTURE, uv);
 	vec4 previous = texture(prev_frame, glitched_uv);
-	
+
 	// Mix selon l’intensité du glitch
 	float glitch_strength = 0.6;
 	COLOR = mix(current, previous, glitch_strength);
