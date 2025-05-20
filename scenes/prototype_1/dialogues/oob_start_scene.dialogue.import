@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://davsvni7dvw3e"
+path="res://.godot/imported/oob_start_scene.dialogue-540e75eb5611c4e29283c9f4ef95a2f1.tres"
+
+[deps]
+
+source_file="res://scenes/prototype_1/dialogues/oob_start_scene.dialogue"
+dest_files=["res://.godot/imported/oob_start_scene.dialogue-540e75eb5611c4e29283c9f4ef95a2f1.tres"]
+
+[params]
+
+defaults=true

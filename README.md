@@ -31,6 +31,7 @@
 - [Shepard's Mountain House](https://skfb.ly/pwrtP) by VirtualPhoto3D
 - [Feluy Village House 1 \[Belgium\]](https://skfb.ly/6SKN7) by Lost Gecko
 - [Mountain House](https://skfb.ly/6ZYx9) by christophemerkle
+- [Stone Bridge_3arch](https://skfb.ly/oHw6G) by xplanepilot
 
 ## Sounds
 

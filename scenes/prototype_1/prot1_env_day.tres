@@ -1,0 +1,14 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://dp6og8jssapi7"]
+
+[ext_resource type="Texture2D" uid="uid://bmrj2p7v3jdlj" path="res://assets/textures/hdri_mountains.jpg" id="1_urwt5"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_1ha4h"]
+panorama = ExtResource("1_urwt5")
+
+[sub_resource type="Sky" id="Sky_6qr2i"]
+sky_material = SubResource("PanoramaSkyMaterial_1ha4h")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_6qr2i")
+ambient_light_sky_contribution = 0.65

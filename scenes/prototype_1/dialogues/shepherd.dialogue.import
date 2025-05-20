@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://co4fb03ksgc8a"
+path="res://.godot/imported/shepherd.dialogue-0f9404bd167275ace8db71c2f52ab4b2.tres"
+
+[deps]
+
+source_file="res://scenes/prototype_1/dialogues/shepherd.dialogue"
+dest_files=["res://.godot/imported/shepherd.dialogue-0f9404bd167275ace8db71c2f52ab4b2.tres"]
+
+[params]
+
+defaults=true

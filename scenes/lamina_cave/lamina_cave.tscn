@@ -146,7 +146,7 @@ metadata/_edit_group_ = true
 [node name="OmniLight3D2" type="OmniLight3D" parent="PlayerFpsController"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.590583, 0)
 light_color = Color(0.927925, 0.625136, 0.402088, 1)
-light_energy = 2.43218
+light_energy = 2.72745
 light_indirect_energy = 3.0
 shadow_enabled = true
 omni_range = 19.9829
@@ -166,7 +166,7 @@ draw_pass_1 = SubResource("QuadMesh_ke6yo")
 [node name="OmniLight3D" type="OmniLight3D" parent="FireParticles"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258984, 0)
 light_color = Color(0.952701, 0.616865, 0.286273, 1)
-light_energy = 5.86436
+light_energy = 6.45489
 light_indirect_energy = 3.0
 shadow_enabled = true
 omni_range = 103.829
