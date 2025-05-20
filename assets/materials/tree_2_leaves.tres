@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c7srdk1sfysnn"]
+
+[ext_resource type="Texture2D" uid="uid://dl83cjnoryc2k" path="res://assets/meshes/trees/pine_tree_0.png" id="1_m5ymo"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0.398313, 0.505604, 0.102394, 1)
+albedo_texture = ExtResource("1_m5ymo")
+metallic = 1.0

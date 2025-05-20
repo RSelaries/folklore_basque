@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1fe53bbph6cf"]
+
+[ext_resource type="PackedScene" uid="uid://d1ogrn544w22r" path="res://assets/meshes/trees/tree_2.glb" id="1_75vm1"]
+[ext_resource type="Material" uid="uid://c7srdk1sfysnn" path="res://assets/materials/tree_2_leaves.tres" id="2_75vm1"]
+[ext_resource type="Material" uid="uid://b7u4n2cgffbmj" path="res://assets/materials/tree_2_wood.tres" id="2_ja1m1"]
+
+[node name="Tree2" type="Node3D"]
+
+[node name="tree_2" parent="." instance=ExtResource("1_75vm1")]
+
+[node name="Leaves_001_Leavs_0" parent="tree_2" index="0"]
+surface_material_override/0 = ExtResource("2_75vm1")
+surface_material_override/1 = ExtResource("2_ja1m1")
+
+[editable path="tree_2"]

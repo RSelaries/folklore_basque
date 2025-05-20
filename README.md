@@ -27,6 +27,10 @@
 - [Troyes House 2 \[France\]](https://skfb.ly/6WWEr) by Lost Gecko
 - [Dijon Shop 2 \[France\]](https://skfb.ly/6C7OK) by Lost Gecko
 - [Angers Shop 1 \[France\]](https://skfb.ly/6WW66) by Lost Gecko
+- [Kläsjeshaus Roscheider Hof](https://skfb.ly/oRKSM) by netgis [BY-NC](https://creativecommons.org/licenses/by-nc/4.0/deed.fr)
+- [Shepard's Mountain House](https://skfb.ly/pwrtP) by VirtualPhoto3D
+- [Feluy Village House 1 \[Belgium\]](https://skfb.ly/6SKN7) by Lost Gecko
+- [Mountain House](https://skfb.ly/6ZYx9) by christophemerkle
 
 ## Sounds
 

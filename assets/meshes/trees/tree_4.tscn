@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ct5k2i7gn61no"]
+
+[ext_resource type="PackedScene" uid="uid://ctq8lbkbsnkox" path="res://assets/meshes/trees/tree_4.glb" id="1_ix07q"]
+[ext_resource type="Material" uid="uid://b7u4n2cgffbmj" path="res://assets/materials/tree_2_wood.tres" id="2_epnxd"]
+[ext_resource type="Material" uid="uid://cdijwyvampyqm" path="res://assets/materials/tree_4_leaves.tres" id="3_ix07q"]
+
+[node name="Tree4" type="Node3D"]
+
+[node name="tree_4" parent="." instance=ExtResource("1_ix07q")]
+
+[node name="tree6_bark_0" parent="tree_4" index="0"]
+surface_material_override/0 = ExtResource("2_epnxd")
+surface_material_override/1 = ExtResource("3_ix07q")
+
+[editable path="tree_4"]

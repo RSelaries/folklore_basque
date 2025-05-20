@@ -8,6 +8,11 @@
 
 config_version=5
 
+[Asset_Placer]
+
+Shortcuts/Select_Y_Z_Plane=Object(Shortcut,"resource_local_to_scene":false,"resource_name":"","events":[],"script":null)
+
+
 [application]
 
 config/name="Folklore Basque"
@@ -116,6 +121,7 @@ locale/translations_pot_files=PackedStringArray("res://scenes/prototype_1/shephe
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+occlusion_culling/use_occlusion_culling=true
 
 [shader_globals]
 

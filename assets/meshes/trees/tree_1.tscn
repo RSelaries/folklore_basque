@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqfdgok8pjyl4"]
+
+[ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="1_hme7k"]
+[ext_resource type="Material" uid="uid://dsi5ik81pe2r8" path="res://assets/materials/tree_1_leaves.tres" id="2_fogcc"]
+[ext_resource type="Material" uid="uid://c7s5vtyol8doh" path="res://assets/materials/tree_1_wood.tres" id="2_fs7gp"]
+
+[node name="Tree1" type="Node3D"]
+
+[node name="tree_1" parent="." instance=ExtResource("1_hme7k")]
+
+[node name="Plane043_vray_01 - Default_0" parent="tree_1" index="0"]
+surface_material_override/0 = ExtResource("2_fogcc")
+surface_material_override/1 = ExtResource("2_fs7gp")
+
+[editable path="tree_1"]
