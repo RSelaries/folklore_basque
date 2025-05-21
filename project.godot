@@ -107,7 +107,7 @@ return={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://scenes/prototype_1/dialogues/oob_start_scene.dialogue", "res://scenes/prototype_1/dialogues/shepherd.dialogue")
+locale/translations_pot_files=PackedStringArray("res://scenes/prototype_1/dialogues/oob_start_scene.dialogue", "res://scenes/prototype_1/dialogues/shepherd.dialogue", "res://scenes/prototype_1/dialogues/bridge_granpa.dialogue")
 
 [layer_names]
 

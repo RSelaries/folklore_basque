@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://nhjgf42kxf84"
+path="res://.godot/imported/bridge_granpa.dialogue-50ab0aa4b7fe4570aa053926627f5c84.tres"
+
+[deps]
+
+source_file="res://scenes/prototype_1/dialogues/bridge_granpa.dialogue"
+dest_files=["res://.godot/imported/bridge_granpa.dialogue-50ab0aa4b7fe4570aa053926627f5c84.tres"]
+
+[params]
+
+defaults=true

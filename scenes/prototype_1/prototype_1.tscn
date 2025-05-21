@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://b34nuooo7qyin"]
+[gd_scene load_steps=70 format=3 uid="uid://b34nuooo7qyin"]
 
 [ext_resource type="Script" uid="uid://q2q11vt7cuew" path="res://scenes/prototype_1/prototype_1.gd" id="1_g7bku"]
 [ext_resource type="Texture2D" uid="uid://c6wrw3ohqu3s7" path="res://assets/textures/material_textures/rock_53/Rock_53_2k_packed_albedo_height.png" id="4_wvelf"]
@@ -39,14 +39,18 @@
 [ext_resource type="Material" uid="uid://boyhxu8qqc73p" path="res://assets/materials/stone_village_gate.tres" id="25_3e7cy"]
 [ext_resource type="Script" uid="uid://b5be7eod5mp3m" path="res://point_n_click/show_dialogue_button.tres.gd" id="26_ajvjb"]
 [ext_resource type="Resource" uid="uid://davsvni7dvw3e" path="res://scenes/prototype_1/dialogues/oob_start_scene.dialogue" id="28_ai81m"]
+[ext_resource type="PackedScene" uid="uid://buvxt3q2sm1t1" path="res://assets/meshes/buildings/bridge_missing_stone.glb" id="30_yya68"]
+[ext_resource type="PackedScene" uid="uid://i72b8dqlnisq" path="res://assets/scenes/characters/bridge_granpa.tscn" id="35_k076n"]
 [ext_resource type="Shader" uid="uid://ban6fk30se87r" path="res://assets/shaders/gamma_correction.gdshader" id="40_xqnqp"]
 [ext_resource type="PackedScene" uid="uid://db0bo55n3d1t0" path="res://assets/meshes/buildings/bridge.glb" id="42_yya68"]
+[ext_resource type="Resource" uid="uid://nhjgf42kxf84" path="res://scenes/prototype_1/dialogues/bridge_granpa.dialogue" id="44_uquc5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xqnqp"]
 sky_top_color = Color(0.247003, 0.311642, 0.45506, 1)
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+sky_horizon_color = Color(0.51578, 0.52615, 0.542521, 1)
 sky_curve = 0.0891905
-ground_horizon_color = Color(0.662745, 0.670588, 0.686275, 1)
+ground_bottom_color = Color(0.201866, 0.256293, 0.382416, 1)
+ground_horizon_color = Color(0.517647, 0.52549, 0.541176, 1)
 
 [sub_resource type="Sky" id="Sky_3e7cy"]
 sky_material = SubResource("ProceduralSkyMaterial_xqnqp")
@@ -188,7 +192,7 @@ indices = PackedInt32Array(0, 1, 2, 2, 1, 34, 0, 3, 1, 1103, 0, 2, 3, 4, 1, 528,
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_3e7cy"]
 noise = SubResource("FastNoiseLite_xqnqp")
 
-[sub_resource type="Resource" id="Resource_3e7cy"]
+[sub_resource type="Resource" id="Resource_k076n"]
 script = ExtResource("13_hsvq4")
 MatShaderType = 2
 MatCustomShader = ExtResource("12_8vouf")
@@ -216,7 +220,7 @@ mat_caustic_sampler = ExtResource("13_7gmbi")
 LodLod0Distance = 50.0
 _selectedShader = 1
 
-[sub_resource type="Curve3D" id="Curve3D_yya68"]
+[sub_resource type="Curve3D" id="Curve3D_uquc5"]
 resource_local_to_scene = true
 bake_interval = 0.05
 _data = {
@@ -234,6 +238,9 @@ shader_parameter/dither_size = 2
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_a8bto"]
 viewport_path = NodePath("Sheperd/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7h8bl"]
+viewport_path = NodePath("BridgeGranpa/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3e7cy"]
 shader = ExtResource("40_xqnqp")
@@ -265,10 +272,10 @@ occluder = SubResource("ArrayOccluder3D_3e7cy")
 [node name="RiverManager" type="Node3D" parent="Terrain3D"]
 transform = Transform3D(0.731485, 0, -0.681858, 0, 1, 0, 0.681858, 0, 0.731485, 511.52, -6.10688, 132.757)
 script = ExtResource("11_8vouf")
-ShaderSettings = SubResource("Resource_3e7cy")
+ShaderSettings = SubResource("Resource_k076n")
 ShapeSmoothness = 5.0
 PointWidths = Array[float]([2.16373, 2.29979, 3.47225, 5.78538, 2.83288, 3.34057, 1.0, 6.68051, 5.73946, 4.42331, 8.62887, 6.7194, 8.59449, 11.4218, 9.46497, 10.3455, 6.53306, 6.85615, 21.6566, 46.8196, 50.9696, 58.4761, 48.8709, 31.9665, 5.16343])
-Curve = SubResource("Curve3D_yya68")
+Curve = SubResource("Curve3D_uquc5")
 metadata/_custom_type_script = "uid://boquq8ua40y0p"
 
 [node name="PostProc" type="CanvasLayer" parent="."]
@@ -322,7 +329,7 @@ transform = Transform3D(0.884833, 0, -0.465908, 0, 1, 0, 0.465908, 0, 0.884833, 
 [node name="Sketchfab_Scene9" parent="Buildings" instance=ExtResource("11_2bsw5")]
 transform = Transform3D(0.878175, 0, -0.478339, 0, 1, 0, 0.478339, 0, 0.878175, 419.708, -29.7732, 194.295)
 
-[node name="bridge" parent="Buildings" instance=ExtResource("42_yya68")]
+[node name="bridge_missing_stone" parent="Buildings" instance=ExtResource("30_yya68")]
 transform = Transform3D(0.353899, 0, -0.935284, 0, 1, 0, 0.935284, 0, 0.353899, 436.775, -38.9239, 215.287)
 
 [node name="bridge2" parent="Buildings" instance=ExtResource("42_yya68")]
@@ -538,6 +545,19 @@ size = Vector2i(1080, 1080)
 [node name="Shepherd" parent="Sheperd/SubViewport" instance=ExtResource("12_4kpbj")]
 position = Vector2(540, 540)
 
+[node name="BridgeGranpa" type="Sprite3D" parent="."]
+transform = Transform3D(0.0603048, 0, -0.225061, 0, 0.233, 0, 0.225061, 0, 0.0603048, 429.16, -28.9728, 188.208)
+billboard = 2
+alpha_cut = 1
+texture = SubResource("ViewportTexture_7h8bl")
+
+[node name="SubViewport" type="SubViewport" parent="BridgeGranpa"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(500, 1080)
+
+[node name="BridgeGranpa" parent="BridgeGranpa/SubViewport" instance=ExtResource("35_k076n")]
+
 [node name="CameraManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("13_x7dfg")
@@ -572,7 +592,7 @@ render_target_update_mode = 4
 
 [node name="PCCamera" type="Camera3D" parent="CameraManager/CameraPreview/CamManagerSubViewport"]
 unique_name_in_owner = true
-transform = Transform3D(-0.250616, 0.210687, -0.944882, 7.45058e-09, 0.976031, 0.217632, 0.968086, 0.0545421, -0.244609, 359.024, -18.9826, 167.643)
+transform = Transform3D(0.618479, -0.0097583, -0.785741, 0.0114459, 0.999929, -0.00340895, 0.785718, -0.00688516, 0.618546, 427.992, -28.2186, 189.158)
 
 [node name="Start" type="Marker3D" parent="CameraManager/CameraPreview/CamManagerSubViewport"]
 transform = Transform3D(-0.479359, 0.076817, -0.87425, 0.0107999, 0.996603, 0.0816459, 0.877552, 0.0296959, -0.478561, -280.797, -10.0433, -219.814)
@@ -901,6 +921,7 @@ script = ExtResource("13_a8bto")
 metadata/_custom_type_script = "uid://c4vi6dxqujrrf"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/VillageEntrance"]
+visible = false
 
 [node name="ToPath7" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/VillageEntrance/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
@@ -912,7 +933,7 @@ mouse_default_cursor_shape = 2
 script = ExtResource("14_r6jb8")
 links_to = NodePath("../../../Path7")
 
-[node name="ToVillageStreet" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/VillageEntrance/CanvasLayer"]
+[node name="ToVillageStreet" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/VillageEntrance/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
 anchor_left = 0.396264
 anchor_top = 0.35963
@@ -924,6 +945,7 @@ offset_right = 0.18396
 offset_bottom = -0.0880127
 mouse_default_cursor_shape = 2
 script = ExtResource("14_r6jb8")
+links_to = NodePath("../../../VillageStreet")
 metadata/_custom_type_script = "uid://c6t2jcowk6t34"
 
 [node name="ToForest" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/VillageEntrance/CanvasLayer"]
@@ -932,5 +954,127 @@ offset_bottom = 8.0
 mouse_default_cursor_shape = 2
 script = ExtResource("14_r6jb8")
 metadata/_custom_type_script = "uid://c6t2jcowk6t34"
+
+[node name="VillageStreet" type="Marker3D" parent="CameraManager/CameraPreview/CamManagerSubViewport"]
+transform = Transform3D(-0.405996, -0.00975824, -0.913822, 0.00233058, 0.999929, -0.0117133, 0.913872, -0.00688534, -0.405943, 398.437, -28.6142, 173.599)
+gizmo_extents = 1.0
+script = ExtResource("13_a8bto")
+metadata/_custom_type_script = "uid://c4vi6dxqujrrf"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/VillageStreet"]
+visible = false
+
+[node name="ToVillageEntrance" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/VillageStreet/CanvasLayer" node_paths=PackedStringArray("links_to")]
+anchors_preset = -1
+anchor_left = -0.000479142
+anchor_top = 0.868568
+anchor_right = 1.0
+anchor_bottom = 1.00031
+mouse_default_cursor_shape = 2
+script = ExtResource("14_r6jb8")
+links_to = NodePath("../../../VillageEntrance")
+
+[node name="ToBridgeEntrance" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/VillageStreet/CanvasLayer" node_paths=PackedStringArray("links_to")]
+anchors_preset = -1
+anchor_left = 0.473521
+anchor_top = 0.392037
+anchor_right = 0.575361
+anchor_bottom = 0.540259
+offset_left = -0.496002
+offset_top = -0.0400085
+offset_right = 0.18396
+offset_bottom = -0.0880127
+mouse_default_cursor_shape = 2
+script = ExtResource("14_r6jb8")
+links_to = NodePath("../../../BridgeEntrance")
+metadata/_custom_type_script = "uid://c6t2jcowk6t34"
+
+[node name="BridgeEntrance" type="Marker3D" parent="CameraManager/CameraPreview/CamManagerSubViewport"]
+transform = Transform3D(-0.405996, -0.00975824, -0.913822, 0.00233058, 0.999929, -0.0117133, 0.913872, -0.00688534, -0.405943, 422.921, -28.2868, 186.433)
+gizmo_extents = 1.0
+script = ExtResource("13_a8bto")
+metadata/_custom_type_script = "uid://c4vi6dxqujrrf"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeEntrance"]
+visible = false
+
+[node name="ToVillageEntrance" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeEntrance/CanvasLayer" node_paths=PackedStringArray("links_to")]
+anchors_preset = -1
+anchor_left = -0.000479142
+anchor_top = 0.868568
+anchor_right = 1.0
+anchor_bottom = 1.00031
+mouse_default_cursor_shape = 2
+script = ExtResource("14_r6jb8")
+links_to = NodePath("../../../VillageEntrance")
+
+[node name="ToToGranpaNear" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeEntrance/CanvasLayer" node_paths=PackedStringArray("links_to")]
+anchors_preset = -1
+anchor_left = 0.418833
+anchor_top = 0.444506
+anchor_right = 0.479875
+anchor_bottom = 0.710012
+offset_left = -0.496002
+offset_top = -0.0400085
+offset_right = 0.18396
+offset_bottom = -0.0880127
+mouse_default_cursor_shape = 2
+script = ExtResource("14_r6jb8")
+links_to = NodePath("../../../ToGranpaNear")
+metadata/_custom_type_script = "uid://c6t2jcowk6t34"
+
+[node name="ToNowhere" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeEntrance/CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.612417
+anchor_top = 0.418148
+anchor_right = 0.902
+anchor_bottom = 0.683568
+offset_left = -0.504089
+offset_top = 0.0399933
+offset_right = -0.104126
+offset_bottom = 0.0479736
+mouse_default_cursor_shape = 2
+script = ExtResource("14_r6jb8")
+metadata/_custom_type_script = "uid://c6t2jcowk6t34"
+
+[node name="ToGranpaNear" type="Marker3D" parent="CameraManager/CameraPreview/CamManagerSubViewport"]
+transform = Transform3D(0.618478, -0.00975824, -0.78574, 0.0114459, 0.999929, -0.00340895, 0.785719, -0.00688534, 0.618546, 427.992, -28.2186, 189.158)
+gizmo_extents = 1.0
+script = ExtResource("13_a8bto")
+metadata/_custom_type_script = "uid://c4vi6dxqujrrf"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/ToGranpaNear"]
+
+[node name="ToBridgeEntrance" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/ToGranpaNear/CanvasLayer" node_paths=PackedStringArray("links_to")]
+anchors_preset = -1
+anchor_left = -0.000479142
+anchor_top = 0.868568
+anchor_right = 1.0
+anchor_bottom = 1.00031
+mouse_default_cursor_shape = 2
+script = ExtResource("14_r6jb8")
+links_to = NodePath("../../../BridgeEntrance")
+
+[node name="ToToGranpaTalk" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/ToGranpaNear/CanvasLayer" node_paths=PackedStringArray("links_to")]
+anchors_preset = -1
+anchor_left = 0.384111
+anchor_top = 0.302531
+anchor_right = 0.605743
+anchor_bottom = 0.865877
+offset_left = -0.496002
+offset_top = -0.0400085
+offset_right = 0.18396
+offset_bottom = -0.0880127
+mouse_default_cursor_shape = 2
+script = ExtResource("14_r6jb8")
+links_to = NodePath("../../../ToGranpaTalk")
+metadata/_custom_type_script = "uid://c6t2jcowk6t34"
+
+[node name="ToGranpaTalk" type="Marker3D" parent="CameraManager/CameraPreview/CamManagerSubViewport" node_paths=PackedStringArray("back_to")]
+transform = Transform3D(0.618478, -0.00975824, -0.78574, 0.0114459, 0.999929, -0.00340895, 0.785719, -0.00688534, 0.618546, 428.495, -28.2165, 188.753)
+script = ExtResource("16_om1qe")
+back_to = NodePath("../ToGranpaNear")
+dialogue = ExtResource("44_uquc5")
+metadata/_custom_type_script = "uid://daonadjpd5j13"
 
 [editable path="Buildings/winchelsea_new_gate"]
