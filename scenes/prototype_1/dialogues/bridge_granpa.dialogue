@@ -1,4 +1,35 @@
 ~ start
 Grand père: Oh bonjour !
-Grand père: Test
+=> questions
+
 => END
+
+
+~ questions
+- Connaissez vous la famille de la jeune disparue ?
+	Grand père: Hmm... Je crois que son père est un marchant du village mais je ne pourrais pas vous en dire plus.
+- Avez vous des informations sur cette jeune femme ?
+	Grand père: Je crois qu'elle est la fille d'un marchant du village mais je ne le connais pas personnellement.
+- Que s'est-il passé sur ce pont ?
+	=> bridge_story
+- Arrêter la discution
+	=> END!
+=> questions
+
+
+~ bridge_story
+if DialogueState and DialogueState.functions["bridge_granpa_anim"]:
+	do DialogueState.functions["bridge_granpa_anim"].call("missing_rock_pan")
+Grand père: Vous voulez parler de cette pierre manquante ici-là ?
+if DialogueState and DialogueState.functions["bridge_granpa_anim"]:
+	do DialogueState.functions["bridge_granpa_anim"].call("RESET")
+Grand père: Voyez-vous, il y a de cela[speed=0.1] . . .[speed=1]
+Grand père: Je n'était pas encore de ce monde.
+Grand père: Il n'y avait pas encore ce pont que voilà, et la traversée de la rivière était parfois difficile.
+Grand père: Mes aïeux ont alors demandé assistance aux [wave][color=blue]laminak[/color][/wave].
+Grand père: Ces derniers·ères, grands·es bâtisseurs·euses, acceptent d'ériger un pont, qu'ils finiront en une nuit avant le chant du coq.
+Grand père: Ils demendent alors de recevoir la plus belle femme du village en paiement.
+Grand père: Cependant mes prédécésseurs ne voulant guère livrer une des leurs, réveillent le coq.
+Grand père: Les [wave][color=blue]laminak[/color][/wave], dernière pierre à la main, se voient alors arrêtés net par le chant du coq.
+Grand père: Et le pont ne fut alors jamais fini et les [wave][color=blue]laminak[/color][/wave] jamais payés.
+=> questions

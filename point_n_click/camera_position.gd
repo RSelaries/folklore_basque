@@ -16,10 +16,11 @@ var current: bool = false:
 	set(value):
 		current = value
 		current_set_to.emit(value)
-		if value and get_children():
-			get_children()[0].visible = true
-		elif get_children():
-			get_children()[0].visible = false
+		if get_children():
+			if value and get_children()[0] is CanvasLayer:
+				get_children()[0].visible = true
+			elif get_children()[0] is CanvasLayer:
+				get_children()[0].visible = false
 
 func switch_cam_to_self() -> void:
 	_set_cam_pos_to_self()

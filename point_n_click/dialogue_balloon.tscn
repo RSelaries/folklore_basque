@@ -1,15 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://5x6fjaay1blo"]
+[gd_scene load_steps=12 format=3 uid="uid://5x6fjaay1blo"]
 
 [ext_resource type="Script" uid="uid://bkm58ywaeb6r" path="res://point_n_click/dialogue_balloon.gd" id="1_x7axm"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_1w8xu"]
+[ext_resource type="Shader" uid="uid://c0ffpah7non42" path="res://assets/shaders/blur.gdshader" id="2_byv7a"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_3g0ll"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kf3s5"]
+shader = ExtResource("2_byv7a")
+shader_parameter/lod = 3.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7k5yp"]
-bg_color = Color(0, 0, 0, 0.692)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
+bg_color = Color(0, 0, 0, 0.501961)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
 border_color = Color(1, 1, 1, 0.5)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
@@ -33,14 +38,12 @@ content_margin_top = 15.0
 content_margin_right = 100.0
 content_margin_bottom = 15.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6vs3f"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_byv7a"]
 content_margin_top = 8.0
 content_margin_bottom = 8.0
-bg_color = Color(0.073, 0.073, 0.073, 0.757)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
+bg_color = Color(0.07, 0.07, 0.07, 0)
 border_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -60,6 +63,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="PanelContainer" type="PanelContainer" parent="Balloon"]
+material = SubResource("ShaderMaterial_kf3s5")
 custom_minimum_size = Vector2(1000, 230)
 layout_mode = 1
 anchors_preset = 7
@@ -67,9 +71,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -500.0
-offset_top = -230.0
-offset_right = 500.0
+offset_left = -504.0
+offset_top = -232.0
+offset_right = 496.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 1
@@ -93,7 +98,7 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_right = 15
 
 [node name="Panel" type="Panel" parent="Balloon/PanelContainer/VBoxContainer/MarginContainer"]
-custom_minimum_size = Vector2(0, 3)
+custom_minimum_size = Vector2(0, 1)
 layout_mode = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_3g0ll")
@@ -133,6 +138,9 @@ response_template = NodePath("ResponseButton")
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 1
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 22
+theme_override_styles/focus = SubResource("StyleBoxEmpty_6vs3f")
 theme_override_styles/normal = SubResource("StyleBoxFlat_byv7a")
 text = "Ceci est un exemple"

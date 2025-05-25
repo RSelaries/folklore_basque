@@ -7,3 +7,5 @@ extends Node3D
 
 func _ready() -> void:
 	terrain_3d.set_camera(pc_camera)
+	var env:Environment = $WorldEnvironment.environment
+	env.fog_enabled = true

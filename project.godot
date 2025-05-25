@@ -16,7 +16,7 @@ Shortcuts/Select_Y_Z_Plane=Object(Shortcut,"resource_local_to_scene":false,"reso
 [application]
 
 config/name="Folklore Basque"
-run/main_scene="uid://b34nuooo7qyin"
+run/main_scene="uid://cf6ok0syg18r"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -31,7 +31,8 @@ Utils="*res://global_scripts/utils.gd"
 PlayerState="*res://global_scripts/player_state.gd"
 SimpleGrass="*res://addons/simplegrasstextured/singleton.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-DialogueState="*res://global_scripts/DialogueState.gd"
+DialogueState="*res://global_scripts/dialogue_state.gd"
+PointNClick="*res://global_scripts/point_n_click.gd"
 
 [dialogue_manager]
 
@@ -40,6 +41,8 @@ runtime/advanced/uses_dotnet=true
 
 [display]
 
+window/size/mode=3
+window/subwindows/embed_subwindows=false
 window/per_pixel_transparency/allowed=true
 
 [dotnet]
@@ -48,7 +51,7 @@ project/assembly_name="Folklore Basque"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/assetplacer/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/dreadpon.spatial_gardener/plugin.cfg", "res://addons/simplegrasstextured/plugin.cfg", "res://addons/terrain_3d/plugin.cfg", "res://addons/waterways_net/plugin.cfg")
+enabled=PackedStringArray("res://addons/anim_track_converter/plugin.cfg", "res://addons/assetplacer/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/dreadpon.spatial_gardener/plugin.cfg", "res://addons/simplegrasstextured/plugin.cfg", "res://addons/terrain_3d/plugin.cfg", "res://addons/waterways_net/plugin.cfg")
 
 [file_customization]
 
@@ -65,7 +68,7 @@ folder_colors={
 
 [global_group]
 
-Interactible3D="A Node3D that can be interacted with by the player. Needs a \"interact\" function and a \"focused\" bool variable."
+pnc_interact_button=""
 
 [input]
 
@@ -102,6 +105,11 @@ interact={
 return={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+pnc_highlight_interactions={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }
 
