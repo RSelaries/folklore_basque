@@ -4,8 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cs5rpht5anajt" path="res://assets/textures/material_textures/Rock060_1K-PNG_NormalGL.png" id="2_se8sm"]
 
 [resource]
+specular_mode = 1
+albedo_color = Color(0.654232, 0.654232, 0.654232, 1)
 albedo_texture = ExtResource("1_03h4u")
+roughness = 0.77
 normal_enabled = true
+normal_scale = 1.34
 normal_texture = ExtResource("2_se8sm")
 uv1_scale = Vector3(0.185, 0.185, 0.185)
 uv1_triplanar = true

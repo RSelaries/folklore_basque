@@ -59,6 +59,7 @@ folder_colors={
 "res://": "yellow",
 "res://addons/": "gray",
 "res://assets/": "green",
+"res://builds/": "gray",
 "res://classes/": "red",
 "res://global_scripts/": "red",
 "res://point_n_click/": "red",
