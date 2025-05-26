@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d1lxjl4p528m5"
+path="res://.godot/imported/wip_dialogue.dialogue-d8837f7e213ca2a275767c088b26269d.tres"
+
+[deps]
+
+source_file="res://scenes/prototype_1/dialogues/wip_dialogue.dialogue"
+dest_files=["res://.godot/imported/wip_dialogue.dialogue-d8837f7e213ca2a275767c088b26269d.tres"]
+
+[params]
+
+defaults=true

@@ -37,6 +37,10 @@ _subresources={
 "vray_01_-_Default": {
 "use_external/enabled": true,
 "use_external/path": "uid://dsi5ik81pe2r8"
+},
+"vray_02_-_Default": {
+"use_external/enabled": true,
+"use_external/path": "uid://c7s5vtyol8doh"
 }
 }
 }

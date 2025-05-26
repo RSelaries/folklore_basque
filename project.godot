@@ -16,7 +16,7 @@ Shortcuts/Select_Y_Z_Plane=Object(Shortcut,"resource_local_to_scene":false,"reso
 [application]
 
 config/name="Folklore Basque"
-run/main_scene="uid://cf6ok0syg18r"
+run/main_scene="uid://78wgp66j7b2c"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -41,7 +41,6 @@ runtime/advanced/uses_dotnet=true
 
 [display]
 
-window/size/mode=3
 window/subwindows/embed_subwindows=false
 window/per_pixel_transparency/allowed=true
 
@@ -116,7 +115,7 @@ pnc_highlight_interactions={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://scenes/prototype_1/dialogues/oob_start_scene.dialogue", "res://scenes/prototype_1/dialogues/shepherd.dialogue", "res://scenes/prototype_1/dialogues/bridge_granpa.dialogue")
+locale/translations_pot_files=PackedStringArray("res://scenes/prototype_1/dialogues/oob_start_scene.dialogue", "res://scenes/prototype_1/dialogues/shepherd.dialogue", "res://scenes/prototype_1/dialogues/bridge_granpa.dialogue", "res://scenes/prototype_1/dialogues/missing_stone_inspect.dialogue", "res://scenes/prototype_1/dialogues/wip_dialogue.dialogue")
 
 [layer_names]
 

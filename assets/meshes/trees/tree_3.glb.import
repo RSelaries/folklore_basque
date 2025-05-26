@@ -37,6 +37,10 @@ _subresources={
 "M_Pine_Branch": {
 "use_external/enabled": true,
 "use_external/path": "uid://d247543cjo5mf"
+},
+"lambert1": {
+"use_external/enabled": true,
+"use_external/path": "uid://b7u4n2cgffbmj"
 }
 }
 }

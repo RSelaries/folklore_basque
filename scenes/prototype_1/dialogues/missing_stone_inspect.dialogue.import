@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dfvdjdp87drhd"
+path="res://.godot/imported/missing_stone_inspect.dialogue-12fc7227ff5cab1495d4578e849965d1.tres"
+
+[deps]
+
+source_file="res://scenes/prototype_1/dialogues/missing_stone_inspect.dialogue"
+dest_files=["res://.godot/imported/missing_stone_inspect.dialogue-12fc7227ff5cab1495d4578e849965d1.tres"]
+
+[params]
+
+defaults=true

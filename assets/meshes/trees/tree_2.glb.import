@@ -37,6 +37,10 @@ _subresources={
 "Leavs": {
 "use_external/enabled": true,
 "use_external/path": "uid://c7srdk1sfysnn"
+},
+"Trank": {
+"use_external/enabled": true,
+"use_external/path": "uid://b7u4n2cgffbmj"
 }
 }
 }

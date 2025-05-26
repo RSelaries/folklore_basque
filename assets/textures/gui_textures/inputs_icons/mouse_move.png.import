@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdytimu6xxbh5"
-path="res://.godot/imported/hand.png-db7894ff0b81f4fbb0a57374814bc46c.ctex"
+uid="uid://b2qj68euxe2ur"
+path="res://.godot/imported/mouse_move.png-5d0d1d55307caee7b36cecb7ea79d4fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/gui_textures/hand.png"
-dest_files=["res://.godot/imported/hand.png-db7894ff0b81f4fbb0a57374814bc46c.ctex"]
+source_file="res://assets/textures/gui_textures/inputs_icons/mouse_move.png"
+dest_files=["res://.godot/imported/mouse_move.png-5d0d1d55307caee7b36cecb7ea79d4fb.ctex"]
 
 [params]
 

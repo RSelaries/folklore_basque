@@ -8,6 +8,7 @@ const arrow_down = preload("uid://cu0pa01bakcyx")
 const arrow_left = preload("uid://bquwq4vk4wvhw")
 const arrow_right = preload("uid://b5oo8j71pnox3")
 const cursor_talk = preload("uid://cw0vx6y4qorae")
+const cursor_inspect = preload("uid://batomnqvpiami")
 
 
 enum Cursors {
@@ -18,6 +19,7 @@ enum Cursors {
 	ARROW_LEFT = 4,
 	ARROW_RIGHT = 5,
 	CURSOR_TALK = 6,
+	INSPECT = 7,
 }
 var cursor_names: Dictionary[Cursors, Control.CursorShape] = {
 	Cursors.DEFAULT : Control.CURSOR_ARROW,
@@ -27,6 +29,7 @@ var cursor_names: Dictionary[Cursors, Control.CursorShape] = {
 	Cursors.ARROW_LEFT : Control.CURSOR_BDIAGSIZE,
 	Cursors.ARROW_RIGHT : Control.CURSOR_FORBIDDEN,
 	Cursors.CURSOR_TALK : Control.CURSOR_BUSY,
+	Cursors.INSPECT : Control.CURSOR_CAN_DROP,
 }
 
 
@@ -36,10 +39,13 @@ func _ready() -> void:
 
 func _init_cursor_shapes() -> void:
 	# Default
-	Input.set_custom_mouse_cursor(cursor_default, Input.CURSOR_ARROW, Vector2(2,2))
+	Input.set_custom_mouse_cursor(cursor_default, Input.CURSOR_ARROW, Vector2i(2,2))
 	
 	# Talk
-	Input.set_custom_mouse_cursor(cursor_talk, Input.CURSOR_BUSY, Vector2(12, 12))
+	Input.set_custom_mouse_cursor(cursor_talk, Input.CURSOR_BUSY, Vector2i(12, 12))
+	
+	# Inspect
+	Input.set_custom_mouse_cursor(cursor_inspect, Input.CURSOR_CAN_DROP, Vector2i(12, 12))
 	
 	# Arrows
 	Input.set_custom_mouse_cursor(arrow_up, Input.CURSOR_CROSS, Vector2(16, 16))

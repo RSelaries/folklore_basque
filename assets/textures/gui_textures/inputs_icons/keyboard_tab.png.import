@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://003k7vn73fce"
-path="res://.godot/imported/talk.png-7c85cf4b1d838c5114a957914199eb12.ctex"
+uid="uid://cema1k7bp1yak"
+path="res://.godot/imported/keyboard_tab.png-515a76f561955aa0ee49f81fb3fae983.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/textures/gui_textures/talk.png"
-dest_files=["res://.godot/imported/talk.png-7c85cf4b1d838c5114a957914199eb12.ctex"]
+source_file="res://assets/textures/gui_textures/inputs_icons/keyboard_tab.png"
+dest_files=["res://.godot/imported/keyboard_tab.png-515a76f561955aa0ee49f81fb3fae983.ctex"]
 
 [params]
 
