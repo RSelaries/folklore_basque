@@ -21,7 +21,8 @@ func _ready() -> void:
 
 
 func _on_pressed() -> void:
-	DialogueManager.show_dialogue_balloon(dialogue)
+	if dialogue:
+		DialogueManager.show_dialogue_balloon(dialogue)
 
 
 func self_highlight(highlighted: bool) -> void:
