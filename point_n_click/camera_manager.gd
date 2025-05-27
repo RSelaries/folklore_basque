@@ -18,13 +18,10 @@ var pc_camera: Camera3D:
 
 
 func _ready() -> void:
-	switch_cam_to(start, false)
+	switch_cam_to(start, false, false)
 
 
-func switch_cam_to(cam_pos: CameraPosition, use_transition: bool = true) -> void:
-	#if use_transition:
-		#_transition_fade_in_out()
-		#await get_tree().create_timer(0.15).timeout
+func switch_cam_to(cam_pos: CameraPosition, use_transition: bool = true, play_sound_effect: bool = true) -> void:
 	
 	if use_transition and transition_type == 1:
 		_transition_blur()
@@ -46,6 +43,9 @@ func switch_cam_to(cam_pos: CameraPosition, use_transition: bool = true) -> void
 			sub_child.current = false
 		if sub_child == cam_pos:
 			sub_child.current = true
+	
+	if play_sound_effect and owner.sound_effects:
+		owner.sound_effects.play_walk_sound()
 
 
 func _transition_blur() -> void:

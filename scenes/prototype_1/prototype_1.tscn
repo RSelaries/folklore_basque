@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3 uid="uid://cf6ok0syg18r"]
+[gd_scene load_steps=88 format=3 uid="uid://cf6ok0syg18r"]
 
 [ext_resource type="Script" uid="uid://q2q11vt7cuew" path="res://scenes/prototype_1/prototype_1.gd" id="1_g7bku"]
 [ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_uquc5"]
@@ -32,6 +32,7 @@
 [ext_resource type="Material" uid="uid://1mq0c4h6742p" path="res://assets/materials/terrain_grass.tres" id="19_k076n"]
 [ext_resource type="Material" uid="uid://qxdca4tux6rt" path="res://assets/materials/rock_1.tres" id="19_uquc5"]
 [ext_resource type="PackedScene" uid="uid://t673wll034ds" path="res://assets/meshes/buildings/feluy_village_house_1_belgium.glb" id="22_7f0h1"]
+[ext_resource type="Shader" uid="uid://denmd2u4ruoy3" path="res://assets/shaders/vhs.gdshader" id="22_cwgw1"]
 [ext_resource type="Shader" uid="uid://csdx0ulhib6lk" path="res://assets/shaders/clouds.gdshader" id="22_lmcn1"]
 [ext_resource type="Shader" uid="uid://bonaulx70xij0" path="res://assets/shaders/psx_dithering.gdshader" id="22_xqnqp"]
 [ext_resource type="Material" uid="uid://boyhxu8qqc73p" path="res://assets/materials/stone_village_gate.tres" id="25_3e7cy"]
@@ -47,6 +48,11 @@
 [ext_resource type="Script" uid="uid://c5wk5652ms1vn" path="res://scenes/prototype_1/inspect_dialogue.gd" id="45_lmcn1"]
 [ext_resource type="Resource" uid="uid://d1lxjl4p528m5" path="res://scenes/prototype_1/dialogues/wip_dialogue.dialogue" id="46_lmcn1"]
 [ext_resource type="PackedScene" uid="uid://df412jems30x2" path="res://scenes/prototype_1/escape_menu.tscn" id="47_0d0aj"]
+[ext_resource type="Script" uid="uid://btradcv83ta0v" path="res://scenes/prototype_1/sound_effetcs.gd" id="48_4rqt4"]
+[ext_resource type="AudioStream" uid="uid://da30gui2trbi2" path="res://assets/audio/sound_effects/snow_step_dry-01.mp3" id="49_lh44x"]
+[ext_resource type="AudioStream" uid="uid://bf6ivww2t71sd" path="res://assets/audio/sound_effects/snow_step_dry-02.mp3" id="50_cwgw1"]
+[ext_resource type="AudioStream" uid="uid://cun6unc43b8y7" path="res://assets/audio/sound_effects/snow_step_dry-03.mp3" id="51_pue4n"]
+[ext_resource type="AudioStream" uid="uid://cn6m8mqb3l8t3" path="res://assets/audio/sound_effects/snow_step_dry-04.mp3" id="52_pq464"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xqnqp"]
 sky_top_color = Color(0.247003, 0.311642, 0.45506, 1)
@@ -201,8 +207,8 @@ noise = SubResource("FastNoiseLite_xqnqp")
 script = ExtResource("13_hsvq4")
 MatShaderType = 1
 FoamNoise = SubResource("NoiseTexture3D_3e7cy")
-mat_albedo_color_first = Color(1, 0, 0, 0)
-mat_albedo_color_second = Color(0, 1, 0, 0)
+mat_albedo_color_first = Color(0.6, 0.7, 0.65, 1)
+mat_albedo_color_second = Color(0.25, 0.35, 0.35, 1)
 mat_albedo_depth = 10.0
 mat_albedo_depth_curve = 0.25
 mat_transparency_clarity = 10.0
@@ -264,6 +270,23 @@ shader_parameter/enabled = true
 shader_parameter/dithering = true
 shader_parameter/colors = 10
 shader_parameter/dither_size = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pue4n"]
+shader = ExtResource("22_cwgw1")
+shader_parameter/resolution = Vector2(1152, 648)
+shader_parameter/scan_line_amount = 0.71
+shader_parameter/warp_amount = 0.0
+shader_parameter/noise_amount = 0.079
+shader_parameter/interference_amount = 0.362
+shader_parameter/grille_amount = 0.1
+shader_parameter/grille_size = 1.0
+shader_parameter/vignette_amount = 0.348
+shader_parameter/vignette_intensity = 1.0
+shader_parameter/aberation_amount = 0.374
+shader_parameter/roll_line_amount = 0.012
+shader_parameter/roll_speed = 0.128
+shader_parameter/scan_line_strength = -8.0
+shader_parameter/pixel_strength = -4.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_a8bto"]
 viewport_path = NodePath("Sheperd/SubViewport")
@@ -421,11 +444,9 @@ _data = {
 script = ExtResource("1_g7bku")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.639359, 0.607533, -0.4713, -3.91615e-08, 0.612948, 0.790123, 0.768909, 0.505173, -0.391893, 0, 0, 0)
+transform = Transform3D(0.979911, -0.157579, 0.122244, -8.31056e-08, 0.612948, 0.790124, -0.199436, -0.774251, 0.600634, 0, 0, 0)
 light_color = Color(0.78778, 0.849289, 0.807934, 1)
-light_energy = 1.2
 shadow_enabled = true
-directional_shadow_max_distance = 1000.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_yya68")
@@ -452,7 +473,6 @@ occluder = SubResource("ArrayOccluder3D_uquc5")
 
 [node name="Clouds" type="MeshInstance3D" parent="Terrain3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 366.205, 0)
-visible = false
 material_override = SubResource("ShaderMaterial_0d0aj")
 cast_shadow = 0
 extra_cull_margin = 16384.0
@@ -471,7 +491,7 @@ material_override = ExtResource("19_k076n")
 [node name="PostProc" type="CanvasLayer" parent="."]
 layer = 3
 
-[node name="ColorRect" type="ColorRect" parent="PostProc"]
+[node name="PsxDither" type="ColorRect" parent="PostProc"]
 material = SubResource("ShaderMaterial_k076n")
 anchors_preset = 15
 anchor_right = 1.0
@@ -480,6 +500,20 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PostProc"]
+layer = 4
+
+[node name="ColorRect" type="ColorRect" parent="PostProc/CanvasLayer"]
+material = SubResource("ShaderMaterial_pue4n")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
 
 [node name="Buildings" type="Node3D" parent="."]
 
@@ -751,6 +785,33 @@ size = Vector2i(500, 1080)
 [node name="ForestTree" parent="." instance=ExtResource("4_lmcn1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 357.917, -21.8276, 171.302)
 
+[node name="EscapeMenu" parent="." instance=ExtResource("47_0d0aj")]
+visible = false
+
+[node name="SoundEffetcs" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("48_4rqt4")
+
+[node name="WalkSound1" type="AudioStreamPlayer" parent="SoundEffetcs"]
+unique_name_in_owner = true
+stream = ExtResource("49_lh44x")
+volume_db = -12.511
+
+[node name="WalkSound2" type="AudioStreamPlayer" parent="SoundEffetcs"]
+unique_name_in_owner = true
+stream = ExtResource("50_cwgw1")
+volume_db = -12.511
+
+[node name="WalkSound3" type="AudioStreamPlayer" parent="SoundEffetcs"]
+unique_name_in_owner = true
+stream = ExtResource("51_pue4n")
+volume_db = -12.511
+
+[node name="WalkSound4" type="AudioStreamPlayer" parent="SoundEffetcs"]
+unique_name_in_owner = true
+stream = ExtResource("52_pq464")
+volume_db = -12.511
+
 [node name="CameraManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("13_x7dfg")
@@ -814,6 +875,7 @@ gizmo_extents = 1.0
 script = ExtResource("13_a8bto")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/Start"]
+visible = false
 
 [node name="ToPath1" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/Start/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
@@ -1592,7 +1654,6 @@ script = ExtResource("13_a8bto")
 metadata/_custom_type_script = "uid://c4vi6dxqujrrf"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeMissingStone"]
-visible = false
 
 [node name="ToBridgeEntrance" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeMissingStone/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
@@ -1618,6 +1679,7 @@ offset_bottom = 31.944
 rotation = -0.57125
 mouse_default_cursor_shape = 2
 script = ExtResource("45_lmcn1")
+dialogue = ExtResource("46_lmcn1")
 metadata/_custom_type_script = "uid://c5wk5652ms1vn"
 
 [node name="BridgeMiddle" type="Marker3D" parent="CameraManager/CameraPreview/CamManagerSubViewport"]
@@ -1654,9 +1716,6 @@ script = ExtResource("45_lmcn1")
 dialogue = ExtResource("46_lmcn1")
 hover_cursor = 2
 metadata/_custom_type_script = "uid://c5wk5652ms1vn"
-
-[node name="EscapeMenu" parent="." instance=ExtResource("47_0d0aj")]
-visible = false
 
 [editable path="Terrain3D/lamina_cave_2"]
 [editable path="Buildings/winchelsea_new_gate"]

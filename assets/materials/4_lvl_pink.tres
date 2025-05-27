@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bfkwbj2s5ar6o"]
+
+[ext_resource type="Shader" uid="uid://bxnoav6kjjppy" path="res://assets/shaders/four_level_posterization.gdshader" id="1_scxcg"]
+
+[resource]
+shader = ExtResource("1_scxcg")
+shader_parameter/level1 = Color(0.202239, 0.0757048, 0.199036, 1)
+shader_parameter/level2 = Color(0.701024, 0.257884, 0.49759, 1)
+shader_parameter/level3 = Color(0.847517, 0.350171, 0.372771, 1)
+shader_parameter/level4 = Color(0.9495, 0.584665, 0.569669, 1)
+shader_parameter/threshold1 = 0.4
+shader_parameter/threshold2 = 0.52
+shader_parameter/threshold3 = 0.8

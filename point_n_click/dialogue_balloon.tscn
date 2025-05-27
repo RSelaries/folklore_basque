@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://5x6fjaay1blo"]
+[gd_scene load_steps=13 format=3 uid="uid://5x6fjaay1blo"]
 
 [ext_resource type="Script" uid="uid://bkm58ywaeb6r" path="res://point_n_click/dialogue_balloon.gd" id="1_x7axm"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_1w8xu"]
 [ext_resource type="Shader" uid="uid://c0ffpah7non42" path="res://assets/shaders/darken_blur.gdshader" id="2_byv7a"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_3g0ll"]
+[ext_resource type="AudioStream" uid="uid://c8ugmecfr4cxs" path="res://assets/audio/sound_effects/talk_sound_2.wav" id="5_kf3s5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kf3s5"]
 shader = ExtResource("2_byv7a")
@@ -118,6 +119,7 @@ bbcode_enabled = true
 text = "Ceci est un exemple de dialogue"
 fit_content = true
 script = ExtResource("2_1w8xu")
+seconds_per_step = 0.04
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 metadata/_custom_type_script = "uid://g32um0mltv5d"
 
@@ -144,3 +146,10 @@ theme_override_font_sizes/font_size = 22
 theme_override_styles/focus = SubResource("StyleBoxEmpty_6vs3f")
 theme_override_styles/normal = SubResource("StyleBoxFlat_byv7a")
 text = "Ceci est un exemple"
+
+[node name="TalkSoundEffect" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_kf3s5")
+volume_db = -14.075
+
+[connection signal="spoke" from="Balloon/PanelContainer/VBoxContainer/DialogueLabel" to="." method="_on_dialogue_label_spoke"]

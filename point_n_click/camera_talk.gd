@@ -18,4 +18,4 @@ func _on_current_set_to(value) -> void:
 
 
 func _on_dialogue_ended() -> void:
-	camera_manager.switch_cam_to(back_to)
+	camera_manager.switch_cam_to(back_to, true, false)

@@ -30,4 +30,4 @@ func _set_cam_pos_to_self() -> void:
 	if Engine.is_editor_hint():
 		camera_manager = owner.find_child("CameraManager")
 	
-	camera_manager.switch_cam_to(self)
+	camera_manager.switch_cam_to(self, false, false)

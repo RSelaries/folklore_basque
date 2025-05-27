@@ -54,4 +54,5 @@ func self_highlight(highlighted: bool) -> void:
 
 func _on_pressed() -> void:
 	if links_to:
-		camera_manager.switch_cam_to(links_to)
+		var use_sound: bool = !links_to is CameraTalk
+		camera_manager.switch_cam_to(links_to, true, use_sound)

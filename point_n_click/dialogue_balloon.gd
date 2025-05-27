@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var character_label: Label = %CharacterLabel
 @onready var dialogue_label: DialogueLabel = %DialogueLabel
 @onready var dialogue_responses_menu: DialogueResponsesMenu = %DialogueResponsesMenu
+@onready var talk_sound_effect: AudioStreamPlayer = %TalkSoundEffect
 
 
 var dialogue: DialogueResource
@@ -27,10 +28,6 @@ var dialogue_line: DialogueLine:
 		apply_dialogue_line()
 
 
-func _exit_tree() -> void:
-	DialogueManager.mutated.disconnect(_on_mutated)
-
-
 func _ready() -> void:
 	balloon.hide()
 	balloon.gui_input.connect(_on_balloon_gui_input)
@@ -41,8 +38,6 @@ func _ready() -> void:
 	
 	mutation_cooldown.timeout.connect(_on_mutation_cooldown_timeout)
 	add_child(mutation_cooldown)
-	
-	DialogueManager.mutated.connect(_on_mutated)
 
 
 func _notification(what: int) -> void:
@@ -144,5 +139,7 @@ func _on_mutation_cooldown_timeout() -> void:
 		balloon.hide()
 
 
-func _on_mutated() -> void:
-	pass
+func _on_dialogue_label_spoke(letter: String, _letter_index: int, _speed: float) -> void:
+	if not letter in [" ", "."]:
+		talk_sound_effect.pitch_scale = randf_range(0.8, 1.2)
+		talk_sound_effect.play()
