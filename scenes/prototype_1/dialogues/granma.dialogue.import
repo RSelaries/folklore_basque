@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://dvchd4gmig1pk"
+path="res://.godot/imported/granma.dialogue-bddae45baead96d288b974fa4b1ff63c.tres"
+
+[deps]
+
+source_file="res://scenes/prototype_1/dialogues/granma.dialogue"
+dest_files=["res://.godot/imported/granma.dialogue-bddae45baead96d288b974fa4b1ff63c.tres"]
+
+[params]
+
+defaults=true

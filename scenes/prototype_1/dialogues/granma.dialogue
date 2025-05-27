@@ -1,0 +1,14 @@
+~ start
+Vieille Femme: Oh tient, bonjour jeune homme/femme !
+if DialogueState.granma["greeted"] == false:
+	Vieille Femme: J'espère que vous vous plaierez dans notre beau village.
+	set DialogueState.granma["greeted"] = true
+if DialogueState.gridge_granpa["knows_about_laminak"] == true:
+	- Que savez vous des laminak ?
+		Vieille Femme: Les [wave][color=blue]laminak[/color][/wave] ?
+		Vieille Femme: Existent-ils seulement ?
+		Vieille Femme: Personnellement, je sais qu'ils existent.
+		Vieille Femme: J'en suis persuadée car, voyez vous, à mon grand âge il est parfois difficile de se repérer
+		Vieille Femme: Mais malgré celà, j'arrive toujours à retrouver mon chemin dans la forêt
+		Vieille Femme: Et chaque fois que je m'y rend tard le soir, j'apperçois du coin de l'oeil des ombres passer.
+=> END

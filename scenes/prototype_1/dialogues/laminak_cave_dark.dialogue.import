@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://bqjccs30ul0wb"
+path="res://.godot/imported/laminak_cave_dark.dialogue-a23a892bc16d31860967851ed4ad64c1.tres"
+
+[deps]
+
+source_file="res://scenes/prototype_1/dialogues/laminak_cave_dark.dialogue"
+dest_files=["res://.godot/imported/laminak_cave_dark.dialogue-a23a892bc16d31860967851ed4ad64c1.tres"]
+
+[params]
+
+defaults=true

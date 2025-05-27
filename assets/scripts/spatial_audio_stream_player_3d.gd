@@ -1,3 +1,4 @@
+@tool
 class_name SpatialAudioStreamPlayer3D
 extends AudioStreamPlayer3D
 
