@@ -203,7 +203,7 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_3e7cy"]
 noise = SubResource("FastNoiseLite_xqnqp")
 
-[sub_resource type="Resource" id="Resource_0d0aj"]
+[sub_resource type="Resource" id="Resource_cwgw1"]
 script = ExtResource("13_hsvq4")
 MatShaderType = 1
 FoamNoise = SubResource("NoiseTexture3D_3e7cy")
@@ -232,7 +232,7 @@ mat_edge_fade = 0.25
 LodLod0Distance = 50.0
 _selectedShader = 1
 
-[sub_resource type="Curve3D" id="Curve3D_4rqt4"]
+[sub_resource type="Curve3D" id="Curve3D_pue4n"]
 resource_local_to_scene = true
 bake_interval = 0.05
 _data = {
@@ -262,6 +262,7 @@ shader_parameter/rotation_matrix = Transform2D(1.6, -1.2, 1.2, 1.6, 0, 0)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4rqt4"]
 lightmap_size_hint = Vector2i(25002, 25002)
+flip_faces = true
 size = Vector2(5000, 5000)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_k076n"]
@@ -462,10 +463,10 @@ metadata/_edit_lock_ = true
 [node name="RiverManager" type="Node3D" parent="Terrain3D"]
 transform = Transform3D(0.731485, 0, -0.681858, 0, 1, 0, 0.681858, 0, 0.731485, 511.52, -6.10688, 132.757)
 script = ExtResource("11_8vouf")
-ShaderSettings = SubResource("Resource_0d0aj")
+ShaderSettings = SubResource("Resource_cwgw1")
 ShapeSmoothness = 5.0
 PointWidths = Array[float]([2.16373, 2.29979, 3.47225, 5.78538, 2.83288, 3.34057, 1.0, 6.68051, 5.73946, 4.42331, 8.62887, 6.7194, 8.59449, 11.4218, 9.46497, 10.3455, 6.53306, 6.85615, 21.6566, 46.8196, 50.9696, 58.4761, 48.8709, 31.9665, 5.16343])
-Curve = SubResource("Curve3D_4rqt4")
+Curve = SubResource("Curve3D_pue4n")
 metadata/_custom_type_script = "uid://boquq8ua40y0p"
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Terrain3D"]
@@ -782,6 +783,20 @@ size = Vector2i(500, 1080)
 
 [node name="BridgeGranpa" parent="BridgeGranpa/SubViewport" instance=ExtResource("35_k076n")]
 
+[node name="BridgeGranpa2" type="Sprite3D" parent="."]
+transform = Transform3D(0.223257, 0, -0.0666747, 0, 0.233, 0, 0.0666747, 0, 0.223257, 403.551, -28.8246, 181.185)
+billboard = 2
+shaded = true
+alpha_cut = 1
+texture = SubResource("ViewportTexture_7h8bl")
+
+[node name="SubViewport" type="SubViewport" parent="BridgeGranpa2"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(500, 1080)
+
+[node name="BridgeGranpa" parent="BridgeGranpa2/SubViewport" instance=ExtResource("35_k076n")]
+
 [node name="ForestTree" parent="." instance=ExtResource("4_lmcn1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 357.917, -21.8276, 171.302)
 
@@ -875,7 +890,6 @@ gizmo_extents = 1.0
 script = ExtResource("13_a8bto")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/Start"]
-visible = false
 
 [node name="ToPath1" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/Start/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
@@ -1654,6 +1668,7 @@ script = ExtResource("13_a8bto")
 metadata/_custom_type_script = "uid://c4vi6dxqujrrf"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeMissingStone"]
+visible = false
 
 [node name="ToBridgeEntrance" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeMissingStone/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1

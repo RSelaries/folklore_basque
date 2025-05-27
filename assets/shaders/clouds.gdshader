@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode unshaded, depth_draw_never, cull_disabled;
+render_mode unshaded, depth_draw_never;
 
 uniform float noise_scale = 11.24;
 uniform float speed = 0.16;
