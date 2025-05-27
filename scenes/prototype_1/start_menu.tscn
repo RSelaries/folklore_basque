@@ -190,7 +190,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cll1a")
-start_scene = ExtResource("2_uee4c")
+prot_scene = ExtResource("2_uee4c")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

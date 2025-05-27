@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://cf6ok0syg18r"]
+[gd_scene load_steps=81 format=3 uid="uid://cf6ok0syg18r"]
 
 [ext_resource type="Script" uid="uid://q2q11vt7cuew" path="res://scenes/prototype_1/prototype_1.gd" id="1_g7bku"]
 [ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_uquc5"]
@@ -46,6 +46,7 @@
 [ext_resource type="Script" uid="uid://dd0scsjhmek5h" path="res://scenes/prototype_1/dialogue_animation.gd" id="45_7h8bl"]
 [ext_resource type="Script" uid="uid://c5wk5652ms1vn" path="res://scenes/prototype_1/inspect_dialogue.gd" id="45_lmcn1"]
 [ext_resource type="Resource" uid="uid://d1lxjl4p528m5" path="res://scenes/prototype_1/dialogues/wip_dialogue.dialogue" id="46_lmcn1"]
+[ext_resource type="PackedScene" uid="uid://df412jems30x2" path="res://scenes/prototype_1/escape_menu.tscn" id="47_0d0aj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xqnqp"]
 sky_top_color = Color(0.247003, 0.311642, 0.45506, 1)
@@ -196,7 +197,7 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_3e7cy"]
 noise = SubResource("FastNoiseLite_xqnqp")
 
-[sub_resource type="Resource" id="Resource_lmcn1"]
+[sub_resource type="Resource" id="Resource_0d0aj"]
 script = ExtResource("13_hsvq4")
 MatShaderType = 1
 FoamNoise = SubResource("NoiseTexture3D_3e7cy")
@@ -225,7 +226,7 @@ mat_edge_fade = 0.25
 LodLod0Distance = 50.0
 _selectedShader = 1
 
-[sub_resource type="Curve3D" id="Curve3D_0d0aj"]
+[sub_resource type="Curve3D" id="Curve3D_4rqt4"]
 resource_local_to_scene = true
 bake_interval = 0.05
 _data = {
@@ -440,10 +441,10 @@ metadata/_edit_lock_ = true
 [node name="RiverManager" type="Node3D" parent="Terrain3D"]
 transform = Transform3D(0.731485, 0, -0.681858, 0, 1, 0, 0.681858, 0, 0.731485, 511.52, -6.10688, 132.757)
 script = ExtResource("11_8vouf")
-ShaderSettings = SubResource("Resource_lmcn1")
+ShaderSettings = SubResource("Resource_0d0aj")
 ShapeSmoothness = 5.0
 PointWidths = Array[float]([2.16373, 2.29979, 3.47225, 5.78538, 2.83288, 3.34057, 1.0, 6.68051, 5.73946, 4.42331, 8.62887, 6.7194, 8.59449, 11.4218, 9.46497, 10.3455, 6.53306, 6.85615, 21.6566, 46.8196, 50.9696, 58.4761, 48.8709, 31.9665, 5.16343])
-Curve = SubResource("Curve3D_0d0aj")
+Curve = SubResource("Curve3D_4rqt4")
 metadata/_custom_type_script = "uid://boquq8ua40y0p"
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Terrain3D"]
@@ -1653,6 +1654,9 @@ script = ExtResource("45_lmcn1")
 dialogue = ExtResource("46_lmcn1")
 hover_cursor = 2
 metadata/_custom_type_script = "uid://c5wk5652ms1vn"
+
+[node name="EscapeMenu" parent="." instance=ExtResource("47_0d0aj")]
+visible = false
 
 [editable path="Terrain3D/lamina_cave_2"]
 [editable path="Buildings/winchelsea_new_gate"]

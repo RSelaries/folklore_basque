@@ -1,0 +1,129 @@
+[gd_scene load_steps=9 format=3 uid="uid://df412jems30x2"]
+
+[ext_resource type="Script" uid="uid://bwqwyhmkuv7g6" path="res://scenes/prototype_1/escape_menu.gd" id="1_j3fop"]
+[ext_resource type="FontFile" uid="uid://cul31crux03yi" path="res://assets/fonts/Prompt-Bold.ttf" id="2_5s1jb"]
+[ext_resource type="Shader" uid="uid://c0ffpah7non42" path="res://assets/shaders/darken_blur.gdshader" id="2_j3fop"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6mdkt"]
+shader = ExtResource("2_j3fop")
+shader_parameter/lod = 2.991
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5s1jb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3fop"]
+content_margin_left = 40.0
+content_margin_top = 5.0
+content_margin_right = 40.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 0.843137)
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.374139, 0.374139, 0.374139, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5s1jb"]
+content_margin_left = 40.0
+content_margin_top = 5.0
+content_margin_right = 40.0
+content_margin_bottom = 5.0
+bg_color = Color(0.695503, 0.695503, 0.695503, 0.843137)
+border_width_top = 5
+border_width_right = 5
+border_color = Color(0.329158, 0.329158, 0.329158, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6mdkt"]
+content_margin_left = 40.0
+content_margin_top = 5.0
+content_margin_right = 40.0
+content_margin_bottom = 5.0
+bg_color = Color(0.94, 0.94, 0.94, 0.796078)
+border_width_left = 5
+border_width_bottom = 5
+border_color = Color(0.374139, 0.374139, 0.374139, 1)
+border_blend = true
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="EscapeMenu" type="CanvasLayer"]
+layer = 50
+script = ExtResource("1_j3fop")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_6mdkt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5s1jb")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5s1jb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j3fop")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5s1jb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6mdkt")
+text = "Reprendre"
+
+[node name="QuitButton" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_5s1jb")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5s1jb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j3fop")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5s1jb")
+theme_override_styles/normal = SubResource("StyleBoxFlat_6mdkt")
+text = "Quitter"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
