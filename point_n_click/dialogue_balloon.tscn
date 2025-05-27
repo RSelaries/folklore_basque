@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bkm58ywaeb6r" path="res://point_n_click/dialogue_balloon.gd" id="1_x7axm"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="2_1w8xu"]
-[ext_resource type="Shader" uid="uid://c0ffpah7non42" path="res://assets/shaders/blur.gdshader" id="2_byv7a"]
+[ext_resource type="Shader" uid="uid://c0ffpah7non42" path="res://assets/shaders/darken_blur.gdshader" id="2_byv7a"]
 [ext_resource type="Script" uid="uid://bb52rsfwhkxbn" path="res://addons/dialogue_manager/dialogue_responses_menu.gd" id="3_3g0ll"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kf3s5"]

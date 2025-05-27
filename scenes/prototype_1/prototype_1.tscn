@@ -196,36 +196,36 @@ texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_3e7cy"]
 noise = SubResource("FastNoiseLite_xqnqp")
 
-[sub_resource type="Resource" id="Resource_7h8bl"]
+[sub_resource type="Resource" id="Resource_lmcn1"]
 script = ExtResource("13_hsvq4")
 MatShaderType = 1
 FoamNoise = SubResource("NoiseTexture3D_3e7cy")
 mat_albedo_color_first = Color(1, 0, 0, 0)
 mat_albedo_color_second = Color(0, 1, 0, 0)
-mat_albedo_depth = null
-mat_albedo_depth_curve = null
-mat_transparency_clarity = null
-mat_transparency_depth_curve = null
-mat_transparency_refraction = null
-mat_normal_scale = null
+mat_albedo_depth = 10.0
+mat_albedo_depth_curve = 0.25
+mat_transparency_clarity = 10.0
+mat_transparency_depth_curve = 0.25
+mat_transparency_refraction = 0.05
+mat_normal_scale = 1.0
 mat_normal_bump_texture = ExtResource("15_7h8bl")
-mat_flow_speed = null
-mat_flow_base = null
-mat_flow_steepness = null
-mat_flow_distance = null
-mat_flow_pressure = null
-mat_flow_max = null
-mat_foam_color = null
-mat_foam_amount = null
-mat_foam_steepness = null
-mat_foam_smoothness = null
-mat_uv_scale = null
-mat_roughness = null
-mat_edge_fade = null
+mat_flow_speed = 1.0
+mat_flow_base = 0.0
+mat_flow_steepness = 2.0
+mat_flow_distance = 1.0
+mat_flow_pressure = 1.0
+mat_flow_max = 4.0
+mat_foam_color = Color(0.9, 0.9, 0.9, 1)
+mat_foam_amount = 2.0
+mat_foam_steepness = 2.0
+mat_foam_smoothness = 0.3
+mat_uv_scale = Vector3(1, 1, 1)
+mat_roughness = 0.2
+mat_edge_fade = 0.25
 LodLod0Distance = 50.0
 _selectedShader = 1
 
-[sub_resource type="Curve3D" id="Curve3D_lmcn1"]
+[sub_resource type="Curve3D" id="Curve3D_0d0aj"]
 resource_local_to_scene = true
 bake_interval = 0.05
 _data = {
@@ -270,21 +270,6 @@ viewport_path = NodePath("Sheperd/SubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_7h8bl"]
 viewport_path = NodePath("BridgeGranpa/SubViewport")
 
-[sub_resource type="Animation" id="Animation_7h8bl"]
-resource_name = "onstart_fade_in"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("%FadeInOut:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_4rqt4"]
 length = 0.001
 tracks/0/type = "value"
@@ -298,6 +283,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7h8bl"]
+resource_name = "onstart_fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%FadeInOut:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dofso"]
@@ -440,10 +440,10 @@ metadata/_edit_lock_ = true
 [node name="RiverManager" type="Node3D" parent="Terrain3D"]
 transform = Transform3D(0.731485, 0, -0.681858, 0, 1, 0, 0.681858, 0, 0.731485, 511.52, -6.10688, 132.757)
 script = ExtResource("11_8vouf")
-ShaderSettings = SubResource("Resource_7h8bl")
+ShaderSettings = SubResource("Resource_lmcn1")
 ShapeSmoothness = 5.0
 PointWidths = Array[float]([2.16373, 2.29979, 3.47225, 5.78538, 2.83288, 3.34057, 1.0, 6.68051, 5.73946, 4.42331, 8.62887, 6.7194, 8.59449, 11.4218, 9.46497, 10.3455, 6.53306, 6.85615, 21.6566, 46.8196, 50.9696, 58.4761, 48.8709, 31.9665, 5.16343])
-Curve = SubResource("Curve3D_lmcn1")
+Curve = SubResource("Curve3D_0d0aj")
 metadata/_custom_type_script = "uid://boquq8ua40y0p"
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Terrain3D"]
@@ -813,7 +813,6 @@ gizmo_extents = 1.0
 script = ExtResource("13_a8bto")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/Start"]
-visible = false
 
 [node name="ToPath1" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/Start/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
@@ -1627,6 +1626,7 @@ script = ExtResource("13_a8bto")
 metadata/_custom_type_script = "uid://c4vi6dxqujrrf"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeMiddle"]
+visible = false
 
 [node name="ToBridgeEntrance" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeMiddle/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1

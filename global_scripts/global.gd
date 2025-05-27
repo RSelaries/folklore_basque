@@ -16,3 +16,8 @@ func _ready() -> void:
 
 func _add_fps_counter() -> void:
 	get_tree().root.add_child.call_deferred(FpsCounter.create_fps_counter())
+
+
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		get_tree().quit()
