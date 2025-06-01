@@ -7,12 +7,12 @@
 viewport_path = NodePath("Laminak2/SubViewport")
 
 [node name="PathFollowLamina" type="PathFollow3D"]
-transform = Transform3D(0.473047, 0.167919, 0.86484, -0.0176661, 0.983231, -0.181243, -0.880851, 0.070459, 0.468084, 0, 0, 0)
+transform = Transform3D(0.473047, 0.167919, 0.86484, -0.0176661, 0.983231, -0.181243, -0.880851, 0.0704589, 0.468084, 0, 0, 0)
 script = ExtResource("1_5ory0")
 speed = 3.0
 
 [node name="Laminak2" type="Sprite3D" parent="."]
-transform = Transform3D(-0.0389159, 0, -0.160345, -0.00146322, 0.164993, 0.000355124, 0.160339, 0.0015057, -0.0389143, -0.0135651, 0.755051, -0.139183)
+transform = Transform3D(0.165001, 0, 0, 0, 0.165, 0, 0, 0, 0.165, -0.0135651, 0.755051, -0.139183)
 extra_cull_margin = 1218.64
 billboard = 2
 shaded = true

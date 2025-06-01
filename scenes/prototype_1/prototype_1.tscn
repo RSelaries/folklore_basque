@@ -542,7 +542,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_hl1pr")
 [node name="OmniLight3D" type="OmniLight3D" parent="Terrain3D/lamina_cave_2/Fire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01747, 0)
 light_color = Color(0.888454, 0.564508, 0, 1)
-light_energy = 10.5574
+light_energy = 17.0975
 shadow_enabled = true
 shadow_opacity = 0.9
 omni_range = 25.4632
@@ -555,9 +555,9 @@ noise_texture = SubResource("NoiseTexture2D_l3e0g")
 
 [node name="SpatialAudioStreamPlayer3D" parent="Terrain3D/lamina_cave_2/Fire/OmniLight3D" instance=ExtResource("23_hl1pr")]
 stream = ExtResource("24_qgmfw")
-volume_db = -18.8987
+volume_db = -18.8989
 autoplay = true
-bus = &"SpatialBus#10"
+bus = &"SpatialBus#12"
 update_frequency_seconds = 2.0
 max_reverb_wetness = 50.0
 
@@ -974,7 +974,6 @@ gizmo_extents = 1.0
 script = ExtResource("13_a8bto")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/Start"]
-visible = false
 
 [node name="ToPath1" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/Start/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
@@ -1781,7 +1780,7 @@ offset_left = -0.160034
 offset_top = 0.223999
 offset_right = -0.463989
 offset_bottom = 0.0239563
-mouse_default_cursor_shape = 11
+mouse_default_cursor_shape = 3
 script = ExtResource("14_r6jb8")
 links_to = NodePath("../../../Lamicave4")
 hover_cursor = 2
@@ -1817,7 +1816,7 @@ offset_left = -0.160034
 offset_top = 0.223999
 offset_right = -0.463989
 offset_bottom = 0.0239563
-mouse_default_cursor_shape = 11
+mouse_default_cursor_shape = 3
 script = ExtResource("14_r6jb8")
 links_to = NodePath("../../../Lamicave5")
 hover_cursor = 2
@@ -1830,6 +1829,7 @@ script = ExtResource("13_a8bto")
 metadata/_custom_type_script = "uid://c4vi6dxqujrrf"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/Lamicave5"]
+visible = false
 
 [node name="ToLamicave4" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/Lamicave5/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
