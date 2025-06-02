@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvy0hqbifp4om"]
+
+[ext_resource type="Script" uid="uid://d7a6067ua7ci" path="res://scenes/recherche_fenetres_puzzle/puzzle_windows.gd" id="1_g2ydo"]
+
+[node name="PuzzleWindow" type="Window"]
+auto_translate_mode = 1
+title = "PuzzleWindow"
+initial_position = 2
+size = Vector2i(370, 300)
+unresizable = true
+always_on_top = true
+script = ExtResource("1_g2ydo")
+
+[node name="PieceTexture" type="TextureRect" parent="."]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer2" type="MarginContainer" parent="PieceTexture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20

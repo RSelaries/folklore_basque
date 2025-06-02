@@ -1,0 +1,435 @@
+[gd_scene load_steps=11 format=3 uid="uid://d0g8or6s3pvn3"]
+
+[ext_resource type="PackedScene" uid="uid://b3exyxs651c2y" path="res://scenes/recherche_p&c/Main.tscn" id="1_6l6fv"]
+[ext_resource type="Script" uid="uid://b0vygdlrl0wnm" path="res://scenes/recherche_boucle/boucle.gd" id="1_hvfqf"]
+[ext_resource type="Script" uid="uid://8b3vywlwf0ih" path="res://scenes/recherche_boucle/loop_manager.gd" id="2_hvfqf"]
+[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/PlayerFpsController.tscn" id="2_ipqt3"]
+[ext_resource type="PackedScene" uid="uid://4uni5gdg0nkr" path="res://assets/mesh/ugly_tree.glb" id="5_03uiq"]
+[ext_resource type="Script" uid="uid://om7y6v6l2kpy" path="res://scenes/recherche_boucle/obstacle.gd" id="5_eo76p"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_eo76p"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oi0bb"]
+size = Vector3(20.118, 38.6309, 3.50195)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_03uiq"]
+size = Vector3(12.124, 39.9919, 4.10742)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_03uiq"]
+radius = 3.81796
+
+[node name="Boucle" type="Node3D"]
+script = ExtResource("1_hvfqf")
+
+[node name="LoopManager" type="Node" parent="."]
+script = ExtResource("2_hvfqf")
+
+[node name="Main" parent="." instance=ExtResource("1_6l6fv")]
+
+[node name="PlayerFpsController" parent="." instance=ExtResource("2_ipqt3")]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -50.1147, 60.8987, -105.924)
+mouse_sensitivity = 0.1
+
+[node name="OrthoCam" type="Camera3D" parent="PlayerFpsController/Neck/FpsCamera" index="0"]
+transform = Transform3D(1, -3.69618e-08, -2.03767e-08, 3.69618e-08, 0.533836, 0.845588, -2.03767e-08, -0.845588, 0.533836, 0, 20.806, 11.9739)
+projection = 1
+size = 13.272
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerFpsController"]
+mesh = SubResource("CapsuleMesh_eo76p")
+
+[node name="TreeCollisions" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TreeCollisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1026, 81.7604, -106.863)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.8887, -16.7482, -5.11445)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51.2552, -16.7482, 4.75446)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D26" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(-0.0813992, 0, 0.996682, 0, 1, 0, -0.996682, 0, -0.0813992, -55.6657, -16.7482, -0.153984)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.984959, 0, -0.172789, 0, 1, 0, 0.172789, 0, 0.984959, -33.6954, -16.7482, 6.52406)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.984959, 0, -0.172789, 0, 1, 0, 0.172789, 0, 0.984959, -32.6064, -16.7482, -3.88934)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.999859, 0, -0.0168068, 0, 1, 0, 0.0168068, 0, 0.999859, -16.0675, -16.7482, -1.98362)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.629198, 0, 0.777245, 0, 1, 0, -0.777245, 0, 0.629198, -2.38713, -16.7482, -8.58558)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D9" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.771425, 0, 0.636321, 0, 1, 0, -0.636321, 0, 0.771425, 13.267, -16.7482, -20.4283)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D10" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.999156, 0, 0.0410735, 0, 1, 0, -0.0410735, 0, 0.999156, 29.4656, -16.7482, -25.0564)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D11" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.949019, 0, -0.315218, 0, 1, 0, 0.315218, 0, 0.949019, 41.0361, -16.7482, -21.9256)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D12" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.302886, 0, -0.953027, 0, 1, 0, 0.953027, 0, 0.302886, 51.9259, -16.7482, -9.19814)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D13" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(-0.465769, 0, -0.884906, 0, 1, 0, 0.884906, 0, -0.465769, 46.4129, -16.7482, 4.68639)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D14" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(-0.722473, 0, 0.6914, 0, 1, 0, -0.6914, 0, -0.722473, 41.2403, -16.7482, 7.61302)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D15" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(-0.177669, 0, -0.98409, 0, 1, 0, 0.98409, 0, -0.177669, 33.2771, -16.7482, 12.9218)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D16" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(-0.992597, 0, -0.121454, 0, 1, 0, 0.121454, 0, -0.992597, 9.0472, -16.7482, 24.2881)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D17" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(-0.999845, 0, -0.0175922, 0, 1, 0, 0.0175922, 0, -0.999845, 26.539, -16.7482, 22.1782)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(-0.95097, 0, -0.309283, 0, 1, 0, 0.309283, 0, -0.95097, 14.424, -16.7482, 11.0841)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D19" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(-0.0874341, 0, 0.99617, 0, 1, 0, -0.99617, 0, -0.0874341, 6.49552, -16.7482, 9.82024)
+shape = SubResource("BoxShape3D_03uiq")
+debug_color = Color(1, 1, 1, 0.0862745)
+
+[node name="CollisionShape3D20" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(-0.879873, 0, 0.475209, 0, 1, 0, -0.475209, 0, -0.879873, 5.81491, -16.7482, 6.34911)
+shape = SubResource("BoxShape3D_03uiq")
+debug_color = Color(1, 1, 1, 0.0862745)
+
+[node name="CollisionShape3D21" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(-0.0530159, 0, 0.998594, 0, 1, 0, -0.998594, 0, -0.0530159, 9.21798, -16.7482, 2.4696)
+shape = SubResource("BoxShape3D_03uiq")
+debug_color = Color(1, 1, 1, 0.0862745)
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.974835, 0, 0.222927, 0, 1, 0, -0.222927, 0, 0.974835, 12.8033, -16.6944, -6.59764)
+shape = SubResource("BoxShape3D_03uiq")
+debug_color = Color(1, 1, 1, 0.0862745)
+
+[node name="CollisionShape3D27" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.992334, 0, -0.123584, 0, 1, 0, 0.123584, 0, 0.992334, 22.5083, -16.7482, -9.52947)
+shape = SubResource("BoxShape3D_03uiq")
+debug_color = Color(1, 1, 1, 0.0862745)
+
+[node name="CollisionShape3D28" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.992334, 0, -0.123584, 0, 1, 0, 0.123584, 0, 0.992334, 25.9935, -16.7482, -12.5307)
+shape = SubResource("BoxShape3D_03uiq")
+debug_color = Color(1, 1, 1, 0.0862745)
+
+[node name="CollisionShape3D29" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.992334, 0, -0.123584, 0, 1, 0, 0.123584, 0, 0.992334, 32.5767, -16.7482, -15.0962)
+shape = SubResource("BoxShape3D_03uiq")
+debug_color = Color(1, 1, 1, 0.0862745)
+
+[node name="CollisionShape3D30" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.74173, 0, 0.670699, 0, 1, 0, -0.670699, 0, 0.74173, 33.3512, -16.7482, -11.0785)
+shape = SubResource("BoxShape3D_03uiq")
+debug_color = Color(1, 1, 1, 0.0862745)
+
+[node name="CollisionShape3D31" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.871291, 0, 0.490767, 0, 1, 0, -0.490767, 0, 0.871291, 44.049, -16.7482, -7.20597)
+shape = SubResource("BoxShape3D_03uiq")
+debug_color = Color(1, 1, 1, 0.0862745)
+
+[node name="CollisionShape3D32" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.694671, 0, 0.719328, 0, 1, 0, -0.719328, 0, 0.694671, 22.4115, -16.7482, 2.57207)
+shape = SubResource("BoxShape3D_03uiq")
+debug_color = Color(1, 1, 1, 0.0862745)
+
+[node name="CollisionShape3D24" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.983512, 0, -0.180845, 0, 1, 0, 0.180845, 0, 0.983512, 15.5477, -16.7482, 2.80991)
+shape = SubResource("BoxShape3D_03uiq")
+debug_color = Color(1, 1, 1, 0.0862745)
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.994465, 0, -0.105067, 0, 1, 0, 0.105067, 0, 0.994465, -19.0496, -16.7482, 8.96891)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="TreeCollisions/StaticBody3D"]
+transform = Transform3D(0.463976, 0, -0.885848, 0, 1, 0, 0.885848, 0, 0.463976, -3.88449, -16.7482, 17.6181)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="Obstacle1" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.77036, 0)
+script = ExtResource("5_eo76p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Obstacle1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94365, 65.5015, -93.3735)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle1/StaticBody3D"]
+transform = Transform3D(0.160277, 0, 0.987072, 0, 1, 0, -0.987072, 0, 0.160277, -27.1071, 0, -9.39954)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="ugly_tree" parent="Obstacle1" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.7486, 63.3433, -100.91)
+
+[node name="ugly_tree2" parent="Obstacle1" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.2579, 62.4486, -103.589)
+
+[node name="ugly_tree3" parent="Obstacle1" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4501, 62.0799, -104.769)
+
+[node name="ugly_tree4" parent="Obstacle1" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.2431, 61.7874, -105.024)
+
+[node name="ugly_tree5" parent="Obstacle1" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.3596, 62.5231, -102.368)
+
+[node name="ugly_tree6" parent="Obstacle1" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.1817, 61.3745, -106.103)
+
+[node name="ugly_tree7" parent="Obstacle1" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.8872, 62.3081, -102.866)
+
+[node name="ugly_tree8" parent="Obstacle1" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.3317, 61.0624, -106.891)
+
+[node name="ugly_tree9" parent="Obstacle1" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.2286, 61.8685, -104.5)
+
+[node name="Obstacle2" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.77036, 0)
+script = ExtResource("5_eo76p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Obstacle2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94365, 65.5015, -93.3735)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle2/StaticBody3D"]
+transform = Transform3D(0.862337, 0, 0.506335, 0, 1, 0, -0.506335, 0, 0.862337, -17.9419, 0, -4.32682)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Obstacle2/StaticBody3D"]
+transform = Transform3D(-0.824975, 0, -0.565168, 0, 1, 0, 0.565168, 0, -0.824975, -13.074, 0, 3.99907)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="ugly_tree" parent="Obstacle2" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.2257, 64.2694, -97.5489)
+
+[node name="ugly_tree2" parent="Obstacle2" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.07, 64.3423, -97.1673)
+
+[node name="ugly_tree3" parent="Obstacle2" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7485, 63.493, -100.008)
+
+[node name="ugly_tree4" parent="Obstacle2" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0284, 64.0898, -98.2033)
+
+[node name="ugly_tree5" parent="Obstacle2" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9181, 65.2325, -94.2413)
+
+[node name="ugly_tree6" parent="Obstacle2" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.411, 64.9925, -95.0214)
+
+[node name="ugly_tree7" parent="Obstacle2" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.4284, 66.3079, -91.5759)
+
+[node name="ugly_tree8" parent="Obstacle2" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3436, 67.4265, -88.4804)
+
+[node name="Obstacle3" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.77036, 0)
+script = ExtResource("5_eo76p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Obstacle3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94365, 65.5015, -93.3735)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle3/StaticBody3D"]
+transform = Transform3D(-0.891086, 0, 0.453835, 0, 1, 0, -0.453835, 0, -0.891086, -16.6998, 0, -12.4007)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Obstacle3/StaticBody3D"]
+transform = Transform3D(-0.35194, 0, -0.936022, 0, 1, 0, 0.936022, 0, -0.35194, 7.08159, 0, -28.8244)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="ugly_tree" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55781, 56.7484, -117.062)
+
+[node name="ugly_tree16" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.13199, 54.5552, -123.401)
+
+[node name="ugly_tree17" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.39432, 53.3859, -127.297)
+
+[node name="ugly_tree18" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26486, 52.7867, -128.056)
+
+[node name="ugly_tree2" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20458, 56.9766, -117.505)
+
+[node name="ugly_tree3" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.66682, 57.1278, -118.099)
+
+[node name="ugly_tree4" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.09462, 56.1142, -121.451)
+
+[node name="ugly_tree5" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.413204, 55.4859, -121.907)
+
+[node name="ugly_tree6" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.79432, 55.6238, -120.178)
+
+[node name="ugly_tree7" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1, 62.0658, -104.724)
+
+[node name="ugly_tree8" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.9341, 61.5503, -106.481)
+
+[node name="ugly_tree9" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.096, 61.7697, -104.728)
+
+[node name="ugly_tree10" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6129, 61.3348, -107.664)
+
+[node name="ugly_tree11" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1123, 60.5257, -109.245)
+
+[node name="ugly_tree12" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3532, 60.6015, -109.53)
+
+[node name="ugly_tree13" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.36, 59.8443, -111.943)
+
+[node name="ugly_tree14" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8798, 58.7759, -115.26)
+
+[node name="ugly_tree15" parent="Obstacle3" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.43569, 57.1748, -119.212)
+
+[node name="Obstacle4" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.77036, 0)
+script = ExtResource("5_eo76p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Obstacle4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.94365, 65.5015, -93.3735)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Obstacle4/StaticBody3D"]
+transform = Transform3D(-0.698728, 0, 0.715388, 0, 1, 0, -0.715388, 0, -0.698728, 12.8787, 0, 2.58806)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Obstacle4/StaticBody3D"]
+transform = Transform3D(0.996784, 0, -0.0801294, 0, 1, 0, 0.0801294, 0, 0.996784, 12.6343, 0, -8.01904)
+shape = SubResource("BoxShape3D_oi0bb")
+debug_color = Color(1, 1, 1, 0.0784314)
+
+[node name="ugly_tree9" parent="Obstacle4" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25542, 61.5257, -100.948)
+
+[node name="ugly_tree10" parent="Obstacle4" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4959, 60.9551, -101.499)
+
+[node name="ugly_tree11" parent="Obstacle4" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2522, 61.3252, -99.8456)
+
+[node name="ugly_tree12" parent="Obstacle4" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8174, 62.3257, -97.9374)
+
+[node name="ugly_tree13" parent="Obstacle4" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1476, 64.0273, -92.7748)
+
+[node name="ugly_tree14" parent="Obstacle4" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4179, 63.6602, -94.6227)
+
+[node name="ugly_tree15" parent="Obstacle4" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0679, 64.275, -93.7322)
+
+[node name="ugly_tree16" parent="Obstacle4" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3755, 65.1303, -90.5943)
+
+[node name="ugly_tree17" parent="Obstacle4" instance=ExtResource("5_03uiq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7483, 65.5015, -88.8736)
+
+[node name="FirstArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.4001, 54.0315, -115.736)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FirstArea"]
+shape = SubResource("SphereShape3D_03uiq")
+debug_color = Color(0.684946, 0.499074, 0.115606, 0.42)
+
+[node name="SecondArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98385, 59.4009, -107.579)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SecondArea"]
+shape = SubResource("SphereShape3D_03uiq")
+debug_color = Color(0.684946, 0.499074, 0.115606, 0.42)
+
+[node name="ThirdArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.99685, 69.0022, -89.1649)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ThirdArea"]
+shape = SubResource("SphereShape3D_03uiq")
+debug_color = Color(0.684946, 0.499074, 0.115606, 0.42)
+
+[node name="FourthArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.2332, 59.5189, -116.158)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FourthArea"]
+shape = SubResource("SphereShape3D_03uiq")
+debug_color = Color(0.684946, 0.499074, 0.115606, 0.42)
+
+[connection signal="body_entered" from="FirstArea" to="LoopManager" method="_on_first_area_body_entered"]
+[connection signal="body_entered" from="SecondArea" to="LoopManager" method="_on_second_area_body_entered"]
+[connection signal="body_entered" from="ThirdArea" to="LoopManager" method="_on_third_area_body_entered"]
+[connection signal="body_entered" from="FourthArea" to="LoopManager" method="_on_fourth_area_body_entered"]
+
+[editable path="Main"]
+[editable path="Main/terrain"]
+[editable path="Main/terrain/maison_basque"]
+[editable path="Main/Trees/ugly_tree27"]
+[editable path="Main/Trees/ugly_tree42"]
+[editable path="PlayerFpsController"]

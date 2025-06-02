@@ -1,0 +1,451 @@
+[gd_scene load_steps=22 format=3 uid="uid://d2deerth84jc3"]
+
+[ext_resource type="Script" uid="uid://dhqb6vii2sg5c" path="res://scenes/recherche_fenetres_lieux/fenetres_lieux.gd" id="1_6j68x"]
+[ext_resource type="Script" uid="uid://cdheqn2na84t" path="res://scenes/recherche_fenetres_lieux/fenetre_lieu.gd" id="2_k3t3h"]
+[ext_resource type="Texture2D" uid="uid://dk7j3tomyqy16" path="res://assets/sprites/dialogue.png" id="3_e6sis"]
+[ext_resource type="Texture2D" uid="uid://bk5vcgspyw1fg" path="res://assets/sprites/berger.png" id="3_rgujs"]
+[ext_resource type="Texture2D" uid="uid://cprbfghvr0jmg" path="res://assets/sprites/montagne.png" id="3_xlcio"]
+[ext_resource type="Texture2D" uid="uid://dlslu64tpsxya" path="res://assets/sprites/unnamed.png" id="6_opu6x"]
+[ext_resource type="Texture2D" uid="uid://bdvqwwsb0faic" path="res://assets/sprites/maison_int_forms.png" id="6_xcw8m"]
+[ext_resource type="FontFile" uid="uid://bmj3ieeu73w5v" path="res://themes/fonts/NeverMind/NeverMind-Heavy.ttf" id="7_g3rn1"]
+[ext_resource type="Texture2D" uid="uid://dcmpr82hk4gcq" path="res://assets/sprites/elgtociv.png" id="7_hmhvd"]
+[ext_resource type="Texture2D" uid="uid://b3dhvj804cy7y" path="res://icon.svg" id="7_yvbob"]
+[ext_resource type="Texture2D" uid="uid://bjgk0oc6h1ank" path="res://assets/sprites/n0s2ok6r.png" id="8_hmhvd"]
+[ext_resource type="Texture2D" uid="uid://boqdes10xhhd7" path="res://assets/sprites/az860s6f.png" id="10_hmhvd"]
+[ext_resource type="Texture2D" uid="uid://d0oc1v74fphrl" path="res://assets/sprites/grotte.png" id="13_qgvr7"]
+[ext_resource type="Texture2D" uid="uid://dco45kehaqly8" path="res://assets/sprites/livre.png" id="14_3cax1"]
+[ext_resource type="Texture2D" uid="uid://clrleen3iq8jl" path="res://assets/sprites/foret.png" id="15_hgxnh"]
+[ext_resource type="Texture2D" uid="uid://oq5opgl5scbe" path="res://assets/sprites/baton.png" id="16_k64bm"]
+[ext_resource type="Texture2D" uid="uid://dxck0bt7trb8x" path="res://assets/sprites/laminak_homme.png" id="17_nv8wy"]
+[ext_resource type="Texture2D" uid="uid://3xt1fdoxkod2" path="res://assets/sprites/rock.png" id="17_qqnct"]
+[ext_resource type="Texture2D" uid="uid://d34tngrwbmjkb" path="res://assets/sprites/grotte_mari_inter.png" id="19_yxwn2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cax1"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.197937, 0.197937, 0.197937, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.266575, 0.266575, 0.266575, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgvr7"]
+bg_color = Color(0.15, 0.033625, 0.0075, 0.803922)
+
+[node name="Inventaire" type="MarginContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+script = ExtResource("1_6j68x")
+
+[node name="Inventory" type="ColorRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+color = Color(0.0962048, 0.0962047, 0.0962047, 1)
+
+[node name="martgin" type="MarginContainer" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HFlowContainer" type="HFlowContainer" parent="Inventory/martgin"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Inventory/martgin/HFlowContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3cax1")
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/martgin/HFlowContainer/PanelContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("6_opu6x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer2" type="PanelContainer" parent="Inventory/martgin/HFlowContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3cax1")
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/martgin/HFlowContainer/PanelContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("7_hmhvd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer3" type="PanelContainer" parent="Inventory/martgin/HFlowContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3cax1")
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/martgin/HFlowContainer/PanelContainer3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("8_hmhvd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer4" type="PanelContainer" parent="Inventory/martgin/HFlowContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3cax1")
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/martgin/HFlowContainer/PanelContainer4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("7_yvbob")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PanelContainer5" type="PanelContainer" parent="Inventory/martgin/HFlowContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3cax1")
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/martgin/HFlowContainer/PanelContainer5"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("10_hmhvd")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Discussion Berger" type="Window" parent="."]
+position = Vector2i(0, 36)
+size = Vector2i(854, 460)
+visible = false
+always_on_top = true
+script = ExtResource("2_k3t3h")
+
+[node name="Control" type="Control" parent="Discussion Berger"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="montagne" type="TextureRect" parent="Discussion Berger/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 152.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xlcio")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Berger" type="TextureRect" parent="Discussion Berger/Control"]
+layout_mode = 0
+offset_left = -96.0
+offset_top = -52.0
+offset_right = 808.0
+offset_bottom = 530.0
+texture = ExtResource("3_rgujs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Discussion Berger/Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -377.0
+offset_top = -188.0
+offset_right = 378.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_e6sis")
+region_rect = Rect2(0, 0, 600, 200)
+patch_margin_left = 60
+patch_margin_top = 50
+patch_margin_right = 60
+patch_margin_bottom = 50
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Discussion Berger/Control/NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 50
+
+[node name="Label" type="RichTextLabel" parent="Discussion Berger/Control/NinePatchRect/MarginContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 22
+theme_override_font_sizes/italics_font_size = 22
+theme_override_font_sizes/mono_font_size = 22
+theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/bold_font_size = 22
+bbcode_enabled = true
+text = "Je suis un personnage qui parle ! 
+Yay j'adore parler avec toi !"
+vertical_alignment = 1
+
+[node name="Exploration Maison" type="Window" parent="."]
+auto_translate_mode = 1
+position = Vector2i(0, 36)
+size = Vector2i(854, 460)
+visible = false
+always_on_top = true
+script = ExtResource("2_k3t3h")
+
+[node name="TextureRect" type="TextureRect" parent="Exploration Maison"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_xcw8m")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Exploration Maison"]
+offset_left = 23.0
+offset_top = 11.0
+offset_right = 244.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.253874, 0.194404, 0.10035, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.356863)
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("7_g3rn1")
+theme_override_font_sizes/font_size = 25
+text = "Maison du berger"
+
+[node name="Enigme des laminak" type="Window" parent="."]
+auto_translate_mode = 1
+position = Vector2i(0, 36)
+size = Vector2i(854, 460)
+visible = false
+always_on_top = true
+script = ExtResource("2_k3t3h")
+
+[node name="TextureRect" type="TextureRect" parent="Enigme des laminak"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_qgvr7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Enigme des laminak/TextureRect"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 40.0
+offset_right = 305.0
+offset_bottom = 404.0
+
+[node name="Label" type="Label" parent="Enigme des laminak/TextureRect/Panel"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 6.0
+offset_right = 174.0
+offset_bottom = 29.0
+text = "Enigme des laminak"
+
+[node name="Label2" type="Label" parent="Enigme des laminak/TextureRect/Panel"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 65.0
+offset_right = 211.0
+offset_bottom = 114.0
+text = "j'ai deux jambes mais
+un seul pied.Qui suis-je ?"
+
+[node name="Button" type="Button" parent="Enigme des laminak/TextureRect/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 155.0
+offset_right = 247.0
+offset_bottom = 209.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgvr7")
+text = "Un unijambiste avec un grand
+membre"
+
+[node name="Button2" type="Button" parent="Enigme des laminak/TextureRect/Panel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 217.0
+offset_right = 248.0
+offset_bottom = 271.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgvr7")
+text = "Une table basse"
+
+[node name="Button3" type="Button" parent="Enigme des laminak/TextureRect/Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 279.0
+offset_right = 247.0
+offset_bottom = 333.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgvr7")
+text = "Un laminak qui a perdu un
+pied"
+
+[node name="Livre de contes" type="Window" parent="."]
+auto_translate_mode = 1
+position = Vector2i(0, 36)
+size = Vector2i(400, 400)
+visible = false
+always_on_top = true
+script = ExtResource("2_k3t3h")
+
+[node name="ColorRect" type="ColorRect" parent="Livre de contes"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.840185, 0.811266, 0.637551, 1)
+
+[node name="TextureRect" type="TextureRect" parent="Livre de contes"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_3cax1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Panel" type="Panel" parent="Livre de contes/TextureRect"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 24.0
+offset_right = 366.0
+offset_bottom = 375.0
+
+[node name="Label2" type="Label" parent="Livre de contes/TextureRect/Panel"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 14.0
+offset_right = 317.0
+offset_bottom = 316.0
+text = "Une fois un berger dormait à l'ombre des hêtres alors que ses brebis étaient dispersées sur le mont Okina.
+Lorsqu'il commença à faire nuit, les brebis se retirèrent dans un abri, sous les rochers. Quelques unes ne le firent pas.
+Le berger partit chercher celles qui manquaient. Il se dirigea vers l'endroit d'où lui semblait parvenir un bruit de sonnaille."
+autowrap_mode = 3
+
+[node name="Label" type="Label" parent="Livre de contes/TextureRect/Panel"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 331.0
+offset_right = 199.0
+offset_bottom = 348.0
+theme_override_font_sizes/font_size = 12
+text = "Page 1 / 12"
+horizontal_alignment = 1
+
+[node name="Forêt" type="Window" parent="."]
+auto_translate_mode = 1
+position = Vector2i(0, 36)
+size = Vector2i(854, 460)
+visible = false
+always_on_top = true
+script = ExtResource("2_k3t3h")
+
+[node name="TextureRect" type="TextureRect" parent="Forêt"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("15_hgxnh")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Baton" type="Sprite2D" parent="Forêt"]
+texture_filter = 1
+position = Vector2(723, 362)
+scale = Vector2(1.58333, 1.58333)
+texture = ExtResource("16_k64bm")
+
+[node name="LaminakHomme" type="Sprite2D" parent="Forêt"]
+texture_filter = 1
+position = Vector2(460, 280)
+scale = Vector2(1.69205, 1.69205)
+texture = ExtResource("17_nv8wy")
+
+[node name="Rock" type="Sprite2D" parent="Forêt"]
+texture_filter = 1
+position = Vector2(83, 401)
+scale = Vector2(1.35833, 1.35833)
+texture = ExtResource("17_qqnct")
+
+[node name="Grotte de Mari" type="Window" parent="."]
+auto_translate_mode = 1
+position = Vector2i(0, 36)
+size = Vector2i(854, 460)
+always_on_top = true
+script = ExtResource("2_k3t3h")
+
+[node name="TextureRect" type="TextureRect" parent="Grotte de Mari"]
+texture_filter = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("19_yxwn2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Grotte de Mari"]
+offset_left = 23.0
+offset_top = 11.0
+offset_right = 244.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.0615387, 0.0389533, 0.0123436, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.356863)
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("7_g3rn1")
+theme_override_font_sizes/font_size = 25
+text = "Grotte de Mari"
+
+[node name="Label2" type="Label" parent="Grotte de Mari"]
+offset_left = 648.0
+offset_top = 252.0
+offset_right = 869.0
+offset_bottom = 280.0
+theme_override_colors/font_color = Color(0.956863, 0.839216, 0.2, 1)
+theme_override_constants/shadow_outline_size = 8
+theme_override_fonts/font = ExtResource("7_g3rn1")
+text = "Entrer"
+
+[node name="Window" type="Window" parent="."]
+position = Vector2i(0, 36)
+script = ExtResource("2_k3t3h")

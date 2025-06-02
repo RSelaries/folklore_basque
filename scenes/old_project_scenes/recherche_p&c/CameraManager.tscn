@@ -1,0 +1,384 @@
+[gd_scene load_steps=18 format=3 uid="uid://kafknie2fgxv"]
+
+[ext_resource type="Script" uid="uid://dmm3motjterua" path="res://scripts/test.gd" id="1_3rhkp"]
+[ext_resource type="Script" uid="uid://r1743jkq02vr" path="res://scripts/utils.gd" id="2_ye166"]
+[ext_resource type="Shader" uid="uid://7bgvkey60en5" path="res://assets/shaders/psx_dithering.gdshader" id="3_0gdcn"]
+[ext_resource type="Script" uid="uid://0j5654o074pg" path="res://scripts/post_proc.gd" id="3_chfd1"]
+[ext_resource type="Script" uid="uid://hnakpntdiute" path="res://scripts/subviewport_autosizing.gd" id="4_chfd1"]
+[ext_resource type="PackedScene" uid="uid://b3exyxs651c2y" path="res://scenes/recherche_p&c/Main.tscn" id="5_q4d41"]
+[ext_resource type="Theme" uid="uid://6mk1ly4ee0sd" path="res://resources/interactions.tres" id="6_0ybgd"]
+[ext_resource type="Script" uid="uid://d3m885vkv3rv7" path="res://scripts/house_far_interactions.gd" id="7_wnomp"]
+[ext_resource type="Script" uid="uid://d1un62uy4ug2s" path="res://scripts/interaction_button.gd" id="8_4cd6a"]
+[ext_resource type="Script" uid="uid://ck7tfxiarbyd2" path="res://scripts/house_side_interactions.gd" id="9_f1g0l"]
+[ext_resource type="Script" uid="uid://cqw2jigmxiv3e" path="res://scripts/house_door_interactions.tres.gd" id="10_uqmgi"]
+[ext_resource type="Script" uid="uid://df114agayvemb" path="res://scripts/house_cross_interactions.gd" id="11_3mi7b"]
+[ext_resource type="PackedScene" uid="uid://lbheygyuyhle" path="res://scenes/recherche_p&c/croix_basque.tscn" id="11_ye166"]
+[ext_resource type="Script" uid="uid://ds0j0xgb8lmil" path="res://scripts/forest_far_interactions.gd" id="12_nxacl"]
+[ext_resource type="Script" uid="uid://dodg8wgysym2i" path="res://scripts/text_manager.gd" id="13_3lchy"]
+[ext_resource type="Script" uid="uid://mnsk2eejq8vo" path="res://scripts/inventory_manager.gd" id="14_k7qux"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0m0f1"]
+shader = ExtResource("3_0gdcn")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 2
+
+[node name="CameraManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3rhkp")
+
+[node name="Utils" type="Node" parent="."]
+script = ExtResource("2_ye166")
+location_name = "ForestFar"
+
+[node name="PostProc" type="CanvasLayer" parent="."]
+layer = 10
+script = ExtResource("3_chfd1")
+
+[node name="Dithering" type="ColorRect" parent="PostProc"]
+material = SubResource("ShaderMaterial_0m0f1")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_chfd1")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Main" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_q4d41")]
+unique_name_in_owner = true
+
+[node name="InteractionWindows" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_0ybgd")
+
+[node name="HouseFarInteractions" type="Control" parent="InteractionWindows"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_wnomp")
+
+[node name="HouseDoorButton" type="Button" parent="InteractionWindows/HouseFarInteractions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.461
+anchor_top = 0.46
+anchor_right = 0.523
+anchor_bottom = 0.608
+offset_left = -0.0720215
+offset_top = -0.0800171
+offset_right = 0.504028
+offset_bottom = 0.0159607
+script = ExtResource("8_4cd6a")
+
+[node name="HouseSideButton" type="Button" parent="InteractionWindows/HouseFarInteractions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.628
+anchor_top = 0.401
+anchor_right = 0.691
+anchor_bottom = 0.549
+offset_left = 0.543945
+offset_top = 0.151978
+offset_right = -0.0320435
+offset_bottom = 0.247986
+script = ExtResource("8_4cd6a")
+
+[node name="HouseSideInteractions" type="Control" parent="InteractionWindows"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_f1g0l")
+
+[node name="HouseDoorButton" type="Button" parent="InteractionWindows/HouseSideInteractions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.289
+anchor_top = 0.606
+anchor_right = 0.352
+anchor_bottom = 0.897
+offset_left = 0.071991
+offset_top = 0.311981
+offset_right = -0.504028
+offset_bottom = -0.255981
+script = ExtResource("8_4cd6a")
+
+[node name="HouseFarButton" type="Button" parent="InteractionWindows/HouseSideInteractions"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 135.0
+offset_bottom = -10.0
+grow_vertical = 2
+script = ExtResource("8_4cd6a")
+
+[node name="HouseCrossButton" type="Button" parent="InteractionWindows/HouseSideInteractions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.589
+anchor_top = 0.461
+anchor_right = 0.623
+anchor_bottom = 0.554
+offset_left = -0.528076
+offset_top = 0.271973
+offset_right = 0.303955
+offset_bottom = 0.00799561
+script = ExtResource("8_4cd6a")
+
+[node name="HouseDoorInteractions" type="Control" parent="InteractionWindows"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_uqmgi")
+
+[node name="HouseFarButton" type="Button" parent="InteractionWindows/HouseDoorInteractions"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 14.0
+offset_top = -143.0
+offset_right = -20.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("8_4cd6a")
+
+[node name="HandleButton" type="Button" parent="InteractionWindows/HouseDoorInteractions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.392
+anchor_top = 0.458
+anchor_right = 0.441
+anchor_bottom = 0.568
+offset_left = 0.415985
+offset_top = 0.215973
+offset_right = -0.0320129
+offset_bottom = -0.0640259
+script = ExtResource("8_4cd6a")
+
+[node name="HouseCrossInteractions" type="Control" parent="InteractionWindows"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_3mi7b")
+croix_basque = ExtResource("11_ye166")
+
+[node name="CrossPickButton" type="Button" parent="InteractionWindows/HouseCrossInteractions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.484
+anchor_top = 0.39
+anchor_right = 0.562
+anchor_bottom = 0.532
+offset_left = -0.568054
+offset_top = 0.279984
+offset_right = 0.575928
+offset_bottom = 0.264008
+script = ExtResource("8_4cd6a")
+
+[node name="HouseSideButton" type="Button" parent="InteractionWindows/HouseCrossInteractions"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.0
+offset_top = -147.0
+offset_right = -8.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("8_4cd6a")
+
+[node name="ForestFarInteractions" type="Control" parent="InteractionWindows"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_nxacl")
+
+[node name="ForestCloserButton" type="Button" parent="InteractionWindows/ForestFarInteractions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.372
+anchor_top = 0.438
+anchor_right = 0.586
+anchor_bottom = 0.664
+offset_left = 0.455994
+offset_top = 0.175995
+offset_right = -0.0720215
+offset_bottom = -0.272034
+script = ExtResource("8_4cd6a")
+
+[node name="ForestCloserInteractions" type="Control" parent="InteractionWindows"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_nxacl")
+
+[node name="ForestClosestButton" type="Button" parent="InteractionWindows/ForestCloserInteractions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.468
+anchor_top = 0.429
+anchor_right = 0.608
+anchor_bottom = 0.597
+offset_left = -0.136047
+offset_top = 0.00799561
+offset_right = -0.416016
+offset_bottom = 0.144012
+script = ExtResource("8_4cd6a")
+
+[node name="ForestClosestInteractions" type="Control" parent="InteractionWindows"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_nxacl")
+
+[node name="HouseFarButton" type="Button" parent="InteractionWindows/ForestClosestInteractions"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.391
+anchor_top = 0.384
+anchor_right = 0.599
+anchor_bottom = 0.676
+offset_left = -0.432037
+offset_top = 0.167999
+offset_right = -0.0480347
+offset_bottom = -0.0480347
+script = ExtResource("8_4cd6a")
+
+[node name="TextManager" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("13_3lchy")
+
+[node name="Control" type="Control" parent="TextManager"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="TextManager/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="TextManager/Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="TextDisplay" type="Label" parent="TextManager/Control/MarginContainer/PanelContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="InventoryManager" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("14_k7qux")
+metadata/_edit_lock_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="InventoryManager"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="InventoryGrid" type="GridContainer" parent="InventoryManager/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+columns = 8
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="InteractionWindows/HouseFarInteractions/HouseDoorButton" to="InteractionWindows/HouseFarInteractions" method="_on_house_door_button_pressed"]
+[connection signal="pressed" from="InteractionWindows/HouseFarInteractions/HouseSideButton" to="InteractionWindows/HouseFarInteractions" method="_on_house_side_button_pressed"]
+[connection signal="pressed" from="InteractionWindows/HouseSideInteractions/HouseDoorButton" to="InteractionWindows/HouseSideInteractions" method="_on_house_door_button_pressed"]
+[connection signal="pressed" from="InteractionWindows/HouseSideInteractions/HouseFarButton" to="InteractionWindows/HouseSideInteractions" method="_on_house_far_button_pressed"]
+[connection signal="pressed" from="InteractionWindows/HouseSideInteractions/HouseCrossButton" to="InteractionWindows/HouseSideInteractions" method="_on_house_cross_button_pressed"]
+[connection signal="pressed" from="InteractionWindows/HouseDoorInteractions/HouseFarButton" to="InteractionWindows/HouseDoorInteractions" method="_on_house_far_button_pressed"]
+[connection signal="pressed" from="InteractionWindows/HouseDoorInteractions/HandleButton" to="InteractionWindows/HouseDoorInteractions" method="_on_handle_button_pressed"]
+[connection signal="pressed" from="InteractionWindows/HouseCrossInteractions/CrossPickButton" to="InteractionWindows/HouseCrossInteractions" method="_on_cross_pick_button_pressed"]
+[connection signal="pressed" from="InteractionWindows/HouseCrossInteractions/HouseSideButton" to="InteractionWindows/HouseCrossInteractions" method="_on_house_side_button_pressed"]
+[connection signal="pressed" from="InteractionWindows/ForestFarInteractions/ForestCloserButton" to="InteractionWindows/ForestFarInteractions" method="_on_forest_closer_button_pressed"]
+[connection signal="pressed" from="InteractionWindows/ForestCloserInteractions/ForestClosestButton" to="InteractionWindows/ForestCloserInteractions" method="_on_forest_closest_button_pressed"]
+[connection signal="pressed" from="InteractionWindows/ForestClosestInteractions/HouseFarButton" to="InteractionWindows/ForestClosestInteractions" method="_on_house_far_button_pressed"]

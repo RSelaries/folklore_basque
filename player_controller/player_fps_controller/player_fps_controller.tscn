@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b8mnitthgljq6" path="res://player_controller/player_fps_controller/player_fps_controller.gd" id="1_u1320"]
 [ext_resource type="Script" uid="uid://3yknytbo607o" path="res://player_controller/player_fps_controller/player_crosshair.gd" id="2_tg4jx"]
-[ext_resource type="Texture2D" uid="uid://003k7vn73fce" path="res://assets/textures/gui_textures/talk.png" id="3_7lkqh"]
-[ext_resource type="Texture2D" uid="uid://cdytimu6xxbh5" path="res://assets/textures/gui_textures/hand.png" id="4_ekll3"]
+[ext_resource type="Texture2D" uid="uid://cx3rk35gwlyy2" path="res://assets/textures/gui_textures/talk.png" id="3_7lkqh"]
+[ext_resource type="Texture2D" uid="uid://v466xtu35ck2" path="res://assets/textures/gui_textures/hand.png" id="4_ekll3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_437ux"]
 

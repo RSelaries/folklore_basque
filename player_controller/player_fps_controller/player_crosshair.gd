@@ -17,7 +17,7 @@ func _on_player_interaction_changed(interaction: PlayerState.Interactions) -> vo
 			_change_crosshair_to("Speek")
 		
 		PlayerState.Interactions.USE:
-			_change_crosshair_to("None")
+			_change_crosshair_to("Use")
 
 
 func _change_crosshair_to(to: String) -> void:

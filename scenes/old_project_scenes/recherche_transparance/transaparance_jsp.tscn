@@ -1,0 +1,117 @@
+[gd_scene load_steps=16 format=3 uid="uid://cjv43ro8kkys1"]
+
+[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/PlayerFpsController.tscn" id="1_3gtjh"]
+[ext_resource type="Texture2D" uid="uid://byybh6mt4650x" path="res://assets/textures/grass.jpg" id="1_fhtg5"]
+[ext_resource type="Script" uid="uid://bkgumbdnijkfk" path="res://scenes/recherche_transparance/transaparance_jsp.gd" id="1_t8dv4"]
+[ext_resource type="Texture2D" uid="uid://cc71ofll1lbwr" path="res://assets/textures/sky.png" id="3_kegs6"]
+[ext_resource type="Shader" uid="uid://c506ff7blh2m6" path="res://assets/shaders/unshaded_dissolve_shader.gdshader" id="3_p04fy"]
+[ext_resource type="PackedScene" uid="uid://yjlqka1l2f6r" path="res://assets/mesh/maison_basque.glb" id="4_p04fy"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3gtjh"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_fhtg5"]
+sky_material = SubResource("ProceduralSkyMaterial_3gtjh")
+
+[sub_resource type="Environment" id="Environment_bmf1b"]
+background_mode = 2
+sky = SubResource("Sky_fhtg5")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmf1b"]
+albedo_texture = ExtResource("1_fhtg5")
+uv1_triplanar = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kegs6"]
+render_priority = 0
+shader = ExtResource("3_p04fy")
+shader_parameter/baseColor = Color(1, 1, 1, 1)
+shader_parameter/baseColorTexture = ExtResource("3_kegs6")
+shader_parameter/dissolveSlider = -0.5
+shader_parameter/dissolveNoiseScale = 16.585
+shader_parameter/edgeNoiseScale = -2.69
+shader_parameter/edgesThickness = 0.209
+shader_parameter/edgeColor = Color(0, 0, 1, 1)
+shader_parameter/edgeEmissionSlider = 1.0
+shader_parameter/enable_dissolve_animation = true
+shader_parameter/animation_speed = 1.0
+shader_parameter/animation_intensity = 0.2
+
+[sub_resource type="SphereMesh" id="SphereMesh_p04fy"]
+material = SubResource("ShaderMaterial_kegs6")
+flip_faces = true
+
+[sub_resource type="Animation" id="Animation_t8dv4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerFpsController/MeshInstance3D:mesh:material:shader_parameter/dissolveSlider")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.5]
+}
+
+[sub_resource type="Animation" id="Animation_kegs6"]
+resource_name = "sky_dissolve"
+length = 10.0
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerFpsController/MeshInstance3D:mesh:material:shader_parameter/dissolveSlider")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.33333, 9.53333),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [-0.5, 1.5]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t8dv4"]
+_data = {
+&"RESET": SubResource("Animation_t8dv4"),
+&"sky_dissolve": SubResource("Animation_kegs6")
+}
+
+[node name="TransaparanceJsp" type="Node3D"]
+script = ExtResource("1_t8dv4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.971501, -0.232175, 0.0477496, 0.234714, -0.914149, 0.330515, -0.033087, 0.332302, 0.942592, 0, 0, 0)
+shadow_enabled = true
+directional_shadow_max_distance = 50.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bmf1b")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+use_collision = true
+size = Vector3(500, 10, 500)
+material = SubResource("StandardMaterial3D_bmf1b")
+
+[node name="PlayerFpsController" parent="." instance=ExtResource("1_3gtjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057, 1, 0.114)
+mouse_sensitivity = 0.1
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerFpsController"]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0.057, 0, -0.114)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_p04fy")
+skeleton = NodePath("../..")
+
+[node name="maison_basque" parent="." instance=ExtResource("4_p04fy")]
+transform = Transform3D(0.219046, 0, 0.975715, 0, 1, 0, -0.975715, 0, 0.219046, -15.9612, -0.0062906, -6.85493)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_t8dv4")
+}
