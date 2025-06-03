@@ -14,4 +14,4 @@ func _on_button_pressed() -> void:
 
 
 func _change_scene() -> void:
-	get_tree().change_scene_to_packed(prot_scene)
+	get_tree().change_scene_to_file("uid://cf6ok0syg18r")

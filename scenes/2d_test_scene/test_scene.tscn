@@ -24,6 +24,47 @@
 [ext_resource type="Texture2D" uid="uid://dw0ym0db28ewe" path="res://assets/sprites/recherches_graphiques/visage_collage/levre_inf_2.png" id="21_2oq4n"]
 [ext_resource type="Texture2D" uid="uid://dl5ybbbqicde4" path="res://assets/sprites/recherches_graphiques/visage_collage/levre_sup_2.png" id="22_bnteq"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oimyc"]
+shader = ExtResource("14_u0xbq")
+shader_parameter/amplitude = 0.05
+shader_parameter/speed = 1.0
+shader_parameter/mult = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_afgys"]
+shader = ExtResource("19_lmrlb")
+shader_parameter/type_switch = false
+shader_parameter/movement_step = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sstcd"]
+shader = ExtResource("19_lmrlb")
+shader_parameter/type_switch = true
+shader_parameter/movement_step = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2oq4n"]
+shader = ExtResource("19_lmrlb")
+shader_parameter/type_switch = true
+shader_parameter/movement_step = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nks25"]
+shader = ExtResource("19_lmrlb")
+shader_parameter/type_switch = false
+shader_parameter/movement_step = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bnteq"]
+shader = ExtResource("19_lmrlb")
+shader_parameter/type_switch = false
+shader_parameter/movement_step = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmrlb"]
+shader = ExtResource("19_lmrlb")
+shader_parameter/type_switch = true
+shader_parameter/movement_step = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kub5s"]
+shader = ExtResource("19_lmrlb")
+shader_parameter/type_switch = true
+shader_parameter/movement_step = 1.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_oer1h"]
 animations = [{
 "frames": [{
@@ -80,84 +121,14 @@ shader_parameter/amplitude = 0.0
 shader_parameter/speed = 5.0
 shader_parameter/mult = 0.05
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oimyc"]
-shader = ExtResource("14_u0xbq")
-shader_parameter/amplitude = 0.05
-shader_parameter/speed = 1.0
-shader_parameter/mult = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_afgys"]
-shader = ExtResource("19_lmrlb")
-shader_parameter/type_switch = false
-shader_parameter/movement_step = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sstcd"]
-shader = ExtResource("19_lmrlb")
-shader_parameter/type_switch = true
-shader_parameter/movement_step = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2oq4n"]
-shader = ExtResource("19_lmrlb")
-shader_parameter/type_switch = true
-shader_parameter/movement_step = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nks25"]
-shader = ExtResource("19_lmrlb")
-shader_parameter/type_switch = false
-shader_parameter/movement_step = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bnteq"]
-shader = ExtResource("19_lmrlb")
-shader_parameter/type_switch = false
-shader_parameter/movement_step = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmrlb"]
-shader = ExtResource("19_lmrlb")
-shader_parameter/type_switch = true
-shader_parameter/movement_step = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kub5s"]
-shader = ExtResource("19_lmrlb")
-shader_parameter/type_switch = true
-shader_parameter/movement_step = 1.0
-
 [node name="TestScene" type="Node2D"]
 script = ExtResource("1_wspqn")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(397, 235)
-scale = Vector2(0.479216, 0.479216)
-sprite_frames = SubResource("SpriteFrames_oer1h")
-autoplay = "default"
-frame_progress = 0.226355
-
-[node name="FigureFloue" type="Sprite2D" parent="."]
-texture_filter = 1
-material = SubResource("ShaderMaterial_u0xbq")
-position = Vector2(962, 360)
-texture = ExtResource("12_u0xbq")
-
-[node name="VisageDéformé" type="Sprite2D" parent="."]
-texture_filter = 1
-material = SubResource("ShaderMaterial_pln1h")
-position = Vector2(-559, 277)
-texture = ExtResource("13_pln1h")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_hf2sn")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_lock_ = true
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 modulate = Color(0.521515, 0.628557, 0.564583, 1)
 texture_filter = 1
+position = Vector2(71, 224)
+scale = Vector2(0.478019, 0.478019)
 
 [node name="Visage3" type="Sprite2D" parent="CanvasGroup"]
 texture_filter = 1
@@ -208,3 +179,36 @@ material = SubResource("ShaderMaterial_kub5s")
 position = Vector2(1880.5, 476)
 scale = Vector2(1.03522, 1)
 texture = ExtResource("22_bnteq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(222, 563)
+scale = Vector2(0.407487, 0.407487)
+sprite_frames = SubResource("SpriteFrames_oer1h")
+autoplay = "default"
+frame_progress = 0.226355
+
+[node name="FigureFloue" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_u0xbq")
+position = Vector2(594, 386)
+scale = Vector2(0.666501, 0.666501)
+texture = ExtResource("12_u0xbq")
+
+[node name="VisageDéformé" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_pln1h")
+position = Vector2(202, 189)
+scale = Vector2(0.33722, 0.33722)
+texture = ExtResource("13_pln1h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_hf2sn")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true

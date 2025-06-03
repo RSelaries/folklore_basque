@@ -1,17 +1,26 @@
-[gd_scene load_steps=81 format=3 uid="uid://cf6ok0syg18r"]
+[gd_scene load_steps=103 format=3 uid="uid://cf6ok0syg18r"]
 
 [ext_resource type="Script" uid="uid://q2q11vt7cuew" path="res://scenes/prototype_1/prototype_1.gd" id="1_g7bku"]
-[ext_resource type="Terrain3DMaterial" uid="uid://cacfbljb1qdvu" path="res://scenes/prototype_1/terrain_material.tres" id="2_cwgw1"]
-[ext_resource type="Terrain3DAssets" uid="uid://c87aujw0i3d51" path="res://scenes/prototype_1/terrain_assets.tres" id="3_pue4n"]
+[ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_8hwn6"]
+[ext_resource type="PackedScene" uid="uid://d1ogrn544w22r" path="res://assets/meshes/trees/tree_2.glb" id="3_r2wqo"]
 [ext_resource type="PackedScene" uid="uid://b2pwqbr3l560h" path="res://assets/meshes/trees/tree_3.glb" id="4_lmcn1"]
+[ext_resource type="PackedScene" uid="uid://ctq8lbkbsnkox" path="res://assets/meshes/trees/tree_4.glb" id="5_bafxi"]
+[ext_resource type="Texture2D" uid="uid://c6wrw3ohqu3s7" path="res://assets/textures/material_textures/rock_53/Rock_53_2k_packed_albedo_height.png" id="6_fiwgl"]
+[ext_resource type="Texture2D" uid="uid://cmkffb1xy66r7" path="res://assets/textures/material_textures/rock_53/Rock_53_2k_packed_normal_roughness.png" id="7_7chpm"]
+[ext_resource type="Texture2D" uid="uid://e5tsckrxy016" path="res://assets/textures/material_textures/grass_03/Grass003_2k_packed_albedo_height.png" id="8_2nmby"]
+[ext_resource type="Texture2D" uid="uid://cnchgw3iqqemx" path="res://assets/textures/material_textures/grass_03/Grass003_2k_packed_normal_roughness.png" id="9_at1c5"]
+[ext_resource type="Texture2D" uid="uid://chtpko861he68" path="res://assets/textures/material_textures/ground_81/Ground_81_2k_packed_albedo_height.png" id="10_2jrif"]
 [ext_resource type="Script" uid="uid://d108smqdlt8pt" path="res://scenes/prototype_1/herd.gd" id="10_71vj1"]
 [ext_resource type="PackedScene" uid="uid://bvrda0bmwav84" path="res://assets/meshes/sheep.glb" id="10_myhl5"]
 [ext_resource type="PackedScene" uid="uid://cy2nwgjlnhk5s" path="res://assets/meshes/buildings/tramain_house_1_france.glb" id="10_om1qe"]
 [ext_resource type="PackedScene" uid="uid://b37a1uh0oxsjv" path="res://assets/meshes/buildings/fumay_house_1_france.glb" id="11_2bsw5"]
 [ext_resource type="Script" uid="uid://boquq8ua40y0p" path="res://addons/waterways_net/RiverManager.cs" id="11_8vouf"]
 [ext_resource type="PackedScene" uid="uid://bja71e6xy2lpy" path="res://assets/meshes/buildings/winchelsea_new_gate.glb" id="11_j3co8"]
+[ext_resource type="Texture2D" uid="uid://dfk5vt78tq5d2" path="res://assets/textures/material_textures/ground_81/Ground_81_2k_packed_normal_roughness.png" id="11_oq7vu"]
 [ext_resource type="PackedScene" uid="uid://bigyh046vjhcx" path="res://assets/scenes/characters/shehperd.tscn" id="12_4kpbj"]
+[ext_resource type="Texture2D" uid="uid://dtvhy3my6q8ee" path="res://assets/textures/material_textures/paving_stones_141/PavingStones141_2k_packed_albedo_height.png" id="12_ryau6"]
 [ext_resource type="Script" uid="uid://c4vi6dxqujrrf" path="res://point_n_click/camera_position.gd" id="13_a8bto"]
+[ext_resource type="Texture2D" uid="uid://cjkp7y8av4b01" path="res://assets/textures/material_textures/paving_stones_141/PavingStones141_2k_packed_normal_roughness.png" id="13_dlsse"]
 [ext_resource type="Script" uid="uid://bi4amxhe6pluq" path="res://addons/waterways_net/Data/RiverShaderSettings.cs" id="13_hsvq4"]
 [ext_resource type="PackedScene" uid="uid://d0bl0i7776jx1" path="res://assets/meshes/buildings/dijon_shop_2_france.glb" id="13_uxger"]
 [ext_resource type="Script" uid="uid://32shd30df62n" path="res://point_n_click/camera_manager.gd" id="13_x7dfg"]
@@ -79,12 +88,132 @@ fog_aerial_perspective = 0.772
 fog_sky_affect = 0.268
 fog_height_density = 0.0055
 
+[sub_resource type="Gradient" id="Gradient_myhl5"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_71vj1"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4kpbj"]
+seamless = true
+color_ramp = SubResource("Gradient_myhl5")
+noise = SubResource("FastNoiseLite_71vj1")
+
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_dvwf7"]
+_shader_parameters = {
+&"auto_base_texture": 0,
+&"auto_height_reduction": 0.0,
+&"auto_overlay_texture": 1,
+&"auto_slope": 0.642,
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.87,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"height_blending": true,
+&"macro_variation1": Color(0.89296, 0.761698, 0.744858, 1),
+&"macro_variation2": Color(0.734149, 0.773975, 0.800159, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise3_scale": 0.225,
+&"noise_texture": SubResource("NoiseTexture2D_4kpbj"),
+&"projection_angular_division": 2.0,
+&"projection_threshold": 0.8,
+&"world_space_normal_blend": true
+}
+world_background = 0
+auto_shader = true
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_x7dfg"]
+name = "tree_1"
+scene_file = ExtResource("2_8hwn6")
+density = 0.0805135
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 400.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_dofso"]
+name = "tree_2"
+id = 1
+scene_file = ExtResource("3_r2wqo")
+density = 0.0269305
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 400.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_utbyu"]
+name = "tree_3"
+id = 2
+scene_file = ExtResource("4_lmcn1")
+density = 0.01
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 400.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_ha3wf"]
+name = "tree_4"
+id = 3
+scene_file = ExtResource("5_bafxi")
+density = 0.0418024
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 400.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xfkgt"]
+name = "Rock"
+albedo_color = Color(0.776005, 0.8316, 0.871254, 1)
+albedo_texture = ExtResource("6_fiwgl")
+normal_texture = ExtResource("7_7chpm")
+roughness = 0.31
+detiling_rotation = 0.509
+detiling_shift = 0.147
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_pk536"]
+name = "Grass"
+id = 1
+albedo_color = Color(0.876609, 0.861393, 0.983443, 1)
+albedo_texture = ExtResource("8_2nmby")
+normal_texture = ExtResource("9_at1c5")
+roughness = 0.397
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_r6jb8"]
+name = "Path"
+id = 2
+albedo_color = Color(0.610388, 0.617268, 0.493481, 1)
+albedo_texture = ExtResource("10_2jrif")
+normal_texture = ExtResource("11_oq7vu")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_fjhfd"]
+name = "PavingStones141_2k_packed_albedo_height"
+id = 3
+albedo_texture = ExtResource("12_ryau6")
+normal_texture = ExtResource("13_dlsse")
+uv_scale = 0.268
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_0n6om"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_x7dfg"), SubResource("Terrain3DMeshAsset_dofso"), SubResource("Terrain3DMeshAsset_utbyu"), SubResource("Terrain3DMeshAsset_ha3wf")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_xfkgt"), SubResource("Terrain3DTextureAsset_pk536"), SubResource("Terrain3DTextureAsset_r6jb8"), SubResource("Terrain3DTextureAsset_fjhfd")])
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xqnqp"]
 
 [sub_resource type="NoiseTexture3D" id="NoiseTexture3D_cwgw1"]
 noise = SubResource("FastNoiseLite_xqnqp")
 
-[sub_resource type="Resource" id="Resource_8hwn6"]
+[sub_resource type="Resource" id="Resource_cwgw1"]
 script = ExtResource("13_hsvq4")
 MatShaderType = 1
 FoamNoise = SubResource("NoiseTexture3D_cwgw1")
@@ -113,7 +242,7 @@ mat_edge_fade = 0.25
 LodLod0Distance = 50.0
 _selectedShader = 1
 
-[sub_resource type="Curve3D" id="Curve3D_bafxi"]
+[sub_resource type="Curve3D" id="Curve3D_pue4n"]
 resource_local_to_scene = true
 bake_interval = 0.05
 _data = {
@@ -370,8 +499,8 @@ environment = SubResource("Environment_yya68")
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://scenes/prototype_1/terrain_3d"
-material = ExtResource("2_cwgw1")
-assets = ExtResource("3_pue4n")
+material = SubResource("Terrain3DMaterial_dvwf7")
+assets = SubResource("Terrain3DAssets_0n6om")
 unique_name_in_owner = true
 top_level = true
 metadata/_edit_lock_ = true
@@ -379,10 +508,10 @@ metadata/_edit_lock_ = true
 [node name="RiverManager" type="Node3D" parent="Terrain3D"]
 transform = Transform3D(0.731485, 0, -0.681858, 0, 1, 0, 0.681858, 0, 0.731485, 511.52, -6.10688, 132.757)
 script = ExtResource("11_8vouf")
-ShaderSettings = SubResource("Resource_8hwn6")
+ShaderSettings = SubResource("Resource_cwgw1")
 ShapeSmoothness = 5.0
 PointWidths = Array[float]([2.16373, 2.29979, 3.47225, 5.78538, 2.83288, 3.34057, 1.0, 6.68051, 5.73946, 4.42331, 8.62887, 6.7194, 8.59449, 11.4218, 9.46497, 10.3455, 6.53306, 6.85615, 21.6566, 46.8196, 50.9696, 58.4761, 48.8709, 31.9665, 5.16343])
-Curve = SubResource("Curve3D_bafxi")
+Curve = SubResource("Curve3D_pue4n")
 metadata/_custom_type_script = "uid://boquq8ua40y0p"
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Terrain3D"]
@@ -413,7 +542,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_hl1pr")
 [node name="OmniLight3D" type="OmniLight3D" parent="Terrain3D/lamina_cave_2/Fire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01747, 0)
 light_color = Color(0.888454, 0.564508, 0, 1)
-light_energy = 11.5809
+light_energy = 12.9755
 shadow_enabled = true
 shadow_opacity = 0.9
 omni_range = 25.4632
@@ -426,9 +555,9 @@ noise_texture = SubResource("NoiseTexture2D_l3e0g")
 
 [node name="SpatialAudioStreamPlayer3D" parent="Terrain3D/lamina_cave_2/Fire/OmniLight3D" instance=ExtResource("23_hl1pr")]
 stream = ExtResource("24_qgmfw")
-volume_db = -18.899
+volume_db = -60.0
 autoplay = true
-bus = &"SpatialBus#12"
+bus = &"SpatialBus#19"
 update_frequency_seconds = 2.0
 max_reverb_wetness = 50.0
 
@@ -1185,6 +1314,7 @@ script = ExtResource("13_a8bto")
 metadata/_custom_type_script = "uid://c4vi6dxqujrrf"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/VillageEntrance"]
+visible = false
 
 [node name="ToPath7" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/VillageEntrance/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
@@ -1374,13 +1504,12 @@ hover_cursor = 2
 metadata/_custom_type_script = "uid://c6t2jcowk6t34"
 
 [node name="Forest5" type="Marker3D" parent="CameraManager/CameraPreview/CamManagerSubViewport"]
-transform = Transform3D(-0.985487, 0, 0.169745, 0, 1, 0, -0.169745, 0, -0.985487, 379.109, -32.9436, 343.352)
+transform = Transform3D(-0.985487, 0, 0.169745, 0, 1, 0, -0.169745, 0, -0.985487, 379.31, -32.9436, 342.439)
 gizmo_extents = 1.0
 script = ExtResource("13_a8bto")
 metadata/_custom_type_script = "uid://c4vi6dxqujrrf"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/Forest5"]
-visible = false
 
 [node name="ToForest4" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/Forest5/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
@@ -1414,11 +1543,11 @@ anchors_preset = -1
 anchor_left = 0.831
 anchor_top = 0.293
 anchor_right = 0.997
-anchor_bottom = 0.81
-offset_left = -0.312012
+anchor_bottom = 0.593
+offset_left = -0.312073
 offset_top = 0.135986
-offset_right = 0.455933
-offset_bottom = 0.119934
+offset_right = 0.456055
+offset_bottom = -0.264038
 mouse_default_cursor_shape = 8
 script = ExtResource("14_r6jb8")
 links_to = NodePath("../../../Forest5_1")

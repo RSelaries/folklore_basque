@@ -1,33 +1,103 @@
-[gd_scene load_steps=47 format=3 uid="uid://cdr0qwlipdg11"]
+[gd_scene load_steps=148 format=3 uid="uid://cdr0qwlipdg11"]
 
-[ext_resource type="Terrain3DMaterial" uid="uid://cacfbljb1qdvu" path="res://scenes/prototype_1/terrain_material.tres" id="1_p0vv5"]
-[ext_resource type="Terrain3DAssets" uid="uid://c87aujw0i3d51" path="res://scenes/prototype_1/terrain_assets.tres" id="2_x3t3k"]
-[ext_resource type="Script" uid="uid://boquq8ua40y0p" path="res://addons/waterways_net/RiverManager.cs" id="3_2m6tg"]
-[ext_resource type="Texture2D" uid="uid://b85tlq8wcklbo" path="res://addons/waterways_net/Textures/water_normal_bump.png" id="4_r7d6n"]
-[ext_resource type="Script" uid="uid://bi4amxhe6pluq" path="res://addons/waterways_net/Data/RiverShaderSettings.cs" id="5_mvwl5"]
+[ext_resource type="Script" uid="uid://wlrxi0ygpx56" path="res://scenes/presentation/presentation.gd" id="1_qulu1"]
+[ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_nd5ni"]
+[ext_resource type="PackedScene" uid="uid://d1ogrn544w22r" path="res://assets/meshes/trees/tree_2.glb" id="3_gveb3"]
+[ext_resource type="PackedScene" uid="uid://b2pwqbr3l560h" path="res://assets/meshes/trees/tree_3.glb" id="4_a8lne"]
+[ext_resource type="PackedScene" uid="uid://ctq8lbkbsnkox" path="res://assets/meshes/trees/tree_4.glb" id="5_e0efl"]
+[ext_resource type="Texture2D" uid="uid://c6wrw3ohqu3s7" path="res://assets/textures/material_textures/rock_53/Rock_53_2k_packed_albedo_height.png" id="6_k2d4w"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cm21xblojhw02" path="res://scenes/prototype_1/terrain_occlusion.res" id="6_vxgo8"]
+[ext_resource type="Texture2D" uid="uid://cmkffb1xy66r7" path="res://assets/textures/material_textures/rock_53/Rock_53_2k_packed_normal_roughness.png" id="7_2pyn7"]
 [ext_resource type="Shader" uid="uid://csdx0ulhib6lk" path="res://assets/shaders/clouds.gdshader" id="7_8peoy"]
+[ext_resource type="Texture2D" uid="uid://e5tsckrxy016" path="res://assets/textures/material_textures/grass_03/Grass003_2k_packed_albedo_height.png" id="8_23kdo"]
 [ext_resource type="PackedScene" uid="uid://f2th0k0gab5c" path="res://assets/terrain/lamina_cave_2.glb" id="8_qulu1"]
 [ext_resource type="Material" uid="uid://qxdca4tux6rt" path="res://assets/materials/rock_1.tres" id="9_cj5kf"]
+[ext_resource type="Texture2D" uid="uid://cnchgw3iqqemx" path="res://assets/textures/material_textures/grass_03/Grass003_2k_packed_normal_roughness.png" id="9_f1h5n"]
+[ext_resource type="Texture2D" uid="uid://chtpko861he68" path="res://assets/textures/material_textures/ground_81/Ground_81_2k_packed_albedo_height.png" id="10_42ahw"]
 [ext_resource type="Material" uid="uid://1mq0c4h6742p" path="res://assets/materials/terrain_grass.tres" id="10_vhq1o"]
 [ext_resource type="Shader" uid="uid://kh6e1c138lm3" path="res://assets/shaders/fire_1.gdshader" id="11_oo5fg"]
+[ext_resource type="Texture2D" uid="uid://dfk5vt78tq5d2" path="res://assets/textures/material_textures/ground_81/Ground_81_2k_packed_normal_roughness.png" id="11_xy5ac"]
 [ext_resource type="Script" uid="uid://de0eihsidytpi" path="res://assets/scripts/flickering_light.gd" id="12_oot7x"]
+[ext_resource type="Texture2D" uid="uid://dtvhy3my6q8ee" path="res://assets/textures/material_textures/paving_stones_141/PavingStones141_2k_packed_albedo_height.png" id="12_uydff"]
+[ext_resource type="Texture2D" uid="uid://cjkp7y8av4b01" path="res://assets/textures/material_textures/paving_stones_141/PavingStones141_2k_packed_normal_roughness.png" id="13_8ap7g"]
 [ext_resource type="PackedScene" uid="uid://bnxb8rqttypyy" path="res://assets/scenes/3d_scenes/spatial_audio_stream_player_3d.tscn" id="13_npnhw"]
 [ext_resource type="AudioStream" uid="uid://h1nkymdnbvhu" path="res://assets/audio/sound_effects/looping_fire_sound_effect.wav" id="14_imkeq"]
 [ext_resource type="Script" uid="uid://d214enylidvtm" path="res://scenes/prototype_1/laminak_path.gd" id="15_2gsya"]
-[ext_resource type="PackedScene" uid="uid://cy2nwgjlnhk5s" path="res://assets/meshes/buildings/tramain_house_1_france.glb" id="16_yw2sf"]
-[ext_resource type="PackedScene" uid="uid://bja71e6xy2lpy" path="res://assets/meshes/buildings/winchelsea_new_gate.glb" id="17_bnaxm"]
-[ext_resource type="Material" uid="uid://boyhxu8qqc73p" path="res://assets/materials/stone_village_gate.tres" id="18_47hnm"]
-[ext_resource type="PackedScene" uid="uid://d0bl0i7776jx1" path="res://assets/meshes/buildings/dijon_shop_2_france.glb" id="19_1326s"]
-[ext_resource type="PackedScene" uid="uid://b37a1uh0oxsjv" path="res://assets/meshes/buildings/fumay_house_1_france.glb" id="20_qqcak"]
-[ext_resource type="PackedScene" uid="uid://t673wll034ds" path="res://assets/meshes/buildings/feluy_village_house_1_belgium.glb" id="21_3485y"]
-[ext_resource type="PackedScene" uid="uid://c2a7rvx66ndq8" path="res://assets/meshes/buildings/troyes_house_1_france.glb" id="22_tx022"]
-[ext_resource type="PackedScene" uid="uid://buvxt3q2sm1t1" path="res://assets/meshes/buildings/bridge_missing_stone.glb" id="23_v1c2f"]
-[ext_resource type="PackedScene" uid="uid://db0bo55n3d1t0" path="res://assets/meshes/buildings/bridge.glb" id="24_764mh"]
 [ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/player_fps_controller/player_fps_controller.tscn" id="25_r7d6n"]
-[ext_resource type="Texture2D" uid="uid://d7j0a6njxxh6" path="res://assets/presentation/Capture d'écran 2025-06-02 111505.png" id="26_mvwl5"]
-[ext_resource type="Shader" uid="uid://0bforbfxopl2" path="res://scenes/presentation/presentation_display.gdshader" id="27_vxgo8"]
 [ext_resource type="Script" uid="uid://v4trr71g6pt4" path="res://scenes/presentation/interactible_display.gd" id="28_8peoy"]
+[ext_resource type="FontFile" uid="uid://d263xgtfugwts" path="res://assets/fonts/Prompt-Black.ttf" id="28_cj5kf"]
+[ext_resource type="Shader" uid="uid://dtwrbcc6nl1ht" path="res://assets/shaders/2d_outline.gdshader" id="28_qulu1"]
+[ext_resource type="Texture2D" uid="uid://v3jaqpvnuxid" path="res://assets/presentation/Capture d'écran 2025-02-10 235651.png" id="29_qulu1"]
+[ext_resource type="Texture2D" uid="uid://hnh6doxlx8t3" path="res://assets/presentation/memoire/Couverture Mémoire.png" id="30_vhq1o"]
+[ext_resource type="Texture2D" uid="uid://d4fhga1rfn6fe" path="res://assets/presentation/design_fiction/Raphael _ Louise-1.png" id="32_bnaxm"]
+[ext_resource type="Texture2D" uid="uid://dvobdmv7qpglh" path="res://assets/presentation/design_fiction/Raphael _ Louise-2.png" id="33_47hnm"]
+[ext_resource type="Texture2D" uid="uid://bnum7jj46yyfb" path="res://assets/presentation/idees_projet/idee_1.png" id="33_3485y"]
+[ext_resource type="Texture2D" uid="uid://cxuldqptxbw0t" path="res://assets/presentation/design_fiction/Raphael _ Louise-3.png" id="34_1326s"]
+[ext_resource type="Texture2D" uid="uid://dtbh5smgd2si0" path="res://assets/presentation/idees_projet/idee_2.png" id="34_tx022"]
+[ext_resource type="Texture2D" uid="uid://b2b8h1ynf80ox" path="res://assets/presentation/design_fiction/Raphael _ Louise-4.png" id="35_qqcak"]
+[ext_resource type="Texture2D" uid="uid://dopnvpesgm05h" path="res://assets/presentation/idees_projet/idee_3.png" id="35_v1c2f"]
+[ext_resource type="Texture2D" uid="uid://e57g0d7mmwsf" path="res://assets/presentation/idees_projet/idee_4.png" id="36_764mh"]
+[ext_resource type="Texture2D" uid="uid://cd6nf8m67joi3" path="res://assets/presentation/design_fiction/Raphael _ Louise-5.png" id="36_3485y"]
+[ext_resource type="Texture2D" uid="uid://bo21uhca5vy76" path="res://assets/presentation/design_fiction/Raphael _ Louise-6.png" id="37_tx022"]
+[ext_resource type="Texture2D" uid="uid://c0xmkeq8540gp" path="res://assets/presentation/idees_projet/idee_5.png" id="37_usj7t"]
+[ext_resource type="Texture2D" uid="uid://o6x87vmmdfri" path="res://assets/presentation/design_fiction/Raphael _ Louise-7.png" id="38_v1c2f"]
+[ext_resource type="Texture2D" uid="uid://bvwlmufvdmj0t" path="res://assets/presentation/idees_projet/idee_6.png" id="38_xah32"]
+[ext_resource type="Texture2D" uid="uid://cbxode52vmxld" path="res://assets/presentation/idees_projet/idee_7.png" id="39_pf1xv"]
+[ext_resource type="Texture2D" uid="uid://dnqmmgrip3rik" path="res://assets/presentation/memoire/Mémoire-13.png" id="39_v1c2f"]
+[ext_resource type="Texture2D" uid="uid://duifgtokl14xv" path="res://assets/presentation/memoire/Mémoire-23.png" id="40_764mh"]
+[ext_resource type="Texture2D" uid="uid://dyhsxh52457vt" path="res://assets/presentation/idees_projet/idee_8.png" id="40_yhnbg"]
+[ext_resource type="Texture2D" uid="uid://nvbwx443lba7" path="res://assets/presentation/idees_projet/idee_9.png" id="41_t5m2n"]
+[ext_resource type="Texture2D" uid="uid://d3ifdvcxruoy0" path="res://assets/presentation/memoire/Mémoire-14.png" id="41_usj7t"]
+[ext_resource type="Texture2D" uid="uid://qn4m42f26eb1" path="res://assets/presentation/idees_projet/idee_10.png" id="42_tfr7r"]
+[ext_resource type="Texture2D" uid="uid://bmp6robgut7ei" path="res://assets/presentation/memoire/Mémoire-15.png" id="42_xah32"]
+[ext_resource type="Texture2D" uid="uid://ccgrwpj2y7xa5" path="res://assets/presentation/memoire/Mémoire-24.png" id="43_pf1xv"]
+[ext_resource type="Texture2D" uid="uid://dsoe0u3hwojkn" path="res://assets/presentation/idees_projet/dessin_idee_1.png" id="43_tfr7r"]
+[ext_resource type="Texture2D" uid="uid://dea28x151te1n" path="res://assets/presentation/idees_projet/dessin_idee_2.png" id="44_jl3e0"]
+[ext_resource type="Texture2D" uid="uid://dhpfhkq1o8xfj" path="res://assets/presentation/memoire/Mémoire-25.png" id="44_yhnbg"]
+[ext_resource type="Texture2D" uid="uid://imv2tcr025i" path="res://assets/presentation/idees_projet/dessin_idee_3.png" id="45_mcxer"]
+[ext_resource type="Texture2D" uid="uid://b0xdm6mkagewm" path="res://assets/presentation/idees_projet/dessin_idee_4.png" id="46_8s1bk"]
+[ext_resource type="Texture2D" uid="uid://pshwmwfj22qu" path="res://assets/presentation/idees_projet/dessin_idee_5.png" id="47_la88n"]
+[ext_resource type="Texture2D" uid="uid://h43603l6rrd6" path="res://assets/presentation/idees_projet/dessin_idee_6.png" id="48_e5wg7"]
+[ext_resource type="Texture2D" uid="uid://clu2xv5muxvv0" path="res://assets/presentation/idees_projet/dessin_idee_7.png" id="49_015do"]
+[ext_resource type="Texture2D" uid="uid://dstvfsm00tcls" path="res://assets/presentation/idees_projet/dessin_idee_8.png" id="50_iqqkb"]
+[ext_resource type="Texture2D" uid="uid://2k4my2arievy" path="res://assets/presentation/idees_projet/dessin_idee_9.png" id="51_1fd3b"]
+[ext_resource type="Script" uid="uid://by6g1tmvgojhp" path="res://scenes/presentation/idee_display.gd" id="52_mcxer"]
+[ext_resource type="Texture2D" uid="uid://coqwtttx3ydsh" path="res://assets/presentation/idees_projet/pnc_idee.png" id="53_iqqkb"]
+[ext_resource type="Shader" uid="uid://cc40xmg413aom" path="res://assets/shaders/blur.gdshader" id="54_8s1bk"]
+[ext_resource type="Texture2D" uid="uid://1t5rfxyuka4p" path="res://assets/presentation/eco/steam_logo.png" id="55_015do"]
+[ext_resource type="FontFile" uid="uid://cs6yj1anymu4i" path="res://assets/fonts/Prompt-Medium.ttf" id="55_iqqkb"]
+[ext_resource type="Texture2D" uid="uid://vfqlh6ilbt6f" path="res://assets/presentation/eco/epic_games_logo.png" id="56_iqqkb"]
+[ext_resource type="Texture2D" uid="uid://b02gnjv0n1af" path="res://assets/presentation/eco/itch_logo.png" id="57_015do"]
+[ext_resource type="FontFile" uid="uid://cul31crux03yi" path="res://assets/fonts/Prompt-Bold.ttf" id="58_iqqkb"]
+[ext_resource type="Texture2D" uid="uid://ct8oqf61ai2nr" path="res://assets/presentation/window.png" id="60_iv3um"]
+[ext_resource type="Texture2D" uid="uid://dc76k0aqiagco" path="res://assets/old_project_assets/sprites/maison_int.png" id="61_t8ca7"]
+[ext_resource type="Texture2D" uid="uid://clrleen3iq8jl" path="res://assets/old_project_assets/sprites/foret.png" id="62_t8ca7"]
+[ext_resource type="Texture2D" uid="uid://cprbfghvr0jmg" path="res://assets/old_project_assets/sprites/montagne.png" id="63_ty7mw"]
+[ext_resource type="Texture2D" uid="uid://bvtmsvrebbcbf" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_1_1.png" id="64_rajte"]
+[ext_resource type="Texture2D" uid="uid://c6o3i08sub2u" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_2_1.png" id="65_uqamv"]
+[ext_resource type="Texture2D" uid="uid://b6j4qpq08ye1n" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_1_2.png" id="66_dk27y"]
+[ext_resource type="Texture2D" uid="uid://c0ds47agupx02" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_2_2.png" id="67_6xq3o"]
+[ext_resource type="Texture2D" uid="uid://bwdplc4rojex1" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_2_3.png" id="68_s13hq"]
+[ext_resource type="Texture2D" uid="uid://bqn2r2yrneqgb" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_1_3.png" id="69_fpy3i"]
+[ext_resource type="Texture2D" uid="uid://cii6d2p7tpxnx" path="res://assets/presentation/transparent_window.png" id="70_uqamv"]
+[ext_resource type="Script" uid="uid://bpdn41frxfhyu" path="res://scenes/presentation/lieux.gd" id="71_dk27y"]
+[ext_resource type="PackedScene" uid="uid://d2deerth84jc3" path="res://scenes/old_project_scenes/recherche_fenetres_lieux/fenetres_lieux.tscn" id="72_6xq3o"]
+[ext_resource type="Script" uid="uid://c70o1ycgmmjwl" path="res://scenes/presentation/puzzle.gd" id="73_s13hq"]
+[ext_resource type="PackedScene" uid="uid://mdp0jea0y75i" path="res://scenes/old_project_scenes/recherche_fenetres_puzzle/fenetres_puzzle.tscn" id="74_fpy3i"]
+[ext_resource type="Script" uid="uid://cn0m1hwe5dsuu" path="res://scenes/presentation/transparence.gd" id="75_ju3xo"]
+[ext_resource type="PackedScene" uid="uid://kafknie2fgxv" path="res://scenes/old_project_scenes/recherche_p&c/CameraManager.tscn" id="76_ju3xo"]
+[ext_resource type="Script" uid="uid://ljrompner8p7" path="res://scenes/presentation/old_point_and_click.gd" id="76_wqgh4"]
+[ext_resource type="Texture2D" uid="uid://b1nqit3rbmod0" path="res://assets/presentation/old_pnc.png" id="77_0n1gm"]
+[ext_resource type="VideoStream" uid="uid://ta3gydkv2i0e" path="res://assets/presentation/laminak_cave_capture.ogv" id="79_s54yu"]
+[ext_resource type="VideoStream" uid="uid://3bm1gs78y7jd" path="res://assets/presentation/mari_cave_catpure.ogv" id="80_s54yu"]
+[ext_resource type="Script" uid="uid://g4ihvnx3tvbr" path="res://scenes/presentation/video_stream_player_tool_autostart.gd" id="81_6dvqr"]
+[ext_resource type="PackedScene" uid="uid://bigyh046vjhcx" path="res://assets/scenes/characters/shehperd.tscn" id="82_p0hgg"]
+[ext_resource type="PackedScene" uid="uid://cdrl387dpcfr7" path="res://scenes/2d_test_scene/test_scene.tscn" id="82_ttlb1"]
+[ext_resource type="PackedScene" uid="uid://i72b8dqlnisq" path="res://assets/scenes/characters/bridge_granpa.tscn" id="83_qjduy"]
+[ext_resource type="Material" uid="uid://2hajamul5kbx" path="res://assets/materials/rock_2.tres" id="83_ttlb1"]
+[ext_resource type="PackedScene" uid="uid://cjxi6ecex4610" path="res://assets/scenes/characters/lamina.tscn" id="84_p0hgg"]
+[ext_resource type="Script" uid="uid://cwm7erlhakmwm" path="res://scenes/presentation/prototype.gd" id="87_nuo5p"]
+[ext_resource type="Texture2D" uid="uid://cyxwtcocf38ci" path="res://assets/presentation/Capture d'écran 2025-06-03 143945.png" id="88_fosky"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r7d6n"]
 sky_top_color = Color(0.247003, 0.311642, 0.45506, 1)
@@ -44,7 +114,6 @@ radiance_size = 5
 background_mode = 2
 sky = SubResource("Sky_3e7cy")
 ambient_light_source = 3
-ambient_light_sky_contribution = 0.25
 tonemap_mode = 2
 glow_bloom = 0.05
 fog_light_color = Color(0.427905, 0.50778, 0.552697, 1)
@@ -54,48 +123,125 @@ fog_aerial_perspective = 0.772
 fog_sky_affect = 0.268
 fog_height_density = 0.0055
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_usj7t"]
+[sub_resource type="Gradient" id="Gradient_myhl5"]
+offsets = PackedFloat32Array(0.2, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_3e7cy"]
-noise = SubResource("FastNoiseLite_usj7t")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_71vj1"]
+noise_type = 2
+frequency = 0.03
+cellular_jitter = 3.0
+cellular_return_type = 0
+domain_warp_enabled = true
+domain_warp_type = 1
+domain_warp_amplitude = 50.0
+domain_warp_fractal_type = 2
+domain_warp_fractal_lacunarity = 1.5
+domain_warp_fractal_gain = 1.0
 
-[sub_resource type="Resource" id="Resource_8peoy"]
-script = ExtResource("5_mvwl5")
-MatShaderType = 1
-FoamNoise = SubResource("NoiseTexture3D_3e7cy")
-mat_albedo_color_first = Color(0.6, 0.7, 0.65, 1)
-mat_albedo_color_second = Color(0.25, 0.35, 0.35, 1)
-mat_albedo_depth = 10.0
-mat_albedo_depth_curve = 0.25
-mat_transparency_clarity = 10.0
-mat_transparency_depth_curve = 0.25
-mat_transparency_refraction = 0.05
-mat_normal_scale = 1.0
-mat_normal_bump_texture = ExtResource("4_r7d6n")
-mat_flow_speed = 1.0
-mat_flow_base = 0.0
-mat_flow_steepness = 2.0
-mat_flow_distance = 1.0
-mat_flow_pressure = 1.0
-mat_flow_max = 4.0
-mat_foam_color = Color(0.9, 0.9, 0.9, 1)
-mat_foam_amount = 2.0
-mat_foam_steepness = 2.0
-mat_foam_smoothness = 0.3
-mat_uv_scale = Vector3(1, 1, 1)
-mat_roughness = 0.2
-mat_edge_fade = 0.25
-LodLod0Distance = 50.0
-_selectedShader = 1
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4kpbj"]
+seamless = true
+color_ramp = SubResource("Gradient_myhl5")
+noise = SubResource("FastNoiseLite_71vj1")
 
-[sub_resource type="Curve3D" id="Curve3D_qulu1"]
-resource_local_to_scene = true
-bake_interval = 0.05
-_data = {
-"points": PackedVector3Array(0, 0, -0.25, 0, 0, 0.25, -9.97623, 42.5494, -119.245, 0, 0, -0.25, 0, 0, 0.25, -9.97626, 42.5494, -118.245, -0.0722346, 5.34057e-05, -2.073, 0.0722346, -5.34057e-05, 2.073, -9.30862, 42.5493, -110.593, 0.0548369, -4.97383e-06, -2.30282, -0.0548369, 4.97383e-06, 2.30282, -9.01855, 42.1577, -100.051, -0.15332, 0.509277, -3.5563, 0.15332, -0.509277, 3.5563, -9.83643, 40.3848, -90.0576, -0.609436, 2.1438, -2.50311, 0.609436, -2.1438, 2.50311, -8.19623, 36.5098, -79.8839, -1.32648, 0, -2.12207, 1.32648, 0, 2.12207, -5.00027, 31.9226, -71.4961, 0.996083, -4.72675e-08, -2.56933, -0.996083, 4.72675e-08, 2.56933, -5.04001, 18.0078, -63.2383, 1.78441, 1.54898e-08, -2.14556, -1.78441, -1.54898e-08, 2.14556, -12.0091, 9.01618, -54.3157, 3.36177, -4.61137e-09, -2.63625, -3.36177, 4.61137e-09, 2.63625, -23.7765, 3.1977, -42.5918, 4.31909, 0.411148, -4.73004, -4.31909, -0.411148, 4.73004, -32.3115, 2.50329, -34.7955, -0.446136, -0.0568008, -3.9581, 0.446136, 0.0568008, 3.9581, -34.1785, 4.019, -20.9715, -1.08157, 0.0316124, -3.1944, 1.08157, -0.0316124, 3.1944, -31.3745, 2.97407, -7.87141, -0.518585, 0.144123, -4.12743, 0.518585, -0.144123, 4.12743, -26.8772, -9.17583, 8.06956, -0.109375, 1.78638, -5.27216, 0.109375, -1.78638, 5.27216, -25.5546, -20.4633, 29.1215, 0.0863037, -0.851334, -3.19716, -0.0863037, 0.851334, 3.19716, -27.0726, -26.0521, 44.9997, -1.40546, -0.385391, -4.03775, 1.40546, 0.385391, 4.03775, -28.026, -25.5587, 62.5561, -1.87958, -0.0624771, -1.51062, 1.87958, 0.0624771, 1.51062, -21.7036, -26.2093, 72.0858, -6.27002, 0.927364, -4.62433, 6.27002, -0.927364, 4.62433, -7.0351, -26.5908, 82.2018, -10.2441, -0.209515, -13.1838, 10.2441, 0.209515, 13.1838, 3.63318, -29.0053, 100.55, -7.3569, 0.311382, -4.98631, 7.3569, -0.311382, 4.98631, 20.9219, -30.0852, 121.5, -10.3785, -1.2338, -5.87805, 10.3785, 1.2338, 5.87805, 40.8394, -30.3405, 132.602, -3.45764, -0.0739746, 0.566147, 3.45764, 0.0739746, -0.566147, 78.0798, -32.6291, 135.772, -5.42865, 0, 1.87206, 5.42865, 0, -1.87206, 99.3101, -31.4484, 130.329, -8.53906, -1.04695, -0.0963745, 8.53906, 1.04695, 0.0963745, 127.737, -29.1852, 118.662),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+[sub_resource type="Terrain3DMaterial" id="Terrain3DMaterial_w3qjp"]
+_shader_parameters = {
+&"auto_base_texture": 0,
+&"auto_height_reduction": 0.0,
+&"auto_overlay_texture": 1,
+&"auto_slope": 0.642,
+&"bias_distance": 512.0,
+&"blend_sharpness": 0.87,
+&"depth_blur": 0.0,
+&"enable_macro_variation": true,
+&"enable_projection": true,
+&"height_blending": true,
+&"macro_variation1": Color(0.89296, 0.761698, 0.744858, 1),
+&"macro_variation2": Color(0.734149, 0.773975, 0.800159, 1),
+&"macro_variation_slope": 0.333,
+&"mipmap_bias": 1.0,
+&"noise1_angle": 0.0,
+&"noise1_offset": Vector2(0.5, 0.5),
+&"noise1_scale": 0.04,
+&"noise2_scale": 0.076,
+&"noise3_scale": 0.225,
+&"noise_texture": SubResource("NoiseTexture2D_4kpbj"),
+&"projection_angular_division": 2.0,
+&"projection_threshold": 0.8,
+&"world_space_normal_blend": true
 }
-point_count = 25
+world_background = 0
+auto_shader = true
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_x7dfg"]
+name = "tree_1"
+scene_file = ExtResource("2_nd5ni")
+density = 0.0805135
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 400.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_dofso"]
+name = "tree_2"
+id = 1
+scene_file = ExtResource("3_gveb3")
+density = 0.0269305
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 400.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_utbyu"]
+name = "tree_3"
+id = 2
+scene_file = ExtResource("4_a8lne")
+density = 0.01
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 400.0
+
+[sub_resource type="Terrain3DMeshAsset" id="Terrain3DMeshAsset_ha3wf"]
+name = "tree_4"
+id = 3
+scene_file = ExtResource("5_e0efl")
+density = 0.0418024
+last_lod = 0
+last_shadow_lod = 0
+lod0_range = 400.0
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_xfkgt"]
+name = "Rock"
+albedo_color = Color(0.776005, 0.8316, 0.871254, 1)
+albedo_texture = ExtResource("6_k2d4w")
+normal_texture = ExtResource("7_2pyn7")
+roughness = 0.31
+detiling_rotation = 0.509
+detiling_shift = 0.147
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_pk536"]
+name = "Grass"
+id = 1
+albedo_color = Color(0.876609, 0.861393, 0.983443, 1)
+albedo_texture = ExtResource("8_23kdo")
+normal_texture = ExtResource("9_f1h5n")
+roughness = 0.397
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_r6jb8"]
+name = "Path"
+id = 2
+albedo_color = Color(0.610388, 0.617268, 0.493481, 1)
+albedo_texture = ExtResource("10_42ahw")
+normal_texture = ExtResource("11_xy5ac")
+
+[sub_resource type="Terrain3DTextureAsset" id="Terrain3DTextureAsset_fjhfd"]
+name = "PavingStones141_2k_packed_albedo_height"
+id = 3
+albedo_texture = ExtResource("12_uydff")
+normal_texture = ExtResource("13_8ap7g")
+uv_scale = 0.268
+
+[sub_resource type="Terrain3DAssets" id="Terrain3DAssets_fj686"]
+mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_x7dfg"), SubResource("Terrain3DMeshAsset_dofso"), SubResource("Terrain3DMeshAsset_utbyu"), SubResource("Terrain3DMeshAsset_ha3wf")])
+texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_xfkgt"), SubResource("Terrain3DTextureAsset_pk536"), SubResource("Terrain3DTextureAsset_r6jb8"), SubResource("Terrain3DTextureAsset_fjhfd")])
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yhnbg"]
 render_priority = 0
@@ -151,26 +297,103 @@ point_count = 13
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r7d6n"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8peoy"]
-render_priority = 0
-shader = ExtResource("27_vxgo8")
-shader_parameter/texture = ExtResource("26_mvwl5")
-shader_parameter/outline_width = 0.0
-shader_parameter/outline_color = Color(0.579624, 0.105956, 0, 1)
+[sub_resource type="ViewportTexture" id="ViewportTexture_oo5fg"]
+viewport_path = NodePath("Displays/MemoireDisplay/SubViewport")
 
-[sub_resource type="QuadMesh" id="QuadMesh_qulu1"]
-material = SubResource("ShaderMaterial_8peoy")
-size = Vector2(3.425, 1.87)
+[sub_resource type="ViewportTexture" id="ViewportTexture_v1c2f"]
+viewport_path = NodePath("Displays/MemoirePages/SubViewport")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8peoy"]
-size = Vector3(3.40625, 1.84375, 0.0292969)
+[sub_resource type="ViewportTexture" id="ViewportTexture_bnaxm"]
+viewport_path = NodePath("Displays/DesignFiction/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vhq1o"]
+size = Vector3(3.39624, 1.91406, 0.0292969)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8peoy"]
+viewport_path = NodePath("Displays/DreamscapeDisplay/Display/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cj5kf"]
+shader = ExtResource("28_qulu1")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 100.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = false
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_tfr7r"]
+viewport_path = NodePath("Displays/IdeeProjets/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oo5fg"]
+size = Vector3(4.51758, 2.551, 0.0292969)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_la88n"]
+shader = ExtResource("54_8s1bk")
+shader_parameter/lod = 4.014
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8s1bk"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_iqqkb"]
+viewport_path = NodePath("Displays/Fenetres/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uqamv"]
+size = Vector3(3.79199, 2.43384, 0.0830078)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dk27y"]
+size = Vector3(2.46851, 3.43799, 0.0917969)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xq3o"]
+size = Vector3(3.09813, 1.81546, 0.0800781)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0n1gm"]
+viewport_path = NodePath("Displays/OldPointAndClick/PointAndClick/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0n1gm"]
+shader = ExtResource("28_qulu1")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = false
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wqgh4"]
+size = Vector3(2.33105, 1.31274, 0.0283203)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_s54yu"]
+viewport_path = NodePath("Displays/Environnements/LaminaCave/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6dvqr"]
+viewport_path = NodePath("Displays/Environnements/MariCave/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_32a1b"]
+viewport_path = NodePath("Displays/RecherchesSprites/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nuo5p"]
+viewport_path = NodePath("Displays/Personnages/Sheperd/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fosky"]
+viewport_path = NodePath("Displays/Personnages/BridgeGranpa/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gr6sl"]
+viewport_path = NodePath("Displays/Personnages/Lamina/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qjduy"]
+shader = ExtResource("28_qulu1")
+shader_parameter/color = Color(0.909764, 0.699548, 0, 1)
+shader_parameter/width = 0.0
+shader_parameter/pattern = 1
+shader_parameter/inside = false
+shader_parameter/add_margins = false
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_caegf"]
+viewport_path = NodePath("Displays/Prototype/Sprite3D/SubViewport")
 
 [node name="Presentation" type="Node3D"]
+script = ExtResource("1_qulu1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.979911, -0.157579, 0.122244, -8.31056e-08, 0.612948, 0.790123, -0.199436, -0.774251, 0.600634, 0, 0, 0)
 light_color = Color(0.78778, 0.849289, 0.807934, 1)
-light_energy = 0.939
+light_energy = 2.099
 light_specular = 0.256
 shadow_enabled = true
 
@@ -179,19 +402,10 @@ environment = SubResource("Environment_mvwl5")
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://scenes/prototype_1/terrain_3d"
-material = ExtResource("1_p0vv5")
-assets = ExtResource("2_x3t3k")
+material = SubResource("Terrain3DMaterial_w3qjp")
+assets = SubResource("Terrain3DAssets_fj686")
 top_level = true
 metadata/_edit_lock_ = true
-
-[node name="RiverManager" type="Node3D" parent="Terrain3D"]
-transform = Transform3D(0.731485, 0, -0.681858, 0, 1, 0, 0.681858, 0, 0.731485, 511.52, -6.10688, 132.757)
-script = ExtResource("3_2m6tg")
-ShaderSettings = SubResource("Resource_8peoy")
-ShapeSmoothness = 5.0
-PointWidths = Array[float]([2.16373, 2.29979, 3.47225, 5.78538, 2.83288, 3.34057, 1.0, 6.68051, 5.73946, 4.42331, 8.62887, 6.7194, 8.59449, 11.4218, 9.46497, 10.3455, 6.53306, 6.85615, 21.6566, 46.8196, 50.9696, 58.4761, 48.8709, 31.9665, 5.16343])
-Curve = SubResource("Curve3D_qulu1")
-metadata/_custom_type_script = "uid://boquq8ua40y0p"
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Terrain3D"]
 occluder = ExtResource("6_vxgo8")
@@ -221,7 +435,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_jl3e0")
 [node name="OmniLight3D" type="OmniLight3D" parent="Terrain3D/lamina_cave_2/Fire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01747, 0)
 light_color = Color(0.888454, 0.564508, 0, 1)
-light_energy = 15.4738
+light_energy = 12.2108
 shadow_enabled = true
 shadow_opacity = 0.9
 omni_range = 25.4632
@@ -234,9 +448,9 @@ noise_texture = SubResource("NoiseTexture2D_mcxer")
 
 [node name="SpatialAudioStreamPlayer3D" parent="Terrain3D/lamina_cave_2/Fire/OmniLight3D" instance=ExtResource("13_npnhw")]
 stream = ExtResource("14_imkeq")
-volume_db = -18.8993
+volume_db = -28.6724
 autoplay = true
-bus = &"SpatialBus#17"
+bus = &"SpatialBus#18"
 update_frequency_seconds = 2.0
 max_reverb_wetness = 50.0
 
@@ -245,77 +459,1320 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0773, -5.6563, -45.0626)
 curve = SubResource("Curve3D_8s1bk")
 script = ExtResource("15_2gsya")
 
-[node name="Buildings" type="Node3D" parent="."]
-
-[node name="Sketchfab_Scene10" parent="Buildings" instance=ExtResource("16_yw2sf")]
-transform = Transform3D(-0.140262, 0, -0.990114, 0, 1, 0, 0.990114, 0, -0.140262, 480.498, -35.3792, 276.492)
-
-[node name="winchelsea_new_gate" parent="Buildings" instance=ExtResource("17_bnaxm")]
-transform = Transform3D(-0.501239, 0, -0.865309, 0, 1, 0, 0.865309, 0, -0.501239, 358.485, -21.1086, 164.803)
-
-[node name="Object_11" parent="Buildings/winchelsea_new_gate" index="0"]
-material_override = ExtResource("18_47hnm")
-
-[node name="Sketchfab_Scene" parent="Buildings" instance=ExtResource("19_1326s")]
-transform = Transform3D(0.819212, 0, -0.573491, 0, 1, 0, 0.573491, 0, 0.819212, 415.079, -30.0974, 167.382)
-
-[node name="Sketchfab_Scene2" parent="Buildings" instance=ExtResource("20_qqcak")]
-transform = Transform3D(0.81532, 0, -0.579011, 0, 1, 0, 0.579011, 0, 0.81532, 407.931, -30.0183, 166.48)
-
-[node name="Sketchfab_Scene3" parent="Buildings" instance=ExtResource("20_qqcak")]
-transform = Transform3D(-0.811625, 0, 0.584179, 0, 1, 0, -0.584179, 0, -0.811625, 418.613, -29.9998, 173.51)
-
-[node name="Sketchfab_Scene5" parent="Buildings" instance=ExtResource("20_qqcak")]
-transform = Transform3D(-0.811625, 0, 0.584179, 0, 1, 0, -0.584179, 0, -0.811625, 425.049, -29.9998, 175.391)
-
-[node name="Sketchfab_Scene4" parent="Buildings" instance=ExtResource("20_qqcak")]
-transform = Transform3D(0.411129, 0, 0.571199, 0, 0.703772, 0, -0.571199, 0, 0.411129, 423.744, -29.9998, 178.68)
-
-[node name="Sketchfab_Scene6" parent="Buildings" instance=ExtResource("21_3485y")]
-transform = Transform3D(-0.897289, 0, 0.441443, 0, 1, 0, -0.441443, 0, -0.897289, 398.361, -30.0379, 183.381)
-
-[node name="Sketchfab_Scene7" parent="Buildings" instance=ExtResource("22_tx022")]
-transform = Transform3D(-0.903814, 0, 0.427926, 0, 1, 0, -0.427926, 0, -0.903814, 404.208, -30.0254, 190.021)
-
-[node name="Sketchfab_Scene8" parent="Buildings" instance=ExtResource("19_1326s")]
-transform = Transform3D(0.884833, 0, -0.465908, 0, 1, 0, 0.465908, 0, 0.884833, 413.558, -29.9999, 189.105)
-
-[node name="Sketchfab_Scene9" parent="Buildings" instance=ExtResource("20_qqcak")]
-transform = Transform3D(0.878175, 0, -0.478339, 0, 1, 0, 0.478339, 0, 0.878175, 419.708, -30.1049, 194.295)
-
-[node name="bridge_missing_stone" parent="Buildings" instance=ExtResource("23_v1c2f")]
-transform = Transform3D(0.353899, 0, -0.935284, 0, 1, 0, 0.935284, 0, 0.353899, 436.775, -38.9239, 215.287)
-
-[node name="bridge2" parent="Buildings" instance=ExtResource("24_764mh")]
-transform = Transform3D(-0.25567, 0, -0.883761, 0, 0.92, 0, 0.883761, 0, -0.25567, 438.163, -44.6847, 305.254)
-
 [node name="PlayerFpsController" parent="." instance=ExtResource("25_r7d6n")]
-transform = Transform3D(-0.46461, 0, -0.885515, 0, 1, 0, 0.885515, 0, -0.46461, -311.319, -9.81165, -235.988)
+unique_name_in_owner = true
+transform = Transform3D(-0.725458, 0, -0.688265, 0, 1, 0, 0.688265, 0, -0.725458, -336.188, -6.71364, -235.505)
+camera_smoothing = true
+smoothing_speed = 6.0
+can_zoom = true
 walking_speed = 5.0
+acceleration = 12.0
+deceleration = 30.0
 mouse_sensitivity = 0.2
+
+[node name="FpsCamera" parent="PlayerFpsController/Neck" index="0"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -1.52588e-05, 0, -0.211914)
+
+[node name="CrosshairContainer" parent="PlayerFpsController/PlayerCrosshair" index="0"]
+metadata/_edit_lock_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerFpsController"]
 cast_shadow = 0
 mesh = SubResource("CapsuleMesh_r7d6n")
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.163308, 0, -0.075701, 0, 0.18, 0, 0.075701, 0, 0.163308, -302.994, -8.02786, -238.486)
-visible = false
-texture_filter = 0
-texture = ExtResource("26_mvwl5")
+[node name="Displays" type="Node3D" parent="."]
 
-[node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(0.907264, 0, -0.420561, 0, 1, 0, 0.420561, 0, 0.907264, -302.994, -8.02786, -238.486)
+[node name="MemoireDisplay" type="Sprite3D" parent="Displays"]
+transform = Transform3D(-0.128323, 0, -0.12191, 0, 0.177, 0, 0.12191, 0, -0.128323, -335.389, -5.91987, -234.669)
+alpha_cut = 1
+texture = SubResource("ViewportTexture_oo5fg")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/MemoireDisplay"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(2120, 1280)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Displays/MemoireDisplay/SubViewport"]
+position = Vector2(1063, 639)
+scale = Vector2(0.416, 0.416)
+
+[node name="Sprite2D" type="Sprite2D" parent="Displays/MemoireDisplay/SubViewport/CanvasGroup"]
+texture = ExtResource("30_vhq1o")
+
+[node name="Label3D" type="Label3D" parent="Displays/MemoireDisplay"]
+transform = Transform3D(5.64972, 0, -2.38419e-07, 0, 5.64972, 0, 2.38419e-07, 0, 5.64972, -6.10352e-05, 0, 1.16943)
+pixel_size = 0.0007
+text = "La grande
+importance
+des petits jeux"
+font = ExtResource("28_cj5kf")
+font_size = 240
+outline_size = 0
+uppercase = true
+line_spacing = -147.75
+
+[node name="MemoirePages" type="Sprite3D" parent="Displays"]
+transform = Transform3D(-0.0994351, 0, 0.0106143, 0, 0.1, 0, -0.0106143, 0, -0.0994351, -326.779, -8.61328, -230.648)
+alpha_cut = 1
+texture = SubResource("ViewportTexture_v1c2f")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/MemoirePages"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(7186, 2934)
+
+[node name="Mémoire-13" type="TextureRect" parent="Displays/MemoirePages/SubViewport"]
+offset_top = 1043.0
+offset_right = 1166.0
+offset_bottom = 2697.0
+texture = ExtResource("39_v1c2f")
+
+[node name="Mémoire-23" type="TextureRect" parent="Displays/MemoirePages/SubViewport"]
+offset_left = 1221.0
+offset_top = 740.0
+offset_right = 2387.0
+offset_bottom = 2394.0
+texture = ExtResource("40_764mh")
+
+[node name="Mémoire-14" type="TextureRect" parent="Displays/MemoirePages/SubViewport"]
+offset_left = 2442.0
+offset_top = 385.0
+offset_right = 3608.0
+offset_bottom = 2039.0
+texture = ExtResource("41_usj7t")
+
+[node name="Mémoire-15" type="TextureRect" parent="Displays/MemoirePages/SubViewport"]
+offset_left = 3608.0
+offset_top = 385.0
+offset_right = 4774.0
+offset_bottom = 2039.0
+texture = ExtResource("42_xah32")
+
+[node name="Mémoire-24" type="TextureRect" parent="Displays/MemoirePages/SubViewport"]
+offset_left = 4829.0
+offset_right = 5995.0
+offset_bottom = 1654.0
+texture = ExtResource("43_pf1xv")
+
+[node name="Mémoire-25" type="TextureRect" parent="Displays/MemoirePages/SubViewport"]
+offset_left = 5995.0
+offset_right = 7161.0
+offset_bottom = 1654.0
+texture = ExtResource("44_yhnbg")
+
+[node name="Label3D" type="Label3D" parent="Displays/MemoirePages"]
+transform = Transform3D(2.52, 0, -8.9407e-08, 0, 2.52, 0, 8.9407e-08, 0, 2.52, 21.4302, 16.8895, -0.0446777)
+text = "Affordances"
+font = ExtResource("58_iqqkb")
+font_size = 180
+outline_size = 60
+
+[node name="Label3D2" type="Label3D" parent="Displays/MemoirePages"]
+transform = Transform3D(2.52, 0, -8.9407e-08, 0, 2.52, 0, 8.9407e-08, 0, 2.52, -0.939697, 13.0988, -0.0447998)
+text = "Narration"
+font = ExtResource("58_iqqkb")
+font_size = 180
+outline_size = 60
+
+[node name="Label3D3" type="Label3D" parent="Displays/MemoirePages"]
+transform = Transform3D(2.52, 0, -8.9407e-08, 0, 2.52, 0, 8.9407e-08, 0, 2.52, -22.8867, 9.40202, -0.0449219)
+text = "Parcours"
+font = ExtResource("58_iqqkb")
+font_size = 180
+outline_size = 60
+
+[node name="DesignFiction" type="Sprite3D" parent="Displays"]
+transform = Transform3D(0.0694927, 0, -0.008412, 0, 0.07, 0, 0.008412, 0, 0.0694927, -319.661, -7.12299, -242.862)
+alpha_cut = 1
+texture = SubResource("ViewportTexture_bnaxm")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/DesignFiction"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(12330, 2300)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Displays/DesignFiction/SubViewport"]
+offset_left = 50.0
+offset_top = 50.0
+offset_right = 12280.0
+offset_bottom = 2250.0
+theme_override_constants/separation = 55
+
+[node name="RaphaelLouise-1" type="TextureRect" parent="Displays/DesignFiction/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("32_bnaxm")
+
+[node name="RaphaelLouise-2" type="TextureRect" parent="Displays/DesignFiction/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("33_47hnm")
+
+[node name="RaphaelLouise-3" type="TextureRect" parent="Displays/DesignFiction/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("34_1326s")
+
+[node name="RaphaelLouise-4" type="TextureRect" parent="Displays/DesignFiction/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("35_qqcak")
+
+[node name="RaphaelLouise-5" type="TextureRect" parent="Displays/DesignFiction/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("36_3485y")
+
+[node name="RaphaelLouise-6" type="TextureRect" parent="Displays/DesignFiction/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("37_tx022")
+
+[node name="RaphaelLouise-7" type="TextureRect" parent="Displays/DesignFiction/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("38_v1c2f")
+
+[node name="Label3D" type="Label3D" parent="Displays/DesignFiction"]
+transform = Transform3D(5.235, 0, 0, 0, 5.235, 0, 0, 0, 5.235, 0, 15.8674, 0)
+text = "Scénarios design fiction"
+font = ExtResource("58_iqqkb")
+font_size = 180
+outline_size = 60
+
+[node name="DreamscapeDisplay" type="Area3D" parent="Displays"]
+transform = Transform3D(-0.99973, 0, -0.0232627, 0, 1, 0, 0.0232627, 0, -0.99973, -313.392, -9.22139, -229.564)
 collision_layer = 2
 script = ExtResource("28_8peoy")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
-mesh = SubResource("QuadMesh_qulu1")
-skeleton = NodePath("../../Sprite3D")
+[node name="Label3D" type="Label3D" parent="Displays/DreamscapeDisplay"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.45058e-09, 0, 0.207022)
+pixel_size = 0.002
+text = "DREAMSCAPE"
+font = ExtResource("28_cj5kf")
+font_size = 80
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("BoxShape3D_8peoy")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/DreamscapeDisplay"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0140991, 0)
+shape = SubResource("BoxShape3D_vhq1o")
+
+[node name="Display" type="Sprite3D" parent="Displays/DreamscapeDisplay"]
+unique_name_in_owner = true
+transform = Transform3D(0.177, 0, 0, 0, 0.177, 0, 0, 0, 0.177, 0, 0, 0)
+alpha_cut = 1
+texture = SubResource("ViewportTexture_8peoy")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/DreamscapeDisplay/Display"]
+transparent_bg = true
+size = Vector2i(2120, 1280)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Displays/DreamscapeDisplay/Display/SubViewport"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_cj5kf")
+position = Vector2(1063, 639)
+
+[node name="Sprite2D" type="Sprite2D" parent="Displays/DreamscapeDisplay/Display/SubViewport/CanvasGroup"]
+texture = ExtResource("29_qulu1")
+
+[node name="IdeeProjets" type="Sprite3D" parent="Displays"]
+transform = Transform3D(0.105929, 0, -0.0563828, 0, 0.12, 0, 0.0563828, 0, 0.105929, -304.31, -8.34456, -238.422)
+alpha_cut = 1
+texture = SubResource("ViewportTexture_tfr7r")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/IdeeProjets"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(5015, 2230)
+
+[node name="HBoxContainer" type="HFlowContainer" parent="Displays/IdeeProjets/SubViewport"]
+offset_top = -1.0
+offset_right = 4903.0
+offset_bottom = 1778.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Idee1" type="TextureRect" parent="Displays/IdeeProjets/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("33_3485y")
+
+[node name="Idee2" type="TextureRect" parent="Displays/IdeeProjets/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("34_tx022")
+
+[node name="Idee3" type="TextureRect" parent="Displays/IdeeProjets/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("35_v1c2f")
+
+[node name="Idee4" type="TextureRect" parent="Displays/IdeeProjets/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("36_764mh")
+
+[node name="Idee5" type="TextureRect" parent="Displays/IdeeProjets/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("37_usj7t")
+
+[node name="Idee6" type="TextureRect" parent="Displays/IdeeProjets/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("38_xah32")
+
+[node name="Idee7" type="TextureRect" parent="Displays/IdeeProjets/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("39_pf1xv")
+
+[node name="Idee8" type="TextureRect" parent="Displays/IdeeProjets/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("40_yhnbg")
+
+[node name="Idee9" type="TextureRect" parent="Displays/IdeeProjets/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("41_t5m2n")
+
+[node name="Idee10" type="TextureRect" parent="Displays/IdeeProjets/SubViewport/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("42_tfr7r")
+
+[node name="DessinIdee1" type="TextureRect" parent="Displays/IdeeProjets/SubViewport"]
+offset_left = 346.944
+offset_top = 451.0
+offset_right = 2215.94
+offset_bottom = 1698.0
+scale = Vector2(0.341419, 0.341419)
+texture = ExtResource("43_tfr7r")
+
+[node name="DessinIdee2" type="TextureRect" parent="Displays/IdeeProjets/SubViewport"]
+offset_left = 1443.69
+offset_top = 334.347
+offset_right = 2635.69
+offset_bottom = 1583.35
+scale = Vector2(0.405609, 0.405609)
+texture = ExtResource("44_jl3e0")
+
+[node name="DessinIdee3" type="TextureRect" parent="Displays/IdeeProjets/SubViewport"]
+offset_left = 2370.94
+offset_top = 484.0
+offset_right = 4357.94
+offset_bottom = 1934.0
+scale = Vector2(0.341419, 0.341419)
+texture = ExtResource("45_mcxer")
+
+[node name="DessinIdee4" type="TextureRect" parent="Displays/IdeeProjets/SubViewport"]
+offset_left = 3332.94
+offset_top = 507.0
+offset_right = 5116.94
+offset_bottom = 1653.0
+scale = Vector2(0.341419, 0.341419)
+texture = ExtResource("46_8s1bk")
+
+[node name="DessinIdee5" type="TextureRect" parent="Displays/IdeeProjets/SubViewport"]
+offset_left = 4486.94
+offset_top = 325.0
+offset_right = 5619.94
+offset_bottom = 1569.0
+scale = Vector2(0.424902, 0.424902)
+texture = ExtResource("47_la88n")
+
+[node name="DessinIdee6" type="TextureRect" parent="Displays/IdeeProjets/SubViewport"]
+offset_left = 105.0
+offset_top = 1459.89
+offset_right = 1303.0
+offset_bottom = 2354.89
+scale = Vector2(0.446687, 0.446687)
+texture = ExtResource("48_e5wg7")
+
+[node name="DessinIdee7" type="TextureRect" parent="Displays/IdeeProjets/SubViewport"]
+offset_left = 1370.94
+offset_top = 1446.0
+offset_right = 3284.94
+offset_bottom = 2887.0
+scale = Vector2(0.341419, 0.341419)
+texture = ExtResource("49_015do")
+
+[node name="DessinIdee8" type="TextureRect" parent="Displays/IdeeProjets/SubViewport"]
+offset_left = 2187.94
+offset_top = 1619.0
+offset_right = 3807.94
+offset_bottom = 3003.0
+scale = Vector2(0.341419, 0.341419)
+texture = ExtResource("50_iqqkb")
+
+[node name="DessinIdee9" type="TextureRect" parent="Displays/IdeeProjets/SubViewport"]
+offset_left = 3379.94
+offset_top = 1608.0
+offset_right = 4932.94
+offset_bottom = 3018.0
+scale = Vector2(0.341419, 0.341419)
+texture = ExtResource("51_1fd3b")
+
+[node name="Label3D" type="Label3D" parent="Displays/IdeeProjets"]
+transform = Transform3D(2.34, 0, 0, 0, 2.34, 0, 0, 0, 2.34, 0, 13.583, 0)
+text = "Idées de projet"
+font = ExtResource("58_iqqkb")
+font_size = 180
+outline_size = 60
+
+[node name="IdeeDisplay" type="Area3D" parent="Displays"]
+transform = Transform3D(0.770958, 0, -0.636886, 0, 1, 0, 0.636886, 0, 0.770958, -299.481, -8.81579, -236.261)
+collision_layer = 2
+script = ExtResource("52_mcxer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/IdeeDisplay"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.838837, 1.0677, -4.57764e-05)
+shape = SubResource("BoxShape3D_oo5fg")
+
+[node name="Display" type="Sprite3D" parent="Displays/IdeeDisplay"]
+transform = Transform3D(0.267, 0, 0, 0, 0.267, 0, 0, 0, 0.267, 1.10037, 0.94431, -0.527802)
+alpha_cut = 1
+texture = ExtResource("53_iqqkb")
+
+[node name="IdeeCanvasLayer" type="CanvasLayer" parent="Displays/IdeeDisplay"]
+unique_name_in_owner = true
+visible = false
+
+[node name="Control" type="Control" parent="Displays/IdeeDisplay/IdeeCanvasLayer"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.670588)
+
+[node name="Blur" type="ColorRect" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control"]
+material = SubResource("ShaderMaterial_la88n")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Pages" type="Control" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Page1" type="Control" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PncIdee" type="TextureRect" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("53_iqqkb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Page1NextBtn" type="Button" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page1"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8s1bk")
+
+[node name="Page2" type="Control" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 80
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("28_cj5kf")
+theme_override_font_sizes/font_size = 50
+text = "Commanditaire"
+
+[node name="Label" type="RichTextLabel" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/bold_font = ExtResource("28_cj5kf")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b][color=#feffe0]Appel à projet[/color][/b] du ministère de la culture pour mettre en avant la culture française aux jeunes"
+fit_content = true
+
+[node name="Spacer" type="Control" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("28_cj5kf")
+theme_override_font_sizes/font_size = 50
+text = "Distribution"
+
+[node name="Label4" type="RichTextLabel" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/bold_font = ExtResource("28_cj5kf")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "Jeux disponible [b][color=#feffe0]gratuitement[/color][/b] sur les plateformes de jeux vidéos"
+fit_content = true
+
+[node name="Spacer2" type="Control" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_right = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="SteamLogo" type="TextureRect" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("55_015do")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="EpicGamesLogo" type="TextureRect" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("56_iqqkb")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="ItchLogo" type="TextureRect" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("57_015do")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 80
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 80
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label2" type="Label" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("28_cj5kf")
+theme_override_font_sizes/font_size = 50
+text = "Public"
+
+[node name="Label" type="RichTextLabel" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/bold_font = ExtResource("28_cj5kf")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b][color=#feffe0]Jeunes[/color][/b] et [b][color=#feffe0]jeunes adultes[/color][/b]"
+fit_content = true
+
+[node name="Spacer" type="Control" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("28_cj5kf")
+theme_override_font_sizes/font_size = 50
+text = "Droits d'auteurs"
+
+[node name="Label4" type="RichTextLabel" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/bold_font = ExtResource("28_cj5kf")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "[b][color=#feffe0]Céssion partielle[/color][/b] des droits d'auteurs"
+fit_content = true
+
+[node name="Label5" type="Label" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("28_cj5kf")
+theme_override_font_sizes/font_size = 50
+text = "Financement"
+
+[node name="Label6" type="RichTextLabel" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2/MarginContainer/HBoxContainer/MarginContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/bold_font = ExtResource("28_cj5kf")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/mono_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+text = "Demande de financement de la part de la région basque"
+fit_content = true
+
+[node name="Page2NextBtn" type="Button" parent="Displays/IdeeDisplay/IdeeCanvasLayer/Control/Pages/Page2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_8s1bk")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_8s1bk")
+
+[node name="Gameplay" type="Label3D" parent="Displays"]
+transform = Transform3D(-0.560798, 0, -0.827953, 0, 1, 0, 0.827953, 0, -0.560798, -295.289, -8.16191, -228.122)
+text = "Gameplay"
+font = ExtResource("58_iqqkb")
+font_size = 150
+outline_size = 50
+
+[node name="Fenetres" type="Sprite3D" parent="Displays"]
+transform = Transform3D(-0.684775, 0, 0.205691, 0, 0.715, 0, -0.205691, 0, -0.684775, -287.53, -9.32887, -217.056)
+alpha_cut = 2
+texture = SubResource("ViewportTexture_iqqkb")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Fenetres"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1275, 405)
+
+[node name="lieux" type="Control" parent="Displays/Fenetres/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 85.0
+offset_right = 297.0
+offset_bottom = 301.0
+texture = ExtResource("60_iv3um")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 27.0
+offset_top = 43.0
+offset_right = -33.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("61_t8ca7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux"]
+layout_mode = 0
+offset_left = 194.0
+offset_top = 126.0
+offset_right = 517.0
+offset_bottom = 378.0
+texture = ExtResource("60_iv3um")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux/TextureRect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = 51.0
+offset_right = -31.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("62_t8ca7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux"]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 3.0
+offset_right = 434.0
+offset_bottom = 249.0
+texture = ExtResource("60_iv3um")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux/TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 49.0
+offset_right = -30.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("63_ty7mw")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Puzzle" type="Control" parent="Displays/Fenetres/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -81.0
+offset_top = -53.0
+offset_right = -41.0
+offset_bottom = -13.0
+
+[node name="TextureRect4" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
+layout_mode = 0
+offset_left = 614.0
+offset_top = 47.0
+offset_right = 771.0
+offset_bottom = 208.0
+texture = ExtResource("60_iv3um")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 26.0
+offset_right = -15.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("64_rajte")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect5" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
+layout_mode = 0
+offset_left = 747.0
+offset_top = 47.0
+offset_right = 904.0
+offset_bottom = 208.0
+texture = ExtResource("60_iv3um")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 26.0
+offset_right = -15.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("65_uqamv")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect7" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
+layout_mode = 0
+offset_left = 613.0
+offset_top = 167.0
+offset_right = 770.0
+offset_bottom = 328.0
+texture = ExtResource("60_iv3um")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 26.0
+offset_right = -15.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("66_dk27y")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect8" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
+layout_mode = 0
+offset_left = 746.0
+offset_top = 167.0
+offset_right = 903.0
+offset_bottom = 328.0
+texture = ExtResource("60_iv3um")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 26.0
+offset_right = -15.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("67_6xq3o")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect9" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
+layout_mode = 0
+offset_left = 747.0
+offset_top = 289.0
+offset_right = 904.0
+offset_bottom = 450.0
+texture = ExtResource("60_iv3um")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 26.0
+offset_right = -15.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("68_s13hq")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
+layout_mode = 0
+offset_left = 615.0
+offset_top = 287.0
+offset_right = 772.0
+offset_bottom = 448.0
+texture = ExtResource("60_iv3um")
+expand_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 26.0
+offset_right = -15.0
+offset_bottom = -29.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("69_fpy3i")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Transparent" type="Control" parent="Displays/Fenetres/SubViewport"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -163.0
+offset_top = -45.0
+offset_right = -123.0
+offset_bottom = -5.0
+
+[node name="TransparentWindow" type="TextureRect" parent="Displays/Fenetres/SubViewport/Transparent"]
+layout_mode = 0
+offset_left = 1005.0
+offset_top = 108.0
+offset_right = 2189.0
+offset_bottom = 928.0
+scale = Vector2(0.331098, 0.331098)
+texture = ExtResource("70_uqamv")
+
+[node name="Label3D" type="Label3D" parent="Displays/Fenetres"]
+transform = Transform3D(2.34, 0, 0, 0, 2.34, 0, 0, 0, 2.34, 0, 2.34448, 0)
+pixel_size = 0.0009
+text = "Fenêtres"
+font = ExtResource("58_iqqkb")
+font_size = 180
+outline_size = 60
+
+[node name="Lieux" type="Area3D" parent="Displays/Fenetres"]
+script = ExtResource("71_dk27y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Fenetres/Lieux"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71307, 0.247994, -0.00012207)
+shape = SubResource("BoxShape3D_uqamv")
+
+[node name="LieuxWindowsLayer" type="CanvasLayer" parent="Displays/Fenetres/Lieux"]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Displays/Fenetres/Lieux/LieuxWindowsLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.670588)
+
+[node name="Blur" type="ColorRect" parent="Displays/Fenetres/Lieux/LieuxWindowsLayer"]
+material = SubResource("ShaderMaterial_la88n")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LieuxWindows" type="Window" parent="Displays/Fenetres/Lieux"]
+unique_name_in_owner = true
+visible = false
+
+[node name="Inventaire" parent="Displays/Fenetres/Lieux/LieuxWindows" instance=ExtResource("72_6xq3o")]
+
+[node name="Grotte de Mari" parent="Displays/Fenetres/Lieux/LieuxWindows/Inventaire" index="6"]
+visible = false
+
+[node name="Puzzle" type="Area3D" parent="Displays/Fenetres"]
+script = ExtResource("73_s13hq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Fenetres/Puzzle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.409546, 0.161864, -6.10352e-05)
+shape = SubResource("BoxShape3D_dk27y")
+
+[node name="PuzzleWindowsLayer" type="CanvasLayer" parent="Displays/Fenetres/Puzzle"]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Displays/Fenetres/Puzzle/PuzzleWindowsLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.670588)
+
+[node name="Blur" type="ColorRect" parent="Displays/Fenetres/Puzzle/PuzzleWindowsLayer"]
+material = SubResource("ShaderMaterial_la88n")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MinisGames" parent="Displays/Fenetres/Puzzle" instance=ExtResource("74_fpy3i")]
+unique_name_in_owner = true
+
+[node name="Transparence" type="Area3D" parent="Displays/Fenetres"]
+script = ExtResource("75_ju3xo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Fenetres/Transparence"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9845, 0.122665, 0)
+shape = SubResource("BoxShape3D_6xq3o")
+
+[node name="OldPointAndClick" type="Area3D" parent="Displays"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -280.917, -10.6042, -215.403)
+script = ExtResource("76_wqgh4")
+
+[node name="Label3D" type="Label3D" parent="Displays/OldPointAndClick"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.940686, 0)
+pixel_size = 0.0012
+text = "Point & Click"
+font = ExtResource("58_iqqkb")
+font_size = 150
+outline_size = 50
+
+[node name="PointAndClick" type="Sprite3D" parent="Displays/OldPointAndClick"]
+transform = Transform3D(0.205, 0, 0, 0, 0.205, 0, 0, 0, 0.205, 0, 0, 0)
+alpha_cut = 1
+texture_filter = 0
+texture = SubResource("ViewportTexture_0n1gm")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/OldPointAndClick/PointAndClick"]
+transparent_bg = true
+size = Vector2i(1197, 687)
+
+[node name="OldPncGroup" type="CanvasGroup" parent="Displays/OldPointAndClick/PointAndClick/SubViewport"]
+unique_name_in_owner = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_0n1gm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Displays/OldPointAndClick/PointAndClick/SubViewport/OldPncGroup"]
+position = Vector2(600, 342)
+texture = ExtResource("77_0n1gm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/OldPointAndClick"]
+shape = SubResource("BoxShape3D_wqgh4")
+
+[node name="OldPncWindow" type="Window" parent="Displays/OldPointAndClick"]
+unique_name_in_owner = true
+initial_position = 1
+size = Vector2i(1153, 648)
+visible = false
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Displays/OldPointAndClick/OldPncWindow"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Displays/OldPointAndClick/OldPncWindow/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1153, 648)
+render_target_update_mode = 0
+
+[node name="CameraManager" parent="Displays/OldPointAndClick/OldPncWindow/SubViewportContainer/SubViewport" instance=ExtResource("76_ju3xo")]
+
+[node name="SubViewport" parent="Displays/OldPointAndClick/OldPncWindow/SubViewportContainer/SubViewport/CameraManager/SubViewportContainer" index="0"]
+own_world_3d = true
+size = Vector2i(1153, 648)
+
+[node name="OldPncCanvasLayer" type="CanvasLayer" parent="Displays/OldPointAndClick"]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Displays/OldPointAndClick/OldPncCanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.670588)
+
+[node name="Blur" type="ColorRect" parent="Displays/OldPointAndClick/OldPncCanvasLayer"]
+material = SubResource("ShaderMaterial_la88n")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Esthetique" type="Label3D" parent="Displays"]
+transform = Transform3D(-0.511128, 0, -0.859505, 0, 1, 0, 0.859505, 0, -0.511128, -275.992, -11.634, -216.557)
+text = "Esthétique"
+font = ExtResource("58_iqqkb")
+font_size = 150
+outline_size = 50
+
+[node name="Environnements" type="Node3D" parent="Displays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -261.072, -14.8479, -215.127)
+
+[node name="LaminaCave" type="Sprite3D" parent="Displays/Environnements"]
+transform = Transform3D(0.897628, 0, -0.440754, 0, 1, 0, 0.440754, 0, 0.897628, 2.57739, -0.535, 1.07593)
+pixel_size = 0.0043
+alpha_cut = 1
+texture = SubResource("ViewportTexture_s54yu")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Environnements/LaminaCave"]
+own_world_3d = true
+size = Vector2i(1152, 648)
+
+[node name="Control" type="Control" parent="Displays/Environnements/LaminaCave/SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Displays/Environnements/LaminaCave/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("79_s54yu")
+volume_db = -80.0
+autoplay = true
+loop = true
+script = ExtResource("81_6dvqr")
+
+[node name="Label3D" type="Label3D" parent="Displays/Environnements/LaminaCave"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76257, 0)
+pixel_size = 0.0023
+text = "Interieur grotte des Laminak"
+font = ExtResource("58_iqqkb")
+font_size = 150
+outline_size = 50
+
+[node name="MariCave" type="Sprite3D" parent="Displays/Environnements"]
+transform = Transform3D(0.897628, 0, -0.440754, 0, 1, 0, 0.440754, 0, 0.897628, -2.48062, 0, -1.54208)
+pixel_size = 0.0043
+alpha_cut = 1
+texture = SubResource("ViewportTexture_6dvqr")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Environnements/MariCave"]
+own_world_3d = true
+size = Vector2i(1152, 648)
+
+[node name="Control" type="Control" parent="Displays/Environnements/MariCave/SubViewport"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Displays/Environnements/MariCave/SubViewport/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("80_s54yu")
+volume_db = -80.0
+autoplay = true
+loop = true
+script = ExtResource("81_6dvqr")
+
+[node name="Label3D" type="Label3D" parent="Displays/Environnements/MariCave"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.03622, 0)
+pixel_size = 0.0023
+text = "Entrée grotte de Mari
+(Grotte Anboto)"
+font = ExtResource("58_iqqkb")
+font_size = 150
+outline_size = 50
+
+[node name="RecherchesSprites" type="Sprite3D" parent="Displays"]
+transform = Transform3D(0.640043, 0, -0.768339, 0, 1, 0, 0.768339, 0, 0.640043, -252.222, -16.0853, -211.669)
+pixel_size = 0.0054
+texture = SubResource("ViewportTexture_32a1b")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/RecherchesSprites"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1372, 762)
+
+[node name="TestScene" parent="Displays/RecherchesSprites/SubViewport" instance=ExtResource("82_ttlb1")]
+
+[node name="Label3D" type="Label3D" parent="Displays/RecherchesSprites"]
+transform = Transform3D(1.526, 0, 0, 0, 1.526, 0, 0, 0, 1.526, 0, 2.70858, 0)
+pixel_size = 0.0023
+text = "Recherches sprites"
+font = ExtResource("58_iqqkb")
+font_size = 150
+outline_size = 50
+
+[node name="Personnages" type="Node3D" parent="Displays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -258.561, -19.4161, -202.766)
+
+[node name="Sheperd" type="Sprite3D" parent="Displays/Personnages"]
+transform = Transform3D(0.209147, 0, -0.102696, 0, 0.233, 0, 0.102696, 0, 0.209147, -1.27951, 0.999704, -0.683395)
+billboard = 2
+alpha_cut = 1
+texture = SubResource("ViewportTexture_nuo5p")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Personnages/Sheperd"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1080, 1080)
+
+[node name="Shepherd" parent="Displays/Personnages/Sheperd/SubViewport" instance=ExtResource("82_p0hgg")]
+position = Vector2(540, 540)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Displays/Personnages/Sheperd"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.17172, 0)
+size = Vector3(4, 1.99707, 4)
+material = ExtResource("83_ttlb1")
+
+[node name="Label3D" type="Label3D" parent="Displays/Personnages/Sheperd"]
+transform = Transform3D(-1.526, 0, 2.3042e-07, 0, 1.526, 0, -2.3042e-07, 0, -1.526, 0, 5.2785, 0)
+pixel_size = 0.0023
+billboard = 2
+text = "Berger"
+font = ExtResource("58_iqqkb")
+font_size = 150
+outline_size = 50
+
+[node name="BridgeGranpa" type="Sprite3D" parent="Displays/Personnages"]
+transform = Transform3D(0.209148, 0, -0.102696, 0, 0.233, 0, 0.102696, 0, 0.209148, 0.105896, 0.627346, -0.102356)
+billboard = 2
+alpha_cut = 1
+texture = SubResource("ViewportTexture_fosky")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Personnages/BridgeGranpa"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(500, 1080)
+
+[node name="BridgeGranpa" parent="Displays/Personnages/BridgeGranpa/SubViewport" instance=ExtResource("83_qjduy")]
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Displays/Personnages/BridgeGranpa"]
+transform = Transform3D(0.999999, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 0.999999, 0, -6.08175, 0)
+size = Vector3(4, 1.99707, 4)
+material = ExtResource("83_ttlb1")
+
+[node name="Label3D" type="Label3D" parent="Displays/Personnages/BridgeGranpa"]
+transform = Transform3D(-1.526, 0, 2.3042e-07, 0, 1.526, 0, -2.3042e-07, 0, -1.526, 0, 5.83662, 0)
+pixel_size = 0.0023
+billboard = 2
+text = "Vieil Homme"
+font = ExtResource("58_iqqkb")
+font_size = 150
+outline_size = 50
+
+[node name="Lamina" type="Sprite3D" parent="Displays/Personnages"]
+transform = Transform3D(0.209148, 0, -0.102696, 0, 0.233, 0, 0.102696, 0, 0.209148, 1.48416, 0, 0.728745)
+pixel_size = 0.0082
+billboard = 2
+alpha_cut = 1
+texture = SubResource("ViewportTexture_gr6sl")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Personnages/Lamina"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(599, 1080)
+
+[node name="Lamina" parent="Displays/Personnages/Lamina/SubViewport" instance=ExtResource("84_p0hgg")]
+unique_name_in_owner = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_qjduy")
+position = Vector2(0, 17.475)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Displays/Personnages/Lamina"]
+transform = Transform3D(0.999999, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 0.999999, 0, -5.14791, 0)
+size = Vector3(4, 1.99707, 4)
+material = ExtResource("83_ttlb1")
+
+[node name="Label3D" type="Label3D" parent="Displays/Personnages/Lamina"]
+transform = Transform3D(-1.526, 0, 2.3042e-07, 0, 1.526, 0, -2.3042e-07, 0, -1.526, 0, 5.06775, 0)
+pixel_size = 0.0023
+billboard = 2
+text = "Lamina"
+font = ExtResource("58_iqqkb")
+font_size = 150
+outline_size = 50
+
+[node name="Prototype" type="Area3D" parent="Displays"]
+transform = Transform3D(-0.584278, 0, -0.811553, 0, 1, 0, 0.811553, 0, -0.584278, -249.806, -20.2082, -202.931)
+script = ExtResource("87_nuo5p")
+
+[node name="Label3D" type="Label3D" parent="Displays/Prototype"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.940686, 0)
+pixel_size = 0.0012
+text = "Prototype
+"
+font = ExtResource("58_iqqkb")
+font_size = 150
+outline_size = 50
+
+[node name="Label3D2" type="Label3D" parent="Displays/Prototype"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00433803, 0.0227782)
+pixel_size = 0.0012
+text = "ESSAYER"
+font = ExtResource("58_iqqkb")
+font_size = 150
+outline_size = 0
+
+[node name="Sprite3D" type="Sprite3D" parent="Displays/Prototype"]
+transform = Transform3D(0.205, 0, 0, 0, 0.205, 0, 0, 0, 0.205, 0, 0, 0)
+alpha_cut = 1
+texture = SubResource("ViewportTexture_caegf")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Prototype/Sprite3D"]
+transparent_bg = true
+size = Vector2i(1197, 723)
+
+[node name="ProtCanvasGroup" type="CanvasGroup" parent="Displays/Prototype/Sprite3D/SubViewport"]
+unique_name_in_owner = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_0n1gm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Displays/Prototype/Sprite3D/SubViewport/ProtCanvasGroup"]
+position = Vector2(600, 360)
+texture = ExtResource("88_fosky")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Prototype"]
+shape = SubResource("BoxShape3D_wqgh4")
 
 [editable path="Terrain3D/lamina_cave_2"]
-[editable path="Buildings/winchelsea_new_gate"]
 [editable path="PlayerFpsController"]
+[editable path="Displays/Fenetres/Lieux/LieuxWindows/Inventaire"]
+[editable path="Displays/OldPointAndClick/OldPncWindow/SubViewportContainer/SubViewport/CameraManager"]

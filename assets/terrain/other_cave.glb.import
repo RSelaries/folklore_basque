@@ -37,10 +37,9 @@ _subresources={
 "other_cave_Cube_001": {
 "generate/lightmap_uv": 1,
 "generate/lods": 0,
-"generate/shadow_meshes": 0,
+"generate/shadow_meshes": 1,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": false,
-"save_to_file/fallback_path": "",
 "save_to_file/path": ""
 },
 "other_cave_Cube_005": {
@@ -49,7 +48,6 @@ _subresources={
 "generate/shadow_meshes": 0,
 "lods/normal_merge_angle": 60.0,
 "save_to_file/enabled": false,
-"save_to_file/fallback_path": "",
 "save_to_file/path": ""
 }
 }
