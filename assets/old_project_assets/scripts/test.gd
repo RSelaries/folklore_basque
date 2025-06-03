@@ -1,5 +1,5 @@
 @tool
-class_name CameraManager
+class_name OldCameraManager
 extends Control
 
 

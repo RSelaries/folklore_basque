@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://lbheygyuyhle"]
 
-[ext_resource type="Script" uid="uid://cwfwh3iq4wh45" path="res://scripts/croix_basque.gd" id="1_53o6f"]
-[ext_resource type="Texture2D" uid="uid://b3dhvj804cy7y" path="res://icon.svg" id="2_fbhs3"]
-[ext_resource type="PackedScene" uid="uid://cyqqiv3gfg75t" path="res://scenes/recherche_p&c/cle_porte.tscn" id="2_oma2o"]
-[ext_resource type="Script" uid="uid://d1un62uy4ug2s" path="res://scripts/interaction_button.gd" id="3_fbhs3"]
+[ext_resource type="Script" uid="uid://cwfwh3iq4wh45" path="res://assets/old_project_assets/scripts/croix_basque.gd" id="1_53o6f"]
+[ext_resource type="PackedScene" uid="uid://cyqqiv3gfg75t" path="res://scenes/old_project_scenes/recherche_p&c/cle_porte.tscn" id="2_oma2o"]
+[ext_resource type="Script" uid="uid://d1un62uy4ug2s" path="res://assets/old_project_assets/scripts/interaction_button.gd" id="3_fbhs3"]
+[ext_resource type="Texture2D" uid="uid://c7drtndxh2v0r" path="res://assets/old_project_assets/icon.svg" id="3_vj3af"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2arr5"]
 
@@ -22,7 +22,7 @@ custom_minimum_size = Vector2(80, 0)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("2_fbhs3")
+texture = ExtResource("3_vj3af")
 expand_mode = 5
 
 [node name="Button" type="Button" parent="TextureRect"]

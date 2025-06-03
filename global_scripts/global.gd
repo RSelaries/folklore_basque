@@ -10,8 +10,8 @@ const rng_seed: int = 69420
 func _ready() -> void:
 	rng.seed = rng_seed
 	
-	if not Engine.is_editor_hint():
-		_add_fps_counter()
+	#if not Engine.is_editor_hint():
+		#_add_fps_counter()
 
 
 func _add_fps_counter() -> void:

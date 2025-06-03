@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://cjv43ro8kkys1"]
 
-[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/PlayerFpsController.tscn" id="1_3gtjh"]
-[ext_resource type="Texture2D" uid="uid://byybh6mt4650x" path="res://assets/textures/grass.jpg" id="1_fhtg5"]
-[ext_resource type="Script" uid="uid://bkgumbdnijkfk" path="res://scenes/recherche_transparance/transaparance_jsp.gd" id="1_t8dv4"]
-[ext_resource type="Texture2D" uid="uid://cc71ofll1lbwr" path="res://assets/textures/sky.png" id="3_kegs6"]
-[ext_resource type="Shader" uid="uid://c506ff7blh2m6" path="res://assets/shaders/unshaded_dissolve_shader.gdshader" id="3_p04fy"]
-[ext_resource type="PackedScene" uid="uid://yjlqka1l2f6r" path="res://assets/mesh/maison_basque.glb" id="4_p04fy"]
+[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/player_fps_controller/player_fps_controller.tscn" id="1_3gtjh"]
+[ext_resource type="Texture2D" uid="uid://byybh6mt4650x" path="res://assets/old_project_assets/textures/grass.jpg" id="1_fhtg5"]
+[ext_resource type="Script" uid="uid://bkgumbdnijkfk" path="res://scenes/old_project_scenes/recherche_transparance/transaparance_jsp.gd" id="1_t8dv4"]
+[ext_resource type="Texture2D" uid="uid://cc71ofll1lbwr" path="res://assets/old_project_assets/textures/sky.png" id="3_kegs6"]
+[ext_resource type="Shader" uid="uid://c506ff7blh2m6" path="res://assets/old_project_assets/shaders/unshaded_dissolve_shader.gdshader" id="3_p04fy"]
+[ext_resource type="PackedScene" uid="uid://yjlqka1l2f6r" path="res://assets/old_project_assets/mesh/maison_basque.glb" id="4_p04fy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_3gtjh"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -99,6 +99,7 @@ size = Vector3(500, 10, 500)
 material = SubResource("StandardMaterial3D_bmf1b")
 
 [node name="PlayerFpsController" parent="." instance=ExtResource("1_3gtjh")]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057, 1, 0.114)
 mouse_sensitivity = 0.1
 

@@ -52,7 +52,7 @@ uniform float grazing_angle_modulation_factor = 50.0;
 uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, filter_linear, repeat_disable;
 
 #ifndef SUPPORT_MOBILE
-uniform sampler2D NORMR_TEXTURE : hint_normal_roughness_texture, filter_linear, repeat_disable;
+//uniform sampler2D NORMR_TEXTURE : hint_normal_roughness_texture, filter_linear, repeat_disable;
 #else
 varying flat mat4 model_view_matrix;
 #endif// !SUPPORT_MOBILE
@@ -254,19 +254,19 @@ void fragment() {
 	depth_samples = getLinearDepthSamples(n, DEPTH_TEXTURE, INV_PROJECTION_MATRIX);
 	
 #ifndef SUPPORT_MOBILE
-	vec3 pixel_normal = texture(NORMR_TEXTURE, SCREEN_UV).xyz;
+	//vec3 pixel_normal = texture(NORMR_TEXTURE, SCREEN_UV).xyz;
 #else
 	vec3 pixel_normal = reconstructWorldNormal(DEPTH_TEXTURE, model_view_matrix, INV_PROJECTION_MATRIX, SCREEN_UV, MODEL_MATRIX, INV_VIEW_MATRIX, VIEWPORT_SIZE.xy);
 #endif
 	
-	float depthEdges = detectEdgesDepth(depth_samples, pixel_normal, VIEW);
+	//float depthEdges = detectEdgesDepth(depth_samples, pixel_normal, VIEW);
 	
 #ifndef SUPPORT_MOBILE
-	float normEdges = min(detectEdgesNormal(n, NORMR_TEXTURE, CAMERA_DIRECTION_WORLD), 1.0);
+	//float normEdges = min(detectEdgesNormal(n, NORMR_TEXTURE, CAMERA_DIRECTION_WORLD), 1.0);
 #else
 	float normEdges = min(detectEdgesNormalReconstructed(n, DEPTH_TEXTURE, model_view_matrix, INV_PROJECTION_MATRIX, SCREEN_UV, MODEL_MATRIX, INV_VIEW_MATRIX, VIEWPORT_SIZE.xy), 1.0);
 #endif
 	
 	ALBEDO.rgb = outlineColor.rgb;
-	ALPHA = max(depthEdges, normEdges) * outlineColor.a * fade_a;
+	//ALPHA = max(depthEdges, normEdges) * outlineColor.a * fade_a;
 }

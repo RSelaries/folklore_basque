@@ -9,5 +9,7 @@ func _ready() -> void:
 	unresizable = true
 	
 	title = name
-	visible = true
+	
+	visible = false
+	get_parent().connect("visibility_changed", func(): visible = get_parent().visible)
 	

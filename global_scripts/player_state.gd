@@ -12,3 +12,4 @@ var interaction: Interactions = Interactions.NONE:
 
 
 var player_scene: PlayerFpsController
+var input_listening: bool = true

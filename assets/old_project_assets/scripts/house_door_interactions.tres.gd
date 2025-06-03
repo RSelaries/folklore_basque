@@ -1,7 +1,7 @@
 extends Control
 
 
-@onready var camera_manager: CameraManager = owner
+@onready var camera_manager: OldCameraManager = owner
 
 
 func _on_house_far_button_pressed() -> void:

@@ -3,7 +3,7 @@ extends Control
 
 @export var croix_basque: PackedScene
 
-@onready var camera_manager: CameraManager = owner
+@onready var camera_manager: OldCameraManager = owner
 
 
 func _on_cross_pick_button_pressed() -> void:

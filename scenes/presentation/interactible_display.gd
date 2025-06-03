@@ -1,21 +1,23 @@
 extends Area3D
 
 
+@onready var display: Sprite3D = %Display
+@onready var canvas_group: CanvasGroup = %CanvasGroup
+
+
 var focused: bool = true:
 	set(value):
 		focused = value
 		if value:
-			shader_matieral.set_shader_parameter("outline_width", 0.018)
+			canvas_group.material.set_shader_parameter("width", 10.0)
 			PlayerState.interaction = PlayerState.Interactions.USE
 		else:
-			shader_matieral.set_shader_parameter("outline_width", 0.0)
-
-var shader_matieral: ShaderMaterial
+			canvas_group.material.set_shader_parameter("width", 0.0)
 
 
 func _ready() -> void:
-	shader_matieral = $MeshInstance3D.get_active_material(0)
+	canvas_group.material.set_shader_parameter("width", 0.0)
 
 
-func _interact() -> void:
-	pass
+func interact() -> void:
+	OS.execute("E://Godot/Projects/folklore_basque/builds/other_projects/dream_scape_awake.exe", [])

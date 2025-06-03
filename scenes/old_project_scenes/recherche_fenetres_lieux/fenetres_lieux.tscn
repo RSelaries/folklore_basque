@@ -1,24 +1,24 @@
 [gd_scene load_steps=22 format=3 uid="uid://d2deerth84jc3"]
 
-[ext_resource type="Script" uid="uid://dhqb6vii2sg5c" path="res://scenes/recherche_fenetres_lieux/fenetres_lieux.gd" id="1_6j68x"]
-[ext_resource type="Script" uid="uid://cdheqn2na84t" path="res://scenes/recherche_fenetres_lieux/fenetre_lieu.gd" id="2_k3t3h"]
-[ext_resource type="Texture2D" uid="uid://dk7j3tomyqy16" path="res://assets/sprites/dialogue.png" id="3_e6sis"]
-[ext_resource type="Texture2D" uid="uid://bk5vcgspyw1fg" path="res://assets/sprites/berger.png" id="3_rgujs"]
-[ext_resource type="Texture2D" uid="uid://cprbfghvr0jmg" path="res://assets/sprites/montagne.png" id="3_xlcio"]
-[ext_resource type="Texture2D" uid="uid://dlslu64tpsxya" path="res://assets/sprites/unnamed.png" id="6_opu6x"]
-[ext_resource type="Texture2D" uid="uid://bdvqwwsb0faic" path="res://assets/sprites/maison_int_forms.png" id="6_xcw8m"]
-[ext_resource type="FontFile" uid="uid://bmj3ieeu73w5v" path="res://themes/fonts/NeverMind/NeverMind-Heavy.ttf" id="7_g3rn1"]
-[ext_resource type="Texture2D" uid="uid://dcmpr82hk4gcq" path="res://assets/sprites/elgtociv.png" id="7_hmhvd"]
-[ext_resource type="Texture2D" uid="uid://b3dhvj804cy7y" path="res://icon.svg" id="7_yvbob"]
-[ext_resource type="Texture2D" uid="uid://bjgk0oc6h1ank" path="res://assets/sprites/n0s2ok6r.png" id="8_hmhvd"]
-[ext_resource type="Texture2D" uid="uid://boqdes10xhhd7" path="res://assets/sprites/az860s6f.png" id="10_hmhvd"]
-[ext_resource type="Texture2D" uid="uid://d0oc1v74fphrl" path="res://assets/sprites/grotte.png" id="13_qgvr7"]
-[ext_resource type="Texture2D" uid="uid://dco45kehaqly8" path="res://assets/sprites/livre.png" id="14_3cax1"]
-[ext_resource type="Texture2D" uid="uid://clrleen3iq8jl" path="res://assets/sprites/foret.png" id="15_hgxnh"]
-[ext_resource type="Texture2D" uid="uid://oq5opgl5scbe" path="res://assets/sprites/baton.png" id="16_k64bm"]
-[ext_resource type="Texture2D" uid="uid://dxck0bt7trb8x" path="res://assets/sprites/laminak_homme.png" id="17_nv8wy"]
-[ext_resource type="Texture2D" uid="uid://3xt1fdoxkod2" path="res://assets/sprites/rock.png" id="17_qqnct"]
-[ext_resource type="Texture2D" uid="uid://d34tngrwbmjkb" path="res://assets/sprites/grotte_mari_inter.png" id="19_yxwn2"]
+[ext_resource type="Script" uid="uid://dhqb6vii2sg5c" path="res://scenes/old_project_scenes/recherche_fenetres_lieux/fenetres_lieux.gd" id="1_6j68x"]
+[ext_resource type="Script" uid="uid://cdheqn2na84t" path="res://scenes/old_project_scenes/recherche_fenetres_lieux/fenetre_lieu.gd" id="2_k3t3h"]
+[ext_resource type="Texture2D" uid="uid://dk7j3tomyqy16" path="res://assets/old_project_assets/sprites/dialogue.png" id="3_e6sis"]
+[ext_resource type="Texture2D" uid="uid://bk5vcgspyw1fg" path="res://assets/old_project_assets/sprites/berger.png" id="3_rgujs"]
+[ext_resource type="Texture2D" uid="uid://cprbfghvr0jmg" path="res://assets/old_project_assets/sprites/montagne.png" id="3_xlcio"]
+[ext_resource type="Texture2D" uid="uid://dlslu64tpsxya" path="res://assets/old_project_assets/sprites/unnamed.png" id="6_opu6x"]
+[ext_resource type="Texture2D" uid="uid://bdvqwwsb0faic" path="res://assets/old_project_assets/sprites/maison_int_forms.png" id="6_xcw8m"]
+[ext_resource type="FontFile" uid="uid://bmj3ieeu73w5v" path="res://assets/old_project_assets/themes/fonts/NeverMind/NeverMind-Heavy.ttf" id="7_g3rn1"]
+[ext_resource type="Texture2D" uid="uid://dcmpr82hk4gcq" path="res://assets/old_project_assets/sprites/elgtociv.png" id="7_hmhvd"]
+[ext_resource type="Texture2D" uid="uid://b1fbygs6306co" path="res://icon.svg" id="7_yvbob"]
+[ext_resource type="Texture2D" uid="uid://bjgk0oc6h1ank" path="res://assets/old_project_assets/sprites/n0s2ok6r.png" id="8_hmhvd"]
+[ext_resource type="Texture2D" uid="uid://boqdes10xhhd7" path="res://assets/old_project_assets/sprites/az860s6f.png" id="10_hmhvd"]
+[ext_resource type="Texture2D" uid="uid://d0oc1v74fphrl" path="res://assets/old_project_assets/sprites/grotte.png" id="13_qgvr7"]
+[ext_resource type="Texture2D" uid="uid://dco45kehaqly8" path="res://assets/old_project_assets/sprites/livre.png" id="14_3cax1"]
+[ext_resource type="Texture2D" uid="uid://clrleen3iq8jl" path="res://assets/old_project_assets/sprites/foret.png" id="15_hgxnh"]
+[ext_resource type="Texture2D" uid="uid://oq5opgl5scbe" path="res://assets/old_project_assets/sprites/baton.png" id="16_k64bm"]
+[ext_resource type="Texture2D" uid="uid://dxck0bt7trb8x" path="res://assets/old_project_assets/sprites/laminak_homme.png" id="17_nv8wy"]
+[ext_resource type="Texture2D" uid="uid://3xt1fdoxkod2" path="res://assets/old_project_assets/sprites/rock.png" id="17_qqnct"]
+[ext_resource type="Texture2D" uid="uid://d34tngrwbmjkb" path="res://assets/old_project_assets/sprites/grotte_mari_inter.png" id="19_yxwn2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3cax1"]
 content_margin_left = 5.0
@@ -445,7 +445,3 @@ theme_override_colors/font_color = Color(0.956863, 0.839216, 0.2, 1)
 theme_override_constants/shadow_outline_size = 8
 theme_override_fonts/font = ExtResource("7_g3rn1")
 text = "Entrer"
-
-[node name="Window" type="Window" parent="."]
-position = Vector2i(0, 36)
-script = ExtResource("2_k3t3h")

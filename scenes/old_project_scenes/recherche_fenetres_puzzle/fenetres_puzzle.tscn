@@ -1,99 +1,114 @@
 [gd_scene load_steps=19 format=3 uid="uid://mdp0jea0y75i"]
 
-[ext_resource type="Script" uid="uid://dkeatf5nw0y8r" path="res://scenes/recherche_fenetres_puzzle/fenetres_puzzle.gd" id="1_wg81l"]
-[ext_resource type="PackedScene" uid="uid://cvy0hqbifp4om" path="res://scenes/recherche_fenetres_puzzle/puzzle_window.tscn" id="3_vwdeu"]
-[ext_resource type="Texture2D" uid="uid://bvtmsvrebbcbf" path="res://assets/sprites/puzzle_pieces/piece_1_1.png" id="4_34c8s"]
-[ext_resource type="Texture2D" uid="uid://b6j4qpq08ye1n" path="res://assets/sprites/puzzle_pieces/piece_1_2.png" id="5_qwjuj"]
-[ext_resource type="Texture2D" uid="uid://bqn2r2yrneqgb" path="res://assets/sprites/puzzle_pieces/piece_1_3.png" id="6_div8b"]
-[ext_resource type="Texture2D" uid="uid://c6o3i08sub2u" path="res://assets/sprites/puzzle_pieces/piece_2_1.png" id="7_gcrpi"]
-[ext_resource type="Texture2D" uid="uid://c0ds47agupx02" path="res://assets/sprites/puzzle_pieces/piece_2_2.png" id="8_34c8s"]
-[ext_resource type="Texture2D" uid="uid://bwdplc4rojex1" path="res://assets/sprites/puzzle_pieces/piece_2_3.png" id="9_qwjuj"]
-[ext_resource type="Texture2D" uid="uid://cevugokbjdrq1" path="res://assets/sprites/puzzle_pieces/piece_3_1.png" id="10_dmcav"]
-[ext_resource type="Texture2D" uid="uid://do7mc3i8jdd1k" path="res://assets/sprites/puzzle_pieces/piece_3_2.png" id="11_b7jij"]
-[ext_resource type="Texture2D" uid="uid://yyqyv7q328n3" path="res://assets/sprites/puzzle_pieces/piece_3_3.png" id="12_lrnqr"]
-[ext_resource type="Texture2D" uid="uid://b1k2ynjjqixcq" path="res://assets/sprites/puzzle_pieces/piece_4_1.png" id="13_eku41"]
-[ext_resource type="Texture2D" uid="uid://dkx2c7l7hr7n0" path="res://assets/sprites/puzzle_pieces/piece_4_2.png" id="14_8hfyw"]
-[ext_resource type="Texture2D" uid="uid://7qlbxnq1yfe6" path="res://assets/sprites/puzzle_pieces/piece_4_3.png" id="15_68h4y"]
-[ext_resource type="Texture2D" uid="uid://dsed0jk2yix5s" path="res://assets/sprites/puzzle_pieces/piece_5_1.png" id="16_eku41"]
-[ext_resource type="Texture2D" uid="uid://ce233u08j1jma" path="res://assets/sprites/puzzle_pieces/piece_5_2.png" id="17_8hfyw"]
-[ext_resource type="Texture2D" uid="uid://ydmhcs1mguth" path="res://assets/sprites/puzzle_pieces/piece_5_3.png" id="18_68h4y"]
-[ext_resource type="PackedScene" uid="uid://djuvo1mlkihil" path="res://scenes/recherche_fenetres_puzzle/resolved_window.tscn" id="18_eku41"]
+[ext_resource type="Script" uid="uid://dkeatf5nw0y8r" path="res://scenes/old_project_scenes/recherche_fenetres_puzzle/fenetres_puzzle.gd" id="1_wg81l"]
+[ext_resource type="PackedScene" uid="uid://cvy0hqbifp4om" path="res://scenes/old_project_scenes/recherche_fenetres_puzzle/puzzle_window.tscn" id="3_vwdeu"]
+[ext_resource type="Texture2D" uid="uid://bvtmsvrebbcbf" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_1_1.png" id="4_34c8s"]
+[ext_resource type="Texture2D" uid="uid://b6j4qpq08ye1n" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_1_2.png" id="5_qwjuj"]
+[ext_resource type="Texture2D" uid="uid://bqn2r2yrneqgb" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_1_3.png" id="6_div8b"]
+[ext_resource type="Texture2D" uid="uid://c6o3i08sub2u" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_2_1.png" id="7_gcrpi"]
+[ext_resource type="Texture2D" uid="uid://c0ds47agupx02" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_2_2.png" id="8_34c8s"]
+[ext_resource type="Texture2D" uid="uid://bwdplc4rojex1" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_2_3.png" id="9_qwjuj"]
+[ext_resource type="Texture2D" uid="uid://cevugokbjdrq1" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_3_1.png" id="10_dmcav"]
+[ext_resource type="Texture2D" uid="uid://do7mc3i8jdd1k" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_3_2.png" id="11_b7jij"]
+[ext_resource type="Texture2D" uid="uid://yyqyv7q328n3" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_3_3.png" id="12_lrnqr"]
+[ext_resource type="Texture2D" uid="uid://b1k2ynjjqixcq" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_4_1.png" id="13_eku41"]
+[ext_resource type="Texture2D" uid="uid://dkx2c7l7hr7n0" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_4_2.png" id="14_8hfyw"]
+[ext_resource type="Texture2D" uid="uid://7qlbxnq1yfe6" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_4_3.png" id="15_68h4y"]
+[ext_resource type="Texture2D" uid="uid://dsed0jk2yix5s" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_5_1.png" id="16_eku41"]
+[ext_resource type="Texture2D" uid="uid://ce233u08j1jma" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_5_2.png" id="17_8hfyw"]
+[ext_resource type="Texture2D" uid="uid://ydmhcs1mguth" path="res://assets/old_project_assets/sprites/puzzle_pieces/piece_5_3.png" id="18_68h4y"]
+[ext_resource type="PackedScene" uid="uid://djuvo1mlkihil" path="res://scenes/old_project_scenes/recherche_fenetres_puzzle/resolved_window.tscn" id="18_eku41"]
 
 [node name="MinisGames" type="Node"]
 script = ExtResource("1_wg81l")
 resolved_window_scene = ExtResource("18_eku41")
 
 [node name="PuzzleWindow11" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow11"
+title = "resolved"
+visible = false
 solution_position = Vector2(28, 87)
 puzzle_piece_texture = ExtResource("4_34c8s")
 
 [node name="PuzzleWindow12" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow12"
+title = "resolved"
+visible = false
 solution_position = Vector2(28, 430)
 puzzle_piece_texture = ExtResource("5_qwjuj")
 
 [node name="PuzzleWindow13" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow13"
+title = "resolved"
+visible = false
 solution_position = Vector2(28, 773)
 puzzle_piece_texture = ExtResource("6_div8b")
 
 [node name="PuzzleWindow21" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow21"
+title = "resolved"
+visible = false
 solution_position = Vector2(404, 87)
 puzzle_piece_texture = ExtResource("7_gcrpi")
 
 [node name="PuzzleWindow22" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow22"
+title = "resolved"
+visible = false
 solution_position = Vector2(404, 430)
 puzzle_piece_texture = ExtResource("8_34c8s")
 
 [node name="PuzzleWindow23" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow23"
+title = "resolved"
+visible = false
 solution_position = Vector2(404, 773)
 puzzle_piece_texture = ExtResource("9_qwjuj")
 
 [node name="PuzzleWindow31" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow31"
+title = "resolved"
+visible = false
 solution_position = Vector2(780, 87)
 puzzle_piece_texture = ExtResource("10_dmcav")
 
 [node name="PuzzleWindow32" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow32"
+title = "resolved"
+visible = false
 solution_position = Vector2(780, 430)
 puzzle_piece_texture = ExtResource("11_b7jij")
 
 [node name="PuzzleWindow33" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow33"
+title = "resolved"
+visible = false
 solution_position = Vector2(780, 773)
 puzzle_piece_texture = ExtResource("12_lrnqr")
 
 [node name="PuzzleWindow41" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow41"
+title = "resolved"
+visible = false
 solution_position = Vector2(1156, 87)
 puzzle_piece_texture = ExtResource("13_eku41")
 
 [node name="PuzzleWindow42" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow42"
+title = "resolved"
+visible = false
 solution_position = Vector2(1156, 430)
 puzzle_piece_texture = ExtResource("14_8hfyw")
 
 [node name="PuzzleWindow43" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow43"
+title = "resolved"
+visible = false
 solution_position = Vector2(1156, 773)
 puzzle_piece_texture = ExtResource("15_68h4y")
 
 [node name="PuzzleWindow51" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow51"
+title = "resolved"
+visible = false
 solution_position = Vector2(1532, 87)
 puzzle_piece_texture = ExtResource("16_eku41")
 
 [node name="PuzzleWindow52" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow52"
+title = "resolved"
+visible = false
 solution_position = Vector2(1532, 430)
 puzzle_piece_texture = ExtResource("17_8hfyw")
 
 [node name="PuzzleWindow53" parent="." instance=ExtResource("3_vwdeu")]
-title = "PuzzleWindow53"
+title = "resolved"
+visible = false
 solution_position = Vector2(1532, 773)
 puzzle_piece_texture = ExtResource("18_68h4y")
