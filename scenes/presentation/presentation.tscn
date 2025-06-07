@@ -1,4 +1,4 @@
-[gd_scene load_steps=180 format=3 uid="uid://cdr0qwlipdg11"]
+[gd_scene load_steps=184 format=3 uid="uid://cdr0qwlipdg11"]
 
 [ext_resource type="Script" uid="uid://wlrxi0ygpx56" path="res://scenes/presentation/presentation.gd" id="1_qulu1"]
 [ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_nd5ni"]
@@ -113,11 +113,14 @@
 [ext_resource type="Material" uid="uid://2hajamul5kbx" path="res://assets/materials/rock_2.tres" id="83_ttlb1"]
 [ext_resource type="PackedScene" uid="uid://cjxi6ecex4610" path="res://assets/scenes/characters/lamina.tscn" id="84_p0hgg"]
 [ext_resource type="Texture2D" uid="uid://ya6fbl3jodiy" path="res://assets/presentation/references/myst1.png" id="85_8imhy"]
+[ext_resource type="Texture2D" uid="uid://d267xwop0y8a8" path="res://assets/presentation/idees_projet/ui4njb2s.png" id="85_qsp0k"]
 [ext_resource type="Texture2D" uid="uid://ctt3qe5w65sm0" path="res://assets/presentation/references/myst2.png" id="86_nqnrk"]
 [ext_resource type="Texture2D" uid="uid://hhlbi8d4xvxo" path="res://assets/presentation/references/feetinthesnow1.png" id="87_nb4qf"]
 [ext_resource type="Script" uid="uid://cwm7erlhakmwm" path="res://scenes/presentation/prototype.gd" id="87_nuo5p"]
 [ext_resource type="Texture2D" uid="uid://cyxwtcocf38ci" path="res://assets/presentation/Capture d'écran 2025-06-03 143945.png" id="88_fosky"]
 [ext_resource type="Texture2D" uid="uid://bxtb854s0c1fm" path="res://assets/presentation/references/feetinthesnow2.png" id="88_qsp0k"]
+[ext_resource type="Texture2D" uid="uid://0ohf0ok8158b" path="res://assets/presentation/references/dreammachine1.png" id="90_gbk34"]
+[ext_resource type="Texture2D" uid="uid://caiyhpdgxsp6h" path="res://assets/presentation/references/dreammachine2.png" id="91_7buv1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r7d6n"]
 sky_top_color = Color(0.247003, 0.311642, 0.45506, 1)
@@ -389,10 +392,13 @@ viewport_path = NodePath("Displays/PhaseIdee/PourquoiJV/SubViewport")
 viewport_path = NodePath("Displays/PhaseIdee/PourquoiGodot/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nqnrk"]
-viewport_path = NodePath("Displays/PhaseIdee/References/IronLung/SubViewport")
+viewport_path = NodePath("Displays/PhaseIdee/References/Myst/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_sh5x0"]
-viewport_path = NodePath("Displays/PhaseIdee/References/Myst/SubViewport")
+viewport_path = NodePath("Displays/PhaseIdee/References/FeetInTheSnow/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_gbk34"]
+viewport_path = NodePath("Displays/PhaseIdee/References/FeetInTheSnow2/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_iqqkb"]
 viewport_path = NodePath("Displays/Fenetres/SubViewport")
@@ -493,7 +499,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_jl3e0")
 [node name="OmniLight3D" type="OmniLight3D" parent="Terrain3D/lamina_cave_2/Fire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01747, 0)
 light_color = Color(0.888454, 0.564508, 0, 1)
-light_energy = 13.3563
+light_energy = 19.6433
 shadow_enabled = true
 shadow_opacity = 0.9
 omni_range = 25.4632
@@ -506,9 +512,9 @@ noise_texture = SubResource("NoiseTexture2D_mcxer")
 
 [node name="SpatialAudioStreamPlayer3D" parent="Terrain3D/lamina_cave_2/Fire/OmniLight3D" instance=ExtResource("13_npnhw")]
 stream = ExtResource("14_imkeq")
-volume_db = -28.673
+volume_db = -28.6735
 autoplay = true
-bus = &"SpatialBus#21"
+bus = &"SpatialBus#1"
 update_frequency_seconds = 2.0
 max_reverb_wetness = 50.0
 
@@ -1071,7 +1077,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -301.377, -6.6259, -230.33)
 [node name="PhasePreliminaire" type="Label3D" parent="Displays/PhaseIdee"]
 transform = Transform3D(-0.308585, 0, -0.951197, 0, 1, 0, 0.951197, 0, -0.308585, -6.99921, 1.04224, -5.07065)
 alpha_cut = 1
-text = "Phase préliminaire"
+text = "Phase idées"
 font = ExtResource("28_cj5kf")
 font_size = 122
 outline_size = 77
@@ -1347,10 +1353,10 @@ texture = SubResource("ViewportTexture_8imhy")
 [node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/PourquoiGodot"]
 disable_3d = true
 transparent_bg = true
-size = Vector2i(1600, 1702)
+size = Vector2i(1630, 1702)
 
 [node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/PourquoiGodot/SubViewport"]
-custom_minimum_size = Vector2(1600, 0)
+custom_minimum_size = Vector2(1627.43, 0)
 offset_right = 1600.0
 offset_bottom = 3000.0
 theme_override_constants/outline_size = 25
@@ -1369,57 +1375,19 @@ text = "[b]Pourquoi Godot ?[/b]
 Godot est un moteur de jeu gratuit et open source, c'est à dire que son code source est librement accessible et que la communauté participe au développement.
 J'ai personnellement choisi ce moteur de jeu car je suis sensible à la création open source, mais égallement car je venais d'apprendre la contronverse autour du moteur Unity (le moteur N°1 chez les dévloppeurs indépendants)"
 
+[node name="Sprite3D" type="Sprite3D" parent="Displays/PhaseIdee/PourquoiGodot"]
+transform = Transform3D(0.999821, 0, -0.0189357, 0, 1, 0, 0.0189357, 0, 0.999821, -4.90143, 1.11127, -0.28717)
+pixel_size = 0.0015
+texture = ExtResource("85_qsp0k")
+
 [node name="References" type="Node3D" parent="Displays/PhaseIdee"]
 transform = Transform3D(-0.175127, 0, -0.984546, 0, 1, 0, 0.984546, 0, -0.175127, -2.52313, -1.19833, 23.9989)
 
-[node name="IronLung" type="Sprite3D" parent="Displays/PhaseIdee/References"]
-transform = Transform3D(0.968535, 0, -0.248876, 0, 1, 0, 0.248876, 0, 0.968535, -3.14291, 0, -0.387878)
+[node name="Myst" type="Sprite3D" parent="Displays/PhaseIdee/References"]
+transform = Transform3D(0.874468, 0, -0.485084, 0, 1, 0, 0.485084, 0, 0.874468, -5.97879, 0, -1.63812)
 pixel_size = 0.0014
 alpha_cut = 1
 texture = SubResource("ViewportTexture_nqnrk")
-
-[node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/References/IronLung"]
-disable_3d = true
-transparent_bg = true
-size = Vector2i(2027, 1381)
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Displays/PhaseIdee/References/IronLung/SubViewport"]
-offset_right = 2027.0
-offset_bottom = 1381.0
-theme_override_constants/separation = 75
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Displays/PhaseIdee/References/IronLung/SubViewport/HBoxContainer2"]
-layout_mode = 2
-theme_override_constants/separation = 85
-
-[node name="TextureRect" type="TextureRect" parent="Displays/PhaseIdee/References/IronLung/SubViewport/HBoxContainer2/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("85_8imhy")
-
-[node name="TextureRect2" type="TextureRect" parent="Displays/PhaseIdee/References/IronLung/SubViewport/HBoxContainer2/VBoxContainer"]
-layout_mode = 2
-texture = ExtResource("86_nqnrk")
-
-[node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/References/IronLung/SubViewport/HBoxContainer2"]
-custom_minimum_size = Vector2(800, 0)
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("55_iqqkb")
-theme_override_fonts/italics_font = ExtResource("48_k2d4w")
-theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
-theme_override_font_sizes/bold_italics_font_size = 80
-theme_override_font_sizes/italics_font_size = 57
-theme_override_font_sizes/mono_font_size = 80
-theme_override_font_sizes/normal_font_size = 67
-theme_override_font_sizes/bold_font_size = 80
-bbcode_enabled = true
-text = "[b]Myst[/b]
-[i][color=#777]Cyan World 1993[/color]
-[/i]Myst est un monument du jeu vidéo et du genre du Point&Click. Il a été extrèmement influant dans le medium du jeu vidéo."
-
-[node name="Myst" type="Sprite3D" parent="Displays/PhaseIdee/References"]
-pixel_size = 0.0014
-alpha_cut = 1
-texture = SubResource("ViewportTexture_sh5x0")
 
 [node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/References/Myst"]
 disable_3d = true
@@ -1437,11 +1405,11 @@ theme_override_constants/separation = 85
 
 [node name="TextureRect" type="TextureRect" parent="Displays/PhaseIdee/References/Myst/SubViewport/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("87_nb4qf")
+texture = ExtResource("85_8imhy")
 
 [node name="TextureRect2" type="TextureRect" parent="Displays/PhaseIdee/References/Myst/SubViewport/HBoxContainer2/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("88_qsp0k")
+texture = ExtResource("86_nqnrk")
 
 [node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/References/Myst/SubViewport/HBoxContainer2"]
 custom_minimum_size = Vector2(800, 0)
@@ -1459,8 +1427,98 @@ text = "[b]Myst[/b]
 [i][color=#777]Cyan World 1993[/color]
 [/i]Myst est un monument du jeu vidéo et du genre du Point&Click. Il a été extrèmement influant dans le medium du jeu vidéo."
 
+[node name="FeetInTheSnow" type="Sprite3D" parent="Displays/PhaseIdee/References"]
+transform = Transform3D(0.982506, 0, -0.186233, 0, 1, 0, 0.186233, 0, 0.982506, -3.0685, 0, -0.502625)
+pixel_size = 0.0014
+alpha_cut = 1
+texture = SubResource("ViewportTexture_sh5x0")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/References/FeetInTheSnow"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(2027, 1381)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Displays/PhaseIdee/References/FeetInTheSnow/SubViewport"]
+offset_right = 2027.0
+offset_bottom = 1381.0
+theme_override_constants/separation = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Displays/PhaseIdee/References/FeetInTheSnow/SubViewport/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 85
+
+[node name="TextureRect" type="TextureRect" parent="Displays/PhaseIdee/References/FeetInTheSnow/SubViewport/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("87_nb4qf")
+
+[node name="TextureRect2" type="TextureRect" parent="Displays/PhaseIdee/References/FeetInTheSnow/SubViewport/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("88_qsp0k")
+
+[node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/References/FeetInTheSnow/SubViewport/HBoxContainer2"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[b]Feet in the Snow[/b]
+[i][color=#777]Abstract Machine 2023[/color]
+[/i]Feet in the snow est un jeu Point&Click indépendant.
+
+Je me suis inspiré du point de vue à la première personne et du style de déplacement, ainsi que de l'atmosphère étrange."
+
+[node name="FeetInTheSnow2" type="Sprite3D" parent="Displays/PhaseIdee/References"]
+transform = Transform3D(0.999972, 0, -0.00752231, 0, 1, 0, 0.00752231, 0, 0.999972, 0.115341, 4.76837e-07, -0.233978)
+pixel_size = 0.0014
+alpha_cut = 1
+texture = SubResource("ViewportTexture_gbk34")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/References/FeetInTheSnow2"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(2097, 1381)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Displays/PhaseIdee/References/FeetInTheSnow2/SubViewport"]
+offset_right = 2027.0
+offset_bottom = 1381.0
+theme_override_constants/separation = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Displays/PhaseIdee/References/FeetInTheSnow2/SubViewport/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 85
+
+[node name="TextureRect" type="TextureRect" parent="Displays/PhaseIdee/References/FeetInTheSnow2/SubViewport/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("90_gbk34")
+
+[node name="TextureRect2" type="TextureRect" parent="Displays/PhaseIdee/References/FeetInTheSnow2/SubViewport/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("91_7buv1")
+
+[node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/References/FeetInTheSnow2/SubViewport/HBoxContainer2"]
+custom_minimum_size = Vector2(820, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[b]The Dream Machine[/b]
+[i][color=#777]Cockroach inc. 2010[/color]
+[/i]The Dream Machine est un jeu Point&Click indépendant où le joueur explore les rêves de ses voisins."
+
 [node name="Label3D2" type="Label3D" parent="Displays/PhaseIdee/References"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54405, 0)
+transform = Transform3D(0.982506, 0, -0.186233, 0, 1, 0, 0.186233, 0, 0.982506, -3.0685, 1.54405, -0.502625)
 pixel_size = 0.002
 text = "Références"
 font = ExtResource("28_cj5kf")
@@ -1470,11 +1528,13 @@ outline_size = 77
 [node name="Gameplay" type="Label3D" parent="Displays"]
 transform = Transform3D(-0.560798, 0, -0.827953, 0, 1, 0, 0.827953, 0, -0.560798, -289.501, -5.89972, -224.476)
 alpha_cut = 1
-text = "Gameplay"
+text = "RECHERCHES
+Gameplay"
 font = ExtResource("28_cj5kf")
 font_size = 122
 outline_size = 77
 uppercase = true
+line_spacing = -40.335
 
 [node name="Fenetres" type="Sprite3D" parent="Displays"]
 transform = Transform3D(-0.684775, 0, 0.205691, 0, 0.715, 0, -0.205691, 0, -0.684775, -287.53, -9.32887, -217.056)

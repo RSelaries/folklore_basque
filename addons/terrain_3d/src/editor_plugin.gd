@@ -50,7 +50,7 @@ func _enter_tree() -> void:
 
 	scene_changed.connect(_on_scene_changed)
 
-	asset_dock = load(ASSET_DOCK).instantiate()
+	asset_dock = preload(ASSET_DOCK).instantiate()
 	asset_dock.initialize(self)
 
 
