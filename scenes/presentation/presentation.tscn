@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=3 uid="uid://cdr0qwlipdg11"]
+[gd_scene load_steps=180 format=3 uid="uid://cdr0qwlipdg11"]
 
 [ext_resource type="Script" uid="uid://wlrxi0ygpx56" path="res://scenes/presentation/presentation.gd" id="1_qulu1"]
 [ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_nd5ni"]
@@ -112,8 +112,12 @@
 [ext_resource type="PackedScene" uid="uid://i72b8dqlnisq" path="res://assets/scenes/characters/bridge_granpa.tscn" id="83_qjduy"]
 [ext_resource type="Material" uid="uid://2hajamul5kbx" path="res://assets/materials/rock_2.tres" id="83_ttlb1"]
 [ext_resource type="PackedScene" uid="uid://cjxi6ecex4610" path="res://assets/scenes/characters/lamina.tscn" id="84_p0hgg"]
+[ext_resource type="Texture2D" uid="uid://ya6fbl3jodiy" path="res://assets/presentation/references/myst1.png" id="85_8imhy"]
+[ext_resource type="Texture2D" uid="uid://ctt3qe5w65sm0" path="res://assets/presentation/references/myst2.png" id="86_nqnrk"]
+[ext_resource type="Texture2D" uid="uid://hhlbi8d4xvxo" path="res://assets/presentation/references/feetinthesnow1.png" id="87_nb4qf"]
 [ext_resource type="Script" uid="uid://cwm7erlhakmwm" path="res://scenes/presentation/prototype.gd" id="87_nuo5p"]
 [ext_resource type="Texture2D" uid="uid://cyxwtcocf38ci" path="res://assets/presentation/Capture d'écran 2025-06-03 143945.png" id="88_fosky"]
+[ext_resource type="Texture2D" uid="uid://bxtb854s0c1fm" path="res://assets/presentation/references/feetinthesnow2.png" id="88_qsp0k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r7d6n"]
 sky_top_color = Color(0.247003, 0.311642, 0.45506, 1)
@@ -382,7 +386,13 @@ viewport_path = NodePath("Displays/PhaseIdee/ExplicationProjet/SubViewport")
 viewport_path = NodePath("Displays/PhaseIdee/PourquoiJV/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_8imhy"]
-viewport_path = NodePath("Displays/PhaseIdee/PourquoiJV2/SubViewport")
+viewport_path = NodePath("Displays/PhaseIdee/PourquoiGodot/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nqnrk"]
+viewport_path = NodePath("Displays/PhaseIdee/References/IronLung/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_sh5x0"]
+viewport_path = NodePath("Displays/PhaseIdee/References/Myst/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_iqqkb"]
 viewport_path = NodePath("Displays/Fenetres/SubViewport")
@@ -483,7 +493,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_jl3e0")
 [node name="OmniLight3D" type="OmniLight3D" parent="Terrain3D/lamina_cave_2/Fire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01747, 0)
 light_color = Color(0.888454, 0.564508, 0, 1)
-light_energy = 17.7173
+light_energy = 13.3563
 shadow_enabled = true
 shadow_opacity = 0.9
 omni_range = 25.4632
@@ -496,7 +506,7 @@ noise_texture = SubResource("NoiseTexture2D_mcxer")
 
 [node name="SpatialAudioStreamPlayer3D" parent="Terrain3D/lamina_cave_2/Fire/OmniLight3D" instance=ExtResource("13_npnhw")]
 stream = ExtResource("14_imkeq")
-volume_db = -28.6729
+volume_db = -28.673
 autoplay = true
 bus = &"SpatialBus#21"
 update_frequency_seconds = 2.0
@@ -1278,6 +1288,25 @@ pixel_size = 0.0027
 alpha_cut = 1
 texture = ExtResource("53_iqqkb")
 
+[node name="Label3D" type="Label3D" parent="Displays/PhaseIdee/IdeeCanvas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59957, 0)
+pixel_size = 0.0014
+text = "Diagramme"
+font = ExtResource("58_iqqkb")
+font_size = 180
+outline_size = 60
+
+[node name="Label3D2" type="Label3D" parent="Displays/PhaseIdee/IdeeCanvas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25312, 0)
+pixel_size = 0.0014
+modulate = Color(0.51, 0.51, 0.51, 1)
+text = "du projet dans sa deuxième version"
+font = ExtResource("58_iqqkb")
+font_size = 110
+outline_size = 0
+autowrap_mode = 3
+width = 1500.0
+
 [node name="PourquoiJV" type="Sprite3D" parent="Displays/PhaseIdee"]
 transform = Transform3D(-0.204035, 0, 0.978963, 0, 1, 0, -0.978963, 0, -0.204035, -2.48822, -1.76066, 4.61758)
 pixel_size = 0.003
@@ -1309,18 +1338,18 @@ text = "[b]Pourquoi un jeu vidéo ?[/b]
 Le but de mon projet est de mettre en avant la culture aux jeunes. Jeunes qui sont générallement inintéressés par la culture et les folklores français.
 Et les jeunes sont aussi la population qui consomment en moyenne le plus de jeux vidéo. Pour cette raison je pensais que le jeu vidéo serais un bon moyen d'intéresser cette catégorie sociale."
 
-[node name="PourquoiJV2" type="Sprite3D" parent="Displays/PhaseIdee"]
+[node name="PourquoiGodot" type="Sprite3D" parent="Displays/PhaseIdee"]
 transform = Transform3D(0.258532, 0, 0.966002, 0, 1, 0, -0.966002, 0, 0.258532, -3.11511, -1.76066, 10.3093)
 pixel_size = 0.003
 alpha_cut = 1
 texture = SubResource("ViewportTexture_8imhy")
 
-[node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/PourquoiJV2"]
+[node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/PourquoiGodot"]
 disable_3d = true
 transparent_bg = true
 size = Vector2i(1600, 1702)
 
-[node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/PourquoiJV2/SubViewport"]
+[node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/PourquoiGodot/SubViewport"]
 custom_minimum_size = Vector2(1600, 0)
 offset_right = 1600.0
 offset_bottom = 3000.0
@@ -1339,6 +1368,104 @@ text = "[b]Pourquoi Godot ?[/b]
 
 Godot est un moteur de jeu gratuit et open source, c'est à dire que son code source est librement accessible et que la communauté participe au développement.
 J'ai personnellement choisi ce moteur de jeu car je suis sensible à la création open source, mais égallement car je venais d'apprendre la contronverse autour du moteur Unity (le moteur N°1 chez les dévloppeurs indépendants)"
+
+[node name="References" type="Node3D" parent="Displays/PhaseIdee"]
+transform = Transform3D(-0.175127, 0, -0.984546, 0, 1, 0, 0.984546, 0, -0.175127, -2.52313, -1.19833, 23.9989)
+
+[node name="IronLung" type="Sprite3D" parent="Displays/PhaseIdee/References"]
+transform = Transform3D(0.968535, 0, -0.248876, 0, 1, 0, 0.248876, 0, 0.968535, -3.14291, 0, -0.387878)
+pixel_size = 0.0014
+alpha_cut = 1
+texture = SubResource("ViewportTexture_nqnrk")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/References/IronLung"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(2027, 1381)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Displays/PhaseIdee/References/IronLung/SubViewport"]
+offset_right = 2027.0
+offset_bottom = 1381.0
+theme_override_constants/separation = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Displays/PhaseIdee/References/IronLung/SubViewport/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 85
+
+[node name="TextureRect" type="TextureRect" parent="Displays/PhaseIdee/References/IronLung/SubViewport/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("85_8imhy")
+
+[node name="TextureRect2" type="TextureRect" parent="Displays/PhaseIdee/References/IronLung/SubViewport/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("86_nqnrk")
+
+[node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/References/IronLung/SubViewport/HBoxContainer2"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[b]Myst[/b]
+[i][color=#777]Cyan World 1993[/color]
+[/i]Myst est un monument du jeu vidéo et du genre du Point&Click. Il a été extrèmement influant dans le medium du jeu vidéo."
+
+[node name="Myst" type="Sprite3D" parent="Displays/PhaseIdee/References"]
+pixel_size = 0.0014
+alpha_cut = 1
+texture = SubResource("ViewportTexture_sh5x0")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/References/Myst"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(2027, 1381)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Displays/PhaseIdee/References/Myst/SubViewport"]
+offset_right = 2027.0
+offset_bottom = 1381.0
+theme_override_constants/separation = 75
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Displays/PhaseIdee/References/Myst/SubViewport/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 85
+
+[node name="TextureRect" type="TextureRect" parent="Displays/PhaseIdee/References/Myst/SubViewport/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("87_nb4qf")
+
+[node name="TextureRect2" type="TextureRect" parent="Displays/PhaseIdee/References/Myst/SubViewport/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("88_qsp0k")
+
+[node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/References/Myst/SubViewport/HBoxContainer2"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[b]Myst[/b]
+[i][color=#777]Cyan World 1993[/color]
+[/i]Myst est un monument du jeu vidéo et du genre du Point&Click. Il a été extrèmement influant dans le medium du jeu vidéo."
+
+[node name="Label3D2" type="Label3D" parent="Displays/PhaseIdee/References"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54405, 0)
+pixel_size = 0.002
+text = "Références"
+font = ExtResource("28_cj5kf")
+font_size = 150
+outline_size = 77
 
 [node name="Gameplay" type="Label3D" parent="Displays"]
 transform = Transform3D(-0.560798, 0, -0.827953, 0, 1, 0, 0.827953, 0, -0.560798, -289.501, -5.89972, -224.476)
