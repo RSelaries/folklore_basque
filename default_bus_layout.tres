@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=34 format=3 uid="uid://b1hhl7ihm3kyi"]
+[gd_resource type="AudioBusLayout" load_steps=36 format=3 uid="uid://b1hhl7ihm3kyi"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n8wo2"]
 room_size = 0.0
@@ -57,6 +57,12 @@ room_size = 0.0
 wet = 0.0
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_3r1kf"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_sjxdv"]
+room_size = 0.0
+wet = 6.9389e-15
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_hnxjo"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
@@ -278,3 +284,13 @@ bus/19/effect/0/effect = SubResource("AudioEffectReverb_hnxjo")
 bus/19/effect/0/enabled = true
 bus/19/effect/1/effect = SubResource("AudioEffectLowPassFilter_3r1kf")
 bus/19/effect/1/enabled = true
+bus/20/name = &"SpatialBus#20"
+bus/20/solo = false
+bus/20/mute = false
+bus/20/bypass_fx = false
+bus/20/volume_db = 0.0
+bus/20/send = &"SpatialBus#20"
+bus/20/effect/0/effect = SubResource("AudioEffectReverb_sjxdv")
+bus/20/effect/0/enabled = true
+bus/20/effect/1/effect = SubResource("AudioEffectLowPassFilter_hnxjo")
+bus/20/effect/1/enabled = true

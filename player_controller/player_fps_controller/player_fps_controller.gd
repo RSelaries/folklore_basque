@@ -76,7 +76,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		target_zoom *= 0.8
 	elif event.is_action_pressed("zoom_out"):
 		target_zoom *= 1.2
-	target_zoom = clamp(target_zoom, 40, 80)
+	target_zoom = clamp(target_zoom, 40, 75)
 
 
 func _physics_process(delta: float) -> void:
