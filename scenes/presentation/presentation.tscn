@@ -499,7 +499,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_jl3e0")
 [node name="OmniLight3D" type="OmniLight3D" parent="Terrain3D/lamina_cave_2/Fire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01747, 0)
 light_color = Color(0.888454, 0.564508, 0, 1)
-light_energy = 19.6433
+light_energy = 10.2582
 shadow_enabled = true
 shadow_opacity = 0.9
 omni_range = 25.4632
@@ -512,9 +512,9 @@ noise_texture = SubResource("NoiseTexture2D_mcxer")
 
 [node name="SpatialAudioStreamPlayer3D" parent="Terrain3D/lamina_cave_2/Fire/OmniLight3D" instance=ExtResource("13_npnhw")]
 stream = ExtResource("14_imkeq")
-volume_db = -28.6735
+volume_db = -28.6736
 autoplay = true
-bus = &"SpatialBus#1"
+bus = &"SpatialBus#22"
 update_frequency_seconds = 2.0
 max_reverb_wetness = 50.0
 
