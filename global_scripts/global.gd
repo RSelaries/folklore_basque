@@ -14,8 +14,8 @@ func _ready() -> void:
 		#_add_fps_counter()
 
 
-func _add_fps_counter() -> void:
-	get_tree().root.add_child.call_deferred(FpsCounter.create_fps_counter())
+#func _add_fps_counter() -> void:
+	#get_tree().root.add_child.call_deferred(FpsCounter.create_fps_counter())
 
 
 func _notification(what):

@@ -2,16 +2,24 @@ extends Node3D
 
 
 @onready var player_fps_controller: PlayerFpsController = %PlayerFpsController
+@onready var memoire_label: Label3D = %MemoireLabel
 
 
 func _ready() -> void:
 	get_window().mode = Window.MODE_FULLSCREEN
 	get_window().transparent = false
-	pass
-	#player_fps_controller.find_child("Neck").find_child("FpsCamera").make_current()
 	
-	#player_fps_controller.walking_speed = 1.0
-	#player_fps_controller.mouse_sensitivity = 0.04
-	#var tween: Tween = get_tree().create_tween()
-	#tween.tween_property(player_fps_controller, "mouse_sensitivity", 0.2, 3.0)
-	#tween.tween_property(player_fps_controller, "walking_speed", 5.0, 3.0)
+	var path: String = get_documents_folder().path_join("dream_scape_awake.exe")
+	#if not DirAccess.dir_exists_absolute(path):
+	if not FileAccess.file_exists(path):
+		memoire_label.text = "dream_scape_awake.exe non trouvé"
+		print("FileAccess.file_exists(path) => ", FileAccess.file_exists(path))
+		print("path : ", path)
+
+
+func get_documents_folder() -> String:
+	if OS.get_name() == "Windows":
+		var userprofile = OS.get_environment("USERPROFILE")
+		if userprofile != "":
+			return userprofile.path_join("Documents")
+	return ""
