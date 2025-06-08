@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=3 uid="uid://cdr0qwlipdg11"]
+[gd_scene load_steps=190 format=3 uid="uid://cdr0qwlipdg11"]
 
 [ext_resource type="Script" uid="uid://wlrxi0ygpx56" path="res://scenes/presentation/presentation.gd" id="1_qulu1"]
 [ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_nd5ni"]
@@ -112,6 +112,7 @@
 [ext_resource type="PackedScene" uid="uid://i72b8dqlnisq" path="res://assets/scenes/characters/bridge_granpa.tscn" id="83_qjduy"]
 [ext_resource type="Material" uid="uid://2hajamul5kbx" path="res://assets/materials/rock_2.tres" id="83_ttlb1"]
 [ext_resource type="PackedScene" uid="uid://cjxi6ecex4610" path="res://assets/scenes/characters/lamina.tscn" id="84_p0hgg"]
+[ext_resource type="Texture2D" uid="uid://bxxp3tix7xs8h" path="res://assets/presentation/idees_projet/Intrigue.png" id="85_7buv1"]
 [ext_resource type="Texture2D" uid="uid://ya6fbl3jodiy" path="res://assets/presentation/references/myst1.png" id="85_8imhy"]
 [ext_resource type="Texture2D" uid="uid://d267xwop0y8a8" path="res://assets/presentation/idees_projet/ui4njb2s.png" id="85_qsp0k"]
 [ext_resource type="Texture2D" uid="uid://ctt3qe5w65sm0" path="res://assets/presentation/references/myst2.png" id="86_nqnrk"]
@@ -121,6 +122,8 @@
 [ext_resource type="Texture2D" uid="uid://bxtb854s0c1fm" path="res://assets/presentation/references/feetinthesnow2.png" id="88_qsp0k"]
 [ext_resource type="Texture2D" uid="uid://0ohf0ok8158b" path="res://assets/presentation/references/dreammachine1.png" id="90_gbk34"]
 [ext_resource type="Texture2D" uid="uid://caiyhpdgxsp6h" path="res://assets/presentation/references/dreammachine2.png" id="91_7buv1"]
+[ext_resource type="Texture2D" uid="uid://df0fn6hpxrnki" path="res://assets/presentation/idees_projet/w8lfswqd.png" id="93_0tk8v"]
+[ext_resource type="Texture2D" uid="uid://cvrare63s0tnw" path="res://assets/presentation/idees_projet/Capture d'écran 2025-06-08 200332.png" id="94_xfalj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r7d6n"]
 sky_top_color = Color(0.247003, 0.311642, 0.45506, 1)
@@ -400,6 +403,15 @@ viewport_path = NodePath("Displays/PhaseIdee/References/FeetInTheSnow/SubViewpor
 [sub_resource type="ViewportTexture" id="ViewportTexture_gbk34"]
 viewport_path = NodePath("Displays/PhaseIdee/References/FeetInTheSnow2/SubViewport")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_0tk8v"]
+viewport_path = NodePath("Displays/PhaseIdee/PourquoiBasque/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xfalj"]
+viewport_path = NodePath("Displays/PhaseIdee/Communication/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_trgt8"]
+viewport_path = NodePath("Displays/PhaseIdee/Financement/SubViewport")
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_iqqkb"]
 viewport_path = NodePath("Displays/Fenetres/SubViewport")
 
@@ -455,7 +467,7 @@ viewport_path = NodePath("Displays/Prototype/Sprite3D/SubViewport")
 script = ExtResource("1_qulu1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.979911, -0.157579, 0.122244, -8.31056e-08, 0.612948, 0.790123, -0.199436, -0.774251, 0.600634, 0, 0, 0)
+transform = Transform3D(0.979911, -0.157579, 0.122244, -8.31056e-08, 0.612948, 0.790123, -0.199436, -0.774251, 0.600634, -289.084, 0, -222.483)
 light_color = Color(0.78778, 0.849289, 0.807934, 1)
 light_energy = 2.099
 light_specular = 0.256
@@ -783,6 +795,8 @@ Dans un monde sans soleil, les humains se sont réfugiés sous terre pour surviv
 HypnOS est une puce neuronale qui permet à l'utilisateut de générer des rêves et vivre dedans tel de la VR.
 
 Le joueur va se retrouver dans une station de métro sombre et claustrophobique, va entrer dans le métro et s'endormir, pour se réveillé dans un monde idyllique. Mais cez monde va vite montrer ses limitations."
+horizontal_alignment = 3
+justification_flags = 35
 
 [node name="RecherchesGraphiques" type="Sprite3D" parent="Displays/DesignFiction"]
 transform = Transform3D(0.352413, 0, 0.935843, 0, 1, 0, -0.935843, 0, 0.352413, 2.13345, -1.21603, -17.8279)
@@ -1290,6 +1304,8 @@ Mon projet diplôme vise à faire connaître la culture des régions de France a
 Les jeux visent à ne pas être des \"cartes postale\" (seul but de mettre en avant la région) mais bien d'être des jeux intéressants en eux mêmes.
 
 Les jeux seront disponibles gratuitements sur les plateformes de jeu vidéo ainsi que sur les sites internet des régions en question."
+horizontal_alignment = 3
+justification_flags = 35
 
 [node name="IdeeCanvas" type="Sprite3D" parent="Displays/PhaseIdee"]
 transform = Transform3D(-0.442821, 0, -0.89661, 0, 1, 0, 0.89661, 0, -0.442821, 3.59454, -1.24558, 12.5335)
@@ -1310,6 +1326,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25312, 0)
 pixel_size = 0.0014
 modulate = Color(0.51, 0.51, 0.51, 1)
 text = "du projet dans sa deuxième version"
+font = ExtResource("58_iqqkb")
+font_size = 110
+outline_size = 0
+autowrap_mode = 3
+width = 1500.0
+
+[node name="Intrigue1" type="Sprite3D" parent="Displays/PhaseIdee"]
+transform = Transform3D(-0.994092, 0, 0.108537, 0, 1, 0, -0.108537, 0, -0.994092, -7.69812, -0.447003, 32.1713)
+pixel_size = 0.0027
+alpha_cut = 1
+texture = ExtResource("85_7buv1")
+
+[node name="Label3D" type="Label3D" parent="Displays/PhaseIdee/Intrigue1"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -2.74039, 2.63042, -0.0102386)
+pixel_size = 0.0014
+text = "Diagramme"
+font = ExtResource("58_iqqkb")
+font_size = 180
+outline_size = 60
+
+[node name="Label3D2" type="Label3D" parent="Displays/PhaseIdee/Intrigue1"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, -2.74039, 2.28397, -0.0102386)
+pixel_size = 0.0014
+modulate = Color(0.51, 0.51, 0.51, 1)
+text = "de la première recherche de l'intrigue et des lieux"
 font = ExtResource("58_iqqkb")
 font_size = 110
 outline_size = 0
@@ -1347,6 +1388,8 @@ text = "[b]Pourquoi un jeu vidéo ?[/b]
 
 Le but de mon projet est de mettre en avant la culture aux jeunes. Jeunes qui sont générallement inintéressés par la culture et les folklores français.
 Et les jeunes sont aussi la population qui consomment en moyenne le plus de jeux vidéo. Pour cette raison je pensais que le jeu vidéo serais un bon moyen d'intéresser cette catégorie sociale."
+horizontal_alignment = 3
+justification_flags = 35
 
 [node name="PourquoiGodot" type="Sprite3D" parent="Displays/PhaseIdee"]
 transform = Transform3D(0.258532, 0, 0.966002, 0, 1, 0, -0.966002, 0, 0.258532, -3.11511, -1.76066, 10.3093)
@@ -1379,9 +1422,11 @@ text = "[b]Pourquoi Godot ?[/b]
 
 Godot est un moteur de jeu gratuit et open source, c'est à dire que son code source est librement accessible et que la communauté participe au développement.
 J'ai personnellement choisi ce moteur de jeu car je suis sensible à la création open source, mais égallement car je venais d'apprendre la contronverse autour du moteur Unity (le moteur N°1 chez les dévloppeurs indépendants)"
+horizontal_alignment = 3
+justification_flags = 35
 
 [node name="Sprite3D" type="Sprite3D" parent="Displays/PhaseIdee/PourquoiGodot"]
-transform = Transform3D(0.996643, 0, -0.081869, 0, 1, 0, 0.081869, 0, 0.996643, -4.90143, 1.11127, -0.28717)
+transform = Transform3D(0.999033, 0, 0.0439681, 0, 1, 0, -0.0439681, 0, 0.999033, -4.84924, 1.11127, -0.0814819)
 pixel_size = 0.0015
 texture_filter = 0
 texture = ExtResource("85_qsp0k")
@@ -1530,6 +1575,125 @@ text = "Références"
 font = ExtResource("28_cj5kf")
 font_size = 150
 outline_size = 77
+
+[node name="PourquoiBasque" type="Sprite3D" parent="Displays/PhaseIdee"]
+transform = Transform3D(-0.0371333, 0, -0.999311, 0, 1, 0, 0.999311, 0, -0.0371333, -2.56509, -1.35631, 28.95)
+pixel_size = 0.003
+alpha_cut = 1
+texture = SubResource("ViewportTexture_0tk8v")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/PourquoiBasque"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1630, 977)
+render_target_update_mode = 4
+
+[node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/PourquoiBasque/SubViewport"]
+custom_minimum_size = Vector2(1627.43, 0)
+offset_top = 40.0
+offset_right = 1627.43
+offset_bottom = 3040.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]Pourquoi la région basque ?[/b]
+
+J'ai décide de choisir la région basque car j'y suis né (à Bayonne plus précisément) mais que je ne connaissais moi même aucunement le folklore basque. Je me suis alors dis que cela en ferais un sujet intéressant, surtout que ce folklore est bien plus vieux que les contes  français généralement d'origine chrétienne."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="TextureRect" type="TextureRect" parent="Displays/PhaseIdee/PourquoiBasque/SubViewport"]
+offset_left = 1241.0
+offset_top = 12.0
+offset_right = 1584.0
+offset_bottom = 204.0
+texture = ExtResource("93_0tk8v")
+expand_mode = 1
+
+[node name="Communication" type="Sprite3D" parent="Displays/PhaseIdee"]
+transform = Transform3D(0.441773, 0, 0.897127, 0, 1, 0, -0.897127, 0, 0.441773, -7.73509, -0.870281, 22.5866)
+pixel_size = 0.003
+alpha_cut = 1
+texture = SubResource("ViewportTexture_xfalj")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/Communication"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1990, 1302)
+render_target_update_mode = 4
+
+[node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/Communication/SubViewport"]
+custom_minimum_size = Vector2(1627.43, 0)
+offset_right = 1935.0
+offset_bottom = 1493.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]Communication[/b]
+
+[dropcap font_size=1 margins=520,400,64,64] [/dropcap]Le jeu n’ayant pas pour but de créer du profit  la communication autour du projet serait simple : posts sur les réseaux sociaux des régions, peut être également de la plateforme itch (qui a souvent tendance à mettre en avant des jeux sur ses réseaux sociaux) mais aussi une campagne d’affichage numérique et dans les rues qui serait prise en charge par la région, grâce à des visuels et vidéos que je fournirais."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="TextureRect" type="TextureRect" parent="Displays/PhaseIdee/Communication/SubViewport"]
+offset_left = 29.0
+offset_top = 227.0
+offset_right = 605.0
+offset_bottom = 734.0
+texture = ExtResource("94_xfalj")
+expand_mode = 1
+
+[node name="Financement" type="Sprite3D" parent="Displays/PhaseIdee"]
+transform = Transform3D(0.465662, 0, 0.884963, 0, 1, 0, -0.884963, 0, 0.465662, -11.6857, -0.870281, 28.5393)
+pixel_size = 0.003
+alpha_cut = 1
+texture = SubResource("ViewportTexture_trgt8")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/Financement"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1195, 1302)
+render_target_update_mode = 4
+
+[node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/Financement/SubViewport"]
+offset_right = 1171.0
+offset_bottom = 1493.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]Financement[/b]
+
+Financé par la région, plus une demande d'aide 	au ministère de la culture.
+
+[b]Public[/b]
+
+Le jeu vise un public jeune et qui serait normalement inintéressé par les folklores français."
+horizontal_alignment = 3
+justification_flags = 35
 
 [node name="Gameplay" type="Label3D" parent="Displays"]
 transform = Transform3D(-0.560798, 0, -0.827953, 0, 1, 0, 0.827953, 0, -0.560798, -289.501, -5.89972, -224.476)
