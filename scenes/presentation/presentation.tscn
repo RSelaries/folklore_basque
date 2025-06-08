@@ -1,4 +1,4 @@
-[gd_scene load_steps=190 format=3 uid="uid://cdr0qwlipdg11"]
+[gd_scene load_steps=192 format=3 uid="uid://cdr0qwlipdg11"]
 
 [ext_resource type="Script" uid="uid://wlrxi0ygpx56" path="res://scenes/presentation/presentation.gd" id="1_qulu1"]
 [ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_nd5ni"]
@@ -413,23 +413,29 @@ viewport_path = NodePath("Displays/PhaseIdee/Communication/SubViewport")
 viewport_path = NodePath("Displays/PhaseIdee/Financement/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_iqqkb"]
-viewport_path = NodePath("Displays/Fenetres/SubViewport")
+viewport_path = NodePath("Displays/Gameplay/FenetreTransparante/SubViewport")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_uqamv"]
-size = Vector3(3.79199, 2.43384, 0.0830078)
+[sub_resource type="BoxShape3D" id="BoxShape3D_6xq3o"]
+size = Vector3(3.53277, 1.97121, 0.0800781)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_512ek"]
+viewport_path = NodePath("Displays/Gameplay/FenetresPuzzle/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dk27y"]
+size = Vector3(2.62988, 3.90295, 0.0917969)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_la88n"]
 shader = ExtResource("54_8s1bk")
 shader_parameter/lod = 4.014
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dk27y"]
-size = Vector3(2.46851, 3.43799, 0.0917969)
+[sub_resource type="ViewportTexture" id="ViewportTexture_xdncf"]
+viewport_path = NodePath("Displays/Gameplay/FenetresLieux/SubViewport")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_6xq3o"]
-size = Vector3(3.09813, 1.81546, 0.0800781)
+[sub_resource type="BoxShape3D" id="BoxShape3D_uqamv"]
+size = Vector3(4.79077, 2.7052, 0.0830078)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_0n1gm"]
-viewport_path = NodePath("Displays/OldPointAndClick/PointAndClick/SubViewport")
+viewport_path = NodePath("Displays/Gameplay/OldPointAndClick/PointAndClick/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0n1gm"]
 shader = ExtResource("28_qulu1")
@@ -1695,8 +1701,11 @@ Le jeu vise un public jeune et qui serait normalement inintéressé par les folk
 horizontal_alignment = 3
 justification_flags = 35
 
-[node name="Gameplay" type="Label3D" parent="Displays"]
-transform = Transform3D(-0.560798, 0, -0.827953, 0, 1, 0, 0.827953, 0, -0.560798, -289.501, -5.89972, -224.476)
+[node name="Gameplay" type="Node3D" parent="Displays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -285.43, -9.17825, -221.625)
+
+[node name="Gameplay" type="Label3D" parent="Displays/Gameplay"]
+transform = Transform3D(-0.560798, 0, -0.827953, 0, 1, 0, 0.827953, 0, -0.560798, -4.07126, 3.27853, -2.85063)
 alpha_cut = 1
 text = "RECHERCHES
 Gameplay"
@@ -1706,286 +1715,358 @@ outline_size = 77
 uppercase = true
 line_spacing = -40.335
 
-[node name="Fenetres" type="Sprite3D" parent="Displays"]
-transform = Transform3D(-0.684775, 0, 0.205691, 0, 0.715, 0, -0.205691, 0, -0.684775, -287.53, -9.32887, -217.056)
-alpha_cut = 2
+[node name="FenetreTransparante" type="Sprite3D" parent="Displays/Gameplay"]
+transform = Transform3D(0.53125, 0, 0.478539, 0, 0.715, 0, -0.478539, 0, 0.53125, 9.89429, -0.496413, -9.51468)
+pixel_size = 0.0037
+alpha_cut = 1
+texture_filter = 0
 texture = SubResource("ViewportTexture_iqqkb")
 
-[node name="SubViewport" type="SubViewport" parent="Displays/Fenetres"]
+[node name="SubViewport" type="SubViewport" parent="Displays/Gameplay/FenetreTransparante"]
 disable_3d = true
 transparent_bg = true
-size = Vector2i(1275, 405)
+size = Vector2i(995, 710)
 
-[node name="lieux" type="Control" parent="Displays/Fenetres/SubViewport"]
+[node name="TransparentWindow" type="TextureRect" parent="Displays/Gameplay/FenetreTransparante/SubViewport"]
+offset_left = -91.0
+offset_top = -56.0
+offset_right = 1093.0
+offset_bottom = 764.0
+texture = ExtResource("70_uqamv")
+
+[node name="Label3D" type="Label3D" parent="Displays/Gameplay/FenetreTransparante"]
+transform = Transform3D(2.34, 0, 0, 0, 2.34, 0, 0, 0, 2.34, 0, 2.34448, 0)
+pixel_size = 0.0009
+text = "Fenêtre transparante"
+font = ExtResource("58_iqqkb")
+font_size = 180
+outline_size = 60
+
+[node name="Transparence" type="Area3D" parent="Displays/Gameplay/FenetreTransparante"]
+script = ExtResource("75_ju3xo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Gameplay/FenetreTransparante/Transparence"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0.020874, 0.0447922, -3.05176e-05)
+shape = SubResource("BoxShape3D_6xq3o")
+
+[node name="FenetresPuzzle" type="Sprite3D" parent="Displays/Gameplay"]
+transform = Transform3D(0.579108, 0, 0.419357, 0, 0.715, 0, -0.419357, 0, 0.579108, 4.07407, -0.496413, -6.62787)
+pixel_size = 0.0022
+alpha_cut = 1
+texture_filter = 0
+texture = SubResource("ViewportTexture_512ek")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Gameplay/FenetresPuzzle"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(2185, 1865)
+
+[node name="Label" type="RichTextLabel" parent="Displays/Gameplay/FenetresPuzzle/SubViewport"]
+custom_minimum_size = Vector2(800, 0)
+offset_left = 1347.0
+offset_top = 31.0
+offset_right = 2168.0
+offset_bottom = 1788.0
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[b]Puzzle de fenêtres[/b]
+
+Ma première recherche de gameplay avec les fenêtres s'est tournée de manière litéral comme un puzzle."
+
+[node name="Puzzle2" type="Control" parent="Displays/Gameplay/FenetresPuzzle/SubViewport"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux"]
+[node name="TextureRect4" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2"]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 85.0
-offset_right = 297.0
-offset_bottom = 301.0
+offset_left = -44.0
+offset_top = -54.0
+offset_right = 715.0
+offset_bottom = 766.0
 texture = ExtResource("60_iv3um")
 expand_mode = 1
-stretch_mode = 5
 
-[node name="TextureRect4" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux/TextureRect"]
+[node name="TextureRect6" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2/TextureRect4"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 27.0
-offset_top = 43.0
-offset_right = -33.0
-offset_bottom = -47.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("61_t8ca7")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="TextureRect3" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux"]
-layout_mode = 0
-offset_left = 194.0
-offset_top = 126.0
-offset_right = 517.0
-offset_bottom = 378.0
-texture = ExtResource("60_iv3um")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="TextureRect5" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux/TextureRect3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 31.0
-offset_top = 51.0
-offset_right = -31.0
-offset_bottom = -55.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("62_t8ca7")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="TextureRect2" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux"]
-layout_mode = 0
-offset_left = 119.0
-offset_top = 3.0
-offset_right = 434.0
-offset_bottom = 249.0
-texture = ExtResource("60_iv3um")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/lieux/TextureRect2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 49.0
-offset_right = -30.0
-offset_bottom = -54.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("63_ty7mw")
-expand_mode = 1
-stretch_mode = 6
-
-[node name="Puzzle" type="Control" parent="Displays/Fenetres/SubViewport"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -81.0
-offset_top = -53.0
-offset_right = -41.0
-offset_bottom = -13.0
-
-[node name="TextureRect4" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
-layout_mode = 0
-offset_left = 614.0
-offset_top = 47.0
-offset_right = 771.0
-offset_bottom = 208.0
-texture = ExtResource("60_iv3um")
-expand_mode = 1
-
-[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 26.0
-offset_right = -15.0
-offset_bottom = -29.0
+offset_left = 73.0
+offset_top = 133.0
+offset_right = -72.0
+offset_bottom = -149.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("64_rajte")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="TextureRect5" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
+[node name="TextureRect5" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2"]
 layout_mode = 0
-offset_left = 747.0
-offset_top = 47.0
-offset_right = 904.0
-offset_bottom = 208.0
+offset_left = 586.0
+offset_top = -49.0
+offset_right = 1345.0
+offset_bottom = 771.0
 texture = ExtResource("60_iv3um")
 expand_mode = 1
 
-[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect5"]
+[node name="TextureRect6" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2/TextureRect5"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 26.0
-offset_right = -15.0
-offset_bottom = -29.0
+offset_left = 74.0
+offset_top = 133.0
+offset_right = -73.0
+offset_bottom = -150.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("65_uqamv")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="TextureRect7" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
+[node name="TextureRect7" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2"]
 layout_mode = 0
-offset_left = 613.0
-offset_top = 167.0
-offset_right = 770.0
-offset_bottom = 328.0
+offset_left = -45.0
+offset_top = 554.0
+offset_right = 714.0
+offset_bottom = 1374.0
 texture = ExtResource("60_iv3um")
 expand_mode = 1
 
-[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect7"]
+[node name="TextureRect6" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2/TextureRect7"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 26.0
-offset_right = -15.0
-offset_bottom = -29.0
+offset_left = 73.0
+offset_top = 133.0
+offset_right = -73.0
+offset_bottom = -150.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("66_dk27y")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="TextureRect8" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
+[node name="TextureRect8" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2"]
 layout_mode = 0
-offset_left = 746.0
-offset_top = 167.0
-offset_right = 903.0
-offset_bottom = 328.0
+offset_left = 593.0
+offset_top = 555.0
+offset_right = 1352.0
+offset_bottom = 1375.0
 texture = ExtResource("60_iv3um")
 expand_mode = 1
 
-[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect8"]
+[node name="TextureRect6" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2/TextureRect8"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 26.0
-offset_right = -15.0
-offset_bottom = -29.0
+offset_left = 73.0
+offset_top = 133.0
+offset_right = -73.0
+offset_bottom = -150.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("67_6xq3o")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="TextureRect9" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
+[node name="TextureRect9" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2"]
 layout_mode = 0
-offset_left = 747.0
-offset_top = 289.0
-offset_right = 904.0
-offset_bottom = 450.0
+offset_left = 588.0
+offset_top = 1172.0
+offset_right = 1347.0
+offset_bottom = 1992.0
 texture = ExtResource("60_iv3um")
 expand_mode = 1
 
-[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect9"]
+[node name="TextureRect6" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2/TextureRect9"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 26.0
-offset_right = -15.0
-offset_bottom = -29.0
+offset_left = 73.0
+offset_top = 133.0
+offset_right = -72.0
+offset_bottom = -149.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("68_s13hq")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle"]
+[node name="TextureRect6" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2"]
 layout_mode = 0
-offset_left = 615.0
-offset_top = 287.0
-offset_right = 772.0
-offset_bottom = 448.0
+offset_left = -44.0
+offset_top = 1174.0
+offset_right = 715.0
+offset_bottom = 1994.0
 texture = ExtResource("60_iv3um")
 expand_mode = 1
 
-[node name="TextureRect6" type="TextureRect" parent="Displays/Fenetres/SubViewport/Puzzle/TextureRect6"]
+[node name="TextureRect6" type="TextureRect" parent="Displays/Gameplay/FenetresPuzzle/SubViewport/Puzzle2/TextureRect6"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 26.0
-offset_right = -15.0
-offset_bottom = -29.0
+offset_left = 73.0
+offset_top = 133.0
+offset_right = -73.0
+offset_bottom = -150.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("69_fpy3i")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="Transparent" type="Control" parent="Displays/Fenetres/SubViewport"]
+[node name="Puzzle" type="Area3D" parent="Displays/Gameplay/FenetresPuzzle"]
+script = ExtResource("73_s13hq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Gameplay/FenetresPuzzle/Puzzle"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, -0.999988, 0.00433254, -0.000152499)
+shape = SubResource("BoxShape3D_dk27y")
+
+[node name="PuzzleWindowsLayer" type="CanvasLayer" parent="Displays/Gameplay/FenetresPuzzle/Puzzle"]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Displays/Gameplay/FenetresPuzzle/Puzzle/PuzzleWindowsLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.670588)
+
+[node name="Blur" type="ColorRect" parent="Displays/Gameplay/FenetresPuzzle/Puzzle/PuzzleWindowsLayer"]
+material = SubResource("ShaderMaterial_la88n")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MinisGames" parent="Displays/Gameplay/FenetresPuzzle/Puzzle" instance=ExtResource("74_fpy3i")]
+
+[node name="FenetresLieux" type="Sprite3D" parent="Displays/Gameplay"]
+transform = Transform3D(0.682803, 0, 0.212146, 0, 0.715, 0, -0.212146, 0, 0.682803, 11.9018, -0.496412, -10.1822)
+pixel_size = 0.0037
+alpha_cut = 1
+texture_filter = 0
+texture = SubResource("ViewportTexture_xdncf")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Gameplay/FenetresLieux"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1650, 1045)
+
+[node name="lieux" type="Control" parent="Displays/Gameplay/FenetresLieux/SubViewport"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = -163.0
-offset_top = -45.0
-offset_right = -123.0
-offset_bottom = -5.0
+offset_right = 470.0
+offset_bottom = 312.0
 
-[node name="TransparentWindow" type="TextureRect" parent="Displays/Fenetres/SubViewport/Transparent"]
+[node name="TextureRect" type="TextureRect" parent="Displays/Gameplay/FenetresLieux/SubViewport/lieux"]
 layout_mode = 0
-offset_left = 1005.0
-offset_top = 108.0
-offset_right = 2189.0
-offset_bottom = 928.0
-scale = Vector2(0.331098, 0.331098)
-texture = ExtResource("70_uqamv")
+offset_left = -70.0
+offset_top = 130.0
+offset_right = 1114.0
+offset_bottom = 950.0
+texture = ExtResource("60_iv3um")
+stretch_mode = 5
 
-[node name="Label3D" type="Label3D" parent="Displays/Fenetres"]
+[node name="TextureRect4" type="TextureRect" parent="Displays/Gameplay/FenetresLieux/SubViewport/lieux/TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 115.0
+offset_top = 134.0
+offset_right = -114.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("61_t8ca7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect3" type="TextureRect" parent="Displays/Gameplay/FenetresLieux/SubViewport/lieux"]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 348.0
+offset_right = 1738.0
+offset_bottom = 1168.0
+texture = ExtResource("60_iv3um")
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="Displays/Gameplay/FenetresLieux/SubViewport/lieux/TextureRect3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 113.0
+offset_top = 134.0
+offset_right = -113.0
+offset_bottom = -150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("62_t8ca7")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TextureRect2" type="TextureRect" parent="Displays/Gameplay/FenetresLieux/SubViewport/lieux"]
+layout_mode = 0
+offset_left = 246.0
+offset_top = -47.0
+offset_right = 1430.0
+offset_bottom = 773.0
+texture = ExtResource("60_iv3um")
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="Displays/Gameplay/FenetresLieux/SubViewport/lieux/TextureRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 113.0
+offset_top = 134.0
+offset_right = -114.0
+offset_bottom = -151.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("63_ty7mw")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label3D" type="Label3D" parent="Displays/Gameplay/FenetresLieux"]
 transform = Transform3D(2.34, 0, 0, 0, 2.34, 0, 0, 0, 2.34, 0, 2.34448, 0)
 pixel_size = 0.0009
-text = "Fenêtres"
+text = "Fenêtres lieux"
 font = ExtResource("58_iqqkb")
 font_size = 180
 outline_size = 60
 
-[node name="Lieux" type="Area3D" parent="Displays/Fenetres"]
+[node name="Lieux" type="Area3D" parent="Displays/Gameplay/FenetresLieux"]
 script = ExtResource("71_dk27y")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Fenetres/Lieux"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71307, 0.247994, -0.00012207)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Gameplay/FenetresLieux/Lieux"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0.0353088, 0.112315, -9.15527e-05)
 shape = SubResource("BoxShape3D_uqamv")
 
-[node name="LieuxWindowsLayer" type="CanvasLayer" parent="Displays/Fenetres/Lieux"]
-unique_name_in_owner = true
+[node name="LieuxWindowsLayer" type="CanvasLayer" parent="Displays/Gameplay/FenetresLieux/Lieux"]
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="Displays/Fenetres/Lieux/LieuxWindowsLayer"]
+[node name="ColorRect" type="ColorRect" parent="Displays/Gameplay/FenetresLieux/Lieux/LieuxWindowsLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1993,7 +2074,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.670588)
 
-[node name="Blur" type="ColorRect" parent="Displays/Fenetres/Lieux/LieuxWindowsLayer"]
+[node name="Blur" type="ColorRect" parent="Displays/Gameplay/FenetresLieux/Lieux/LieuxWindowsLayer"]
 material = SubResource("ShaderMaterial_la88n")
 anchors_preset = 15
 anchor_right = 1.0
@@ -2001,57 +2082,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="LieuxWindows" type="Window" parent="Displays/Fenetres/Lieux"]
-unique_name_in_owner = true
+[node name="LieuxWindows" type="Window" parent="Displays/Gameplay/FenetresLieux/Lieux"]
+auto_translate_mode = 1
 visible = false
 
-[node name="Inventaire" parent="Displays/Fenetres/Lieux/LieuxWindows" instance=ExtResource("72_6xq3o")]
+[node name="Inventaire" parent="Displays/Gameplay/FenetresLieux/Lieux/LieuxWindows" instance=ExtResource("72_6xq3o")]
 
-[node name="Grotte de Mari" parent="Displays/Fenetres/Lieux/LieuxWindows/Inventaire" index="6"]
+[node name="Discussion Berger" parent="Displays/Gameplay/FenetresLieux/Lieux/LieuxWindows/Inventaire" index="1"]
+auto_translate_mode = 1
+
+[node name="Grotte de Mari" parent="Displays/Gameplay/FenetresLieux/Lieux/LieuxWindows/Inventaire" index="6"]
 visible = false
 
-[node name="Puzzle" type="Area3D" parent="Displays/Fenetres"]
-script = ExtResource("73_s13hq")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Fenetres/Puzzle"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.409546, 0.161864, -6.10352e-05)
-shape = SubResource("BoxShape3D_dk27y")
-
-[node name="PuzzleWindowsLayer" type="CanvasLayer" parent="Displays/Fenetres/Puzzle"]
-unique_name_in_owner = true
-visible = false
-
-[node name="ColorRect" type="ColorRect" parent="Displays/Fenetres/Puzzle/PuzzleWindowsLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.670588)
-
-[node name="Blur" type="ColorRect" parent="Displays/Fenetres/Puzzle/PuzzleWindowsLayer"]
-material = SubResource("ShaderMaterial_la88n")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MinisGames" parent="Displays/Fenetres/Puzzle" instance=ExtResource("74_fpy3i")]
-unique_name_in_owner = true
-
-[node name="Transparence" type="Area3D" parent="Displays/Fenetres"]
-script = ExtResource("75_ju3xo")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Fenetres/Transparence"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9845, 0.122665, 0)
-shape = SubResource("BoxShape3D_6xq3o")
-
-[node name="OldPointAndClick" type="Area3D" parent="Displays"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -280.917, -10.6042, -215.403)
+[node name="OldPointAndClick" type="Area3D" parent="Displays/Gameplay"]
+transform = Transform3D(-0.673103, 0, -0.739549, 0, 1, 0, 0.739549, 0, -0.673103, 15.0321, -1.42595, -5.36491)
 script = ExtResource("76_wqgh4")
+metadata/_edit_group_ = true
 
-[node name="Label3D" type="Label3D" parent="Displays/OldPointAndClick"]
+[node name="Label3D" type="Label3D" parent="Displays/Gameplay/OldPointAndClick"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.940686, 0)
 pixel_size = 0.0012
 text = "Point & Click"
@@ -2059,35 +2107,35 @@ font = ExtResource("58_iqqkb")
 font_size = 150
 outline_size = 50
 
-[node name="PointAndClick" type="Sprite3D" parent="Displays/OldPointAndClick"]
+[node name="PointAndClick" type="Sprite3D" parent="Displays/Gameplay/OldPointAndClick"]
 transform = Transform3D(0.205, 0, 0, 0, 0.205, 0, 0, 0, 0.205, 0, 0, 0)
 alpha_cut = 1
 texture_filter = 0
 texture = SubResource("ViewportTexture_0n1gm")
 
-[node name="SubViewport" type="SubViewport" parent="Displays/OldPointAndClick/PointAndClick"]
+[node name="SubViewport" type="SubViewport" parent="Displays/Gameplay/OldPointAndClick/PointAndClick"]
 transparent_bg = true
 size = Vector2i(1197, 687)
 
-[node name="OldPncGroup" type="CanvasGroup" parent="Displays/OldPointAndClick/PointAndClick/SubViewport"]
+[node name="OldPncGroup" type="CanvasGroup" parent="Displays/Gameplay/OldPointAndClick/PointAndClick/SubViewport"]
 unique_name_in_owner = true
 texture_filter = 1
 material = SubResource("ShaderMaterial_0n1gm")
 
-[node name="Sprite2D" type="Sprite2D" parent="Displays/OldPointAndClick/PointAndClick/SubViewport/OldPncGroup"]
+[node name="Sprite2D" type="Sprite2D" parent="Displays/Gameplay/OldPointAndClick/PointAndClick/SubViewport/OldPncGroup"]
 position = Vector2(600, 342)
 texture = ExtResource("77_0n1gm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/OldPointAndClick"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Gameplay/OldPointAndClick"]
 shape = SubResource("BoxShape3D_wqgh4")
 
-[node name="OldPncWindow" type="Window" parent="Displays/OldPointAndClick"]
+[node name="OldPncWindow" type="Window" parent="Displays/Gameplay/OldPointAndClick"]
 unique_name_in_owner = true
 initial_position = 1
 size = Vector2i(1153, 648)
 visible = false
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Displays/OldPointAndClick/OldPncWindow"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Displays/Gameplay/OldPointAndClick/OldPncWindow"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2095,22 +2143,22 @@ grow_horizontal = 2
 grow_vertical = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="Displays/OldPointAndClick/OldPncWindow/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Displays/Gameplay/OldPointAndClick/OldPncWindow/SubViewportContainer"]
 handle_input_locally = false
 size = Vector2i(1153, 648)
 render_target_update_mode = 0
 
-[node name="CameraManager" parent="Displays/OldPointAndClick/OldPncWindow/SubViewportContainer/SubViewport" instance=ExtResource("76_ju3xo")]
+[node name="CameraManager" parent="Displays/Gameplay/OldPointAndClick/OldPncWindow/SubViewportContainer/SubViewport" instance=ExtResource("76_ju3xo")]
 
-[node name="SubViewport" parent="Displays/OldPointAndClick/OldPncWindow/SubViewportContainer/SubViewport/CameraManager/SubViewportContainer" index="0"]
+[node name="SubViewport" parent="Displays/Gameplay/OldPointAndClick/OldPncWindow/SubViewportContainer/SubViewport/CameraManager/SubViewportContainer" index="0"]
 own_world_3d = true
 size = Vector2i(1153, 648)
 
-[node name="OldPncCanvasLayer" type="CanvasLayer" parent="Displays/OldPointAndClick"]
+[node name="OldPncCanvasLayer" type="CanvasLayer" parent="Displays/Gameplay/OldPointAndClick"]
 unique_name_in_owner = true
 visible = false
 
-[node name="ColorRect" type="ColorRect" parent="Displays/OldPointAndClick/OldPncCanvasLayer"]
+[node name="ColorRect" type="ColorRect" parent="Displays/Gameplay/OldPointAndClick/OldPncCanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2118,13 +2166,52 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.670588)
 
-[node name="Blur" type="ColorRect" parent="Displays/OldPointAndClick/OldPncCanvasLayer"]
+[node name="Blur" type="ColorRect" parent="Displays/Gameplay/OldPointAndClick/OldPncCanvasLayer"]
 material = SubResource("ShaderMaterial_la88n")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Jspexplication" type="Sprite3D" parent="Displays/Gameplay"]
+transform = Transform3D(0.89103, 0, 0.453944, 0, 1, 0, -0.453944, 0, 0.89103, 10.8018, 0.179672, -11.0866)
+pixel_size = 0.003
+alpha_cut = 1
+texture = SubResource("ViewportTexture_dswv6")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Gameplay/Jspexplication"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1600, 1702)
+render_target_update_mode = 4
+
+[node name="Label" type="RichTextLabel" parent="Displays/Gameplay/Jspexplication/SubViewport"]
+custom_minimum_size = Vector2(1600, 0)
+offset_right = 1600.0
+offset_bottom = 3000.0
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]Pourquoi un jeu vidéo ?[/b]
+
+Le but de mon projet est de mettre en avant la culture aux jeunes. Jeunes qui sont générallement inintéressés par la culture et les folklores français.
+Et les jeunes sont aussi la population qui consomment en moyenne le plus de jeux vidéo. Pour cette raison je pensais que le jeu vidéo serais un bon moyen d'intéresser cette catégorie sociale."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="a lire" type="Label3D" parent="Displays/Gameplay"]
+transform = Transform3D(0.957622, 0, 0.288029, 0, 1, 0, -0.288029, 0, 0.957622, 6.92487, 0, -6.59134)
+text = "ajouter une note sur le jeu du workshop pour expliquer les fenêtres"
+autowrap_mode = 3
 
 [node name="Esthetique" type="Label3D" parent="Displays"]
 transform = Transform3D(-0.511128, 0, -0.859505, 0, 1, 0, 0.859505, 0, -0.511128, -275.992, -9.79217, -216.557)
@@ -2370,5 +2457,5 @@ shape = SubResource("BoxShape3D_wqgh4")
 
 [editable path="Terrain3D/lamina_cave_2"]
 [editable path="PlayerFpsController"]
-[editable path="Displays/Fenetres/Lieux/LieuxWindows/Inventaire"]
-[editable path="Displays/OldPointAndClick/OldPncWindow/SubViewportContainer/SubViewport/CameraManager"]
+[editable path="Displays/Gameplay/FenetresLieux/Lieux/LieuxWindows/Inventaire"]
+[editable path="Displays/Gameplay/OldPointAndClick/OldPncWindow/SubViewportContainer/SubViewport/CameraManager"]
