@@ -26,7 +26,7 @@ public abstract partial class ContextlessPlugin : EditorPlugin
 			if (_drawPanel == null || !IsInstanceValid(_drawPanel) || !_drawPanel.IsInsideTree())
 			{
 				_drawPanel = _CreateDrawPanel();
-				GetEditorInterface().GetBaseControl().AddChild(_drawPanel);
+				EditorInterface.Singleton.GetBaseControl().AddChild(_drawPanel);
 			}
 			return _drawPanel;
 		}
@@ -41,7 +41,7 @@ public abstract partial class ContextlessPlugin : EditorPlugin
 	{
 		if (!Engine.IsEditorHint()) return;
 		_drawPanel = _CreateDrawPanel();
-		GetEditorInterface().GetBaseControl().AddChild(_drawPanel);
+		EditorInterface.Singleton.GetBaseControl().AddChild(_drawPanel);
 
 		int i = 0;
 		foreach (SubViewport vp in Get3DViewports())
@@ -190,7 +190,7 @@ public abstract partial class ContextlessPlugin : EditorPlugin
 	protected SubViewport Get3DViewportUnderMouse()
 	{
 		// MainScreen -> Node3DEditor
-		var mainScreen3DVisible = GetEditorInterface().GetEditorMainScreen().GetChild<Control>(1).Visible;
+		var mainScreen3DVisible = EditorInterface.Singleton.GetEditorMainScreen().GetChild<Control>(1).Visible;
 		if (!mainScreen3DVisible) return null;
 
 		var viewports = Get3DViewports();
@@ -225,12 +225,12 @@ public abstract partial class ContextlessPlugin : EditorPlugin
 
 	protected bool IsPluginEnabled(string pluginName)
 	{
-		return GetEditorInterface().IsPluginEnabled(pluginName);
+		return EditorInterface.Singleton.IsPluginEnabled(pluginName);
 	}
 
 	private IEnumerable<SubViewport> Get3DViewports()
 	{
-		var mainScreen = GetEditorInterface().GetEditorMainScreen();
+		var mainScreen = EditorInterface.Singleton.GetEditorMainScreen();
 		// MainScreen -> Node3DEditor -> HSplitContainer -> HSplitContainer -> VSplitContainer -> Node3DEditorViewportContainer
 		var hsplitContainer1 = mainScreen.GetChild(1).GetChild(1);
 		var hsplitContainer2 = hsplitContainer1.GetChild(hsplitContainer1.GetChildCount() - 1); // last child

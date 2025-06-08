@@ -465,7 +465,7 @@ shadow_enabled = true
 environment = SubResource("Environment_mvwl5")
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
-data_directory = "res://scenes/prototype_1/terrain_3d"
+data_directory = "res://scenes/presentation/terrain"
 material = SubResource("Terrain3DMaterial_nb4qf")
 assets = SubResource("Terrain3DAssets_qsp0k")
 top_level = true
@@ -499,7 +499,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_jl3e0")
 [node name="OmniLight3D" type="OmniLight3D" parent="Terrain3D/lamina_cave_2/Fire"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01747, 0)
 light_color = Color(0.888454, 0.564508, 0, 1)
-light_energy = 10.2582
+light_energy = 17.3727
 shadow_enabled = true
 shadow_opacity = 0.9
 omni_range = 25.4632
@@ -512,7 +512,7 @@ noise_texture = SubResource("NoiseTexture2D_mcxer")
 
 [node name="SpatialAudioStreamPlayer3D" parent="Terrain3D/lamina_cave_2/Fire/OmniLight3D" instance=ExtResource("13_npnhw")]
 stream = ExtResource("14_imkeq")
-volume_db = -28.6736
+volume_db = -28.6737
 autoplay = true
 bus = &"SpatialBus#22"
 update_frequency_seconds = 2.0
@@ -1376,8 +1376,9 @@ Godot est un moteur de jeu gratuit et open source, c'est à dire que son code so
 J'ai personnellement choisi ce moteur de jeu car je suis sensible à la création open source, mais égallement car je venais d'apprendre la contronverse autour du moteur Unity (le moteur N°1 chez les dévloppeurs indépendants)"
 
 [node name="Sprite3D" type="Sprite3D" parent="Displays/PhaseIdee/PourquoiGodot"]
-transform = Transform3D(0.999821, 0, -0.0189357, 0, 1, 0, 0.0189357, 0, 0.999821, -4.90143, 1.11127, -0.28717)
+transform = Transform3D(0.996643, 0, -0.081869, 0, 1, 0, 0.081869, 0, 0.996643, -4.90143, 1.11127, -0.28717)
 pixel_size = 0.0015
+texture_filter = 0
 texture = ExtResource("85_qsp0k")
 
 [node name="References" type="Node3D" parent="Displays/PhaseIdee"]

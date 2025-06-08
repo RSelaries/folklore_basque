@@ -1,4 +1,3 @@
-@tool
 extends Light3D
 
 @export var min_light_energy: float = 0.5

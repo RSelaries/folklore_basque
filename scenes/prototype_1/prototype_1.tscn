@@ -557,7 +557,7 @@ noise_texture = SubResource("NoiseTexture2D_l3e0g")
 stream = ExtResource("24_qgmfw")
 volume_db = -60.0
 autoplay = true
-bus = &"SpatialBus#21"
+bus = &"SpatialBus#23"
 update_frequency_seconds = 2.0
 max_reverb_wetness = 50.0
 

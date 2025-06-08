@@ -93,10 +93,10 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 		if (!FileAccess.FileExists(PluginFilePath))
 		{
 			GD.PrintErr($"Plugin location appears to be incorrect. Plugin expected at: {PluginFilePath}. " +
-			            $"\nPlease follow these steps to fix: " +
-			            $"\n1. Deactivate the plugin " +
-			            $"\n2. Make sure the assetplacer folder is directly contained in the addons folder" +
-			            $"\n3. Press 'Build' again!");
+						$"\nPlease follow these steps to fix: " +
+						$"\n1. Deactivate the plugin " +
+						$"\n2. Make sure the assetplacer folder is directly contained in the addons folder" +
+						$"\n3. Press 'Build' again!");
 			initFailed = true;
 			return;
 		}
@@ -109,7 +109,7 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 		
 		_inputManager = new InputManager();
 		
-		_editedSceneRoot = GetEditorInterface().GetEditedSceneRoot();
+		_editedSceneRoot = EditorInterface.Singleton.GetEditedSceneRoot();
 		
 		AssetPlacerPersistence.Init();
 		AssetPlacerPersistence.Instance.SetSceneRoot(_editedSceneRoot);
@@ -117,23 +117,23 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 		SceneClosed += OnSceneClosed;
 		SceneChanged += OnSceneChanged;
 		
-		GetEditorInterface().GetSelection().SelectionChanged += OnSelectionChanged;
-		GetEditorInterface().GetBaseControl().ThemeChanged += OnThemeChanged;
+		EditorInterface.Singleton.GetSelection().SelectionChanged += OnSelectionChanged;
+		EditorInterface.Singleton.GetBaseControl().ThemeChanged += OnThemeChanged;
 
 		//////// Initialize palette
 		_assetPalette = new AssetPalette();
 		AddChild(_assetPalette);
 
-		_assetPalette.Init(GetEditorInterface());
+		_assetPalette.Init(EditorInterface.Singleton);
 		/////////
 		
 		_spawnParentSelection = new NodePathSelector();
 		AddChild(_spawnParentSelection);
-		_spawnParentSelection.Init(GetEditorInterface(), SpawnParentPathSaveKey);
+		_spawnParentSelection.Init(EditorInterface.Singleton, SpawnParentPathSaveKey);
 
 		_snapping = new Snapping();
 		AddChild(_snapping);
-		_snapping.Init(GetEditorInterface());
+		_snapping.Init(EditorInterface.Singleton);
 		
 		InitializeUi();
 		InitializePlacementControllers();
@@ -163,11 +163,11 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 	private void InitializePlacementControllers()
 	{
 		// Initialize Controllers
-		_planePlacementController = new PlanePlacementController(_assetPlacerUi.placementUi, _snapping, GetEditorInterface());
+		_planePlacementController = new PlanePlacementController(_assetPlacerUi.placementUi, _snapping, EditorInterface.Singleton);
 		AddChild(_planePlacementController);
-		_surfacePlacementController = new SurfacePlacementController(_assetPlacerUi.placementUi, _snapping, GetEditorInterface(), GetEditorInterface().GetEditedSceneRoot());
+		_surfacePlacementController = new SurfacePlacementController(_assetPlacerUi.placementUi, _snapping, EditorInterface.Singleton, EditorInterface.Singleton.GetEditedSceneRoot());
 		AddChild(_surfacePlacementController);
-		_terrain3DPlacementController = new Terrain3DPlacementController(_assetPlacerUi.placementUi, _snapping, GetEditorInterface(), GetEditorInterface().GetEditedSceneRoot());
+		_terrain3DPlacementController = new Terrain3DPlacementController(_assetPlacerUi.placementUi, _snapping, EditorInterface.Singleton, EditorInterface.Singleton.GetEditedSceneRoot());
 		AddChild(_terrain3DPlacementController);
 		_dummyPlacementController = new DummyPlacementController();
 		AddChild(_dummyPlacementController);
@@ -223,8 +223,8 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 		AssetPlacerPersistence.TrySavePluginData();
 		SceneClosed -= OnSceneClosed;
 		SceneChanged -= OnSceneChanged;
-		GetEditorInterface().GetSelection().SelectionChanged -= OnSelectionChanged;
-		GetEditorInterface().GetBaseControl().ThemeChanged -= OnThemeChanged;
+		EditorInterface.Singleton.GetSelection().SelectionChanged -= OnSelectionChanged;
+		EditorInterface.Singleton.GetBaseControl().ThemeChanged -= OnThemeChanged;
 		
 		SetCurrentPlacementController(null);
 		_assetPalette.ClearHologram();
@@ -244,9 +244,9 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 		var assetPlacerContainerScene = ResourceLoader.Load<PackedScene>("res://addons/assetplacer/ui/AssetPlacerUi.tscn");
 		_assetPlacerUi = assetPlacerContainerScene.Instantiate<AssetPlacerUi>();
 		_assetPlacerUi.Init();
-		_assetPlacerUi.ApplyTheme(GetEditorInterface().GetBaseControl());
+		_assetPlacerUi.ApplyTheme(EditorInterface.Singleton.GetBaseControl());
 		AddControlToBottomPanel(_assetPlacerUi, AssetPlacerTitle);
-		_assetPlacerUi.placementUi._terrain3DSelector.Init(GetEditorInterface(), PlacementUi.Terrain3DSaveKey);
+		_assetPlacerUi.placementUi._terrain3DSelector.Init(EditorInterface.Singleton, PlacementUi.Terrain3DSaveKey);
 		_assetPlacerUi.placementUi._terrain3DSelector.OnSceneChanged(_editedSceneRoot);
 		
 		_assetPalette.SetUi(_assetPlacerUi._assetPaletteUi);
@@ -432,7 +432,7 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 	
 	private void SetToolTip(string text, params Color[] colors)
 	{
-		var font = GetEditorInterface().GetBaseControl().GetThemeFont("main", "EditorFonts");
+		var font = EditorInterface.Singleton.GetBaseControl().GetThemeFont("main", "EditorFonts");
 		var pos = _tooltipOnMouse ? _inputManager.screenMousePosition : _tooltipPos;
 		((TooltipPanel) DrawPanel).SetTooltip(text, font, pos, _inputManager.tooltipRect, colors);
 	}
@@ -444,10 +444,10 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 	{
 		if (initFailed) return;
 		if (what == NotificationCrash 
-		    || what == NotificationApplicationFocusOut
-		    || what == NotificationWMCloseRequest
-		    || what == NotificationWMWindowFocusOut
-		    || what == NotificationEditorPreSave)
+			|| what == NotificationApplicationFocusOut
+			|| what == NotificationWMCloseRequest
+			|| what == NotificationWMWindowFocusOut
+			|| what == NotificationEditorPreSave)
 		{
 			AssetPlacerPersistence.TrySavePluginData();
 		}
@@ -455,12 +455,12 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 	
 	private void OnThemeChanged()
 	{
-		_assetPlacerUi.ApplyTheme(GetEditorInterface().GetBaseControl());
+		_assetPlacerUi.ApplyTheme(EditorInterface.Singleton.GetBaseControl());
 	}
 	
 	private void OnSelectionChanged()
 	{
-		var selection = GetEditorInterface().GetSelection().GetSelectedNodes();
+		var selection = EditorInterface.Singleton.GetSelection().GetSelectedNodes();
 		_currentPlacementController?.OnSelectionChanged();
 		_assetPalette?.OnSelectionChanged();
 		
@@ -472,7 +472,7 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 			{
 				if (_processState is ProcessState.PlacingHologram)
 				{
-					if(selection.Contains(_assetPalette.Hologram)) GetEditorInterface().GetSelection().RemoveNode(_assetPalette.Hologram);
+					if(selection.Contains(_assetPalette.Hologram)) EditorInterface.Singleton.GetSelection().RemoveNode(_assetPalette.Hologram);
 				}
 				_spawnParentSelection.OnSelectionChanged(new Array<Node>());
 				_assetPlacerUi.placementUi._terrain3DSelector.OnSelectionChanged(new Array<Node>());
@@ -480,7 +480,7 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 			}
 			else // several assets selected or transforming hologram deselected
 			{
-				if(selection.Contains(_assetPalette.Hologram)) GetEditorInterface().GetSelection().RemoveNode(_assetPalette.Hologram);
+				if(selection.Contains(_assetPalette.Hologram)) EditorInterface.Singleton.GetSelection().RemoveNode(_assetPalette.Hologram);
 				SetState(ProcessState.Idle);
 				return;
 			}
@@ -493,7 +493,7 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 	private void OnSceneClosed(string filePath)
 	{
 		// if this was the currently edited scene
-		if (GetEditorInterface().GetEditedSceneRoot()?.SceneFilePath == filePath)
+		if (EditorInterface.Singleton.GetEditedSceneRoot()?.SceneFilePath == filePath)
 		{
 			AssetPlacerPersistence.Instance.SavePluginData();
 			AssetPlacerPersistence.Instance.SetSceneRoot(null);
@@ -520,7 +520,7 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 		_externalUi = true;
 		RemoveControlFromBottomPanel(_assetPlacerUi);
 		var w = new Window();
-		GetEditorInterface().GetBaseControl().GetWindow().AddChild(w);
+		EditorInterface.Singleton.GetBaseControl().GetWindow().AddChild(w);
 		w.Title = AssetPlacerTitle;
 		w.Exclusive = false;
 		w.Transient = true;
@@ -538,7 +538,7 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 		//CallDeferred("ResizeExternalWindow", w);
 		bg.Size = w.Size;
 		bg.ThemeTypeVariation = "TabContainer";
-		var baseControl = GetEditorInterface().GetBaseControl();
+		var baseControl = EditorInterface.Singleton.GetBaseControl();
 		w.Position = baseControl.GetViewport().GetWindow().Position + (Vector2I) baseControl.GetViewportRect().GetCenter() - w.Size/2;
 		_assetPlacerUi.OnAttachmentChanged(false);
 		AssetPlacerUi.ClampWindowToScreen(w, baseControl);
@@ -558,7 +558,7 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 	{
 		var w = _assetPlacerUi.GetParent<Window>();
 		w.RemoveChild(_assetPlacerUi);
-		GetEditorInterface().GetBaseControl().GetWindow().RemoveChild(w);
+		EditorInterface.Singleton.GetBaseControl().GetWindow().RemoveChild(w);
 		w.QueueFree();
 	}
 	#endregion
@@ -630,7 +630,7 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 	
 	private void CheckEditedSceneRoot()
 	{
-		var currentRoot = GetEditorInterface().GetEditedSceneRoot();
+		var currentRoot = EditorInterface.Singleton.GetEditedSceneRoot();
 		if (currentRoot != _editedSceneRoot) // Edited Scene Root changed (rename, deletion, scene closed, other node made root, why-so-ever)
 		{
 			UpdateEditedSceneRoot(currentRoot, false);
@@ -661,13 +661,13 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 		switch (state)
 		{
 			case ProcessState.PlacingHologram:
-				GetEditorInterface().GetSelection().Clear();
+				EditorInterface.Singleton.GetSelection().Clear();
 				_tooltipOnMouse = true;
 				break;
 			case ProcessState.TransformingHologram:
 				_hologramBeforeTransform = _assetPalette.Hologram.Transform;
-				GetEditorInterface().GetSelection().Clear();
-				GetEditorInterface().GetSelection().AddNode(_assetPalette.Hologram);
+				EditorInterface.Singleton.GetSelection().Clear();
+				EditorInterface.Singleton.GetSelection().AddNode(_assetPalette.Hologram);
 				_tooltipOnMouse = true;
 				break;
 			case ProcessState.Idle:
@@ -803,8 +803,8 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 			var altPlacement = Settings.GetSetting(Settings.DefaultCategory, Settings.UseShiftSetting).AsBool() ? InputManager.shiftPressed : InputManager.altPressed;
 			if (altPlacement)
 			{
-				GetEditorInterface().CallDeferred("edit_node", _assetPalette.LastPlacedAsset);
-				var editorSelection = GetEditorInterface().GetSelection();
+				EditorInterface.Singleton.CallDeferred("edit_node", _assetPalette.LastPlacedAsset);
+				var editorSelection = EditorInterface.Singleton.GetSelection();
 				editorSelection.Clear();
 				editorSelection.AddNode(_assetPalette.LastPlacedAsset);
 				_assetPalette.DeselectAsset();
@@ -862,8 +862,8 @@ public partial class AssetPlacerPlugin : ContextlessPlugin
 			var altPlacement = Settings.GetSetting(Settings.DefaultCategory, Settings.UseShiftSetting).AsBool() ? InputManager.shiftPressed : InputManager.altPressed;
 			if (altPlacement)
 			{
-				GetEditorInterface().CallDeferred("edit_node", asset);
-				var editorSelection = GetEditorInterface().GetSelection();
+				EditorInterface.Singleton.CallDeferred("edit_node", asset);
+				var editorSelection = EditorInterface.Singleton.GetSelection();
 				editorSelection.Clear();
 				_paintingAssets.ForEach(a=>editorSelection.AddNode(a));
 				_assetPalette.DeselectAsset();
