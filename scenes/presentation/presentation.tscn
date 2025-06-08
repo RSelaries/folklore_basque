@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://b2pwqbr3l560h" path="res://assets/meshes/trees/tree_3.glb" id="4_a8lne"]
 [ext_resource type="PackedScene" uid="uid://ctq8lbkbsnkox" path="res://assets/meshes/trees/tree_4.glb" id="5_e0efl"]
 [ext_resource type="Texture2D" uid="uid://c6wrw3ohqu3s7" path="res://assets/textures/material_textures/rock_53/Rock_53_2k_packed_albedo_height.png" id="6_k2d4w"]
-[ext_resource type="ArrayOccluder3D" uid="uid://cm21xblojhw02" path="res://scenes/prototype_1/terrain_occlusion.res" id="6_vxgo8"]
 [ext_resource type="Texture2D" uid="uid://cmkffb1xy66r7" path="res://assets/textures/material_textures/rock_53/Rock_53_2k_packed_normal_roughness.png" id="7_2pyn7"]
 [ext_resource type="Shader" uid="uid://csdx0ulhib6lk" path="res://assets/shaders/clouds.gdshader" id="7_8peoy"]
 [ext_resource type="Texture2D" uid="uid://e5tsckrxy016" path="res://assets/textures/material_textures/grass_03/Grass003_2k_packed_albedo_height.png" id="8_23kdo"]
@@ -21,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://dtvhy3my6q8ee" path="res://assets/textures/material_textures/paving_stones_141/PavingStones141_2k_packed_albedo_height.png" id="12_uydff"]
 [ext_resource type="Texture2D" uid="uid://cjkp7y8av4b01" path="res://assets/textures/material_textures/paving_stones_141/PavingStones141_2k_packed_normal_roughness.png" id="13_8ap7g"]
 [ext_resource type="PackedScene" uid="uid://bnxb8rqttypyy" path="res://assets/scenes/3d_scenes/spatial_audio_stream_player_3d.tscn" id="13_npnhw"]
+[ext_resource type="ArrayOccluder3D" uid="uid://bipirl53h5b78" path="res://scenes/presentation/terrain_3d_occluder_3d.tres" id="14_gbk34"]
 [ext_resource type="AudioStream" uid="uid://h1nkymdnbvhu" path="res://assets/audio/sound_effects/looping_fire_sound_effect.wav" id="14_imkeq"]
 [ext_resource type="Script" uid="uid://d214enylidvtm" path="res://scenes/prototype_1/laminak_path.gd" id="15_2gsya"]
 [ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/player_fps_controller/player_fps_controller.tscn" id="25_r7d6n"]
@@ -370,7 +370,7 @@ viewport_path = NodePath("Displays/DesignFiction/References/Metro2033/SubViewpor
 [sub_resource type="ViewportTexture" id="ViewportTexture_23kdo"]
 viewport_path = NodePath("Displays/DesignFiction/References/IronLung/SubViewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_uydff"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_7buv1"]
 viewport_path = NodePath("Displays/DesignFiction/References/TheOtherSide/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_tfr7r"]
@@ -472,7 +472,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Terrain3D"]
-occluder = ExtResource("6_vxgo8")
+occluder = ExtResource("14_gbk34")
 
 [node name="Clouds" type="MeshInstance3D" parent="Terrain3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 366.205, 0)
@@ -512,9 +512,9 @@ noise_texture = SubResource("NoiseTexture2D_mcxer")
 
 [node name="SpatialAudioStreamPlayer3D" parent="Terrain3D/lamina_cave_2/Fire/OmniLight3D" instance=ExtResource("13_npnhw")]
 stream = ExtResource("14_imkeq")
-volume_db = -28.6737
+volume_db = -28.6738
 autoplay = true
-bus = &"SpatialBus#22"
+bus = &"SpatialBus#23"
 update_frequency_seconds = 2.0
 max_reverb_wetness = 50.0
 
@@ -554,6 +554,7 @@ texture = SubResource("ViewportTexture_oo5fg")
 disable_3d = true
 transparent_bg = true
 size = Vector2i(2120, 1280)
+render_target_update_mode = 4
 
 [node name="CanvasGroup" type="CanvasGroup" parent="Displays/StartDisplay/SubViewport"]
 position = Vector2(1063, 639)
@@ -1029,7 +1030,7 @@ Je me suis inspiré de l'ambiance claustrophobique ainsi que des visuels du jeu 
 transform = Transform3D(0.992999, 0, 0.118127, 0, 1, 0, -0.118127, 0, 0.992999, -2.8634, 0, -0.771118)
 pixel_size = 0.0014
 alpha_cut = 1
-texture = SubResource("ViewportTexture_uydff")
+texture = SubResource("ViewportTexture_7buv1")
 
 [node name="SubViewport" type="SubViewport" parent="Displays/DesignFiction/References/TheOtherSide"]
 disable_3d = true
@@ -1093,6 +1094,7 @@ texture = SubResource("ViewportTexture_tfr7r")
 disable_3d = true
 transparent_bg = true
 size = Vector2i(5445, 2280)
+render_target_update_mode = 4
 
 [node name="Idee1" type="TextureRect" parent="Displays/PhaseIdee/IdeeProjets/SubViewport"]
 offset_left = 39.0
@@ -1264,6 +1266,7 @@ texture = SubResource("ViewportTexture_e3ffs")
 disable_3d = true
 transparent_bg = true
 size = Vector2i(1600, 1702)
+render_target_update_mode = 4
 
 [node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/ExplicationProjet/SubViewport"]
 custom_minimum_size = Vector2(1600, 0)
@@ -1323,6 +1326,7 @@ texture = SubResource("ViewportTexture_dswv6")
 disable_3d = true
 transparent_bg = true
 size = Vector2i(1600, 1702)
+render_target_update_mode = 4
 
 [node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/PourquoiJV/SubViewport"]
 custom_minimum_size = Vector2(1600, 0)
@@ -1354,6 +1358,7 @@ texture = SubResource("ViewportTexture_8imhy")
 disable_3d = true
 transparent_bg = true
 size = Vector2i(1630, 1702)
+render_target_update_mode = 4
 
 [node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/PourquoiGodot/SubViewport"]
 custom_minimum_size = Vector2(1627.43, 0)
