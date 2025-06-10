@@ -56,7 +56,7 @@ movie_writer/fps=30
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anim_track_converter/plugin.cfg", "res://addons/assetplacer/plugin.cfg", "res://addons/console/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/dreadpon.spatial_gardener/plugin.cfg", "res://addons/simplegrasstextured/plugin.cfg", "res://addons/terrain_3d/plugin.cfg", "res://addons/waterways_net/plugin.cfg")
+enabled=PackedStringArray("res://addons/anim_track_converter/plugin.cfg", "res://addons/assetplacer/plugin.cfg", "res://addons/console/plugin.cfg", "res://addons/decal_compatibility/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/dreadpon.spatial_gardener/plugin.cfg", "res://addons/simplegrasstextured/plugin.cfg", "res://addons/terrain_3d/plugin.cfg", "res://addons/waterways_net/plugin.cfg")
 
 [file_customization]
 
@@ -163,6 +163,7 @@ renderer/rendering_method.mobile="gl_compatibility"
 lights_and_shadows/directional_shadow/size=8192
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality=4
 lights_and_shadows/positional_shadow/soft_shadow_filter_quality.mobile=2
+limits/opengl/max_lights_per_object=12
 occlusion_culling/use_occlusion_culling=true
 lights_and_shadows/positional_shadow/atlas_size=8192
 

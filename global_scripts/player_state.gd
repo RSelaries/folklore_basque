@@ -9,6 +9,7 @@ var interaction: Interactions = Interactions.NONE:
 	set(value):
 		interaction = value
 		interaction_changed_to.emit(value)
+		#print("interaction changed to : ", value)
 
 
 var player_scene: PlayerFpsController

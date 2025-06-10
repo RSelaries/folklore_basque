@@ -1,6 +1,9 @@
 extends Control
 
 
+var hide_lieux: Callable
+
+
 func _ready() -> void:
 	#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	get_window().size = Vector2(630, 460)

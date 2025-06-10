@@ -6,6 +6,7 @@ extends Node
 
 var is_resolved: bool = false
 var do_test: bool = true
+var hide_puzzle: Callable
 
 
 func _ready() -> void:

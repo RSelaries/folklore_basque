@@ -9,6 +9,7 @@ extends CharacterBody3D
 @export var zoom_speed: float = 100.0
 
 @export var walking_speed = 10.0
+@export var sprint_mult = 3.0
 @export var jump_velocity = 4.5
 
 @export var acceleration: float = 10.0
@@ -84,7 +85,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
-	if not PlayerState.input_listening:
+	if not PlayerState.input_listening or not get_window().has_focus():
 		move_and_slide()
 		return
 	
@@ -105,8 +106,10 @@ func _physics_process(delta: float) -> void:
 	var direction := (neck.global_basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	var target_velocity = direction * walking_speed
+	
+	# Handle Sprint
 	if Input.is_action_pressed("sprint"):
-			target_velocity *= 3.0
+			target_velocity *= sprint_mult
 	
 	if direction:
 		var horizontal_velocity = Vector2(velocity.x, velocity.z)
@@ -122,12 +125,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = new_horizontal_velocity.x
 		velocity.z = new_horizontal_velocity.y
 	
+	_check_for_interaction()
+	
 	move_and_slide()
 
 
 func _process(delta: float) -> void:
-	_check_for_interaction()
-	
 	# Handle Camera Zoom
 	if can_zoom:
 		fps_camera.fov = move_toward(fps_camera.fov, target_zoom, zoom_speed * delta)

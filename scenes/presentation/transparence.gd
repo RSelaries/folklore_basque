@@ -5,7 +5,7 @@ var focused: bool = true:
 	set(value):
 		focused = value
 		if value:
-			PlayerState.interaction = PlayerState.Interactions.USE
+			PlayerState.interaction = PlayerState.Interactions.NONE
 
 
 func _ready() -> void:

@@ -41,3 +41,12 @@ func _process(_delta: float) -> void:
 	else:
 		title = name
 		resolved = false
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not visible:
+		return
+	
+	if event.is_action_pressed("esc_menu"):
+		if get_parent() and "hide_puzzle" in get_parent():
+			get_parent().hide_puzzle.call()

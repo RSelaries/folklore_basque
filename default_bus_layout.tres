@@ -1,4 +1,4 @@
-[gd_resource type="AudioBusLayout" load_steps=38 format=3 uid="uid://c1688yv0eugc0"]
+[gd_resource type="AudioBusLayout" load_steps=58 format=3 uid="uid://c1688yv0eugc0"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_n8wo2"]
 room_size = 0.0
@@ -70,8 +70,68 @@ wet = 6.9389e-15
 
 [sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_nf0co"]
 
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_nf0co"]
+room_size = 0.0
+wet = 6.9389e-15
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_w8t7n"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_7h8fu"]
+room_size = 3.84374e-26
+wet = 2.40234e-26
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_2lqp5"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_w8t7n"]
+room_size = 0.0
+wet = 6.9389e-15
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_7h8fu"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_2lqp5"]
+room_size = 0.0
+wet = 6.9389e-15
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_pu3yg"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_pu3yg"]
+room_size = 0.0
+wet = 6.9389e-15
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_sk1wo"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_sk1wo"]
+room_size = 0.0
+wet = 6.9389e-15
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_shvw8"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_shvw8"]
+room_size = 0.0
+wet = 6.9389e-15
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_hupnq"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_hupnq"]
+room_size = 3.15737e-06
+wet = 1.97336e-06
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_5iqlm"]
+
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_j3pel"]
 resource_name = "Reverb"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_5iqlm"]
+room_size = 0.0
+wet = 6.9389e-15
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_qi87n"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_qi87n"]
+room_size = 0.0
+wet = 6.9389e-15
+
+[sub_resource type="AudioEffectLowPassFilter" id="AudioEffectLowPassFilter_g8vdu"]
 
 [sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
 room_size = 0.03854
@@ -310,3 +370,103 @@ bus/21/effect/0/effect = SubResource("AudioEffectReverb_3r1kf")
 bus/21/effect/0/enabled = true
 bus/21/effect/1/effect = SubResource("AudioEffectLowPassFilter_nf0co")
 bus/21/effect/1/enabled = true
+bus/22/name = &"SpatialBus#22"
+bus/22/solo = false
+bus/22/mute = false
+bus/22/bypass_fx = false
+bus/22/volume_db = 0.0
+bus/22/send = &"Master"
+bus/22/effect/0/effect = SubResource("AudioEffectReverb_nf0co")
+bus/22/effect/0/enabled = true
+bus/22/effect/1/effect = SubResource("AudioEffectLowPassFilter_w8t7n")
+bus/22/effect/1/enabled = true
+bus/23/name = &"SpatialBus#23"
+bus/23/solo = false
+bus/23/mute = false
+bus/23/bypass_fx = false
+bus/23/volume_db = 0.0
+bus/23/send = &"SpatialBus#22"
+bus/23/effect/0/effect = SubResource("AudioEffectReverb_7h8fu")
+bus/23/effect/0/enabled = true
+bus/23/effect/1/effect = SubResource("AudioEffectLowPassFilter_2lqp5")
+bus/23/effect/1/enabled = true
+bus/24/name = &"SpatialBus#24"
+bus/24/solo = false
+bus/24/mute = false
+bus/24/bypass_fx = false
+bus/24/volume_db = 0.0
+bus/24/send = &"SpatialBus#22"
+bus/24/effect/0/effect = SubResource("AudioEffectReverb_w8t7n")
+bus/24/effect/0/enabled = true
+bus/24/effect/1/effect = SubResource("AudioEffectLowPassFilter_7h8fu")
+bus/24/effect/1/enabled = true
+bus/25/name = &"SpatialBus#25"
+bus/25/solo = false
+bus/25/mute = false
+bus/25/bypass_fx = false
+bus/25/volume_db = 0.0
+bus/25/send = &"SpatialBus#24"
+bus/25/effect/0/effect = SubResource("AudioEffectReverb_2lqp5")
+bus/25/effect/0/enabled = true
+bus/25/effect/1/effect = SubResource("AudioEffectLowPassFilter_pu3yg")
+bus/25/effect/1/enabled = true
+bus/26/name = &"SpatialBus#26"
+bus/26/solo = false
+bus/26/mute = false
+bus/26/bypass_fx = false
+bus/26/volume_db = 0.0
+bus/26/send = &"SpatialBus#25"
+bus/26/effect/0/effect = SubResource("AudioEffectReverb_pu3yg")
+bus/26/effect/0/enabled = true
+bus/26/effect/1/effect = SubResource("AudioEffectLowPassFilter_sk1wo")
+bus/26/effect/1/enabled = true
+bus/27/name = &"SpatialBus#27"
+bus/27/solo = false
+bus/27/mute = false
+bus/27/bypass_fx = false
+bus/27/volume_db = 0.0
+bus/27/send = &"SpatialBus#26"
+bus/27/effect/0/effect = SubResource("AudioEffectReverb_sk1wo")
+bus/27/effect/0/enabled = true
+bus/27/effect/1/effect = SubResource("AudioEffectLowPassFilter_shvw8")
+bus/27/effect/1/enabled = true
+bus/28/name = &"SpatialBus#28"
+bus/28/solo = false
+bus/28/mute = false
+bus/28/bypass_fx = false
+bus/28/volume_db = 0.0
+bus/28/send = &"SpatialBus#28"
+bus/28/effect/0/effect = SubResource("AudioEffectReverb_shvw8")
+bus/28/effect/0/enabled = true
+bus/28/effect/1/effect = SubResource("AudioEffectLowPassFilter_hupnq")
+bus/28/effect/1/enabled = true
+bus/29/name = &"SpatialBus#29"
+bus/29/solo = false
+bus/29/mute = false
+bus/29/bypass_fx = false
+bus/29/volume_db = 0.0
+bus/29/send = &"SpatialBus#28"
+bus/29/effect/0/effect = SubResource("AudioEffectReverb_hupnq")
+bus/29/effect/0/enabled = true
+bus/29/effect/1/effect = SubResource("AudioEffectLowPassFilter_5iqlm")
+bus/29/effect/1/enabled = true
+bus/30/name = &"SpatialBus#30"
+bus/30/solo = false
+bus/30/mute = false
+bus/30/bypass_fx = false
+bus/30/volume_db = 0.0
+bus/30/send = &"SpatialBus#29"
+bus/30/effect/0/effect = SubResource("AudioEffectReverb_5iqlm")
+bus/30/effect/0/enabled = true
+bus/30/effect/1/effect = SubResource("AudioEffectLowPassFilter_qi87n")
+bus/30/effect/1/enabled = true
+bus/31/name = &"SpatialBus#31"
+bus/31/solo = false
+bus/31/mute = false
+bus/31/bypass_fx = false
+bus/31/volume_db = 0.0
+bus/31/send = &"SpatialBus#30"
+bus/31/effect/0/effect = SubResource("AudioEffectReverb_qi87n")
+bus/31/effect/0/enabled = true
+bus/31/effect/1/effect = SubResource("AudioEffectLowPassFilter_g8vdu")
+bus/31/effect/1/enabled = true

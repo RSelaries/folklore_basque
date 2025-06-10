@@ -12,4 +12,9 @@ func _ready() -> void:
 	
 	visible = false
 	get_parent().connect("visibility_changed", func(): visible = get_parent().visible)
-	
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("esc_menu"):
+		if get_parent() and "hide_lieux" in get_parent():
+			get_parent().hide_lieux.call()

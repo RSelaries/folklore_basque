@@ -3,6 +3,7 @@ extends Node3D
 
 enum Modes {TOP_DOWN_PIXEL, TOP_DOWN, FPS}
 @export var mode: Modes = Modes.FPS
+@onready var world_environment: WorldEnvironment = $Main/WorldEnvironment
 
 
 func _ready() -> void:
@@ -10,8 +11,6 @@ func _ready() -> void:
 		Modes.FPS: _fps_classic_mode()
 		Modes.TOP_DOWN_PIXEL: _top_down_pixelation_mode(true)
 		Modes.TOP_DOWN: _top_down_pixelation_mode()
-	
-	
 
 
 func _top_down_pixelation_mode(pixeized: bool = false) -> void:

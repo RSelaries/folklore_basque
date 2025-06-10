@@ -1,11 +1,34 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0g8or6s3pvn3"]
+[gd_scene load_steps=14 format=3 uid="uid://d0g8or6s3pvn3"]
 
-[ext_resource type="PackedScene" uid="uid://b3exyxs651c2y" path="res://scenes/recherche_p&c/Main.tscn" id="1_6l6fv"]
-[ext_resource type="Script" uid="uid://b0vygdlrl0wnm" path="res://scenes/recherche_boucle/boucle.gd" id="1_hvfqf"]
-[ext_resource type="Script" uid="uid://8b3vywlwf0ih" path="res://scenes/recherche_boucle/loop_manager.gd" id="2_hvfqf"]
-[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/PlayerFpsController.tscn" id="2_ipqt3"]
-[ext_resource type="PackedScene" uid="uid://4uni5gdg0nkr" path="res://assets/mesh/ugly_tree.glb" id="5_03uiq"]
-[ext_resource type="Script" uid="uid://om7y6v6l2kpy" path="res://scenes/recherche_boucle/obstacle.gd" id="5_eo76p"]
+[ext_resource type="PackedScene" uid="uid://b3exyxs651c2y" path="res://scenes/old_project_scenes/recherche_p&c/Main.tscn" id="1_6l6fv"]
+[ext_resource type="Script" uid="uid://b0vygdlrl0wnm" path="res://scenes/old_project_scenes/recherche_boucle/boucle.gd" id="1_hvfqf"]
+[ext_resource type="Script" uid="uid://8b3vywlwf0ih" path="res://scenes/old_project_scenes/recherche_boucle/loop_manager.gd" id="2_hvfqf"]
+[ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/player_fps_controller/player_fps_controller.tscn" id="2_ipqt3"]
+[ext_resource type="PackedScene" uid="uid://4uni5gdg0nkr" path="res://assets/old_project_assets/mesh/ugly_tree.glb" id="5_03uiq"]
+[ext_resource type="Script" uid="uid://om7y6v6l2kpy" path="res://scenes/old_project_scenes/recherche_boucle/obstacle.gd" id="5_eo76p"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_glv2v"]
+sky_top_color = Color(0.200302, 0.338444, 0.48962, 1)
+sky_horizon_color = Color(0.39231, 0.401633, 0.41635, 1)
+sky_energy_multiplier = 0.5
+ground_bottom_color = Color(0.135853, 0.23561, 0.377959, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_uu6xs"]
+sky_material = SubResource("ProceduralSkyMaterial_glv2v")
+
+[sub_resource type="Environment" id="Environment_roo5s"]
+background_mode = 2
+sky = SubResource("Sky_uu6xs")
+ambient_light_sky_contribution = 0.5
+ambient_light_energy = 0.0
+tonemap_mode = 2
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+fog_sun_scatter = 0.02
+fog_density = 0.046
+adjustment_enabled = true
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_eo76p"]
 
@@ -26,9 +49,18 @@ script = ExtResource("2_hvfqf")
 
 [node name="Main" parent="." instance=ExtResource("1_6l6fv")]
 
+[node name="WorldEnvironment" parent="Main" index="1"]
+environment = SubResource("Environment_roo5s")
+
 [node name="PlayerFpsController" parent="." instance=ExtResource("2_ipqt3")]
 unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -50.1147, 60.8987, -105.924)
+smoothing_speed = 100.0
+walking_speed = 8.0
+sprint_mult = 1.0
+jump_velocity = 0.0
+acceleration = 1000.0
+deceleration = 100.0
 mouse_sensitivity = 0.1
 
 [node name="OrthoCam" type="Camera3D" parent="PlayerFpsController/Neck/FpsCamera" index="0"]
@@ -428,8 +460,4 @@ debug_color = Color(0.684946, 0.499074, 0.115606, 0.42)
 [connection signal="body_entered" from="FourthArea" to="LoopManager" method="_on_fourth_area_body_entered"]
 
 [editable path="Main"]
-[editable path="Main/terrain"]
-[editable path="Main/terrain/maison_basque"]
-[editable path="Main/Trees/ugly_tree27"]
-[editable path="Main/Trees/ugly_tree42"]
 [editable path="PlayerFpsController"]

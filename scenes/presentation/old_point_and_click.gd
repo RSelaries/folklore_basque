@@ -33,9 +33,13 @@ func interact() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if old_pnc_window.visible:
 		if event.is_action_pressed("esc_menu"):
-			old_pnc_window.visible = false
-			old_pnc_canvas_layer.visible = false
-			PlayerState.input_listening = true
-			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			hide_pnc()
 		
 		get_window().set_input_as_handled()
+
+
+func hide_pnc() -> void:
+	old_pnc_window.visible = false
+	old_pnc_canvas_layer.visible = false
+	PlayerState.input_listening = true
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

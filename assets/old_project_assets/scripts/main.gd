@@ -26,14 +26,13 @@ func _ready() -> void:
 		if child is Camera3D:
 			cameras.append(child)
 	
-	%WorldEnvironment.environment.fog_enabled = true
+	if not Engine.is_editor_hint():
+		%WorldEnvironment.environment.fog_enabled = true
 
 
 func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		_update_cameras()
-		if in_engine_no_fog and %WorldEnvironment.environment.fog_enabled:
-			%WorldEnvironment.environment.fog_enabled = false
 
 
 func _update_cameras(force: bool = false) -> void:
