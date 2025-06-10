@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ci4571t8710kt"]
+
+[ext_resource type="FontFile" uid="uid://cs6yj1anymu4i" path="res://assets/fonts/Prompt-Medium.ttf" id="1_13bie"]
+[ext_resource type="FontFile" uid="uid://cul31crux03yi" path="res://assets/fonts/Prompt-Bold.ttf" id="1_gqx5m"]
+[ext_resource type="FontFile" uid="uid://dghjgoqnvj8vw" path="res://assets/fonts/Prompt-ExtraLight.ttf" id="2_ue7gr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ue7gr"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+
+[resource]
+RichTextLabel/constants/outline_size = 25
+RichTextLabel/constants/text_highlight_h_padding = 21
+RichTextLabel/font_sizes/bold_font_size = 80
+RichTextLabel/font_sizes/bold_italics_font_size = 57
+RichTextLabel/font_sizes/italics_font_size = 80
+RichTextLabel/font_sizes/mono_font_size = 67
+RichTextLabel/font_sizes/normal_font_size = 80
+RichTextLabel/fonts/bold_font = ExtResource("1_gqx5m")
+RichTextLabel/fonts/bold_italics_font = ExtResource("1_gqx5m")
+RichTextLabel/fonts/italics_font = ExtResource("2_ue7gr")
+RichTextLabel/fonts/normal_font = ExtResource("1_13bie")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_ue7gr")
