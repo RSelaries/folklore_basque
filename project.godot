@@ -16,7 +16,7 @@ Shortcuts/Select_Y_Z_Plane=Object(Shortcut,"resource_local_to_scene":false,"reso
 [application]
 
 config/name="Folklore Basque"
-run/main_scene="uid://78wgp66j7b2c"
+run/main_scene="uid://cdr0qwlipdg11"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 

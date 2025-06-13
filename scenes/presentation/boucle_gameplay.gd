@@ -18,6 +18,7 @@ var focused: bool = false:
 
 func interact() -> void:
 	boucle_window.visible = true
+	boucle_window.grab_focus()
 	boucle_canvas_layer.visible = true
 
 

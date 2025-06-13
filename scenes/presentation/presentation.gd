@@ -6,6 +6,8 @@ extends Node3D
 
 
 func _ready() -> void:
+	get_window().mode = Window.MODE_WINDOWED
+	get_window().size = Vector2(2, 2)
 	get_window().mode = Window.MODE_FULLSCREEN
 	get_window().transparent = false
 	

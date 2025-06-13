@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://b3rt6q0416s0"]
+[gd_scene load_steps=39 format=3 uid="uid://b3rt6q0416s0"]
 
 [ext_resource type="Script" uid="uid://cdq0whek0islp" path="res://scenes/3d_test_scene/test_3d_scene.gd" id="1_rp5pb"]
 [ext_resource type="Texture2D" uid="uid://bmrj2p7v3jdlj" path="res://assets/textures/hdri_mountains.jpg" id="2_me6r3"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://dl5ybbbqicde4" path="res://assets/sprites/recherches_graphiques/visage_collage/levre_sup_2.png" id="15_l8do3"]
 [ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/player_fps_controller/player_fps_controller.tscn" id="16_jus0k"]
 [ext_resource type="Shader" uid="uid://ba2ax8lys3gqf" path="res://assets/shaders/milk_outside_spatial.gdshader" id="19_236cj"]
-[ext_resource type="AudioStream" uid="uid://comp4fpoal73k" path="res://assets/audio/musics/water_planet.mp3" id="20_236cj"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mioed"]
 panorama = ExtResource("2_me6r3")
@@ -235,7 +234,10 @@ texture = ExtResource("15_l8do3")
 
 [node name="PlayerFpsController" parent="." instance=ExtResource("16_jus0k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 59.9498, 5)
+smoothing_speed = 60.0
 walking_speed = 5.0
+acceleration = 50.0
+deceleration = 50.0
 mouse_sensitivity = 0.1
 
 [node name="FpsCamera" parent="PlayerFpsController/Neck" index="0"]
@@ -279,11 +281,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_236cj")
-volume_db = -14.136
-autoplay = true
-parameters/looping = true
 
 [editable path="PlayerFpsController"]
