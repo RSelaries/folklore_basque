@@ -1,0 +1,612 @@
+[gd_scene load_steps=46 format=3 uid="uid://dqe25dwaruinw"]
+
+[ext_resource type="Shader" uid="uid://foqf6idimvb0" path="res://addons/decal_compatibility/decal.gdshader" id="1_ti02y"]
+[ext_resource type="Texture2D" uid="uid://dn1sytjqth6xh" path="res://assets/presentation/recherches/lamina.png" id="2_0wb2g"]
+[ext_resource type="Script" uid="uid://feckn7f3pmud" path="res://addons/decal_compatibility/decal_compatibility.gd" id="3_50ji1"]
+[ext_resource type="FontFile" uid="uid://cs6yj1anymu4i" path="res://assets/fonts/Prompt-Medium.ttf" id="4_sy4cb"]
+[ext_resource type="FontFile" uid="uid://c801ycp6gg1pm" path="res://assets/fonts/Prompt-Light.ttf" id="5_wp77n"]
+[ext_resource type="FontFile" uid="uid://cul31crux03yi" path="res://assets/fonts/Prompt-Bold.ttf" id="6_fc3ds"]
+[ext_resource type="Texture2D" uid="uid://c66o73exuuagm" path="res://assets/presentation/recherches/2zapve39.png" id="7_3xv2s"]
+[ext_resource type="Texture2D" uid="uid://df4bh87foytno" path="res://assets/presentation/recherches/mari.png" id="8_irtof"]
+[ext_resource type="Texture2D" uid="uid://7bb47uta5a3g" path="res://assets/presentation/recherches/d1hnvkcv.png" id="9_2veih"]
+[ext_resource type="Texture2D" uid="uid://dbe2poqy48n3r" path="res://assets/presentation/recherches/basajaun.png" id="10_11hxp"]
+[ext_resource type="Texture2D" uid="uid://bt5qlbuxmb1x0" path="res://assets/presentation/recherches/guillen_pec.png" id="11_c0uig"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c25i5"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = ExtResource("2_0wb2g")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.36483, 0.5, 0.197511)
+shader_parameter/cube_half_size = Vector3(1.3705, 1, 2.5315)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_1s08e"]
+material = SubResource("ShaderMaterial_c25i5")
+size = Vector3(2.741, 2, 5.063)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_33ija"]
+viewport_path = NodePath("Displays/Intrigue/Pistes/Laminak/LaminaExplication/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hihyj"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = SubResource("ViewportTexture_33ija")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ho4sh"]
+material = SubResource("ShaderMaterial_hihyj")
+size = Vector3(4.191, 2, 3.074)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmyrg"]
+content_margin_left = 40.0
+content_margin_right = 40.0
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_k2aqg"]
+viewport_path = NodePath("Displays/Intrigue/Pistes/Laminak/Explication/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pr7mw"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = SubResource("ViewportTexture_k2aqg")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_5tjvl"]
+material = SubResource("ShaderMaterial_pr7mw")
+size = Vector3(4.191, 2, 3.074)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eb3qo"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = ExtResource("7_3xv2s")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.208725, 0.5, 0.24079)
+shader_parameter/cube_half_size = Vector3(2.3955, 1, 2.0765)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_fejy1"]
+material = SubResource("ShaderMaterial_eb3qo")
+size = Vector3(4.791, 2, 4.153)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f7ksq"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = ExtResource("8_irtof")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.21901, 0.5, 0.24079)
+shader_parameter/cube_half_size = Vector3(2.283, 1, 2.0765)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_epvcp"]
+material = SubResource("ShaderMaterial_f7ksq")
+size = Vector3(4.566, 2, 4.153)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5f3yk"]
+viewport_path = NodePath("Displays/Intrigue/Pistes/Laminak/Suite/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r0500"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = SubResource("ViewportTexture_5f3yk")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_re7va"]
+material = SubResource("ShaderMaterial_r0500")
+size = Vector3(4.191, 2, 3.074)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kq33r"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = ExtResource("9_2veih")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_xql5k"]
+material = SubResource("ShaderMaterial_kq33r")
+size = Vector3(4.191, 2, 3.074)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5k1wf"]
+viewport_path = NodePath("Displays/Intrigue/Pistes/Laminak/Suite2/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_51meb"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = SubResource("ViewportTexture_5k1wf")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ctjnb"]
+material = SubResource("ShaderMaterial_51meb")
+size = Vector3(4.191, 2, 3.074)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_cindl"]
+viewport_path = NodePath("Displays/Intrigue/Pistes/Laminak/Suite3/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xmb5l"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = SubResource("ViewportTexture_cindl")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_k8om6"]
+material = SubResource("ShaderMaterial_xmb5l")
+size = Vector3(4.191, 2, 3.074)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pbqcg"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = ExtResource("10_11hxp")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.36483, 0.5, 0.197511)
+shader_parameter/cube_half_size = Vector3(1.3705, 1, 2.5315)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_fug0v"]
+material = SubResource("ShaderMaterial_pbqcg")
+size = Vector3(2.741, 2, 5.063)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h7txb"]
+viewport_path = NodePath("Displays/Intrigue/Pistes/Basajaun/BasajaunExplication/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ymt8j"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = SubResource("ViewportTexture_h7txb")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_u12uc"]
+material = SubResource("ShaderMaterial_ymt8j")
+size = Vector3(4.191, 2, 3.074)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_dmww2"]
+viewport_path = NodePath("Displays/Intrigue/Pistes/Basajaun/Explication/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kpr2m"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = SubResource("ViewportTexture_dmww2")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_gm232"]
+material = SubResource("ShaderMaterial_kpr2m")
+size = Vector3(4.191, 2, 3.074)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7vlaw"]
+render_priority = 0
+shader = ExtResource("1_ti02y")
+shader_parameter/albedo = ExtResource("11_c0uig")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.29577, 0.5, 0.197511)
+shader_parameter/cube_half_size = Vector3(1.6905, 1, 2.5315)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_tnmxc"]
+material = SubResource("ShaderMaterial_7vlaw")
+size = Vector3(3.381, 2, 5.063)
+
+[node name="BackupLaminaBasajaun" type="Node3D"]
+
+[node name="Pistes" type="Node3D" parent="."]
+transform = Transform3D(0.941447, 0, -0.337161, 0, 1, 0, 0.337161, 0, 0.941447, -23.0067, -13.3573, 16.7086)
+
+[node name="Laminak" type="Node3D" parent="Pistes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145151, 0, 7.67606)
+
+[node name="Lamina" type="MeshInstance3D" parent="Pistes/Laminak"]
+transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 3.45066, 2.07486, 4.72374)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_1s08e")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(2.741, 2, 5.063)
+texture = ExtResource("2_0wb2g")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="LaminaExplication" type="MeshInstance3D" parent="Pistes/Laminak"]
+transform = Transform3D(-0.0790333, -0.996872, 4.37114e-08, -4.70293e-08, -4.012e-08, -1, 0.996872, -0.0790333, -4.37114e-08, 3.74718, 1.59592, 1.44274)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_ho4sh")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(4.191, 2, 3.074)
+texture = SubResource("ViewportTexture_33ija")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Pistes/Laminak/LaminaExplication"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1117, 1022)
+
+[node name="Label" type="RichTextLabel" parent="Pistes/Laminak/LaminaExplication/SubViewport"]
+offset_right = 1117.64
+offset_bottom = 1039.9
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("4_sy4cb")
+theme_override_fonts/italics_font = ExtResource("5_wp77n")
+theme_override_fonts/bold_italics_font = ExtResource("6_fc3ds")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xmyrg")
+bbcode_enabled = true
+text = "Le Lamina
+[i][color=#777]Les Laminak (un/une Lamina) sont des lutins ou des génies, parfois bienfaisant parfois malfaisant, de la mythologie basque. Il vivent sous terres et dans des grottes et sont au service de la déesse Mari.
+Ils sont parfois décrits comme des femmes avec un corps animal, parfois commes des petits lutins mâles, parfois autrement."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Explication" type="MeshInstance3D" parent="Pistes/Laminak"]
+transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 2.98699, 3.05304, 8.02169)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_5tjvl")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(4.191, 2, 3.074)
+texture = SubResource("ViewportTexture_k2aqg")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Pistes/Laminak/Explication"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1067, 907)
+
+[node name="Label" type="RichTextLabel" parent="Pistes/Laminak/Explication/SubViewport"]
+custom_minimum_size = Vector2(1.155, 0)
+offset_right = 1075.58
+offset_bottom = 1002.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("4_sy4cb")
+theme_override_fonts/italics_font = ExtResource("5_wp77n")
+theme_override_fonts/bold_italics_font = ExtResource("6_fc3ds")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xmyrg")
+bbcode_enabled = true
+text = "[b]1 - Les laminak[/b]
+[i][color=#777]Piste 1[/color]
+[/i]
+Le joueur va entendre l'histoire du pont des laminak. Il va alors enquêter sur ces êtres pour savoir s'ils pourraient être responsables de la disparition."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Pont" type="MeshInstance3D" parent="Pistes/Laminak"]
+transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 2.61727, 2.71697, 12.8125)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_fejy1")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(4.791, 2, 4.153)
+texture = ExtResource("7_3xv2s")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="Pont2" type="MeshInstance3D" parent="Pistes/Laminak"]
+transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 1.43188, 2.58103, 17.9673)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_epvcp")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(4.566, 2, 4.153)
+texture = ExtResource("8_irtof")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="Suite" type="MeshInstance3D" parent="Pistes/Laminak"]
+transform = Transform3D(8.9407e-08, 1, 4.37114e-08, 4.37114e-08, 4.37114e-08, -1, -1, 8.9407e-08, -4.37114e-08, -4.10938, 3.05304, 6.43294)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_re7va")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(4.191, 2, 3.074)
+texture = SubResource("ViewportTexture_5f3yk")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Pistes/Laminak/Suite"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1067, 907)
+
+[node name="Label" type="RichTextLabel" parent="Pistes/Laminak/Suite/SubViewport"]
+custom_minimum_size = Vector2(1.155, 0)
+offset_right = 1075.58
+offset_bottom = 1002.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("4_sy4cb")
+theme_override_fonts/italics_font = ExtResource("5_wp77n")
+theme_override_fonts/bold_italics_font = ExtResource("6_fc3ds")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xmyrg")
+bbcode_enabled = true
+text = "[b]2 - La grotte[/b]
+[i][color=#777]Piste 1[/color]
+[/i]
+Le joueur va reunir des indices de la part des habitants du village pour savoir où les laminak peuvent vivre et comment leur parler."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Suite4" type="MeshInstance3D" parent="Pistes/Laminak"]
+transform = Transform3D(0.10904, 0.994037, 4.82171e-08, 4.37114e-08, 4.37114e-08, -1, -0.994037, 0.10904, -3.86845e-08, -5.10111, 3.05304, 10.7919)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_xql5k")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(4.191, 2, 3.074)
+texture = ExtResource("9_2veih")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="Suite2" type="MeshInstance3D" parent="Pistes/Laminak"]
+transform = Transform3D(0.158796, 0.987312, 4.37114e-08, 5.0098e-08, 3.62156e-08, -1, -0.987312, 0.158796, -4.37114e-08, -5.61035, 3.05304, 16.2316)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_ctjnb")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(4.191, 2, 3.074)
+texture = SubResource("ViewportTexture_5k1wf")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Pistes/Laminak/Suite2"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1097, 1082)
+
+[node name="Label" type="RichTextLabel" parent="Pistes/Laminak/Suite2/SubViewport"]
+offset_right = 1096.19
+offset_bottom = 1021.95
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("4_sy4cb")
+theme_override_fonts/italics_font = ExtResource("5_wp77n")
+theme_override_fonts/bold_italics_font = ExtResource("6_fc3ds")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xmyrg")
+bbcode_enabled = true
+text = "[b]3 - Les règles[/b]
+[i][color=#777]Piste 1[/color]
+[/i]
+Le joueur va devoir découvrir les règles imposées par les laminak sur leurs visiteurs.
+Au terme des énigmes mis en place par les laminak pour entrer dans la grotte, le joueur va pouvoir leur parler."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Suite3" type="MeshInstance3D" parent="Pistes/Laminak"]
+transform = Transform3D(-0.149328, -0.988788, -4.32906e-08, 5.00979e-08, 3.62156e-08, -1, 0.988788, -0.149328, 4.41282e-08, 1.33521, 3.05304, 21.1035)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_k8om6")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(4.191, 2, 3.074)
+texture = SubResource("ViewportTexture_cindl")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Pistes/Laminak/Suite3"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1097, 1082)
+
+[node name="Label" type="RichTextLabel" parent="Pistes/Laminak/Suite3/SubViewport"]
+offset_right = 987.89
+offset_bottom = 1021.95
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("4_sy4cb")
+theme_override_fonts/italics_font = ExtResource("5_wp77n")
+theme_override_fonts/bold_italics_font = ExtResource("6_fc3ds")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xmyrg")
+bbcode_enabled = true
+text = "[b]4 - La réponse[/b]
+[i][color=#777]Piste 1[/color]
+[/i]
+Les laminak vont confier ne pas retenir la jeune femme et ne pas savoir où elle se trouve. Cependant, ils évoquent une certaine Mari."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Basajaun" type="Node3D" parent="Pistes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.42232, 0, 4.57948)
+
+[node name="Basajaun" type="MeshInstance3D" parent="Pistes/Basajaun"]
+transform = Transform3D(0.367199, -0.930142, 4.37114e-08, -2.4607e-08, -5.67086e-08, -1, 0.930142, 0.367199, -4.37114e-08, 3.89853, 2.07486, -1.9015)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_fug0v")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(2.741, 2, 5.063)
+texture = ExtResource("10_11hxp")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="BasajaunExplication" type="MeshInstance3D" parent="Pistes/Basajaun"]
+transform = Transform3D(0.758839, -0.651278, 4.37114e-08, 4.70168e-09, -6.16382e-08, -1, 0.651278, 0.758839, -4.37114e-08, 3.02008, 1.26, -4.76091)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_u12uc")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(4.191, 2, 3.074)
+texture = SubResource("ViewportTexture_h7txb")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Pistes/Basajaun/BasajaunExplication"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1117, 1022)
+
+[node name="Label" type="RichTextLabel" parent="Pistes/Basajaun/BasajaunExplication/SubViewport"]
+offset_right = 1117.64
+offset_bottom = 1039.9
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("4_sy4cb")
+theme_override_fonts/italics_font = ExtResource("5_wp77n")
+theme_override_fonts/bold_italics_font = ExtResource("6_fc3ds")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xmyrg")
+bbcode_enabled = true
+text = "Le Basajaun
+[i][color=#777]Le Basajaun, ou \"seigneur sauvage\" en basque, est une sorte d'être humain sauvage vivant dans les montagnes et dans les grottes. Il terrorise les villageois en venant parfois descendre de sa montagne pour dévorer le bétail, et d'autres fois un humain selon sa faim.[/color]
+[/i]"
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Explication" type="MeshInstance3D" parent="Pistes/Basajaun"]
+transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 5.08202, 3.05304, 1.69612)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_gm232")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(4.191, 2, 3.074)
+texture = SubResource("ViewportTexture_dmww2")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Pistes/Basajaun/Explication"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1117, 1022)
+
+[node name="Label" type="RichTextLabel" parent="Pistes/Basajaun/Explication/SubViewport"]
+offset_right = 1117.64
+offset_bottom = 1039.9
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("4_sy4cb")
+theme_override_fonts/italics_font = ExtResource("5_wp77n")
+theme_override_fonts/bold_italics_font = ExtResource("6_fc3ds")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xmyrg")
+bbcode_enabled = true
+text = "[b]1 - Le Basajaun[/b]
+[i][color=#777]Piste 3[/color]
+[/i]
+Sur son chemin vers le village, le joueur feras connaissance avec un verger voisin qui se plaignera que ses bêtes disparaissent. Ce berger va alors réveler au joueur l'existance du Basajaun."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="GuillenPec" type="Node3D" parent="Pistes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.92511, 0, 8.0321)
+
+[node name="Guillen" type="MeshInstance3D" parent="Pistes/GuillenPec"]
+transform = Transform3D(0.155486, 0.987838, 0, 4.31798e-08, -6.79652e-09, -1, -0.987838, 0.155486, -4.37114e-08, -3.42902, 2.07486, 0.362053)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_tnmxc")
+Skeleton = null
+script = ExtResource("3_50ji1")
+size = Vector3(3.381, 2, 5.063)
+texture = ExtResource("11_c0uig")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
