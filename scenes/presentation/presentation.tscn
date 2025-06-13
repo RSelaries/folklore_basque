@@ -1,4 +1,4 @@
-[gd_scene load_steps=390 format=4 uid="uid://cdr0qwlipdg11"]
+[gd_scene load_steps=407 format=4 uid="uid://cdr0qwlipdg11"]
 
 [ext_resource type="Script" uid="uid://wlrxi0ygpx56" path="res://scenes/presentation/presentation.gd" id="1_qulu1"]
 [ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_nd5ni"]
@@ -9,20 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://cmkffb1xy66r7" path="res://assets/textures/material_textures/rock_53/Rock_53_2k_packed_normal_roughness.png" id="7_2pyn7"]
 [ext_resource type="Shader" uid="uid://csdx0ulhib6lk" path="res://assets/shaders/clouds.gdshader" id="7_8peoy"]
 [ext_resource type="Texture2D" uid="uid://e5tsckrxy016" path="res://assets/textures/material_textures/grass_03/Grass003_2k_packed_albedo_height.png" id="8_23kdo"]
-[ext_resource type="PackedScene" uid="uid://f2th0k0gab5c" path="res://assets/terrain/lamina_cave_2.glb" id="8_qulu1"]
 [ext_resource type="Material" uid="uid://qxdca4tux6rt" path="res://assets/materials/rock_1.tres" id="9_cj5kf"]
 [ext_resource type="Texture2D" uid="uid://cnchgw3iqqemx" path="res://assets/textures/material_textures/grass_03/Grass003_2k_packed_normal_roughness.png" id="9_f1h5n"]
 [ext_resource type="Texture2D" uid="uid://chtpko861he68" path="res://assets/textures/material_textures/ground_81/Ground_81_2k_packed_albedo_height.png" id="10_42ahw"]
-[ext_resource type="Material" uid="uid://1mq0c4h6742p" path="res://assets/materials/terrain_grass.tres" id="10_vhq1o"]
-[ext_resource type="Shader" uid="uid://kh6e1c138lm3" path="res://assets/shaders/fire_1.gdshader" id="11_oo5fg"]
 [ext_resource type="Texture2D" uid="uid://dfk5vt78tq5d2" path="res://assets/textures/material_textures/ground_81/Ground_81_2k_packed_normal_roughness.png" id="11_xy5ac"]
-[ext_resource type="Script" uid="uid://de0eihsidytpi" path="res://assets/scripts/flickering_light.gd" id="12_oot7x"]
 [ext_resource type="Texture2D" uid="uid://dtvhy3my6q8ee" path="res://assets/textures/material_textures/paving_stones_141/PavingStones141_2k_packed_albedo_height.png" id="12_uydff"]
 [ext_resource type="Texture2D" uid="uid://cjkp7y8av4b01" path="res://assets/textures/material_textures/paving_stones_141/PavingStones141_2k_packed_normal_roughness.png" id="13_8ap7g"]
-[ext_resource type="PackedScene" uid="uid://bnxb8rqttypyy" path="res://assets/scenes/3d_scenes/spatial_audio_stream_player_3d.tscn" id="13_npnhw"]
 [ext_resource type="ArrayOccluder3D" uid="uid://bipirl53h5b78" path="res://scenes/presentation/terrain_3d_occluder_3d.tres" id="14_gbk34"]
-[ext_resource type="AudioStream" uid="uid://h1nkymdnbvhu" path="res://assets/audio/sound_effects/looping_fire_sound_effect.wav" id="14_imkeq"]
-[ext_resource type="Script" uid="uid://d214enylidvtm" path="res://scenes/prototype_1/laminak_path.gd" id="15_2gsya"]
 [ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/player_fps_controller/player_fps_controller.tscn" id="25_r7d6n"]
 [ext_resource type="Script" uid="uid://v4trr71g6pt4" path="res://scenes/presentation/interactible_display.gd" id="28_8peoy"]
 [ext_resource type="FontFile" uid="uid://d263xgtfugwts" path="res://assets/fonts/Prompt-Black.ttf" id="28_cj5kf"]
@@ -123,6 +116,7 @@
 [ext_resource type="Texture2D" uid="uid://bxtb854s0c1fm" path="res://assets/presentation/references/feetinthesnow2.png" id="88_qsp0k"]
 [ext_resource type="Texture2D" uid="uid://0ohf0ok8158b" path="res://assets/presentation/references/dreammachine1.png" id="90_gbk34"]
 [ext_resource type="Texture2D" uid="uid://caiyhpdgxsp6h" path="res://assets/presentation/references/dreammachine2.png" id="91_7buv1"]
+[ext_resource type="Script" uid="uid://c08gi0s673skq" path="res://scenes/presentation/presentation_cave_area.gd" id="91_65onn"]
 [ext_resource type="Texture2D" uid="uid://df0fn6hpxrnki" path="res://assets/presentation/idees_projet/w8lfswqd.png" id="93_0tk8v"]
 [ext_resource type="Texture2D" uid="uid://cvrare63s0tnw" path="res://assets/presentation/idees_projet/Capture d'écran 2025-06-08 200332.png" id="94_xfalj"]
 [ext_resource type="Theme" uid="uid://ci4571t8710kt" path="res://assets/presentation/presentation_explications.tres" id="95_fwyk0"]
@@ -370,38 +364,6 @@ lightmap_size_hint = Vector2i(25002, 25002)
 flip_faces = true
 size = Vector2(5000, 5000)
 
-[sub_resource type="QuadMesh" id="QuadMesh_tfr7r"]
-size = Vector2(3, 3)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jl3e0"]
-render_priority = 0
-shader = ExtResource("11_oo5fg")
-shader_parameter/detail_strength = 3.0
-shader_parameter/scroll_speed = 1.2
-shader_parameter/fire_height = 1.0
-shader_parameter/fire_shape = 1.595
-shader_parameter/fire_thickness = 2.08
-shader_parameter/fire_sharpness = 1.0
-shader_parameter/intensity = 1.165
-shader_parameter/noise_octaves = 6
-shader_parameter/noise_lacunarity = 3.0
-shader_parameter/noise_gain = 0.5
-shader_parameter/noise_amplitude = 1.0
-shader_parameter/noise_frequency = 1.5
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_qgmfw"]
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mcxer"]
-noise = SubResource("FastNoiseLite_qgmfw")
-
-[sub_resource type="Curve3D" id="Curve3D_8s1bk"]
-closed = true
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.78641, 0.46035, -2.50192, 0, 0, 0, 0, 0, 0, -6.43533, 0.710327, -4.05389, 0, 0, 0, 0, 0, 0, -3.88266, 0.726295, -8.16226, 0, 0, 0, 0, 0, 0, 1.66287, 0.653484, -9.74628, 0, 0, 0, 0, 0, 0, 5.55771, 0, -4.57098, 0, 0, 0, 0, 0, 0, 9.75977, 0, 1.53479, 0, 0, 0, 0, 0, 0, 7.74149, 0, 7.29968, 0, 0, 0, 0, 0, 0, 2.09384, 0.262367, 8.55191, 0, 0, 0, 0, 0, 0, -0.247894, 0.584099, 7.90808, 0, 0, 0, 0, 0, 0, -2.58087, 0.488136, 6.70694, 0, 0, 0, 0, 0, 0, -4.76303, 0.142597, 4.82767, 0, 0, 0, 0, 0, 0, -6.56989, 0.0746841, 2.97638, 0, 0, 0, 0, 0, 0, -7.79236, 0.0861855, 0.215149),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 13
-
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r7d6n"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_oo5fg"]
@@ -496,6 +458,17 @@ viewport_path = NodePath("Displays/PhaseIdee/FinancementPrix/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_trgt8"]
 viewport_path = NodePath("Displays/PhaseIdee/Financement/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rk38e"]
+size = Vector3(7.06543, 11.0095, 7.901)
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_65onn"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2oru1"]
+material = SubResource("ORMMaterial3D_65onn")
+size = Vector2(8.866, 9.51)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_m5t8r"]
 viewport_path = NodePath("Displays/Intrigue/recherches/Cerquand/SubViewport")
@@ -815,6 +788,26 @@ shader_parameter/fade_power = 1.0
 material = SubResource("ShaderMaterial_b6rb1")
 size = Vector3(4.191, 2, 3.074)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_65onn"]
+viewport_path = NodePath("Displays/Intrigue/Introduction2/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2oru1"]
+render_priority = 0
+shader = ExtResource("125_hiowu")
+shader_parameter/albedo = SubResource("ViewportTexture_65onn")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.41876)
+shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.194)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_14bau"]
+material = SubResource("ShaderMaterial_2oru1")
+size = Vector3(4.191, 2, 2.388)
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_fwyk0"]
 viewport_path = NodePath("Displays/Intrigue/Pistes/Basajaun/Papaita/Displays_Intrigue_Pistes_Basajaun_Papita#SubViewport")
 
@@ -1119,7 +1112,7 @@ shader_parameter/modulate = Color(1, 1, 1, 1)
 shader_parameter/albedo_mix = 1.0
 shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
 shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
-shader_parameter/enable_y_fade = false
+shader_parameter/enable_y_fade = true
 shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
@@ -1134,8 +1127,8 @@ shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("120_avkdy")
 shader_parameter/modulate = Color(0.77062, 0.687297, 0.499446, 1)
 shader_parameter/albedo_mix = 1.0
-shader_parameter/scale_mod = Vector3(0.434594, 0.5, 0.246427)
-shader_parameter/cube_half_size = Vector3(1.1505, 1, 2.029)
+shader_parameter/scale_mod = Vector3(0.481696, 0.5, 0.246427)
+shader_parameter/cube_half_size = Vector3(1.038, 1, 2.029)
 shader_parameter/enable_y_fade = false
 shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
@@ -1143,7 +1136,7 @@ shader_parameter/fade_power = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_fllle"]
 material = SubResource("ShaderMaterial_ojvw8")
-size = Vector3(2.301, 2, 4.058)
+size = Vector3(2.076, 2, 4.058)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vun32"]
 viewport_path = NodePath("Displays/Intrigue/Pistes/GuillenPec/GuillenExplication/SubViewport")
@@ -1174,16 +1167,156 @@ shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_pk46w")
 shader_parameter/modulate = Color(1, 1, 1, 1)
 shader_parameter/albedo_mix = 1.0
-shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
-shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
-shader_parameter/enable_y_fade = false
+shader_parameter/scale_mod = Vector3(0.19976, 0.5, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.503, 1, 1.537)
+shader_parameter/enable_y_fade = true
 shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_8s2ll"]
 material = SubResource("ShaderMaterial_oljqu")
-size = Vector3(4.191, 2, 3.074)
+size = Vector3(5.006, 2, 3.074)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rk38e"]
+viewport_path = NodePath("Displays/Intrigue/Pistes/GuillenPec/Explication2/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_65onn"]
+render_priority = 0
+shader = ExtResource("125_hiowu")
+shader_parameter/albedo = SubResource("ViewportTexture_rk38e")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.185839, 0.755858, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.6905, 0.6615, 1.537)
+shader_parameter/enable_y_fade = true
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_2oru1"]
+material = SubResource("ShaderMaterial_65onn")
+size = Vector3(5.381, 1.323, 3.074)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_2oru1"]
+viewport_path = NodePath("Displays/Intrigue/Pistes/GuillenPec/Explication3/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14bau"]
+render_priority = 0
+shader = ExtResource("125_hiowu")
+shader_parameter/albedo = SubResource("ViewportTexture_2oru1")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.185839, 0.755858, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.6905, 0.6615, 1.537)
+shader_parameter/enable_y_fade = true
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_l04ty"]
+material = SubResource("ShaderMaterial_14bau")
+size = Vector3(5.381, 1.323, 3.074)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_l04ty"]
+viewport_path = NodePath("Displays/Intrigue/Pistes/GuillenPec/Explication4/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wb0ju"]
+render_priority = 0
+shader = ExtResource("125_hiowu")
+shader_parameter/albedo = SubResource("ViewportTexture_l04ty")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.185839, 0.755858, 0.325309)
+shader_parameter/cube_half_size = Vector3(2.6905, 0.6615, 1.537)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_yxhgx"]
+material = SubResource("ShaderMaterial_wb0ju")
+size = Vector3(5.381, 1.323, 3.074)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wb0ju"]
+viewport_path = NodePath("Displays/Intrigue/Dénouement/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yxhgx"]
+render_priority = 0
+shader = ExtResource("125_hiowu")
+shader_parameter/albedo = SubResource("ViewportTexture_wb0ju")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.19976, 0.5, 0.320102)
+shader_parameter/cube_half_size = Vector3(2.503, 1, 1.562)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_fencp"]
+material = SubResource("ShaderMaterial_yxhgx")
+size = Vector3(5.006, 2, 3.124)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_w51nr"]
+viewport_path = NodePath("Displays/Intrigue/Dénouement2/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bp678"]
+render_priority = 0
+shader = ExtResource("125_hiowu")
+shader_parameter/albedo = SubResource("ViewportTexture_w51nr")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.19976, 0.5, 0.320102)
+shader_parameter/cube_half_size = Vector3(2.503, 1, 1.562)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_x3ce4"]
+material = SubResource("ShaderMaterial_bp678")
+size = Vector3(5.006, 2, 3.124)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_bp678"]
+viewport_path = NodePath("Displays/Intrigue/Fin/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fcyos"]
+render_priority = 0
+shader = ExtResource("125_hiowu")
+shader_parameter/albedo = SubResource("ViewportTexture_bp678")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.19976, 0.5, 0.320102)
+shader_parameter/cube_half_size = Vector3(2.503, 1, 1.562)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_vojj5"]
+material = SubResource("ShaderMaterial_fcyos")
+size = Vector3(5.006, 2, 3.124)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x3ce4"]
+viewport_path = NodePath("Displays/Intrigue/Sortie/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ircnm"]
+render_priority = 0
+shader = ExtResource("125_hiowu")
+shader_parameter/albedo = SubResource("ViewportTexture_x3ce4")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.298864, 0.5, 0.800641)
+shader_parameter/cube_half_size = Vector3(1.673, 1, 0.6245)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_b7di1"]
+material = SubResource("ShaderMaterial_ircnm")
+size = Vector3(3.346, 2, 1.249)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_512ek"]
 viewport_path = NodePath("Displays/Gameplay/FenetresPuzzle/SubViewport")
@@ -1284,6 +1417,9 @@ viewport_path = NodePath("Displays/Esthetique/Personnages/LaminaGroup/LaminaStep
 [sub_resource type="ViewportTexture" id="ViewportTexture_ev652"]
 viewport_path = NodePath("Displays/Esthetique/PourquoiSprites/SubViewport")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_nqwrc"]
+viewport_path = NodePath("Displays/Esthetique/PourquoiSprites2/SubViewport")
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_wslrt"]
 size = Vector3(2.65234, 1.63477, 0.0263672)
 
@@ -1299,13 +1435,13 @@ shader_parameter/inside = false
 shader_parameter/add_margins = false
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_2b3u3"]
-viewport_path = NodePath("Displays/Esthetique/TestScene3D/TestScene3DWindow/Test3dScene/Sprite3D/SubViewport")
+viewport_path = NodePath("Sprite3D/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_sqkpa"]
-viewport_path = NodePath("Displays/Esthetique/TestScene3D/TestScene3DWindow/Test3dScene/Sprite3D2/SubViewport")
+viewport_path = NodePath("Sprite3D2/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_h6dxm"]
-viewport_path = NodePath("Displays/Esthetique/TestScene3D/TestScene3DWindow/Test3dScene/Sprite3D3/SubViewport")
+viewport_path = NodePath("Sprite3D3/SubViewport")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_14bau"]
 size = Vector3(2.87012, 1.54663, 0.0263672)
@@ -1334,7 +1470,7 @@ viewport_path = NodePath("Displays/Esthetique/ExplicationsScenettes/SubViewport"
 viewport_path = NodePath("Displays/Prototype/EnvironnementExplication/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_eg2uh"]
-viewport_path = NodePath("Displays/Prototype/ExplicationEnvironnement2/SubViewport")
+viewport_path = NodePath("Displays/Prototype/Date/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_caegf"]
 viewport_path = NodePath("Displays/Prototype/PrototypeDisplay/Sprite3D/SubViewport")
@@ -1369,47 +1505,6 @@ cast_shadow = 0
 extra_cull_margin = 16384.0
 gi_mode = 0
 mesh = SubResource("PlaneMesh_t5m2n")
-
-[node name="lamina_cave_2" parent="Terrain3D" instance=ExtResource("8_qulu1")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 344.338, -32.2178, 362.397)
-
-[node name="LaminaCave2" parent="Terrain3D/lamina_cave_2" index="0"]
-material_override = ExtResource("9_cj5kf")
-
-[node name="Grass" parent="Terrain3D/lamina_cave_2" index="1"]
-material_override = ExtResource("10_vhq1o")
-
-[node name="Fire" type="MeshInstance3D" parent="Terrain3D/lamina_cave_2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.44327, -4.72355, -39.8526)
-mesh = SubResource("QuadMesh_tfr7r")
-surface_material_override/0 = SubResource("ShaderMaterial_jl3e0")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Terrain3D/lamina_cave_2/Fire"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.01747, 0)
-light_color = Color(0.888454, 0.564508, 0, 1)
-light_energy = 17.3727
-shadow_enabled = true
-shadow_opacity = 0.9
-omni_range = 25.4632
-omni_attenuation = 0.596
-script = ExtResource("12_oot7x")
-min_light_energy = 10.0
-max_light_energy = 20.0
-flicker_speed = 50.0
-noise_texture = SubResource("NoiseTexture2D_mcxer")
-
-[node name="SpatialAudioStreamPlayer3D" parent="Terrain3D/lamina_cave_2/Fire/OmniLight3D" instance=ExtResource("13_npnhw")]
-stream = ExtResource("14_imkeq")
-volume_db = -32.1749
-autoplay = true
-bus = &"SpatialBus#40"
-update_frequency_seconds = 2.0
-max_reverb_wetness = 50.0
-
-[node name="Path3D" type="Path3D" parent="Terrain3D/lamina_cave_2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0773, -5.6563, -45.0626)
-curve = SubResource("Curve3D_8s1bk")
-script = ExtResource("15_2gsya")
 
 [node name="PlayerFpsController" parent="." instance=ExtResource("25_r7d6n")]
 unique_name_in_owner = true
@@ -2612,7 +2707,7 @@ horizontal_alignment = 3
 justification_flags = 35
 
 [node name="Intrigue" type="Node3D" parent="Displays"]
-transform = Transform3D(0.995304, 0, 0.0968012, 0, 1, 0, -0.0968012, 0, 0.995304, -290.288, -6.69741, -214.967)
+transform = Transform3D(0.995304, 0, 0.0968012, 0, 1, 0, -0.0968012, 0, 0.995304, -290.288, -8.33839, -214.967)
 
 [node name="presentation_cave" parent="Displays/Intrigue" instance=ExtResource("133_dwot8")]
 transform = Transform3D(-0.894014, 0, 0.44804, 0, 1, 0, -0.44804, 0, -0.894014, 2.16602, -7.93536, -3.65599)
@@ -2624,72 +2719,111 @@ material_override = ExtResource("9_cj5kf")
 [node name="CollisionShape3D" parent="Displays/Intrigue/presentation_cave/PresentationCave/StaticBody3D" index="0"]
 visible = false
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70961, 4.38079, -10.4092)
+[node name="Area3D" type="Area3D" parent="Displays/Intrigue/presentation_cave"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.629, -2.18928, -85.0217)
+script = ExtResource("91_65onn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Intrigue/presentation_cave/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.672263, 0, -2.46953)
+shape = SubResource("BoxShape3D_rk38e")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Displays/Intrigue/presentation_cave/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 0, -9.87518)
+mesh = SubResource("QuadMesh_2oru1")
+
+[node name="TeleportLocation" type="Marker3D" parent="Displays/Intrigue/presentation_cave/Area3D"]
+unique_name_in_owner = true
+transform = Transform3D(-0.992014, 0, 0.12613, 0, 1, 0, -0.12613, 0, -0.992014, -11.742, 8.049, 83.836)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Displays/Intrigue/presentation_cave/Area3D"]
+
+[node name="BlackFadeInOut" type="ColorRect" parent="Displays/Intrigue/presentation_cave/Area3D/CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="Lights" type="Node3D" parent="Displays/Intrigue/presentation_cave"]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave/Lights"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 2.70963, 4.38079, -10.4092)
 light_color = Color(0.93534, 0.762968, 0.228537, 1)
 light_energy = 16.0
 light_specular = 0.0
 omni_range = 9.207
 omni_attenuation = 2.284
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6762, -1.66849, -21.1674)
+[node name="OmniLight3D2" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave/Lights"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 11.6762, -1.66849, -21.1674)
 light_color = Color(0.93534, 0.762968, 0.228537, 1)
 light_energy = 16.0
 light_specular = 0.0
 omni_range = 9.207
 omni_attenuation = 2.284
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.308, -1.66849, -39.4832)
+[node name="OmniLight3D3" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave/Lights"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 11.308, -1.66849, -39.4832)
 light_color = Color(0.93534, 0.762968, 0.228537, 1)
 light_energy = 16.0
 light_specular = 0.0
 omni_range = 9.207
 omni_attenuation = 2.284
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.308, -1.66849, -50.9967)
+[node name="OmniLight3D5" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave/Lights"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 11.308, -1.66849, -50.9967)
 light_color = Color(0.93534, 0.762968, 0.228537, 1)
 light_energy = 16.0
 light_specular = 0.0
 omni_range = 9.207
 omni_attenuation = 2.284
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8284, -1.66849, -44.2544)
+[node name="OmniLight3D6" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave/Lights"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 20.8284, -1.66849, -44.2544)
 light_color = Color(0.93534, 0.762968, 0.228537, 1)
 light_energy = 16.0
 light_specular = 0.0
 omni_range = 9.207
 omni_attenuation = 2.284
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.8283, -1.66849, -55.7679)
+[node name="OmniLight3D7" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave/Lights"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 20.8283, -1.66849, -55.7679)
 light_color = Color(0.93534, 0.762968, 0.228537, 1)
 light_energy = 16.0
 light_specular = 0.0
 omni_range = 9.207
 omni_attenuation = 2.284
 
-[node name="OmniLight3D8" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05194, -1.66849, -35.8468)
+[node name="OmniLight3D8" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave/Lights"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 4.05197, -1.66849, -35.8468)
 light_color = Color(0.93534, 0.762968, 0.228537, 1)
 light_energy = 16.0
 light_specular = 0.0
 omni_range = 9.207
 omni_attenuation = 2.284
 
-[node name="OmniLight3D9" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05188, -1.66849, -47.3603)
+[node name="OmniLight3D9" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave/Lights"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 4.05188, -1.66849, -47.3603)
 light_color = Color(0.93534, 0.762968, 0.228537, 1)
 light_energy = 16.0
 light_specular = 0.0
 omni_range = 9.207
 omni_attenuation = 2.284
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4942, -1.66849, -62.7956)
+[node name="OmniLight3D4" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave/Lights"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 12.4942, -1.66849, -62.7956)
+light_color = Color(0.93534, 0.762968, 0.228537, 1)
+light_energy = 16.0
+light_specular = 0.0
+omni_range = 9.207
+omni_attenuation = 2.284
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Displays/Intrigue/presentation_cave/Lights"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 12.4942, -1.66849, -73.8611)
 light_color = Color(0.93534, 0.762968, 0.228537, 1)
 light_energy = 16.0
 light_specular = 0.0
@@ -2697,12 +2831,12 @@ omni_range = 9.207
 omni_attenuation = 2.284
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Displays/Intrigue/presentation_cave"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.507, -2.5437, -48.3424)
-blend_distance = 2.02
-size = Vector3(36.0463, 14.9126, 71.0732)
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999999, 12.507, -2.26101, -58.7198)
+size = Vector3(36.0463, 15.478, 91.8281)
+interior = true
 
 [node name="IntrigueTitle" type="Label3D" parent="Displays/Intrigue"]
-transform = Transform3D(-0.877574, 0, 0.479442, 0, 1, 0, -0.479442, 0, -0.877574, 1.23685, 1.63983, -1.35645)
+transform = Transform3D(-0.877574, 0, 0.479442, 0, 1, 0, -0.479442, 0, -0.877574, 1.23685, 3.30673, -1.35645)
 alpha_cut = 1
 text = "4 - Intrigue"
 font = ExtResource("28_cj5kf")
@@ -2713,7 +2847,7 @@ uppercase = true
 [node name="recherches" type="Node3D" parent="Displays/Intrigue"]
 
 [node name="Cerquand" type="MeshInstance3D" parent="Displays/Intrigue/recherches"]
-transform = Transform3D(-0.72003, -0.693943, -2.09571e-08, 4.17093e-08, -1.30773e-08, -1, 0.693943, -0.72003, 3.836e-08, -0.772064, -3.98596, 4.65799)
+transform = Transform3D(-0.72003, -0.693943, -2.09571e-08, 4.17093e-08, -1.30773e-08, -1, 0.693943, -0.72003, 3.836e-08, -0.772064, -3.53833, 4.65799)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_eg2uh")
@@ -2758,7 +2892,7 @@ text = "[b]Légendes et récits populaires du pays basque[/b]
 justification_flags = 35
 
 [node name="LegendesBasques" type="MeshInstance3D" parent="Displays/Intrigue/recherches"]
-transform = Transform3D(-0.479442, -0.877574, -2.09571e-08, 4.37114e-08, 0, -1, 0.877574, -0.479442, 3.836e-08, 1.38925, -2.53329, 0.701859)
+transform = Transform3D(-0.479442, -0.877574, -2.09571e-08, 4.37114e-08, 0, -1, 0.877574, -0.479442, 3.836e-08, 1.49184, -2.22364, 0.757905)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_sqkpa")
@@ -2784,7 +2918,7 @@ enable_fade = false
 metadata/_custom_type_script = "uid://feckn7f3pmud"
 
 [node name="SiteMoche" type="MeshInstance3D" parent="Displays/Intrigue/recherches"]
-transform = Transform3D(0.914706, 0.404121, 2.20503e-08, 3.54219e-08, -2.5612e-08, -1, -0.404121, 0.914706, -3.77422e-08, -6.5694, -5.73598, 3.50453)
+transform = Transform3D(0.914706, 0.404121, 2.20503e-08, 3.54219e-08, -2.5612e-08, -1, -0.404121, 0.914706, -3.77422e-08, -6.65207, -4.55051, 3.49644)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_bp678")
@@ -2829,7 +2963,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LabelSites" type="MeshInstance3D" parent="Displays/Intrigue/recherches"]
-transform = Transform3D(0.829718, 0.54479, -0.121538, 0.0917481, -0.347885, -0.933037, -0.550591, 0.763007, -0.33863, -6.06812, -4.07589, 3.59331)
+transform = Transform3D(0.829718, 0.54479, -0.121538, 0.0917481, -0.347885, -0.933037, -0.550591, 0.763007, -0.33863, -6.15088, -2.89042, 3.58527)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_ircnm")
@@ -2860,7 +2994,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SiteEncorePlusMoche" type="MeshInstance3D" parent="Displays/Intrigue/recherches"]
-transform = Transform3D(0.65648, 0.754344, 3.93352e-09, 3.54219e-08, -2.5612e-08, -1, -0.754344, 0.65648, -4.35341e-08, -3.99854, -4.73389, 1.6212)
+transform = Transform3D(0.65648, 0.754344, 3.93352e-09, 3.54219e-08, -2.5612e-08, -1, -0.754344, 0.65648, -4.35341e-08, -4.20358, -3.45992, 1.60132)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_k8gpc")
@@ -2875,7 +3009,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 [node name="DecoMurs" type="Node3D" parent="Displays/Intrigue/recherches"]
 
 [node name="DecoMur" type="MeshInstance3D" parent="Displays/Intrigue/recherches/DecoMurs"]
-transform = Transform3D(-0.995346, 0.096366, 2.20503e-08, -1.83106e-08, 3.96914e-08, -1, -0.096366, -0.995346, -3.77422e-08, -5.4621, -5.73598, 6.77647)
+transform = Transform3D(-0.995346, 0.096366, 2.20503e-08, -1.83106e-08, 3.96914e-08, -1, -0.096366, -0.995346, -3.77422e-08, -5.46213, -4.93823, 6.77647)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_ln5ns")
@@ -2904,7 +3038,7 @@ fade_power = 5.0
 metadata/_custom_type_script = "uid://feckn7f3pmud"
 
 [node name="DecoMur2" type="MeshInstance3D" parent="Displays/Intrigue/recherches/DecoMurs"]
-transform = Transform3D(-0.983012, -0.183541, 2.20503e-08, -2.8603e-08, 3.30539e-08, -1, 0.183541, -0.983012, -3.77422e-08, -7.33973, -6.87651, 6.92639)
+transform = Transform3D(-0.983012, -0.183541, 2.20503e-08, -2.8603e-08, 3.30539e-08, -1, 0.183541, -0.983012, -3.77422e-08, -7.39316, -5.68584, 7.47591)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_d3t3n")
@@ -2920,7 +3054,7 @@ fade_power = 5.0
 metadata/_custom_type_script = "uid://feckn7f3pmud"
 
 [node name="DecoMur3" type="MeshInstance3D" parent="Displays/Intrigue/recherches/DecoMurs"]
-transform = Transform3D(0.995185, 0.0980182, 2.20503e-08, 2.56435e-08, -3.53991e-08, -1, -0.0980182, 0.995185, -3.77422e-08, -10.4365, -6.87651, 3.38198)
+transform = Transform3D(0.995185, 0.0980182, 2.20503e-08, 2.56435e-08, -3.53991e-08, -1, -0.0980182, 0.995185, -3.77422e-08, -10.3555, -5.49682, 3.38983)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_srot5")
@@ -2936,7 +3070,7 @@ fade_power = 5.0
 metadata/_custom_type_script = "uid://feckn7f3pmud"
 
 [node name="DecoMur4" type="MeshInstance3D" parent="Displays/Intrigue/recherches/DecoMurs"]
-transform = Transform3D(-0.998044, -0.062513, 2.20503e-08, -2.43666e-08, 3.62899e-08, -1, 0.062513, -0.998044, -3.77422e-08, -10.4413, -7.2815, 7.12052)
+transform = Transform3D(-0.998044, -0.062513, 2.20503e-08, -2.43666e-08, 3.62899e-08, -1, 0.062513, -0.998044, -3.77422e-08, -10.3387, -6.63902, 7.62083)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_tuf0m")
@@ -2968,7 +3102,7 @@ fade_power = 5.0
 metadata/_custom_type_script = "uid://feckn7f3pmud"
 
 [node name="DecoMur7" type="MeshInstance3D" parent="Displays/Intrigue/recherches/DecoMurs"]
-transform = Transform3D(0.857688, 0.514171, 2.20503e-08, 3.83182e-08, -2.10334e-08, -1, -0.514171, 0.857688, -3.77422e-08, -13.1305, -7.61384, 4.3513)
+transform = Transform3D(0.857688, 0.514171, 2.20503e-08, 3.83182e-08, -2.10334e-08, -1, -0.514171, 0.857688, -3.77422e-08, -13.4195, -6.29081, 4.05132)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_5f554")
@@ -2984,7 +3118,7 @@ fade_power = 5.0
 metadata/_custom_type_script = "uid://feckn7f3pmud"
 
 [node name="DecoMur9" type="MeshInstance3D" parent="Displays/Intrigue/recherches/DecoMurs"]
-transform = Transform3D(-0.33972, 0.030034, 0.940047, 0.240084, 0.969148, 0.055799, -0.909369, 0.244646, -0.336449, -11.2143, -9.11584, 4.65199)
+transform = Transform3D(-0.33972, 0.030034, 0.940047, 0.240084, 0.969148, 0.055799, -0.909369, 0.244646, -0.336449, -11.2775, -7.82176, 4.97182)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_y23tt")
@@ -3000,7 +3134,7 @@ fade_power = 5.0
 metadata/_custom_type_script = "uid://feckn7f3pmud"
 
 [node name="DecoMur10" type="MeshInstance3D" parent="Displays/Intrigue/recherches/DecoMurs"]
-transform = Transform3D(-0.784953, 0.030034, 0.618827, 0.174399, 0.969148, 0.17418, -0.594503, 0.244646, -0.765973, -8.95773, -9.16453, 5.61079)
+transform = Transform3D(-0.784953, 0.030034, 0.618827, 0.174399, 0.969148, 0.17418, -0.594503, 0.244646, -0.765973, -9.09305, -7.87045, 5.65872)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_o53nj")
@@ -3065,7 +3199,44 @@ bbcode_enabled = true
 text = "[b]Le début[/b]
 [i][color=#777]Introduction[/color]
 [/i]
-Le joueur va apprendre de la disparition d'une jeune femme dans un village des pyrénées basques. Il va alors partir enquêter pour savoir ce qui est arrivé."
+Le joueur va apprendre la disparition d'une jeune femme dans un village des pyrénées basques. Il va alors partir enquêter pour savoir ce qui est arrivé."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Introduction2" type="MeshInstance3D" parent="Displays/Intrigue"]
+transform = Transform3D(0.965926, 0.258819, 8.74228e-08, 7.31306e-08, 6.48486e-08, -1, -0.258819, 0.965925, 4.37114e-08, -26.5088, -11.99, 15.1807)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_14bau")
+Skeleton = null
+script = ExtResource("125_vmdts")
+size = Vector3(4.191, 2, 2.388)
+texture = SubResource("ViewportTexture_65onn")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Introduction2"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1132, 632)
+
+[node name="Label" type="RichTextLabel" parent="Displays/Intrigue/Introduction2/SubViewport"]
+offset_right = 1172.0
+offset_bottom = 1002.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "Pourquoi une disparition ?
+[i][color=#777]Le but est de mettre le joueur en position d'enquêteur pour que l'apprentissage des contes se fasse de manière ludique. C'est le joueur qui voudra par lui même en apprendre plus, pour résoudre l'intrigue."
+horizontal_alignment = 3
 justification_flags = 35
 
 [node name="Pistes" type="Node3D" parent="Displays/Intrigue"]
@@ -3150,7 +3321,7 @@ bbcode_enabled = true
 text = "[b]1 - Le Basajaun[/b]
 [i][color=#777]Piste 3[/color]
 [/i]
-Sur son chemin vers le village, le joueur feras connaissance avec un verger voisin qui se plaignera que ses bêtes disparaissent. Ce berger va alors réveler au joueur l'existance du Basajaun."
+Sur son chemin vers le village, le joueur fais  connaissance avec un berger voisin qui se plaint que ses bêtes disparaissent. Ce berger révèle alors au joueur l'existance du Basajaun."
 horizontal_alignment = 3
 justification_flags = 35
 
@@ -3189,7 +3360,7 @@ bbcode_enabled = true
 text = "[b]2 - Enquête [/b]
 [i][color=#777]Piste 3[/color]
 [/i]
-Le joueur devra réunir des informations de la part des habitants du villages ainsi que des indices dans la forêts et d'autres endroits pour découvrir où vit le Basajaun, et comment se comporter avec lui."
+Le joueur devra réunir des informations de la part des habitants du village ainsi que des indices dans la forêt et d'autres endroits pour découvrir où vit le Basajaun, et comment se comporter avec lui."
 horizontal_alignment = 3
 justification_flags = 35
 
@@ -3228,7 +3399,7 @@ bbcode_enabled = true
 text = "[b]3 - Rencontre [/b]
 [i][color=#777]Piste 3[/color]
 [/i]
-Le Basajaun étant un suspect potentiel de la disparition de la jeune femme, le joueur va partir à sa rencontrer, ou au moins va chercher où il habite pour retrouver la victime."
+Le Basajaun étant un suspect potentiel de la disparition de la jeune femme, le joueur va partir à sa rencontre, ou du moins chercher où il habite pour retrouver la victime."
 horizontal_alignment = 3
 justification_flags = 35
 
@@ -3267,7 +3438,7 @@ bbcode_enabled = true
 text = "[b]4 - L'antre du Basajaun[/b]
 [i][color=#777]Piste 3[/color]
 [/i]
-Le Basajaun étant friand d'énigmes, le joueur va devoir trouver des énigmes à lui raconter pour pouvoir le distraire et fouiller sa maison pour chercher la jeune disparue. Jeune femme qui n'est finallement pas ici."
+Le Basajaun étant friand d'énigmes, le joueur va devoir trouver des énigmes à lui raconter afin de pouvoir le distraire et fouiller sa maison pour chercher la jeune disparue. Cette dernière n'étant finallement pas ici."
 horizontal_alignment = 3
 justification_flags = 35
 
@@ -3367,8 +3538,8 @@ theme_override_font_sizes/bold_font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxEmpty_sxdxt")
 bbcode_enabled = true
 text = "Le Lamina
-[i][color=#777]Les Laminak (un/une Lamina) sont des lutins ou des génies, parfois bienfaisant parfois malfaisant, de la mythologie basque. Il vivent sous terres et dans des grottes et sont au service de la déesse Mari.
-Ils sont parfois décrits comme des femmes avec un corps animal, parfois commes des petits lutins mâles, parfois autrement."
+[i][color=#777]Les Laminak (un/une Lamina) sont des lutins ou des génies, parfois bienfaisants parfois malfaisants, de la mythologie basque. Ils vivent sous terre et dans des grottes et sont au service de la déesse Mari.
+Ils sont parfois décrits comme des femmes avec un corps animal, parfois comme des petits lutins mâles, parfois autrement."
 horizontal_alignment = 3
 justification_flags = 35
 
@@ -3424,7 +3595,7 @@ enable_fade = false
 metadata/_custom_type_script = "uid://feckn7f3pmud"
 
 [node name="Pont2" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/Laminak"]
-transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 1.43188, 1.91019, 17.9673)
+transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 1.43188, 1.91019, 17.8006)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_45jxj")
@@ -3520,8 +3691,8 @@ bbcode_enabled = true
 text = "[b]3 - Les règles[/b]
 [i][color=#777]Piste 1[/color]
 [/i]
-Le joueur va devoir découvrir les règles imposées par les laminak sur leurs visiteurs.
-Au terme des énigmes mis en place par les laminak pour entrer dans la grotte, le joueur va pouvoir leur parler."
+Le joueur va devoir découvrir les règles imposées par les laminak à leurs visiteurs.
+Au terme des énigmes mises en place par les laminak pour entrer dans la grotte, le joueur va pouvoir leur parler."
 horizontal_alignment = 3
 justification_flags = 35
 
@@ -3567,13 +3738,13 @@ justification_flags = 35
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.92511, 0, 8.0321)
 
 [node name="Guillen" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/GuillenPec"]
-transform = Transform3D(0.155486, 0.987838, -8.88178e-16, 4.31798e-08, -6.79652e-09, -1, -0.987838, 0.155486, -4.37114e-08, -3.42902, 1.77195, 0.362045)
+transform = Transform3D(0.155486, 0.987838, -8.88178e-16, 4.31798e-08, -6.79652e-09, -1, -0.987838, 0.155486, -4.37114e-08, -3.40547, 1.80187, 0.212414)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_fllle")
 Skeleton = null
 script = ExtResource("125_vmdts")
-size = Vector3(2.301, 2, 4.058)
+size = Vector3(2.076, 2, 4.058)
 texture = ExtResource("120_avkdy")
 modulate = Color(0.77062, 0.687297, 0.499446, 1)
 enable_fade = false
@@ -3611,18 +3782,18 @@ theme_override_font_sizes/bold_font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
 bbcode_enabled = true
 text = "Guillen Pec
-[i][color=#777]Guilllen (Guillaume) est un prenom extrèmement répendu, un prénom de monsieur tout le monde. Le compte de Guillen Pec (Guillaume le Simple, traduit par J.F. Cerquand) raconte la mort du père du personnage éponyme, et son accès à la fortune à travers la ruse. Il en viendra à \"tuer\" ses frêres ainsi que d'autres innocents."
+[i][color=#777]Guilllen (Guillaume) est un prénom extrèmement répendu, un prénom de monsieur tout le monde. Le compte de Guillen Pec (Guillaume le Simple, traduit par J.F. Cerquand) raconte la mort du père du personnage éponyme, et son accès à la fortune à travers la ruse. Il en viendra à \"tuer\" ses frêres ainsi que d'autres innocents."
 horizontal_alignment = 3
 justification_flags = 35
 
 [node name="Explication" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/GuillenPec"]
-transform = Transform3D(0.121211, 0.992627, 4.37114e-08, 4.86874e-08, 3.80908e-08, -1, -0.992627, 0.121211, -4.37114e-08, -4.09657, 3.05304, 4.72949)
+transform = Transform3D(0.121211, 0.992627, 4.37114e-08, 4.86874e-08, 3.80908e-08, -1, -0.992627, 0.121211, -4.37114e-08, -4.09657, 1.61678, 4.72949)
 cast_shadow = 0
 gi_lightmap_scale = 0
 mesh = SubResource("BoxMesh_8s2ll")
 Skeleton = null
 script = ExtResource("125_vmdts")
-size = Vector3(4.191, 2, 3.074)
+size = Vector3(5.006, 2, 3.074)
 texture = SubResource("ViewportTexture_pk46w")
 enable_fade = false
 metadata/_custom_type_script = "uid://feckn7f3pmud"
@@ -3630,12 +3801,12 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 [node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Pistes/GuillenPec/Explication"]
 disable_3d = true
 transparent_bg = true
-size = Vector2i(1067, 907)
+size = Vector2i(1702, 907)
 
 [node name="Label" type="RichTextLabel" parent="Displays/Intrigue/Pistes/GuillenPec/Explication/SubViewport"]
 custom_minimum_size = Vector2(1.155, 0)
-offset_right = 1075.58
-offset_bottom = 1002.0
+offset_right = 1729.0
+offset_bottom = 1042.0
 theme_override_constants/outline_size = 0
 theme_override_fonts/normal_font = ExtResource("55_iqqkb")
 theme_override_fonts/italics_font = ExtResource("48_k2d4w")
@@ -3648,11 +3819,271 @@ theme_override_font_sizes/bold_font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
 bbcode_enabled = true
 text = "[b]1 - Guillen Pec[/b]
-[i][color=#777]Piste 1[/color]
+[i][color=#777]Piste 2[/color]
 [/i]
+Le joueur va, au travers d'un habitant du village, apprendre l'existence de Guillen Pec, qui s'est étrangement enrichi, et dont les membres de la famille sont suspicieusement morts.
 "
 horizontal_alignment = 3
 justification_flags = 35
+
+[node name="Explication2" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/GuillenPec"]
+transform = Transform3D(-0.121211, -0.992627, 4.37114e-08, -4.86874e-08, -3.80908e-08, -1, 0.992627, -0.121211, -4.37114e-08, 2.41527, 1.61678, 9.07509)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_2oru1")
+Skeleton = null
+script = ExtResource("125_vmdts")
+size = Vector3(5.381, 1.323, 3.074)
+texture = SubResource("ViewportTexture_rk38e")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Pistes/GuillenPec/Explication2"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1702, 907)
+
+[node name="Label" type="RichTextLabel" parent="Displays/Intrigue/Pistes/GuillenPec/Explication2/SubViewport"]
+custom_minimum_size = Vector2(1.155, 0)
+offset_right = 1729.0
+offset_bottom = 1042.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]2 - Commérages[/b]
+[i][color=#777]Piste 2[/color]
+[/i]
+Le joueur va devoir glaner des informations de la part des villageois sur ce fameux Guillen Pec, homme le plus riche de la région. Le joueur va apprendre l'emplacement de la maison de Guillen, ainsi que ses magasins (dont le père de la disparue est d'ailleurs un salarié)."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Explication3" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/GuillenPec"]
+transform = Transform3D(0.121211, 0.992627, 4.37114e-08, 4.86874e-08, 3.80908e-08, -1, -0.992627, 0.121211, -4.37114e-08, -5.0821, 1.61678, 12.128)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_l04ty")
+Skeleton = null
+script = ExtResource("125_vmdts")
+size = Vector3(5.381, 1.323, 3.074)
+texture = SubResource("ViewportTexture_2oru1")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Pistes/GuillenPec/Explication3"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1702, 1027)
+
+[node name="Label" type="RichTextLabel" parent="Displays/Intrigue/Pistes/GuillenPec/Explication3/SubViewport"]
+custom_minimum_size = Vector2(1.155, 0)
+offset_right = 1729.0
+offset_bottom = 1042.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]3 - Guillen Pec, coupable ?[/b]
+[i][color=#777]Piste 2[/color]
+[/i]
+Guillen est un suspect plus que potentiel car, comme va l'apprendre le joueur, le père de la jeune femme recherchée était en manque cruel d'argent pour faire tourner son magasin. Il aurait alors pu avoir kidnappé sa fille comme moyen de pression. (Surtout qu'il a un passif avec les crimes pour s'enrichir)"
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Explication4" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/GuillenPec"]
+transform = Transform3D(-0.121211, -0.992627, 4.37114e-08, -4.86874e-08, -3.80908e-08, -1, 0.992627, -0.121211, -4.37114e-08, 1.4628, 1.61678, 17.4571)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_yxhgx")
+Skeleton = null
+script = ExtResource("125_vmdts")
+size = Vector3(5.381, 1.323, 3.074)
+texture = SubResource("ViewportTexture_l04ty")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Pistes/GuillenPec/Explication4"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1702, 1027)
+
+[node name="Label" type="RichTextLabel" parent="Displays/Intrigue/Pistes/GuillenPec/Explication4/SubViewport"]
+custom_minimum_size = Vector2(1.155, 0)
+offset_right = 1729.0
+offset_bottom = 1042.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]4 - Résolution[/b]
+[i][color=#777]Piste 2[/color]
+[/i]
+Au terme de son enquête, le joueur déduira que Guillaume Pec ne peut pas être le coupable de la disparition de la jeune femme."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Dénouement" type="MeshInstance3D" parent="Displays/Intrigue"]
+transform = Transform3D(-0.999875, -0.0158123, -5.56341e-08, 5.60533e-08, -2.60655e-08, -1, 0.0158123, -0.999875, 2.69485e-08, -33.4826, -11.2155, 54.4346)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_fencp")
+Skeleton = null
+skeleton = NodePath("../Pistes/Laminak")
+script = ExtResource("125_vmdts")
+size = Vector3(5.006, 2, 3.124)
+texture = SubResource("ViewportTexture_wb0ju")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Dénouement"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1757, 942)
+
+[node name="Label" type="RichTextLabel" parent="Displays/Intrigue/Dénouement/SubViewport"]
+offset_right = 1738.0
+offset_bottom = 1082.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sxdxt")
+bbcode_enabled = true
+text = "[b]Le coupable[/b]
+[i][color=#777]Dénouement[/color]
+[/i]
+En reliant tous les fils, le joueur va conclure que la disparition de la jeune femme est finalement due, non pas au Basajaun, aux Laminak ou bien à Guillen Pec, mais bien la dame Mari. Il va alors en apprendre plus sur elle, et pouvoir communiquer avec elle à l'aide des Sorgin."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Dénouement2" type="MeshInstance3D" parent="Displays/Intrigue"]
+transform = Transform3D(-0.544347, 0.838861, -5.56341e-08, 7.67821e-09, -6.13386e-08, -1, -0.838861, -0.544347, 2.69485e-08, -44.9196, -11.2155, 48.9272)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_x3ce4")
+Skeleton = null
+skeleton = NodePath("../Pistes/Laminak")
+script = ExtResource("125_vmdts")
+size = Vector3(5.006, 2, 3.124)
+texture = SubResource("ViewportTexture_w51nr")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Dénouement2"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1757, 942)
+
+[node name="Label" type="RichTextLabel" parent="Displays/Intrigue/Dénouement2/SubViewport"]
+offset_right = 1738.0
+offset_bottom = 1082.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sxdxt")
+bbcode_enabled = true
+text = "[b]Mari[/b]
+[i][color=#777]Dénouement[/color]
+[/i]
+En effet, Mari, déesse mère, déesse de la Terre, de la pluie et du beau temps, dame Anbotoko, déteste les menteurs et voleurs. Et le père de la disparue, dans une situation difficile, a été contraint de voler pour survivre. Mari l'a alors puni en lui \"confisquant\" sa fille adorée."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Fin" type="MeshInstance3D" parent="Displays/Intrigue"]
+transform = Transform3D(-0.62123, -0.783629, -5.56341e-08, 5.56791e-08, 2.68553e-08, -1, 0.783629, -0.62123, 2.69485e-08, -39.4932, -11.2155, 59.0439)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_vojj5")
+Skeleton = null
+skeleton = NodePath("../Pistes/Laminak")
+script = ExtResource("125_vmdts")
+size = Vector3(5.006, 2, 3.124)
+texture = SubResource("ViewportTexture_bp678")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Fin"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1757, 942)
+
+[node name="Label" type="RichTextLabel" parent="Displays/Intrigue/Fin/SubViewport"]
+offset_right = 1019.0
+offset_bottom = 791.0
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sxdxt")
+bbcode_enabled = true
+text = "[b]La Fin[/b]
+[i][color=#777]Dénouement[/color]
+[/i]
+Au final, le joueur réussi à entrer en contact avec Mari et la convainc de libérer la jeune fille du marchand."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Sortie" type="MeshInstance3D" parent="Displays/Intrigue"]
+transform = Transform3D(0.47863, 0.878017, -5.56341e-08, -5.02894e-08, -3.59494e-08, -1, -0.878017, 0.47863, 2.69485e-08, -45.2668, -10.1949, 56.813)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_b7di1")
+Skeleton = null
+skeleton = NodePath("../Pistes/Laminak")
+script = ExtResource("125_vmdts")
+size = Vector3(3.346, 2, 1.249)
+texture = SubResource("ViewportTexture_x3ce4")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Sortie"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(397, 112)
+
+[node name="Label" type="Label" parent="Displays/Intrigue/Sortie/SubViewport"]
+offset_right = 364.0
+offset_bottom = 122.0
+theme_override_fonts/font = ExtResource("28_cj5kf")
+theme_override_font_sizes/font_size = 80
+text = "← SORTIE"
 
 [node name="Gameplay" type="Node3D" parent="Displays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -271.751, -9.17825, -230.689)
@@ -4769,7 +5200,40 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
 bbcode_enabled = true
 text = "[b]Pourquoi des collages ?[/b]
 
-Durant ma phase de recherche des contes basques, je me suis rendu compte que les [bgcolor=#f00a]créatures mythologiques[/bgcolor] n'était que peu, voir [bgcolor=#f00a]pas du tout décrites[/bgcolor]. J'ai alors voulu représenter ce [bgcolor=#f00a]flou[/bgcolor] dans la description des personnage en les représentan par des [bgcolor=#f00a]collages de papier[/bgcolor] découpés faits sur photoshops, puis [bgcolor=#f00a]incorporés dans le monde 3D.[/bgcolor]"
+Durant ma phase de recherche des contes basques, je me suis rendu compte que les [bgcolor=#f00a]créatures mythologiques[/bgcolor] n'était que peu, voir [bgcolor=#f00a]pas du tout décrites[/bgcolor]. J'ai alors voulu représenter ce [bgcolor=#f00a]flou[/bgcolor] dans la description des personnages en les représentant par des [bgcolor=#f00a]collages de papier[/bgcolor] découpés faits sur photoshop, puis [bgcolor=#f00a]incorporés dans le monde 3D.[/bgcolor]"
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="PourquoiSprites2" type="Sprite3D" parent="Displays/Esthetique"]
+transform = Transform3D(-0.311109, 0, 0.950374, 0, 1, 0, -0.950374, 0, -0.311109, -5.99817, -2.43061, 0.742218)
+pixel_size = 0.003
+alpha_cut = 1
+texture = SubResource("ViewportTexture_nqwrc")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Esthetique/PourquoiSprites2"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1185, 1057)
+render_target_update_mode = 4
+
+[node name="Label" type="RichTextLabel" parent="Displays/Esthetique/PourquoiSprites2/SubViewport"]
+offset_right = 1175.0
+offset_bottom = 1066.0
+theme = ExtResource("95_fwyk0")
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]Une esthétique personnelle[/b]
+
+[bgcolor=#f00a][/bgcolor]Bien que mon projet vise à mettre en avant la culture mythologique basque, le jeu est tout de même influencé par mes références personnelles et donc en ressort une esthétique qui m'est personnelle."
 horizontal_alignment = 3
 justification_flags = 35
 
@@ -5025,7 +5489,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
 bbcode_enabled = true
 text = "[b]Recherches d'environnements[/b]
 
-[bgcolor=#f00a][/bgcolor]Je me suis ensuite essayé à créer des [bgcolor=#f00a]minis environnements[/bgcolor] 3D, avec des effets visuels, des effets de particules et du son et d'y [bgcolor=#f00a]intégrer des personnages en collages[/bgcolor] qui [bgcolor=#f00a]refléterait plus la mythologie basque[/bgcolor] que mes premières recherches."
+[bgcolor=#f00a][/bgcolor]Je me suis ensuite essayé à créer des [bgcolor=#f00a]minis environnements[/bgcolor] 3D, avec des effets visuels, des effets de particules et du son et d'y [bgcolor=#f00a]intégrer des personnages en collages[/bgcolor] qui [bgcolor=#f00a]refléterait mieux la mythologie basque[/bgcolor] que mes premières recherches."
 horizontal_alignment = 3
 justification_flags = 35
 
@@ -5085,7 +5549,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
 bbcode_enabled = true
 text = "[b]Création de l'environnement[/b]
 
-Pour le terrain, je me suis réessayé à utiliser l'outil [bgcolor=#f00a]Terrain3D[/bgcolor] que j'ai populé d'arbres, de bâtiments et [bgcolor=#f00a]lieux[/bgcolor] ainsi que de [bgcolor=#f00a]personnages.[/bgcolor] Puis j'ai recherché différents [bgcolor=#f00a]effets visuels[/bgcolor] pour appuyer [bgcolor=#f00a]l'atmosphère[/bgcolor] choisie."
+Pour le terrain, je me suis réessayé à utiliser l'outil [bgcolor=#f00a]Terrain3D[/bgcolor] que j'ai habillé d'arbres, de bâtiments et [bgcolor=#f00a]lieux[/bgcolor] ainsi que de [bgcolor=#f00a]personnages.[/bgcolor] Puis j'ai recherché différents [bgcolor=#f00a]effets visuels[/bgcolor] pour appuyer [bgcolor=#f00a]l'atmosphère[/bgcolor] choisie."
 horizontal_alignment = 3
 justification_flags = 35
 
@@ -5098,7 +5562,7 @@ texture = ExtResource("200_fencp")
 [node name="Label3D" type="Label3D" parent="Displays/Prototype/Arbres"]
 transform = Transform3D(1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 1.64067, 0)
 pixel_size = 0.0023
-text = "Population du terrain"
+text = "Habillage du terrain"
 font = ExtResource("58_iqqkb")
 font_size = 150
 outline_size = 50
@@ -5131,19 +5595,19 @@ font = ExtResource("58_iqqkb")
 font_size = 150
 outline_size = 50
 
-[node name="ExplicationEnvironnement2" type="Sprite3D" parent="Displays/Prototype"]
+[node name="Date" type="Sprite3D" parent="Displays/Prototype"]
 transform = Transform3D(-0.170467, 0, -0.985364, 0, 1, 0, 0.985364, 0, -0.170467, -0.932434, -0.0324268, -11.4425)
 pixel_size = 0.003
 alpha_cut = 1
 texture = SubResource("ViewportTexture_eg2uh")
 
-[node name="SubViewport" type="SubViewport" parent="Displays/Prototype/ExplicationEnvironnement2"]
+[node name="SubViewport" type="SubViewport" parent="Displays/Prototype/Date"]
 disable_3d = true
 transparent_bg = true
 size = Vector2i(1320, 967)
 render_target_update_mode = 4
 
-[node name="Label" type="RichTextLabel" parent="Displays/Prototype/ExplicationEnvironnement2/SubViewport"]
+[node name="Label" type="RichTextLabel" parent="Displays/Prototype/Date/SubViewport"]
 offset_right = 1321.0
 offset_bottom = 1066.0
 theme = ExtResource("95_fwyk0")
@@ -5160,7 +5624,7 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
 bbcode_enabled = true
 text = "[b]Datation du monde[/b]
 
-J'ai voulu représenter l'aspect [bgcolor=#f00a]inteporel[/bgcolor] des [bgcolor=#f00a]contes[/bgcolor] à travers le monde que je créais. Pour cela, j'ai utilisé des bâtiments [bgcolor=#f00a]récents[/bgcolor] comme plus [bgcolor=#f00a]vieux[/bgcolor], et je n'ai mis aucun élément qui permettrait de [bgcolor=#f00a]dater[/bgcolor] précisément le monde du jeu."
+J'ai voulu représenter l'aspect [bgcolor=#f00a]intemporel[/bgcolor] des [bgcolor=#f00a]contes[/bgcolor] à travers le monde que je créais. Pour cela, j'ai utilisé des bâtiments [bgcolor=#f00a]récents[/bgcolor] comme plus [bgcolor=#f00a]vieux[/bgcolor], et je n'ai mis aucun élément qui permettrait de [bgcolor=#f00a]dater[/bgcolor] précisément le monde du jeu."
 horizontal_alignment = 3
 justification_flags = 35
 
@@ -5226,7 +5690,6 @@ texture = ExtResource("45_3c5ia")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Prototype/PrototypeDisplay"]
 shape = SubResource("BoxShape3D_wqgh4")
 
-[editable path="Terrain3D/lamina_cave_2"]
 [editable path="PlayerFpsController"]
 [editable path="Displays/Intrigue/presentation_cave"]
 [editable path="Displays/Gameplay/FenetresLieux/Lieux/LieuxWindows/Inventaire"]
