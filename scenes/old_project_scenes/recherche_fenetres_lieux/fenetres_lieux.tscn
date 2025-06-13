@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bdvqwwsb0faic" path="res://assets/old_project_assets/sprites/maison_int_forms.png" id="6_xcw8m"]
 [ext_resource type="FontFile" uid="uid://bmj3ieeu73w5v" path="res://assets/old_project_assets/themes/fonts/NeverMind/NeverMind-Heavy.ttf" id="7_g3rn1"]
 [ext_resource type="Texture2D" uid="uid://dcmpr82hk4gcq" path="res://assets/old_project_assets/sprites/elgtociv.png" id="7_hmhvd"]
-[ext_resource type="Texture2D" uid="uid://b1fbygs6306co" path="res://icon.svg" id="7_yvbob"]
+[ext_resource type="Texture2D" uid="uid://contp430i05j1" path="res://icon.svg" id="7_yvbob"]
 [ext_resource type="Texture2D" uid="uid://bjgk0oc6h1ank" path="res://assets/old_project_assets/sprites/n0s2ok6r.png" id="8_hmhvd"]
 [ext_resource type="Texture2D" uid="uid://boqdes10xhhd7" path="res://assets/old_project_assets/sprites/az860s6f.png" id="10_hmhvd"]
 [ext_resource type="Texture2D" uid="uid://d0oc1v74fphrl" path="res://assets/old_project_assets/sprites/grotte.png" id="13_qgvr7"]
