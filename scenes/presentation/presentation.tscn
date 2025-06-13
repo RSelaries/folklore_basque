@@ -1,3 +1,4 @@
+[gd_scene load_steps=325 format=4 uid="uid://cdr0qwlipdg11"]
 <<<<<<< Updated upstream
 [gd_scene load_steps=313 format=4 uid="uid://cdr0qwlipdg11"]
 =======
@@ -139,6 +140,7 @@
 [ext_resource type="Texture2D" uid="uid://7bb47uta5a3g" path="res://assets/presentation/recherches/d1hnvkcv.png" id="117_g3ol2"]
 [ext_resource type="PackedScene" uid="uid://d0g8or6s3pvn3" path="res://scenes/old_project_scenes/recherche_boucle/boucle.tscn" id="119_8g43q"]
 [ext_resource type="Script" uid="uid://cqyoqvfwvpri7" path="res://scenes/presentation/boucle_window.gd" id="119_jvx70"]
+[ext_resource type="Texture2D" uid="uid://dv3ujjgb1hek0" path="res://assets/presentation/recherches/guillenpec.png" id="120_avkdy"]
 [ext_resource type="Texture2D" uid="uid://dv3ujjgb1hek0" path="res://assets/presentation/recherches/guillenpec.png" id="120_avkdy"]
 [ext_resource type="Script" uid="uid://chqwruvmko0ob" path="res://scenes/presentation/old_pnc_window.gd" id="120_covws"]
 [ext_resource type="PackedScene" uid="uid://dn5yeqbs35g2w" path="res://scenes/old_project_scenes/terrain_pnc_boucle/terrain.tscn" id="122_1r2ny"]
@@ -1076,6 +1078,7 @@ shader_parameter/albedo_mix = 1.0
 shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
 shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
 shader_parameter/enable_y_fade = false
+shader_parameter/enable_y_fade = false
 shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
@@ -1285,8 +1288,11 @@ viewport_path = NodePath("Displays/Intrigue/Pistes/Basajaun/Explication2/SubView
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_ev652")
+shader_parameter/albedo = SubResource("ViewportTexture_ev652")
 shader_parameter/modulate = Color(1, 1, 1, 1)
 shader_parameter/albedo_mix = 1.0
+shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.282406)
+shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.7705)
 shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.282406)
 shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.7705)
 shader_parameter/enable_y_fade = false
@@ -3374,6 +3380,7 @@ theme_override_font_sizes/bold_font_size = 70
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
 bbcode_enabled = true
 text = "Lea Lamina
+text = "Lea Lamina
 [i][color=#777]Les Laminak (un/une Lamina) sont des lutins ou des génies, parfois bienfaisant parfois malfaisant, de la mythologie basque. Il vivent sous terres et dans des grottes et sont au service de la déesse Mari.
 Ils sont parfois décrits comme des femmes avec un corps animal, parfois commes des petits lutins mâles, parfois autrement."
 horizontal_alignment = 3
@@ -3603,6 +3610,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.42232, 0, 4.57948)
 
 [node name="Basajaun" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/Basajaun"]
 transform = Transform3D(0.367199, -0.930142, 4.37114e-08, -2.4607e-08, -5.67086e-08, -1, 0.930142, 0.367199, -4.37114e-08, 5.04166, 2.07486, 2.31834)
+transform = Transform3D(0.367199, -0.930142, 4.37114e-08, -2.4607e-08, -5.67086e-08, -1, 0.930142, 0.367199, -4.37114e-08, 5.04166, 2.07486, 2.31834)
 cast_shadow = 0
 gi_lightmap_scale = 0
 <<<<<<< Updated upstream
@@ -3618,6 +3626,7 @@ enable_fade = false
 metadata/_custom_type_script = "uid://feckn7f3pmud"
 
 [node name="BasajaunExplication" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/Basajaun"]
+transform = Transform3D(0.280616, -0.95982, 4.37114e-08, -2.96889e-08, -5.42212e-08, -1, 0.95982, 0.280616, -4.37114e-08, 4.64471, 1.26, -0.632766)
 transform = Transform3D(0.280616, -0.95982, 4.37114e-08, -2.96889e-08, -5.42212e-08, -1, 0.95982, 0.280616, -4.37114e-08, 4.64471, 1.26, -0.632766)
 cast_shadow = 0
 gi_lightmap_scale = 0
@@ -3702,6 +3711,7 @@ horizontal_alignment = 3
 justification_flags = 35
 
 [node name="Explication" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/Basajaun"]
+transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 4.60552, 3.05304, 6.03106)
 transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 4.60552, 3.05304, 6.03106)
 cast_shadow = 0
 gi_lightmap_scale = 0
@@ -3854,10 +3864,125 @@ Le Basajaun étant friand d'énigmes, le joueur va devoir trouver des énigmes �
 horizontal_alignment = 3
 justification_flags = 35
 
+[node name="Explication2" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/Basajaun"]
+transform = Transform3D(0.106923, 0.994267, 4.37114e-08, 4.81346e-08, 3.8787e-08, -1, -0.994267, 0.106923, -4.37114e-08, -1.79335, 3.05304, 10.3507)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_vun32")
+Skeleton = null
+script = ExtResource("125_vmdts")
+size = Vector3(4.191, 2, 3.541)
+texture = SubResource("ViewportTexture_ev652")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Pistes/Basajaun/Explication2"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1117, 1107)
+
+[node name="Label" type="RichTextLabel" parent="Displays/Intrigue/Pistes/Basajaun/Explication2/SubViewport"]
+offset_right = 1117.64
+offset_bottom = 1121.72
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]2 - Enquête [/b]
+[i][color=#777]Piste 3[/color]
+[/i]
+Le joueur devra réunir des informations de la part des habitants du villages ainsi que des indices dans la forêts et d'autres endroits pour découvrir où vit le Basajaun, et comment se comporter avec lui."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Explication3" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/Basajaun"]
+transform = Transform3D(-0.106924, -0.994267, 4.37114e-08, -4.81346e-08, -3.8787e-08, -1, 0.994267, -0.106924, -4.37114e-08, 3.59198, 3.05304, 14.8548)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_pk46w")
+Skeleton = null
+script = ExtResource("125_vmdts")
+size = Vector3(4.191, 2, 3.541)
+texture = SubResource("ViewportTexture_0gx23")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Pistes/Basajaun/Explication3"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1117, 1107)
+
+[node name="Label" type="RichTextLabel" parent="Displays/Intrigue/Pistes/Basajaun/Explication3/SubViewport"]
+offset_right = 1117.64
+offset_bottom = 1121.72
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]3 - Rencontre [/b]
+[i][color=#777]Piste 3[/color]
+[/i]
+Le Basajaun étant un suspect potentiel de la disparition de la jeune femme, le joueur va partir à sa rencontrer, ou au moins va chercher où il habite pour retrouver la victime."
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="Explication4" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/Basajaun"]
+transform = Transform3D(0.106924, 0.994267, 4.37114e-08, 4.81346e-08, 3.8787e-08, -1, -0.994267, 0.106924, -4.37114e-08, -2.94847, 3.05304, 18.9335)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_8nfll")
+Skeleton = null
+script = ExtResource("125_vmdts")
+size = Vector3(4.191, 2, 3.541)
+texture = SubResource("ViewportTexture_l0eu4")
+enable_fade = false
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Intrigue/Pistes/Basajaun/Explication4"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1117, 1107)
+
+[node name="Label" type="RichTextLabel" parent="Displays/Intrigue/Pistes/Basajaun/Explication4/SubViewport"]
+offset_right = 1117.64
+offset_bottom = 1121.72
+theme_override_constants/outline_size = 0
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 70
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 70
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]4 - L'antre du Basajaun[/b]
+[i][color=#777]Piste 3[/color]
+[/i]
+Le Basajaun étant friand d'énigmes, le joueur va devoir trouver des énigmes à lui raconter pour pouvoir le distraire et fouiller sa maison pour chercher la jeune disparue. Jeune femme qui n'est finallement pas ici."
+horizontal_alignment = 3
+justification_flags = 35
+
 [node name="GuillenPec" type="Node3D" parent="Displays/Intrigue/Pistes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.92511, 0, 8.0321)
 
 [node name="Guillen" type="MeshInstance3D" parent="Displays/Intrigue/Pistes/GuillenPec"]
+transform = Transform3D(0.155486, 0.987838, 0, 4.31798e-08, -6.79652e-09, -1, -0.987838, 0.155486, -4.37114e-08, -3.42902, 2.27687, 0.362053)
 transform = Transform3D(0.155486, 0.987838, 0, 4.31798e-08, -6.79652e-09, -1, -0.987838, 0.155486, -4.37114e-08, -3.42902, 2.27687, 0.362053)
 cast_shadow = 0
 gi_lightmap_scale = 0
@@ -3868,6 +3993,9 @@ mesh = SubResource("BoxMesh_wslrt")
 >>>>>>> Stashed changes
 Skeleton = null
 script = ExtResource("125_vmdts")
+size = Vector3(2.656, 2, 5.368)
+texture = ExtResource("120_avkdy")
+modulate = Color(0.77062, 0.687297, 0.499446, 1)
 size = Vector3(2.656, 2, 5.368)
 texture = ExtResource("120_avkdy")
 modulate = Color(0.77062, 0.687297, 0.499446, 1)
