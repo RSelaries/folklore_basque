@@ -15,3 +15,6 @@ func _ready() -> void:
 	for child in post_proc.get_children():
 		if "visible" in child:
 			child.visible = true
+	
+	get_window().size = Vector2(2.0, 2.0)
+	get_window().mode = Window.MODE_FULLSCREEN
