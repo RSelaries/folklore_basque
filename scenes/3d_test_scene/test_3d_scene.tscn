@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b3rt6q0416s0"]
+[gd_scene load_steps=40 format=3 uid="uid://b3rt6q0416s0"]
 
 [ext_resource type="Script" uid="uid://cdq0whek0islp" path="res://scenes/3d_test_scene/test_3d_scene.gd" id="1_rp5pb"]
 [ext_resource type="Texture2D" uid="uid://bmrj2p7v3jdlj" path="res://assets/textures/hdri_mountains.jpg" id="2_me6r3"]
@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/player_fps_controller/player_fps_controller.tscn" id="16_jus0k"]
 [ext_resource type="Shader" uid="uid://ba2ax8lys3gqf" path="res://assets/shaders/milk_outside_spatial.gdshader" id="19_236cj"]
 [ext_resource type="AudioStream" uid="uid://comp4fpoal73k" path="res://assets/audio/musics/water_planet.mp3" id="20_236cj"]
-[ext_resource type="Shader" uid="uid://b4jfqdkjlif6t" path="res://scenes/3d_test_scene/height_shader_test.gdshader" id="21_wtt0r"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_mioed"]
 panorama = ExtResource("2_me6r3")
@@ -85,8 +84,8 @@ func _process(delta: float) -> void:
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8w2ad"]
 shader = ExtResource("5_poeqp")
 shader_parameter/amplitude = -0.04
-shader_parameter/speed = -24.675
-shader_parameter/mult = 12.29
+shader_parameter/speed = 24.0
+shader_parameter/mult = 0.5
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8lw5h"]
 shader = ExtResource("8_jus0k")
@@ -128,14 +127,6 @@ viewport_path = NodePath("Sprite3D3/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_236cj"]
 shader = ExtResource("19_236cj")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3rye0"]
-render_priority = 0
-shader = ExtResource("21_wtt0r")
-shader_parameter/color_low = Color(1, 1, 0, 1)
-shader_parameter/color_high = Color(1, 0, 0, 1)
-shader_parameter/min_height = -0.435
-shader_parameter/max_height = 5.745
 
 [node name="Test3dScene" type="Node3D"]
 script = ExtResource("1_rp5pb")
@@ -294,29 +285,5 @@ stream = ExtResource("20_236cj")
 volume_db = -14.136
 autoplay = true
 parameters/looping = true
-
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 63, 16)
-material_override = SubResource("ShaderMaterial_3rye0")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96655, 0)
-size = Vector3(1, 4.93311, 1)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02085, 0.738892, -0.0545616)
-size = Vector3(4.13196, 2.47778, 2.66211)
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72345, 1.42377, -0.31197)
-size = Vector3(1.22348, 3.84753, 1.58203)
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 0.89627, 0.443509, 0, -0.443509, 0.89627, 1.06894, 2.35999, -1.08761)
-size = Vector3(1.22348, 3.84753, 1.58203)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 0.992187, -0.124762, 0, 0.124762, 0.992187, 1.06894, 4.61697, -1.83521)
-size = Vector3(0.443359, 3.84753, 0.331055)
 
 [editable path="PlayerFpsController"]

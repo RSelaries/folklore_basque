@@ -1,4 +1,4 @@
-[gd_scene load_steps=307 format=4 uid="uid://cdr0qwlipdg11"]
+[gd_scene load_steps=313 format=4 uid="uid://cdr0qwlipdg11"]
 
 [ext_resource type="Script" uid="uid://wlrxi0ygpx56" path="res://scenes/presentation/presentation.gd" id="1_qulu1"]
 [ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_nd5ni"]
@@ -158,6 +158,8 @@
 [ext_resource type="Texture2D" uid="uid://dn1sytjqth6xh" path="res://assets/presentation/recherches/lamina.png" id="142_j3ioo"]
 [ext_resource type="Texture2D" uid="uid://dbe2poqy48n3r" path="res://assets/presentation/recherches/basajaun.png" id="143_2b6ts"]
 [ext_resource type="Texture2D" uid="uid://bt5qlbuxmb1x0" path="res://assets/presentation/recherches/guillen_pec.png" id="144_scveq"]
+[ext_resource type="Texture2D" uid="uid://btc27f646dfx8" path="res://assets/presentation/esthetique/Capture d'écran 2025-06-13 114737.png" id="157_8amb2"]
+[ext_resource type="Script" uid="uid://c432l3tym2oro" path="res://scenes/presentation/test_scene_3d.gd" id="157_wslrt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_r7d6n"]
 sky_top_color = Color(0.247003, 0.311642, 0.45506, 1)
@@ -454,7 +456,7 @@ viewport_path = NodePath("Displays/PhaseIdee/Financement/SubViewport")
 [sub_resource type="ViewportTexture" id="ViewportTexture_m5t8r"]
 viewport_path = NodePath("Displays/Intrigue/recherches/Cerquand/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_scveq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wslrt"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_m5t8r")
@@ -467,11 +469,11 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_fwyk0"]
-material = SubResource("ShaderMaterial_scveq")
+[sub_resource type="BoxMesh" id="BoxMesh_v3rt0"]
+material = SubResource("ShaderMaterial_wslrt")
 size = Vector3(3.4, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3c5ia"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ea6fg"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("128_555ut")
@@ -484,11 +486,11 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_r3jer"]
-material = SubResource("ShaderMaterial_3c5ia")
+[sub_resource type="BoxMesh" id="BoxMesh_ev652"]
+material = SubResource("ShaderMaterial_ea6fg")
 size = Vector3(1.785, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_g3ol2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0gx23"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("129_lh1q6")
@@ -501,11 +503,11 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_avkdy"]
-material = SubResource("ShaderMaterial_g3ol2")
+[sub_resource type="BoxMesh" id="BoxMesh_l0eu4"]
+material = SubResource("ShaderMaterial_0gx23")
 size = Vector3(1.377, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8amb2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vun32"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("130_usahh")
@@ -518,14 +520,14 @@ shader_parameter/fade_start = 0.0
 shader_parameter/fade_end = 1.0
 shader_parameter/fade_power = 5.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_wslrt"]
-material = SubResource("ShaderMaterial_8amb2")
+[sub_resource type="BoxMesh" id="BoxMesh_6thaw"]
+material = SubResource("ShaderMaterial_vun32")
 size = Vector3(2.825, 2, 2)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_340k8"]
 viewport_path = NodePath("Displays/Intrigue/recherches/LabelLivres/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3rt0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pk46w"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_340k8")
@@ -538,14 +540,14 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_ea6fg"]
-material = SubResource("ShaderMaterial_v3rt0")
+[sub_resource type="BoxMesh" id="BoxMesh_sxdxt"]
+material = SubResource("ShaderMaterial_pk46w")
 size = Vector3(2.5, 1.45, 2.5)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_un63m"]
 viewport_path = NodePath("Displays/Intrigue/recherches/LabelSites/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ev652"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8nfll"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_un63m")
@@ -558,11 +560,11 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_0gx23"]
-material = SubResource("ShaderMaterial_ev652")
+[sub_resource type="BoxMesh" id="BoxMesh_qvjg6"]
+material = SubResource("ShaderMaterial_8nfll")
 size = Vector3(2.5, 1.45, 2.5)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l0eu4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_om0y4"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("131_340k8")
@@ -575,11 +577,11 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_vun32"]
-material = SubResource("ShaderMaterial_l0eu4")
+[sub_resource type="BoxMesh" id="BoxMesh_yxcbs"]
+material = SubResource("ShaderMaterial_om0y4")
 size = Vector3(2.86, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6thaw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lik77"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("132_un63m")
@@ -592,11 +594,11 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_pk46w"]
-material = SubResource("ShaderMaterial_6thaw")
+[sub_resource type="BoxMesh" id="BoxMesh_1vrvw"]
+material = SubResource("ShaderMaterial_lik77")
 size = Vector3(2.825, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sxdxt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qku0"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("133_j3xwe")
@@ -609,11 +611,11 @@ shader_parameter/fade_start = 0.0
 shader_parameter/fade_end = 1.0
 shader_parameter/fade_power = 5.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_8nfll"]
-material = SubResource("ShaderMaterial_sxdxt")
+[sub_resource type="BoxMesh" id="BoxMesh_osi2g"]
+material = SubResource("ShaderMaterial_5qku0")
 size = Vector3(2.825, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qvjg6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yx1r6"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("133_ijhx3")
@@ -626,11 +628,11 @@ shader_parameter/fade_start = 0.0
 shader_parameter/fade_end = 1.0
 shader_parameter/fade_power = 5.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_om0y4"]
-material = SubResource("ShaderMaterial_qvjg6")
+[sub_resource type="BoxMesh" id="BoxMesh_1rgf0"]
+material = SubResource("ShaderMaterial_yx1r6")
 size = Vector3(2.825, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yxcbs"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m3knp"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("134_ijhx3")
@@ -643,11 +645,11 @@ shader_parameter/fade_start = 0.0
 shader_parameter/fade_end = 1.0
 shader_parameter/fade_power = 5.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_lik77"]
-material = SubResource("ShaderMaterial_yxcbs")
+[sub_resource type="BoxMesh" id="BoxMesh_ibnmh"]
+material = SubResource("ShaderMaterial_m3knp")
 size = Vector3(2.825, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1vrvw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ywvnq"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("135_e3oh6")
@@ -660,11 +662,11 @@ shader_parameter/fade_start = 0.0
 shader_parameter/fade_end = 1.0
 shader_parameter/fade_power = 5.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_5qku0"]
-material = SubResource("ShaderMaterial_1vrvw")
+[sub_resource type="BoxMesh" id="BoxMesh_4frui"]
+material = SubResource("ShaderMaterial_ywvnq")
 size = Vector3(2.825, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_osi2g"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c1erc"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("137_fc1qu")
@@ -677,11 +679,11 @@ shader_parameter/fade_start = 0.0
 shader_parameter/fade_end = 1.0
 shader_parameter/fade_power = 5.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_yx1r6"]
-material = SubResource("ShaderMaterial_osi2g")
+[sub_resource type="BoxMesh" id="BoxMesh_th7xd"]
+material = SubResource("ShaderMaterial_c1erc")
 size = Vector3(2.825, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1rgf0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sp42q"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("137_imngt")
@@ -694,11 +696,11 @@ shader_parameter/fade_start = 0.0
 shader_parameter/fade_end = 1.0
 shader_parameter/fade_power = 5.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_m3knp"]
-material = SubResource("ShaderMaterial_1rgf0")
+[sub_resource type="BoxMesh" id="BoxMesh_ylbuh"]
+material = SubResource("ShaderMaterial_sp42q")
 size = Vector3(2.825, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibnmh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5nu41"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("139_hdn8w")
@@ -711,11 +713,11 @@ shader_parameter/fade_start = 0.0
 shader_parameter/fade_end = 1.0
 shader_parameter/fade_power = 5.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_ywvnq"]
-material = SubResource("ShaderMaterial_ibnmh")
+[sub_resource type="BoxMesh" id="BoxMesh_65e4g"]
+material = SubResource("ShaderMaterial_5nu41")
 size = Vector3(2.825, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4frui"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gshoy"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("140_usv6m")
@@ -728,11 +730,11 @@ shader_parameter/fade_start = 0.0
 shader_parameter/fade_end = 1.0
 shader_parameter/fade_power = 5.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_c1erc"]
-material = SubResource("ShaderMaterial_4frui")
+[sub_resource type="BoxMesh" id="BoxMesh_obfmx"]
+material = SubResource("ShaderMaterial_gshoy")
 size = Vector3(2.825, 2, 2)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_th7xd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_66ntj"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("137_7rus7")
@@ -745,14 +747,14 @@ shader_parameter/fade_start = 0.0
 shader_parameter/fade_end = 1.0
 shader_parameter/fade_power = 5.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_sp42q"]
-material = SubResource("ShaderMaterial_th7xd")
+[sub_resource type="BoxMesh" id="BoxMesh_ku1fd"]
+material = SubResource("ShaderMaterial_66ntj")
 size = Vector3(2.825, 2, 2)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_r3jer"]
 viewport_path = NodePath("Displays/Intrigue/Introduction/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_avkdy"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tx18u"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_r3jer")
@@ -765,11 +767,11 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_8amb2"]
-material = SubResource("ShaderMaterial_avkdy")
+[sub_resource type="BoxMesh" id="BoxMesh_bw5si"]
+material = SubResource("ShaderMaterial_tx18u")
 size = Vector3(4.191, 2, 3.074)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ylbuh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5tdo"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("142_j3ioo")
@@ -782,14 +784,14 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_5nu41"]
-material = SubResource("ShaderMaterial_ylbuh")
+[sub_resource type="BoxMesh" id="BoxMesh_rk38e"]
+material = SubResource("ShaderMaterial_w5tdo")
 size = Vector3(2.741, 2, 5.063)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ea6fg"]
 viewport_path = NodePath("Displays/Intrigue/Pistes/Laminak/LaminaExplication/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qku0"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_65onn"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_ea6fg")
@@ -802,14 +804,14 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_osi2g"]
-material = SubResource("ShaderMaterial_5qku0")
+[sub_resource type="BoxMesh" id="BoxMesh_2oru1"]
+material = SubResource("ShaderMaterial_65onn")
 size = Vector3(4.191, 2, 3.074)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3c5ia"]
 viewport_path = NodePath("Displays/Intrigue/Pistes/Laminak/Explication/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_r3jer"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_14bau"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_3c5ia")
@@ -822,11 +824,11 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_g3ol2"]
-material = SubResource("ShaderMaterial_r3jer")
+[sub_resource type="BoxMesh" id="BoxMesh_l04ty"]
+material = SubResource("ShaderMaterial_14bau")
 size = Vector3(4.191, 2, 3.074)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wslrt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wb0ju"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("116_r3jer")
@@ -839,11 +841,11 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_v3rt0"]
-material = SubResource("ShaderMaterial_wslrt")
+[sub_resource type="BoxMesh" id="BoxMesh_yxhgx"]
+material = SubResource("ShaderMaterial_wb0ju")
 size = Vector3(4.791, 2, 4.153)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8nfll"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fencp"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("117_avkdy")
@@ -856,14 +858,14 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_qvjg6"]
-material = SubResource("ShaderMaterial_8nfll")
+[sub_resource type="BoxMesh" id="BoxMesh_eg2uh"]
+material = SubResource("ShaderMaterial_fencp")
 size = Vector3(4.566, 2, 4.153)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_g3ol2"]
 viewport_path = NodePath("Displays/Intrigue/Pistes/Laminak/Suite/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ea6fg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2b3u3"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_g3ol2")
@@ -871,16 +873,16 @@ shader_parameter/modulate = Color(1, 1, 1, 1)
 shader_parameter/albedo_mix = 1.0
 shader_parameter/scale_mod = Vector3(0.238607, 0.5, 0.325309)
 shader_parameter/cube_half_size = Vector3(2.0955, 1, 1.537)
-shader_parameter/enable_y_fade = true
+shader_parameter/enable_y_fade = false
 shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_ev652"]
-material = SubResource("ShaderMaterial_ea6fg")
+[sub_resource type="BoxMesh" id="BoxMesh_sqkpa"]
+material = SubResource("ShaderMaterial_2b3u3")
 size = Vector3(4.191, 2, 3.074)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pk46w"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h6dxm"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("117_g3ol2")
@@ -893,14 +895,14 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_sxdxt"]
-material = SubResource("ShaderMaterial_pk46w")
+[sub_resource type="BoxMesh" id="BoxMesh_nqwrc"]
+material = SubResource("ShaderMaterial_h6dxm")
 size = Vector3(4.191, 2, 3.074)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_avkdy"]
 viewport_path = NodePath("Displays/Intrigue/Pistes/Laminak/Suite2/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0gx23"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w51nr"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_avkdy")
@@ -913,14 +915,14 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_l0eu4"]
-material = SubResource("ShaderMaterial_0gx23")
+[sub_resource type="BoxMesh" id="BoxMesh_bp678"]
+material = SubResource("ShaderMaterial_w51nr")
 size = Vector3(4.191, 2, 3.074)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_8amb2"]
 viewport_path = NodePath("Displays/Intrigue/Pistes/Laminak/Suite3/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_vun32"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3ce4"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_8amb2")
@@ -933,11 +935,11 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_6thaw"]
-material = SubResource("ShaderMaterial_vun32")
+[sub_resource type="BoxMesh" id="BoxMesh_fcyos"]
+material = SubResource("ShaderMaterial_x3ce4")
 size = Vector3(4.191, 2, 3.074)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_65e4g"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vojj5"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("143_2b6ts")
@@ -950,14 +952,14 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_gshoy"]
-material = SubResource("ShaderMaterial_65e4g")
+[sub_resource type="BoxMesh" id="BoxMesh_ircnm"]
+material = SubResource("ShaderMaterial_vojj5")
 size = Vector3(2.741, 2, 5.063)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_v3rt0"]
 viewport_path = NodePath("Displays/Intrigue/Pistes/Basajaun/BasajaunExplication/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lik77"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b7di1"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_v3rt0")
@@ -970,14 +972,14 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_1vrvw"]
-material = SubResource("ShaderMaterial_lik77")
+[sub_resource type="BoxMesh" id="BoxMesh_k8gpc"]
+material = SubResource("ShaderMaterial_b7di1")
 size = Vector3(4.191, 2, 3.074)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_wslrt"]
 viewport_path = NodePath("Displays/Intrigue/Pistes/Basajaun/Explication/SubViewport")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_om0y4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2pgl"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = SubResource("ViewportTexture_wslrt")
@@ -990,11 +992,11 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_yxcbs"]
-material = SubResource("ShaderMaterial_om0y4")
+[sub_resource type="BoxMesh" id="BoxMesh_ln5ns"]
+material = SubResource("ShaderMaterial_d2pgl")
 size = Vector3(4.191, 2, 3.074)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_obfmx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rsj1i"]
 render_priority = 0
 shader = ExtResource("125_hiowu")
 shader_parameter/albedo = ExtResource("144_scveq")
@@ -1007,8 +1009,8 @@ shader_parameter/fade_start = 0.3
 shader_parameter/fade_end = 0.7
 shader_parameter/fade_power = 1.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_66ntj"]
-material = SubResource("ShaderMaterial_obfmx")
+[sub_resource type="BoxMesh" id="BoxMesh_lr1cf"]
+material = SubResource("ShaderMaterial_rsj1i")
 size = Vector3(3.381, 2, 5.063)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_512ek"]
@@ -1101,6 +1103,23 @@ viewport_path = NodePath("Displays/Esthetique/Personnages/BridgeGranpa/SubViewpo
 [sub_resource type="ViewportTexture" id="ViewportTexture_gr6sl"]
 viewport_path = NodePath("Displays/Esthetique/Personnages/Lamina/SubViewport")
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_ev652"]
+viewport_path = NodePath("Displays/Esthetique/PourquoiSprites/SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wslrt"]
+size = Vector3(2.65234, 1.63477, 0.0263672)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0gx23"]
+viewport_path = NodePath("Displays/Esthetique/TestScene3D/Sprite3D/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l0eu4"]
+shader = ExtResource("28_qulu1")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/width = 10.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = false
+
 [sub_resource type="ViewportTexture" id="ViewportTexture_caegf"]
 viewport_path = NodePath("Displays/Prototype/Sprite3D/SubViewport")
 
@@ -1165,9 +1184,9 @@ noise_texture = SubResource("NoiseTexture2D_mcxer")
 
 [node name="SpatialAudioStreamPlayer3D" parent="Terrain3D/lamina_cave_2/Fire/OmniLight3D" instance=ExtResource("13_npnhw")]
 stream = ExtResource("14_imkeq")
-volume_db = -31.7036
+volume_db = -31.7039
 autoplay = true
-bus = &"SpatialBus#32"
+bus = &"SpatialBus#36"
 update_frequency_seconds = 2.0
 max_reverb_wetness = 50.0
 
@@ -2481,7 +2500,7 @@ uppercase = true
 transform = Transform3D(-0.72003, -0.693943, -2.09571e-08, 4.17093e-08, -1.30773e-08, -1, 0.693943, -0.72003, 3.836e-08, -0.772064, -3.98596, 4.65799)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_fwyk0")
+mesh = SubResource("BoxMesh_v3rt0")
 Skeleton = null
 skeleton = NodePath("../../IntrigueTitle")
 script = ExtResource("125_vmdts")
@@ -2526,7 +2545,7 @@ justification_flags = 35
 transform = Transform3D(-0.479442, -0.877574, -2.09571e-08, 4.37114e-08, 0, -1, 0.877574, -0.479442, 3.836e-08, 1.38925, -2.53329, 0.701859)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_r3jer")
+mesh = SubResource("BoxMesh_ev652")
 Skeleton = null
 skeleton = NodePath("../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2539,7 +2558,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(-0.667624, -0.744499, -2.09571e-08, 4.25504e-08, -1.00075e-08, -1, 0.744499, -0.667624, 3.836e-08, 0.501221, -2.90597, 2.32727)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_avkdy")
+mesh = SubResource("BoxMesh_l0eu4")
 Skeleton = null
 skeleton = NodePath("../LegendesBasques")
 script = ExtResource("125_vmdts")
@@ -2552,7 +2571,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(0.914706, 0.404121, 2.20503e-08, 3.54219e-08, -2.5612e-08, -1, -0.404121, 0.914706, -3.77422e-08, -6.5694, -5.73598, 3.50453)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_wslrt")
+mesh = SubResource("BoxMesh_6thaw")
 Skeleton = null
 skeleton = NodePath("../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2568,7 +2587,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(-0.759635, -0.63798, 0.126242, 1.63913e-07, -0.194114, -0.980979, 0.65035, -0.745186, 0.147456, 0.0820618, -1.50991, 2.11656)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_ea6fg")
+mesh = SubResource("BoxMesh_sxdxt")
 Skeleton = null
 skeleton = NodePath("../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2597,7 +2616,7 @@ vertical_alignment = 1
 transform = Transform3D(0.829718, 0.54479, -0.121538, 0.0917481, -0.347885, -0.933037, -0.550591, 0.763007, -0.33863, -6.06812, -4.07589, 3.59331)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_0gx23")
+mesh = SubResource("BoxMesh_qvjg6")
 Skeleton = null
 skeleton = NodePath("../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2628,7 +2647,7 @@ vertical_alignment = 1
 transform = Transform3D(0.65648, 0.754344, 3.93352e-09, 3.54219e-08, -2.5612e-08, -1, -0.754344, 0.65648, -4.35341e-08, -3.99854, -4.73389, 1.6212)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_vun32")
+mesh = SubResource("BoxMesh_yxcbs")
 Skeleton = null
 skeleton = NodePath("../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2643,7 +2662,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(-0.995346, 0.096366, 2.20503e-08, -1.83106e-08, 3.96914e-08, -1, -0.096366, -0.995346, -3.77422e-08, -5.4621, -5.73598, 6.77647)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_pk46w")
+mesh = SubResource("BoxMesh_1vrvw")
 Skeleton = null
 skeleton = NodePath("../../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2656,7 +2675,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(0.957667, 0.257034, -0.129646, 2.23517e-08, -0.450348, -0.892853, -0.28788, 0.855056, -0.431283, -11.385, -5.38627, 4.16757)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_8nfll")
+mesh = SubResource("BoxMesh_osi2g")
 Skeleton = null
 skeleton = NodePath("../../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2672,7 +2691,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(-0.983012, -0.183541, 2.20503e-08, -2.8603e-08, 3.30539e-08, -1, 0.183541, -0.983012, -3.77422e-08, -7.33973, -6.87651, 6.92639)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_om0y4")
+mesh = SubResource("BoxMesh_1rgf0")
 Skeleton = null
 skeleton = NodePath("../../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2688,7 +2707,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(0.995185, 0.0980182, 2.20503e-08, 2.56435e-08, -3.53991e-08, -1, -0.0980182, 0.995185, -3.77422e-08, -10.4365, -6.87651, 3.38198)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_lik77")
+mesh = SubResource("BoxMesh_ibnmh")
 Skeleton = null
 skeleton = NodePath("../../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2704,7 +2723,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(-0.998044, -0.062513, 2.20503e-08, -2.43666e-08, 3.62899e-08, -1, 0.062513, -0.998044, -3.77422e-08, -10.4413, -7.2815, 7.12052)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_5qku0")
+mesh = SubResource("BoxMesh_4frui")
 Skeleton = null
 skeleton = NodePath("../../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2720,7 +2739,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(-0.981293, 0.19114, -0.0230295, -0.0715399, -0.473079, -0.878111, -0.178736, -0.860036, 0.477903, -9.26974, -5.90489, 7.04714)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_yx1r6")
+mesh = SubResource("BoxMesh_th7xd")
 Skeleton = null
 skeleton = NodePath("../../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2736,7 +2755,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(0.857688, 0.514171, 2.20503e-08, 3.83182e-08, -2.10334e-08, -1, -0.514171, 0.857688, -3.77422e-08, -13.1305, -7.61384, 4.3513)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_m3knp")
+mesh = SubResource("BoxMesh_ylbuh")
 Skeleton = null
 skeleton = NodePath("../../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2752,7 +2771,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(-0.33972, 0.030034, 0.940047, 0.240084, 0.969148, 0.055799, -0.909369, 0.244646, -0.336449, -11.2143, -9.11584, 4.65199)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_ywvnq")
+mesh = SubResource("BoxMesh_65e4g")
 Skeleton = null
 skeleton = NodePath("../../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2768,7 +2787,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(-0.784953, 0.030034, 0.618827, 0.174399, 0.969148, 0.17418, -0.594503, 0.244646, -0.765973, -8.95773, -9.16453, 5.61079)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_c1erc")
+mesh = SubResource("BoxMesh_obfmx")
 Skeleton = null
 skeleton = NodePath("../../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2784,7 +2803,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(-0.969484, 0.24253, 0.0357871, -0.167232, -0.547505, -0.819922, -0.179262, -0.800886, 0.571355, -9.26222, -4.58614, 6.8741)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_sp42q")
+mesh = SubResource("BoxMesh_ku1fd")
 Skeleton = null
 skeleton = NodePath("../../Cerquand")
 script = ExtResource("125_vmdts")
@@ -2800,7 +2819,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(0.697928, 0.710816, -0.0873905, 5.21541e-08, -0.122025, -0.992527, -0.716168, 0.692712, -0.0851649, -22.6421, -10.5841, 12.6034)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_8amb2")
+mesh = SubResource("BoxMesh_bw5si")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(4.191, 2, 3.074)
@@ -2843,7 +2862,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.145151, 0, 7.67606)
 transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 3.45066, 2.07486, 4.72374)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_5nu41")
+mesh = SubResource("BoxMesh_rk38e")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(2.741, 2, 5.063)
@@ -2855,7 +2874,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(-0.0790333, -0.996872, 4.37114e-08, -4.70293e-08, -4.012e-08, -1, 0.996872, -0.0790333, -4.37114e-08, 3.74718, 1.59592, 1.44274)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_osi2g")
+mesh = SubResource("BoxMesh_2oru1")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(4.191, 2, 3.074)
@@ -2892,7 +2911,7 @@ justification_flags = 35
 transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 2.98699, 3.05304, 8.02169)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_g3ol2")
+mesh = SubResource("BoxMesh_l04ty")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(4.191, 2, 3.074)
@@ -2931,7 +2950,7 @@ justification_flags = 35
 transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 2.61727, 2.71697, 12.8125)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_v3rt0")
+mesh = SubResource("BoxMesh_yxhgx")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(4.791, 2, 4.153)
@@ -2943,7 +2962,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 1.43188, 2.58103, 17.9673)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_qvjg6")
+mesh = SubResource("BoxMesh_eg2uh")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(4.566, 2, 4.153)
@@ -2955,7 +2974,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(8.9407e-08, 1, 4.37114e-08, 4.37114e-08, 4.37114e-08, -1, -1, 8.9407e-08, -4.37114e-08, -4.10938, 3.05304, 6.43294)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_ev652")
+mesh = SubResource("BoxMesh_sqkpa")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(4.191, 2, 3.074)
@@ -2994,7 +3013,7 @@ justification_flags = 35
 transform = Transform3D(0.10904, 0.994037, 4.82171e-08, 4.37114e-08, 4.37114e-08, -1, -0.994037, 0.10904, -3.86845e-08, -5.10111, 3.05304, 10.7919)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_sxdxt")
+mesh = SubResource("BoxMesh_nqwrc")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(4.191, 2, 3.074)
@@ -3006,7 +3025,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(0.158796, 0.987312, 4.37114e-08, 5.0098e-08, 3.62156e-08, -1, -0.987312, 0.158796, -4.37114e-08, -5.61035, 3.05304, 16.2316)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_l0eu4")
+mesh = SubResource("BoxMesh_bp678")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(4.191, 2, 3.074)
@@ -3045,7 +3064,7 @@ justification_flags = 35
 transform = Transform3D(-0.149328, -0.988788, -4.32906e-08, 5.00979e-08, 3.62156e-08, -1, 0.988788, -0.149328, 4.41282e-08, 1.33521, 3.05304, 21.1035)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_6thaw")
+mesh = SubResource("BoxMesh_fcyos")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(4.191, 2, 3.074)
@@ -3086,7 +3105,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.42232, 0, 4.57948)
 transform = Transform3D(0.367199, -0.930142, 4.37114e-08, -2.4607e-08, -5.67086e-08, -1, 0.930142, 0.367199, -4.37114e-08, 3.89853, 2.07486, -1.9015)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_gshoy")
+mesh = SubResource("BoxMesh_ircnm")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(2.741, 2, 5.063)
@@ -3098,7 +3117,7 @@ metadata/_custom_type_script = "uid://feckn7f3pmud"
 transform = Transform3D(0.758839, -0.651278, 4.37114e-08, 4.70168e-09, -6.16382e-08, -1, 0.651278, 0.758839, -4.37114e-08, 3.02008, 1.26, -4.76091)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_1vrvw")
+mesh = SubResource("BoxMesh_k8gpc")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(4.191, 2, 3.074)
@@ -3135,7 +3154,7 @@ justification_flags = 35
 transform = Transform3D(0, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1, 1, 0, -4.37114e-08, 5.08202, 3.05304, 1.69612)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_yxcbs")
+mesh = SubResource("BoxMesh_ln5ns")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(4.191, 2, 3.074)
@@ -3176,13 +3195,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.92511, 0, 8.0321)
 transform = Transform3D(0.155486, 0.987838, 0, 4.31798e-08, -6.79652e-09, -1, -0.987838, 0.155486, -4.37114e-08, -3.42902, 2.07486, 0.362053)
 cast_shadow = 0
 gi_lightmap_scale = 0
-mesh = SubResource("BoxMesh_66ntj")
+mesh = SubResource("BoxMesh_lr1cf")
 Skeleton = null
 script = ExtResource("125_vmdts")
 size = Vector3(3.381, 2, 5.063)
 texture = ExtResource("144_scveq")
 enable_fade = false
 metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="Label3D" type="Label3D" parent="Displays/Intrigue"]
+transform = Transform3D(-0.8783, 0, 0.478109, 0, 1, 0, -0.478109, 0, -0.8783, 2.82563, 0, -4.3933)
+text = "Penser à mettre explication
+des choix graphiques : 
+papier découpé, monde 3D
+style étrange..."
 
 [node name="Gameplay" type="Node3D" parent="Displays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -271.751, -9.17825, -230.689)
@@ -3797,7 +3823,7 @@ scale = Vector2(0.591236, 0.591236)
 texture = ExtResource("115_byqag")
 
 [node name="Clickable" type="Sprite3D" parent="Displays/Gameplay/OldPointAndClick/PointAndClick"]
-transform = Transform3D(1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, 1, 1.36876, 1.01132, -0.00530803)
+transform = Transform3D(1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, 1, 1.24533, 1.01128, -0.0053126)
 modulate = Color(0.642593, 0.538371, 0, 1)
 pixel_size = 0.0009
 texture = ExtResource("45_3c5ia")
@@ -3920,9 +3946,10 @@ font_size = 150
 outline_size = 50
 
 [node name="Esthetique" type="Node3D" parent="Displays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -264.432, -8.77213, -209.786)
 
 [node name="EsthetiqueLabel" type="Label3D" parent="Displays/Esthetique"]
-transform = Transform3D(-0.462538, 0, -0.8866, 0, 1, 0, 0.8866, 0, -0.462538, -271.857, -6.85985, -214.031)
+transform = Transform3D(-0.462538, 0, -0.8866, 0, 1, 0, 0.8866, 0, -0.462538, -7.42545, 1.91228, -4.24484)
 alpha_cut = 1
 text = "6 - RECHERCHES
 Esthétiques"
@@ -3933,7 +3960,7 @@ uppercase = true
 line_spacing = -40.335
 
 [node name="Environnements" type="Node3D" parent="Displays/Esthetique"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -261.072, -11.5415, -215.127)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.35956, -2.76937, -5.34084)
 
 [node name="LaminaCave" type="Sprite3D" parent="Displays/Esthetique/Environnements"]
 transform = Transform3D(0.897628, 0, -0.440754, 0, 1, 0, 0.440754, 0, 0.897628, 2.57739, -0.535, 1.07593)
@@ -4015,7 +4042,7 @@ font_size = 150
 outline_size = 50
 
 [node name="RecherchesSprites" type="Sprite3D" parent="Displays/Esthetique"]
-transform = Transform3D(0.640043, 0, -0.768339, 0, 1, 0, 0.768339, 0, 0.640043, -252.222, -10.4343, -211.669)
+transform = Transform3D(0.150035, 0, 0.98868, 0, 1, 0, -0.98868, 0, 0.150035, -7.31676, -1.66217, 7.12909)
 pixel_size = 0.0054
 texture = SubResource("ViewportTexture_32a1b")
 
@@ -4035,7 +4062,7 @@ font_size = 150
 outline_size = 50
 
 [node name="Personnages" type="Node3D" parent="Displays/Esthetique"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -258.561, -10.8512, -202.766)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87054, -2.07907, 7.02016)
 
 [node name="Sheperd" type="Sprite3D" parent="Displays/Esthetique/Personnages"]
 transform = Transform3D(0.209147, 0, -0.102696, 0, 0.233, 0, 0.102696, 0, 0.209147, -1.28, 0, -0.683)
@@ -4122,6 +4149,62 @@ text = "Lamina"
 font = ExtResource("58_iqqkb")
 font_size = 150
 outline_size = 50
+
+[node name="PourquoiSprites" type="Sprite3D" parent="Displays/Esthetique"]
+transform = Transform3D(-0.13397, 0, 0.990986, 0, 1, 0, -0.990986, 0, -0.13397, -7.55125, -0.852778, 13.4399)
+pixel_size = 0.003
+alpha_cut = 1
+texture = SubResource("ViewportTexture_ev652")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Esthetique/PourquoiSprites"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(1735, 1057)
+render_target_update_mode = 4
+
+[node name="Label" type="RichTextLabel" parent="Displays/Esthetique/PourquoiSprites/SubViewport"]
+offset_right = 1725.0
+offset_bottom = 1066.0
+theme = ExtResource("95_fwyk0")
+theme_override_constants/outline_size = 25
+theme_override_fonts/normal_font = ExtResource("55_iqqkb")
+theme_override_fonts/italics_font = ExtResource("48_k2d4w")
+theme_override_fonts/bold_italics_font = ExtResource("58_iqqkb")
+theme_override_font_sizes/bold_italics_font_size = 80
+theme_override_font_sizes/italics_font_size = 57
+theme_override_font_sizes/mono_font_size = 80
+theme_override_font_sizes/normal_font_size = 67
+theme_override_font_sizes/bold_font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
+bbcode_enabled = true
+text = "[b]Pourquoi des collages ?[/b]
+
+Durant ma phase de recherche des contes basques, je me suis rendu compte que les [bgcolor=#f00a]créatures mythologiques[/bgcolor] n'était que peu, voir [bgcolor=#f00a]pas du tout décrites[/bgcolor]. J'ai alors voulu représenter ce [bgcolor=#f00a]flou[/bgcolor] dans la description des personnage en les représentan par des [bgcolor=#f00a]collages de papier[/bgcolor] découpés faits sur photoshops, puis [bgcolor=#f00a]incorporés dans le monde 3D.[/bgcolor]"
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="TestScene3D" type="Area3D" parent="Displays/Esthetique"]
+transform = Transform3D(-0.530097, 0, 0.847937, 0, 1, 0, -0.847937, 0, -0.530097, -5.8922, -0.719041, 17.4681)
+script = ExtResource("157_wslrt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Displays/Esthetique/TestScene3D"]
+shape = SubResource("BoxShape3D_wslrt")
+
+[node name="Sprite3D" type="Sprite3D" parent="Displays/Esthetique/TestScene3D"]
+pixel_size = 0.0017
+alpha_cut = 1
+texture = SubResource("ViewportTexture_0gx23")
+
+[node name="SubViewport" type="SubViewport" parent="Displays/Esthetique/TestScene3D/Sprite3D"]
+transparent_bg = true
+size = Vector2i(1657, 1047)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Displays/Esthetique/TestScene3D/Sprite3D/SubViewport"]
+material = SubResource("ShaderMaterial_l0eu4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Displays/Esthetique/TestScene3D/Sprite3D/SubViewport/CanvasGroup"]
+position = Vector2(830, 521)
+texture = ExtResource("157_8amb2")
 
 [node name="Prototype" type="Area3D" parent="Displays"]
 transform = Transform3D(-0.584278, 0, -0.811553, 0, 1, 0, 0.811553, 0, -0.584278, -249.806, -10.9132, -202.931)
