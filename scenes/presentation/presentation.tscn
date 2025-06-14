@@ -1396,7 +1396,7 @@ shader_parameter/inside = false
 shader_parameter/add_margins = false
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wqgh4"]
-size = Vector3(2.33105, 1.31274, 0.0283203)
+size = Vector3(3.44141, 2.02563, 0.0283203)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dwot8"]
 viewport_path = NodePath("Displays/Gameplay/OldPointAndClick/Text/SubViewport")
@@ -5658,11 +5658,11 @@ font_size = 150
 outline_size = 50
 
 [node name="PrototypeDisplay" type="Area3D" parent="Displays/Prototype"]
-transform = Transform3D(0.848962, 0, -0.528453, 0, 1, 0, 0.528453, 0, 0.848962, -0.192352, -0.513799, -25.368)
+transform = Transform3D(0.931691, 0, -0.363251, 0, 1, 0, 0.363251, 0, 0.931691, -0.893081, -0.513799, -25.0394)
 script = ExtResource("87_nuo5p")
 
 [node name="Label3D" type="Label3D" parent="Displays/Prototype/PrototypeDisplay"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.940686, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.44533, 0)
 pixel_size = 0.0012
 text = "Prototype
 "
@@ -5679,7 +5679,7 @@ font_size = 150
 outline_size = 0
 
 [node name="Sprite3D" type="Sprite3D" parent="Displays/Prototype/PrototypeDisplay"]
-pixel_size = 0.002
+pixel_size = 0.003
 alpha_cut = 1
 texture = SubResource("ViewportTexture_ircnm")
 
@@ -5697,7 +5697,7 @@ position = Vector2(600, 360)
 texture = ExtResource("88_fosky")
 
 [node name="Clickable" type="Sprite3D" parent="Displays/Prototype/PrototypeDisplay/Sprite3D"]
-transform = Transform3D(1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, 1, 1.34509, 1.01233, -0.0052489)
+transform = Transform3D(1, 0, 8.9407e-08, 0, 1, 0, -8.9407e-08, 0, 1, 1.89836, 1.41701, -0.00524969)
 modulate = Color(0.642593, 0.538371, 0, 1)
 pixel_size = 0.0009
 texture = ExtResource("45_3c5ia")
