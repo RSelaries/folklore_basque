@@ -2,8 +2,7 @@ extends Area3D
 
 
 @onready var test_3d_group: CanvasGroup = %Test3DGroup
-@onready var test_scene_3d_window: Window = %TestScene3DWindow
-@onready var test_3d_canvas_layer: CanvasLayer = %Test3DCanvasLayer
+@onready var test_scene_shader: Area3D = get_parent().find_child("TestScene3DShader")
 
 
 var focused: bool = false:
@@ -17,19 +16,18 @@ var focused: bool = false:
 
 
 func interact() -> void:
-	test_scene_3d_window.visible = true
-	test_3d_canvas_layer.visible = true
-	test_scene_3d_window.grab_focus()
+	if test_scene_shader.has_method("interact"):
+		test_scene_shader.interact()
+		if test_scene_shader.find_child("TestScene3DWindowShader").has_method("set_shader"):
+			test_scene_shader.find_child("TestScene3DWindowShader").set_shader(false)
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if test_scene_3d_window.visible:
+	if test_scene_shader.find_child("TestScene3DWindowShader").visible:
 		if event.is_action_pressed("esc_menu"):
 			hide_window()
 
 
 func hide_window() -> void:
-	test_scene_3d_window.visible = false
-	test_3d_canvas_layer.visible = false
-	get_window().grab_focus()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if test_scene_shader.has_method("hide_window"):
+		test_scene_shader.hide_window()

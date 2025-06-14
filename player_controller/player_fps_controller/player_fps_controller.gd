@@ -86,6 +86,8 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	if not PlayerState.input_listening or not get_window().has_focus():
+		velocity.x = 0
+		velocity.z = 0
 		move_and_slide()
 		return
 	

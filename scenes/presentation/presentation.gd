@@ -9,6 +9,7 @@ func _ready() -> void:
 	get_window().mode = Window.MODE_WINDOWED
 	get_window().size = Vector2(2, 2)
 	get_window().mode = Window.MODE_FULLSCREEN
+	get_window().set_deferred("mode", Window.MODE_FULLSCREEN)
 	get_window().transparent = false
 	
 	var path: String = get_documents_folder().path_join("dream_scape_awake.exe")

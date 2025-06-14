@@ -1,9 +1,13 @@
 shader_type canvas_item;
 
-
+uniform bool active = true;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture,filter_nearest,repeat_disable;
 
 void fragment() {
+	if (!active){
+		discard;
+	}
+
 	//set pallet
 	vec3 palette[3];
 		palette[0] = vec3(0.051, 0.051, 0.078);

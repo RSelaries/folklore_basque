@@ -126,6 +126,7 @@ viewport_path = NodePath("Sprite3D3/SubViewport")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_236cj"]
 shader = ExtResource("19_236cj")
+shader_parameter/active = true
 
 [node name="Test3dScene" type="Node3D"]
 script = ExtResource("1_rp5pb")
@@ -274,6 +275,7 @@ autowrap_mode = 3
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+unique_name_in_owner = true
 material = SubResource("ShaderMaterial_236cj")
 anchors_preset = 15
 anchor_right = 1.0

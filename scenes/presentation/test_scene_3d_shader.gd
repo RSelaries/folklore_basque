@@ -34,3 +34,4 @@ func hide_window() -> void:
 	test_3d_canvas_layer.visible = false
 	get_window().grab_focus()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	test_scene_3d_window.set_shader(true)
