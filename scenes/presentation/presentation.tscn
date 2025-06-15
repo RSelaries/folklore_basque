@@ -1599,7 +1599,7 @@ line_spacing = -147.75
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -335.813, -5.54635, -228.12)
 
 [node name="WhosLila" type="Sprite3D" parent="Displays/Memoire"]
-transform = Transform3D(-0.978946, 0, -0.20412, 0, 1, 0, 0.20412, 0, -0.978946, -1.60132, -1.2674, 12.4534)
+transform = Transform3D(-0.975795, 0, -0.218688, 0, 1, 0, 0.218688, 0, -0.975795, -1.95612, -1.2674, 12.5282)
 pixel_size = 0.001
 alpha_cut = 1
 texture = SubResource("ViewportTexture_2b3u3")
@@ -1626,14 +1626,6 @@ offset_left = 2347.0
 offset_right = 3513.0
 offset_bottom = 1654.0
 texture = ExtResource("44_yhnbg")
-
-[node name="Label3D3" type="Label3D" parent="Displays/Memoire/WhosLila"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 1.33368, 0)
-pixel_size = 0.002
-text = "Who's Lila ?"
-font = ExtResource("28_cj5kf")
-font_size = 150
-outline_size = 77
 
 [node name="Parcours" type="Sprite3D" parent="Displays/Memoire"]
 transform = Transform3D(-0.959697, 0, 0.281036, 0, 1, 0, -0.281036, 0, -0.959697, -7.13153, -1.2674, 12.3175)
@@ -1729,19 +1721,11 @@ font_size = 150
 outline_size = 77
 
 [node name="IronLung" type="Sprite3D" parent="Displays/Memoire"]
-transform = Transform3D(-0.668521, 0, -0.743693, 0, 1, 0, 0.743693, 0, -0.668521, 1.16455, -1.26741, 11.0363)
+transform = Transform3D(-0.719897, 0, -0.69408, 0, 1, 0, 0.69408, 0, -0.719897, 0.768951, -1.26741, 11.1583)
 pixel_size = 0.001
 alpha_cut = 1
 texture = SubResource("ViewportTexture_k8gpc")
 script = ExtResource("26_l04ty")
-
-[node name="Label3D3" type="Label3D" parent="Displays/Memoire/IronLung"]
-transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0, 1.33368, 0)
-pixel_size = 0.002
-text = "Iron Lung"
-font = ExtResource("28_cj5kf")
-font_size = 150
-outline_size = 77
 
 [node name="SubViewport" type="SubViewport" parent="Displays/Memoire/IronLung"]
 disable_3d = true
@@ -1768,7 +1752,7 @@ outline_size = 77
 uppercase = true
 
 [node name="Sprite3D" type="Sprite3D" parent="Displays/Memoire"]
-transform = Transform3D(-0.166769, 0, 0.985995, 0, 1, 0, -0.985995, 0, -0.166769, -13.0715, -0.177422, 6.52238)
+transform = Transform3D(-0.239093, 0, 0.970996, 0, 1, 0, -0.970996, 0, -0.239093, -13.0143, -0.780248, 6.41856)
 pixel_size = 0.003
 alpha_cut = 1
 texture = SubResource("ViewportTexture_d2pgl")
@@ -1777,12 +1761,11 @@ script = ExtResource("26_l04ty")
 [node name="SubViewport" type="SubViewport" parent="Displays/Memoire/Sprite3D"]
 disable_3d = true
 transparent_bg = true
-size = Vector2i(1600, 1702)
+size = Vector2i(1450, 1052)
 
 [node name="Label" type="RichTextLabel" parent="Displays/Memoire/Sprite3D/SubViewport"]
-custom_minimum_size = Vector2(1600, 0)
-offset_right = 1600.0
-offset_bottom = 3000.0
+offset_right = 1463.0
+offset_bottom = 1063.0
 theme = ExtResource("95_fwyk0")
 theme_override_constants/outline_size = 25
 theme_override_fonts/normal_font = ExtResource("55_iqqkb")
@@ -1797,9 +1780,17 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
 bbcode_enabled = true
 text = "[b]Mémoire[/b]
 
-[bgcolor=#f00a][/bgcolor]J'ai au travers de mon travail de mémoire de DNMADe, exploré l'industrie du jeu vidéo ainsi que la place des jeux indépendants dans cette industrie. J'ai analysé trois axes du jeu vidéo qui sont exploités"
+J'ai au travers de mon travail de mémoire de DNMADe, exploré l[bgcolor=#f00a]'industrie du jeu vidéo[/bgcolor] ainsi que la place des jeux [bgcolor=#f00a]indépendants[/bgcolor] dans cette industrie. J'ai analysé [bgcolor=#f00a]trois axes[/bgcolor] du jeu vidéo qui sont exploités particulièrement par les indépendants : [bgcolor=#f00a]l'Affordance[/bgcolor] (et sa subversion), le [bgcolor=#f00a]Parcours[/bgcolor] et la [bgcolor=#f00a]Narration.[/bgcolor]"
 horizontal_alignment = 3
 justification_flags = 35
+
+[node name="Label3D3" type="Label3D" parent="Displays/Memoire"]
+transform = Transform3D(-0.921281, 0, -0.388899, 0, 1, 0, 0.388899, 0, -0.921281, -0.40493, 0.225558, 12.0619)
+pixel_size = 0.002
+text = "Références"
+font = ExtResource("28_cj5kf")
+font_size = 150
+outline_size = 77
 
 [node name="DesignFiction" type="Node3D" parent="Displays"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -321.937, -7.12299, -249.201)
