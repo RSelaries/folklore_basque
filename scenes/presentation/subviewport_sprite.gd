@@ -7,7 +7,7 @@ func _ready() -> void:
 	_update_texture()
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		_update_texture()
 

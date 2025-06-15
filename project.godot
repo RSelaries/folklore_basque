@@ -56,7 +56,7 @@ movie_writer/fps=30
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/anim_track_converter/plugin.cfg", "res://addons/assetplacer/plugin.cfg", "res://addons/console/plugin.cfg", "res://addons/decal_compatibility/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/dreadpon.spatial_gardener/plugin.cfg", "res://addons/simplegrasstextured/plugin.cfg", "res://addons/terrain_3d/plugin.cfg", "res://addons/waterways_net/plugin.cfg")
+enabled=PackedStringArray("res://addons/anim_track_converter/plugin.cfg", "res://addons/console/plugin.cfg", "res://addons/decal_compatibility/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg", "res://addons/dreadpon.spatial_gardener/plugin.cfg", "res://addons/simplegrasstextured/plugin.cfg", "res://addons/terrain_3d/plugin.cfg", "res://addons/waterways_net/plugin.cfg")
 
 [file_customization]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=423 format=4 uid="uid://cdr0qwlipdg11"]
+[gd_scene load_steps=422 format=4 uid="uid://cdr0qwlipdg11"]
 
 [ext_resource type="Script" uid="uid://wlrxi0ygpx56" path="res://scenes/presentation/presentation.gd" id="1_qulu1"]
 [ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_nd5ni"]
@@ -18,7 +18,6 @@
 [ext_resource type="ArrayOccluder3D" uid="uid://bipirl53h5b78" path="res://scenes/presentation/terrain_3d_occluder_3d.tres" id="14_gbk34"]
 [ext_resource type="PackedScene" uid="uid://cxrdpo22t70" path="res://player_controller/player_fps_controller/player_fps_controller.tscn" id="25_r7d6n"]
 [ext_resource type="Texture2D" uid="uid://btxj0hhyuq8fk" path="res://assets/presentation/memoire/Mémoire-16.png" id="25_wb0ju"]
-[ext_resource type="Script" uid="uid://di0xeysgf1h12" path="res://scenes/presentation/subviewport_sprite.gd" id="26_l04ty"]
 [ext_resource type="Texture2D" uid="uid://dhf4cnwqhnuec" path="res://assets/presentation/memoire/Mémoire-17.png" id="26_yxhgx"]
 [ext_resource type="Texture2D" uid="uid://bfep5c3jee7fy" path="res://assets/presentation/memoire/Mémoire-18.png" id="27_fencp"]
 [ext_resource type="Texture2D" uid="uid://4d6jfsbhdkql" path="res://assets/presentation/memoire/Mémoire-28.png" id="27_wb0ju"]
@@ -377,22 +376,22 @@ size = Vector2(5000, 5000)
 viewport_path = NodePath("Displays/StartDisplay/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_2b3u3"]
-viewport_path = NodePath("/root/@EditorNode@21301/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Presentation/Displays/Memoire/WhosLila/SubViewport")
+viewport_path = NodePath("Displays/Memoire/WhosLila/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_sqkpa"]
-viewport_path = NodePath("/root/@EditorNode@21301/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Presentation/Displays/Memoire/Parcours/SubViewport")
+viewport_path = NodePath("Displays/Memoire/Parcours/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_h6dxm"]
-viewport_path = NodePath("/root/@EditorNode@21301/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Presentation/Displays/Memoire/Narration/SubViewport")
+viewport_path = NodePath("Displays/Memoire/Narration/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_b7di1"]
-viewport_path = NodePath("/root/@EditorNode@21301/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Presentation/Displays/Memoire/Affordances/SubViewport")
+viewport_path = NodePath("Displays/Memoire/Affordances/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_k8gpc"]
-viewport_path = NodePath("/root/@EditorNode@21301/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Presentation/Displays/Memoire/IronLung/SubViewport")
+viewport_path = NodePath("Displays/Memoire/IronLung/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_d2pgl"]
-viewport_path = NodePath("/root/@EditorNode@21301/@Panel@14/@VBoxContainer@15/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@26/DockVSplitCenter/@VSplitContainer@54/@VBoxContainer@55/@EditorMainScreen@102/MainScreen/@CanvasItemEditor@11482/@VSplitContainer@11134/@HSplitContainer@11136/@HSplitContainer@11138/@Control@11139/@SubViewportContainer@11140/@SubViewport@11141/Presentation/Displays/Memoire/Sprite3D/SubViewport")
+viewport_path = NodePath("Displays/Memoire/Sprite3D/SubViewport")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nb4qf"]
 content_margin_left = 40.0
@@ -1623,7 +1622,6 @@ transform = Transform3D(-0.975795, 0, -0.218688, 0, 1, 0, 0.218688, 0, -0.975795
 pixel_size = 0.001
 alpha_cut = 1
 texture = SubResource("ViewportTexture_2b3u3")
-script = ExtResource("26_l04ty")
 
 [node name="SubViewport" type="SubViewport" parent="Displays/Memoire/WhosLila"]
 disable_3d = true
@@ -1652,7 +1650,6 @@ transform = Transform3D(-0.959697, 0, 0.281036, 0, 1, 0, -0.281036, 0, -0.959697
 pixel_size = 0.001
 alpha_cut = 1
 texture = SubResource("ViewportTexture_sqkpa")
-script = ExtResource("26_l04ty")
 
 [node name="SubViewport" type="SubViewport" parent="Displays/Memoire/Parcours"]
 disable_3d = true
@@ -1683,7 +1680,6 @@ transform = Transform3D(-0.902036, 0, 0.431661, 0, 1, 0, -0.431661, 0, -0.902036
 pixel_size = 0.001
 alpha_cut = 1
 texture = SubResource("ViewportTexture_h6dxm")
-script = ExtResource("26_l04ty")
 
 [node name="SubViewport" type="SubViewport" parent="Displays/Memoire/Narration"]
 disable_3d = true
@@ -1714,7 +1710,6 @@ transform = Transform3D(-0.657506, 0, 0.753449, 0, 1, 0, -0.753449, 0, -0.657506
 pixel_size = 0.001
 alpha_cut = 1
 texture = SubResource("ViewportTexture_b7di1")
-script = ExtResource("26_l04ty")
 
 [node name="SubViewport" type="SubViewport" parent="Displays/Memoire/Affordances"]
 disable_3d = true
@@ -1745,7 +1740,6 @@ transform = Transform3D(-0.719897, 0, -0.69408, 0, 1, 0, 0.69408, 0, -0.719897, 
 pixel_size = 0.001
 alpha_cut = 1
 texture = SubResource("ViewportTexture_k8gpc")
-script = ExtResource("26_l04ty")
 
 [node name="SubViewport" type="SubViewport" parent="Displays/Memoire/IronLung"]
 disable_3d = true
@@ -1776,7 +1770,6 @@ transform = Transform3D(-0.239093, 0, 0.970996, 0, 1, 0, -0.970996, 0, -0.239093
 pixel_size = 0.003
 alpha_cut = 1
 texture = SubResource("ViewportTexture_d2pgl")
-script = ExtResource("26_l04ty")
 
 [node name="SubViewport" type="SubViewport" parent="Displays/Memoire/Sprite3D"]
 disable_3d = true
