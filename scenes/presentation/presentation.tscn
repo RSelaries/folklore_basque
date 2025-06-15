@@ -1,4 +1,4 @@
-[gd_scene load_steps=419 format=4 uid="uid://cdr0qwlipdg11"]
+[gd_scene load_steps=423 format=4 uid="uid://cdr0qwlipdg11"]
 
 [ext_resource type="Script" uid="uid://wlrxi0ygpx56" path="res://scenes/presentation/presentation.gd" id="1_qulu1"]
 [ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_nd5ni"]
@@ -125,6 +125,7 @@
 [ext_resource type="Script" uid="uid://c08gi0s673skq" path="res://scenes/presentation/presentation_cave_area.gd" id="91_65onn"]
 [ext_resource type="Texture2D" uid="uid://df0fn6hpxrnki" path="res://assets/presentation/idees_projet/w8lfswqd.png" id="93_0tk8v"]
 [ext_resource type="Texture2D" uid="uid://cvrare63s0tnw" path="res://assets/presentation/idees_projet/Capture d'écran 2025-06-08 200332.png" id="94_xfalj"]
+[ext_resource type="Texture2D" uid="uid://c7fiyfjmwq14p" path="res://assets/presentation/idees_projet/Capture d'écran 2025-05-28 121824.png" id="95_eg2uh"]
 [ext_resource type="Theme" uid="uid://ci4571t8710kt" path="res://assets/presentation/presentation_explications.tres" id="95_fwyk0"]
 [ext_resource type="Texture2D" uid="uid://dbe2poqy48n3r" path="res://assets/presentation/recherches/basajaun.png" id="115_avkdy"]
 [ext_resource type="Texture2D" uid="uid://d7j0a6njxxh6" path="res://assets/presentation/Capture d'écran 2025-06-02 111505.png" id="115_byqag"]
@@ -476,6 +477,20 @@ viewport_path = NodePath("Displays/PhaseIdee/Communication/SubViewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_scveq"]
 viewport_path = NodePath("Displays/PhaseIdee/FinancementPrix/SubViewport")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ln5ns"]
+content_margin_left = 4.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rsj1i"]
+content_margin_top = 4.0
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ln5ns"]
+content_margin_left = 40.0
+content_margin_top = 40.0
+content_margin_right = 40.0
+content_margin_bottom = 40.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_trgt8"]
 viewport_path = NodePath("Displays/PhaseIdee/Financement/SubViewport")
@@ -1515,7 +1530,7 @@ viewport_path = NodePath("Displays/Prototype/PrototypeDisplay/Sprite3D/SubViewpo
 script = ExtResource("1_qulu1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.979911, -0.157579, 0.122244, -8.31056e-08, 0.612948, 0.790123, -0.199436, -0.774251, 0.600634, -289.084, 0, -222.483)
+transform = Transform3D(0.979911, -0.157579, 0.122244, -8.31056e-08, 0.612948, 0.790123, -0.199436, -0.774251, 0.600634, 0, 0, 0)
 light_color = Color(0.78778, 0.849289, 0.807934, 1)
 light_energy = 2.099
 light_specular = 0.256
@@ -1557,6 +1572,11 @@ transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -1.52588
 
 [node name="CrosshairContainer" parent="PlayerFpsController/PlayerCrosshair" index="0"]
 metadata/_edit_lock_ = true
+
+[node name="None2" type="ColorRect" parent="PlayerFpsController/PlayerCrosshair/CrosshairContainer" index="1"]
+custom_minimum_size = Vector2(2, 2)
+layout_mode = 2
+mouse_filter = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerFpsController"]
 cast_shadow = 0
@@ -2504,7 +2524,7 @@ autowrap_mode = 3
 width = 1500.0
 
 [node name="PourquoiJV" type="Sprite3D" parent="Displays/PhaseIdee"]
-transform = Transform3D(-0.204035, 0, 0.978963, 0, 1, 0, -0.978963, 0, -0.204035, -2.48822, -1.76066, 4.61758)
+transform = Transform3D(-0.204035, 0, 0.978963, 0, 1, 0, -0.978963, 0, -0.204035, -2.62241, -1.76066, 5.09974)
 pixel_size = 0.003
 alpha_cut = 1
 texture = SubResource("ViewportTexture_dswv6")
@@ -2539,7 +2559,7 @@ horizontal_alignment = 3
 justification_flags = 35
 
 [node name="PourquoiGodot" type="Sprite3D" parent="Displays/PhaseIdee"]
-transform = Transform3D(0.258532, 0, 0.966002, 0, 1, 0, -0.966002, 0, 0.258532, -3.11511, -1.76066, 10.3093)
+transform = Transform3D(0.205862, 0, 0.97858, 0, 1, 0, -0.97858, 0, 0.205862, -2.9628, -1.76066, 10.0905)
 pixel_size = 0.003
 alpha_cut = 1
 texture = SubResource("ViewportTexture_8imhy")
@@ -2566,7 +2586,7 @@ theme_override_font_sizes/normal_font_size = 67
 theme_override_font_sizes/bold_font_size = 80
 theme_override_styles/normal = SubResource("StyleBoxEmpty_nb4qf")
 bbcode_enabled = true
-text = "[b]Pourquoi Godot ?[/b]
+text = "[b]Pourquoi                      ?[/b]
 
 [bgcolor=#f00a]Godot[/bgcolor] est un moteur de jeu gratuit et [bgcolor=#f00a]open source[/bgcolor], c'est à dire que son code source est librement accessible et que la [bgcolor=#f00a]communauté[/bgcolor] participe au développement.
 J'ai personnellement choisi ce moteur de jeu car je suis [bgcolor=#f00a]sensible à la création open source[/bgcolor], mais également car je venais d'apprendre la [bgcolor=#f00a]contronverse[/bgcolor] autour du moteur Unity (le moteur N°1 chez les dévloppeurs indépendants)"
@@ -2574,8 +2594,8 @@ horizontal_alignment = 3
 justification_flags = 35
 
 [node name="Sprite3D" type="Sprite3D" parent="Displays/PhaseIdee/PourquoiGodot"]
-transform = Transform3D(0.999033, 0, 0.0439681, 0, 1, 0, -0.0439681, 0, 0.999033, -4.72192, 1.11127, 0.00559711)
-pixel_size = 0.0015
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.434257, 2.36315, 1.12653e-05)
+pixel_size = 0.0005
 texture_filter = 0
 texture = ExtResource("85_qsp0k")
 
@@ -2768,7 +2788,7 @@ texture = ExtResource("93_0tk8v")
 expand_mode = 1
 
 [node name="Communication" type="Sprite3D" parent="Displays/PhaseIdee"]
-transform = Transform3D(0.484887, 0, 0.874577, 0, 1, 0, -0.874577, 0, 0.484887, -6.02235, -0.870281, 19.717)
+transform = Transform3D(0.387388, 0, 0.921917, 0, 1, 0, -0.921917, 0, 0.387388, -4.68226, -0.733617, 16.2279)
 pixel_size = 0.003
 alpha_cut = 1
 texture = SubResource("ViewportTexture_xfalj")
@@ -2810,7 +2830,7 @@ texture = ExtResource("94_xfalj")
 expand_mode = 1
 
 [node name="FinancementPrix" type="Sprite3D" parent="Displays/PhaseIdee"]
-transform = Transform3D(0.291805, 0, 0.956478, 0, 1, 0, -0.956478, 0, 0.291805, -11.0255, -0.94434, 27.7668)
+transform = Transform3D(0.329428, 0, 0.944181, 0, 1, 0, -0.944181, 0, 0.329428, -10.5815, -0.610302, 26.6489)
 pixel_size = 0.003
 alpha_cut = 1
 texture = SubResource("ViewportTexture_scveq")
@@ -2818,27 +2838,123 @@ texture = SubResource("ViewportTexture_scveq")
 [node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/FinancementPrix"]
 disable_3d = true
 transparent_bg = true
-size = Vector2i(1885, 1337)
+size = Vector2i(2550, 1537)
 render_target_update_mode = 4
 
-[node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/FinancementPrix/SubViewport"]
-offset_right = 1878.0
-offset_bottom = 1493.0
+[node name="VBoxContainer2" type="VBoxContainer" parent="Displays/PhaseIdee/FinancementPrix/SubViewport"]
+offset_right = 2550.0
+offset_bottom = 1522.42
+theme_override_constants/separation = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("58_iqqkb")
+theme_override_font_sizes/font_size = 106
+text = "Charges Directes"
+horizontal_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+theme_override_styles/separator = SubResource("StyleBoxFlat_ln5ns")
+
+[node name="Label3" type="Label" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("58_iqqkb")
+theme_override_font_sizes/font_size = 106
+text = "Charges Indirectes"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxFlat_rsj1i")
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme = ExtResource("95_fwyk0")
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/normal_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ln5ns")
 bbcode_enabled = true
-text = "[b]Rémunération[/b]
-[bgcolor=#f00a]5500 €[/bgcolor] (Électricité, materiel informatique, logements...) pour 2 mois
-[b]Assets/Logiciels[/b]
-[bgcolor=#f00a]500 ~ 1000 €[/bgcolor] (Modèles 3D, photographies, logiciels...)
-[b]Freelancers[/b]
-[bgcolor=#f00a]2000 €[/bgcolor] (musiques, effets sonores, décors...)
-[b]Autres charges[/b]
-[bgcolor=#f00a]? €[/bgcolor] (affichage, marketing, communication, administratif...)"
+text = "[b]Mise en ligne :[/b] [bgcolor=#f00a]200 €[/bgcolor]
+[i]
+[/i][b]Assets :[/b] [bgcolor=#f00a]500 ~ 1000 €[/bgcolor] (assets 3D, photos d'archives)
+[i] 
+[/i][b]Freelancers :[/b] [bgcolor=#f00a]5000 ~ 10.000 €[/bgcolor] (musiques, décors...)
+[i]
+[/i][b]Communication :[/b] [bgcolor=#f00a]~1000 €[/bgcolor] (campagne d'affichage, dépliants, flyers...)"
 horizontal_alignment = 3
 justification_flags = 35
 
+[node name="VSeparator" type="VSeparator" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+theme_override_styles/separator = SubResource("StyleBoxFlat_ln5ns")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2/VBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("95_fwyk0")
+theme_override_font_sizes/italics_font_size = 28
+theme_override_font_sizes/normal_font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ln5ns")
+bbcode_enabled = true
+text = "[b]Salaire :[/b] [bgcolor=#f00a]5040 €[/bgcolor]
+[i]
+[/i][b]Loyer / Électricité :[/b] [bgcolor=#f00a]1800 €[/bgcolor]
+[i]
+[/i][b]Materiel :[/b] [bgcolor=#f00a]160 €[/bgcolor] (2000 € / 12)
+[i]
+[/i][b]Licenses :[/b] [bgcolor=#f00a]100 €[/bgcolor] (Creative cloud, ArmorPaint, Addon Godot et Blender ...)"
+horizontal_alignment = 3
+justification_flags = 35
+
+[node name="HSeparator2" type="HSeparator" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_styles/separator = SubResource("StyleBoxFlat_rsj1i")
+
+[node name="MarginContainer" type="MarginContainer" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 19
+
+[node name="Label" type="Label" parent="Displays/PhaseIdee/FinancementPrix/SubViewport/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("55_iqqkb")
+theme_override_font_sizes/font_size = 80
+text = "Montant demandé : 20.000 €"
+horizontal_alignment = 1
+
 [node name="Financement" type="Sprite3D" parent="Displays/PhaseIdee"]
-transform = Transform3D(0.6929, 0, 0.721034, 0, 1, 0, -0.721034, 0, 0.6929, -8.90366, -0.870281, 23.845)
+transform = Transform3D(0.605129, 0, 0.796128, 0, 1, 0, -0.796128, 0, 0.605129, -7.31, -0.572019, 21.106)
 pixel_size = 0.003
 alpha_cut = 1
 texture = SubResource("ViewportTexture_trgt8")
@@ -2846,12 +2962,12 @@ texture = SubResource("ViewportTexture_trgt8")
 [node name="SubViewport" type="SubViewport" parent="Displays/PhaseIdee/Financement"]
 disable_3d = true
 transparent_bg = true
-size = Vector2i(1195, 1302)
+size = Vector2i(1475, 1507)
 render_target_update_mode = 4
 
 [node name="Label" type="RichTextLabel" parent="Displays/PhaseIdee/Financement/SubViewport"]
-offset_right = 1207.81
-offset_bottom = 1493.0
+offset_right = 1477.0
+offset_bottom = 1082.0
 theme = ExtResource("95_fwyk0")
 theme_override_constants/outline_size = 25
 theme_override_fonts/normal_font = ExtResource("55_iqqkb")
@@ -2873,6 +2989,13 @@ text = "[b]Financement[/b]
 Le jeu vise un public [bgcolor=#f00a]jeune[/bgcolor], souvent moins sensible aux folklores français, et plus [bgcolor=#f00a]habitué[/bgcolor] aux formats des [bgcolor=#f00a]jeux vidéos.[/bgcolor]"
 horizontal_alignment = 3
 justification_flags = 35
+
+[node name="TextureRect" type="TextureRect" parent="Displays/PhaseIdee/Financement/SubViewport"]
+offset_left = 113.0
+offset_top = 1128.0
+offset_right = 1321.0
+offset_bottom = 1469.0
+texture = ExtResource("95_eg2uh")
 
 [node name="Intrigue" type="Node3D" parent="Displays"]
 transform = Transform3D(0.995304, 0, 0.0968012, 0, 1, 0, -0.0968012, 0, 0.995304, -290.288, -8.33839, -214.967)
