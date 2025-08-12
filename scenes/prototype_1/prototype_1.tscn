@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://cf6ok0syg18r"]
+[gd_scene load_steps=96 format=3 uid="uid://cf6ok0syg18r"]
 
 [ext_resource type="Script" uid="uid://q2q11vt7cuew" path="res://scenes/prototype_1/prototype_1.gd" id="1_g7bku"]
 [ext_resource type="PackedScene" uid="uid://usaeugysmrdg" path="res://assets/meshes/trees/tree_1.glb" id="2_8hwn6"]
@@ -14,19 +14,16 @@
 [ext_resource type="PackedScene" uid="uid://bvrda0bmwav84" path="res://assets/meshes/sheep.glb" id="10_myhl5"]
 [ext_resource type="PackedScene" uid="uid://cy2nwgjlnhk5s" path="res://assets/meshes/buildings/tramain_house_1_france.glb" id="10_om1qe"]
 [ext_resource type="PackedScene" uid="uid://b37a1uh0oxsjv" path="res://assets/meshes/buildings/fumay_house_1_france.glb" id="11_2bsw5"]
-[ext_resource type="Script" uid="uid://boquq8ua40y0p" path="res://addons/waterways_net/RiverManager.cs" id="11_8vouf"]
 [ext_resource type="PackedScene" uid="uid://bja71e6xy2lpy" path="res://assets/meshes/buildings/winchelsea_new_gate.glb" id="11_j3co8"]
 [ext_resource type="Texture2D" uid="uid://dfk5vt78tq5d2" path="res://assets/textures/material_textures/ground_81/Ground_81_2k_packed_normal_roughness.png" id="11_oq7vu"]
 [ext_resource type="PackedScene" uid="uid://bigyh046vjhcx" path="res://assets/scenes/characters/shehperd.tscn" id="12_4kpbj"]
 [ext_resource type="Texture2D" uid="uid://dtvhy3my6q8ee" path="res://assets/textures/material_textures/paving_stones_141/PavingStones141_2k_packed_albedo_height.png" id="12_ryau6"]
 [ext_resource type="Script" uid="uid://c4vi6dxqujrrf" path="res://point_n_click/camera_position.gd" id="13_a8bto"]
 [ext_resource type="Texture2D" uid="uid://cjkp7y8av4b01" path="res://assets/textures/material_textures/paving_stones_141/PavingStones141_2k_packed_normal_roughness.png" id="13_dlsse"]
-[ext_resource type="Script" uid="uid://bi4amxhe6pluq" path="res://addons/waterways_net/Data/RiverShaderSettings.cs" id="13_hsvq4"]
 [ext_resource type="PackedScene" uid="uid://d0bl0i7776jx1" path="res://assets/meshes/buildings/dijon_shop_2_france.glb" id="13_uxger"]
 [ext_resource type="Script" uid="uid://32shd30df62n" path="res://point_n_click/camera_manager.gd" id="13_x7dfg"]
 [ext_resource type="Script" uid="uid://c6t2jcowk6t34" path="res://point_n_click/camera_position_button.gd" id="14_r6jb8"]
 [ext_resource type="PackedScene" uid="uid://c2a7rvx66ndq8" path="res://assets/meshes/buildings/troyes_house_1_france.glb" id="14_t3oql"]
-[ext_resource type="Texture2D" uid="uid://b85tlq8wcklbo" path="res://addons/waterways_net/Textures/water_normal_bump.png" id="15_7h8bl"]
 [ext_resource type="Script" uid="uid://daonadjpd5j13" path="res://point_n_click/camera_talk.gd" id="16_om1qe"]
 [ext_resource type="ArrayOccluder3D" uid="uid://cm21xblojhw02" path="res://scenes/prototype_1/terrain_occlusion.res" id="17_gjqbu"]
 [ext_resource type="Resource" uid="uid://co4fb03ksgc8a" path="res://scenes/prototype_1/dialogues/shepherd.dialogue" id="17_om1qe"]
@@ -207,49 +204,6 @@ uv_scale = 0.268
 [sub_resource type="Terrain3DAssets" id="Terrain3DAssets_0n6om"]
 mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_x7dfg"), SubResource("Terrain3DMeshAsset_dofso"), SubResource("Terrain3DMeshAsset_utbyu"), SubResource("Terrain3DMeshAsset_ha3wf")])
 texture_list = Array[Terrain3DTextureAsset]([SubResource("Terrain3DTextureAsset_xfkgt"), SubResource("Terrain3DTextureAsset_pk536"), SubResource("Terrain3DTextureAsset_r6jb8"), SubResource("Terrain3DTextureAsset_fjhfd")])
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_xqnqp"]
-
-[sub_resource type="NoiseTexture3D" id="NoiseTexture3D_cwgw1"]
-noise = SubResource("FastNoiseLite_xqnqp")
-
-[sub_resource type="Resource" id="Resource_8hwn6"]
-script = ExtResource("13_hsvq4")
-MatShaderType = 1
-FoamNoise = SubResource("NoiseTexture3D_cwgw1")
-mat_albedo_color_first = Color(0.6, 0.7, 0.65, 1)
-mat_albedo_color_second = Color(0.25, 0.35, 0.35, 1)
-mat_albedo_depth = 10.0
-mat_albedo_depth_curve = 0.25
-mat_transparency_clarity = 10.0
-mat_transparency_depth_curve = 0.25
-mat_transparency_refraction = 0.05
-mat_normal_scale = 1.0
-mat_normal_bump_texture = ExtResource("15_7h8bl")
-mat_flow_speed = 1.0
-mat_flow_base = 0.0
-mat_flow_steepness = 2.0
-mat_flow_distance = 1.0
-mat_flow_pressure = 1.0
-mat_flow_max = 4.0
-mat_foam_color = Color(0.9, 0.9, 0.9, 1)
-mat_foam_amount = 2.0
-mat_foam_steepness = 2.0
-mat_foam_smoothness = 0.3
-mat_uv_scale = Vector3(1, 1, 1)
-mat_roughness = 0.2
-mat_edge_fade = 0.25
-LodLod0Distance = 50.0
-_selectedShader = 1
-
-[sub_resource type="Curve3D" id="Curve3D_bafxi"]
-resource_local_to_scene = true
-bake_interval = 0.05
-_data = {
-"points": PackedVector3Array(0, 0, -0.25, 0, 0, 0.25, -9.97623, 42.5494, -119.245, 0, 0, -0.25, 0, 0, 0.25, -9.97626, 42.5494, -118.245, -0.0722346, 5.34057e-05, -2.073, 0.0722346, -5.34057e-05, 2.073, -9.30862, 42.5493, -110.593, 0.0548369, -4.97383e-06, -2.30282, -0.0548369, 4.97383e-06, 2.30282, -9.01855, 42.1577, -100.051, -0.15332, 0.509277, -3.5563, 0.15332, -0.509277, 3.5563, -9.83643, 40.3848, -90.0576, -0.609436, 2.1438, -2.50311, 0.609436, -2.1438, 2.50311, -8.19623, 36.5098, -79.8839, -1.32648, 0, -2.12207, 1.32648, 0, 2.12207, -5.00027, 31.9226, -71.4961, 0.996083, -4.72675e-08, -2.56933, -0.996083, 4.72675e-08, 2.56933, -5.04001, 18.0078, -63.2383, 1.78441, 1.54898e-08, -2.14556, -1.78441, -1.54898e-08, 2.14556, -12.0091, 9.01618, -54.3157, 3.36177, -4.61137e-09, -2.63625, -3.36177, 4.61137e-09, 2.63625, -23.7765, 3.1977, -42.5918, 4.31909, 0.411148, -4.73004, -4.31909, -0.411148, 4.73004, -32.3115, 2.50329, -34.7955, -0.446136, -0.0568008, -3.9581, 0.446136, 0.0568008, 3.9581, -34.1785, 4.019, -20.9715, -1.08157, 0.0316124, -3.1944, 1.08157, -0.0316124, 3.1944, -31.3745, 2.97407, -7.87141, -0.518585, 0.144123, -4.12743, 0.518585, -0.144123, 4.12743, -26.8772, -9.17583, 8.06956, -0.109375, 1.78638, -5.27216, 0.109375, -1.78638, 5.27216, -25.5546, -20.4633, 29.1215, 0.0863037, -0.851334, -3.19716, -0.0863037, 0.851334, 3.19716, -27.0726, -26.0521, 44.9997, -1.40546, -0.385391, -4.03775, 1.40546, 0.385391, 4.03775, -28.026, -25.5587, 62.5561, -1.87958, -0.0624771, -1.51062, 1.87958, 0.0624771, 1.51062, -21.7036, -26.2093, 72.0858, -6.27002, 0.927364, -4.62433, 6.27002, -0.927364, 4.62433, -7.0351, -26.5908, 82.2018, -10.2441, -0.209515, -13.1838, 10.2441, 0.209515, 13.1838, 3.63318, -29.0053, 100.55, -7.3569, 0.311382, -4.98631, 7.3569, -0.311382, 4.98631, 20.9219, -30.0852, 121.5, -10.3785, -1.2338, -5.87805, 10.3785, 1.2338, 5.87805, 40.8394, -30.3405, 132.602, -3.45764, -0.0739746, 0.566147, 3.45764, 0.0739746, -0.566147, 78.0798, -32.6291, 135.772, -5.42865, 0, 1.87206, 5.42865, 0, -1.87206, 99.3101, -31.4484, 130.329, -8.53906, -1.04695, -0.0963745, 8.53906, 1.04695, 0.0963745, 127.737, -29.1852, 118.662),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-}
-point_count = 25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0d0aj"]
 render_priority = 0
@@ -505,15 +459,6 @@ unique_name_in_owner = true
 top_level = true
 metadata/_edit_lock_ = true
 
-[node name="RiverManager" type="Node3D" parent="Terrain3D"]
-transform = Transform3D(0.731485, 0, -0.681858, 0, 1, 0, 0.681858, 0, 0.731485, 511.52, -6.10688, 132.757)
-script = ExtResource("11_8vouf")
-ShaderSettings = SubResource("Resource_8hwn6")
-ShapeSmoothness = 5.0
-PointWidths = Array[float]([2.16373, 2.29979, 3.47225, 5.78538, 2.83288, 3.34057, 1.0, 6.68051, 5.73946, 4.42331, 8.62887, 6.7194, 8.59449, 11.4218, 9.46497, 10.3455, 6.53306, 6.85615, 21.6566, 46.8196, 50.9696, 58.4761, 48.8709, 31.9665, 5.16343])
-Curve = SubResource("Curve3D_bafxi")
-metadata/_custom_type_script = "uid://boquq8ua40y0p"
-
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="Terrain3D"]
 occluder = ExtResource("17_gjqbu")
 
@@ -557,7 +502,7 @@ noise_texture = SubResource("NoiseTexture2D_l3e0g")
 stream = ExtResource("24_qgmfw")
 volume_db = -60.0
 autoplay = true
-bus = &"SpatialBus#47"
+bus = &"SpatialBus#49"
 update_frequency_seconds = 2.0
 max_reverb_wetness = 50.0
 
@@ -974,6 +919,7 @@ gizmo_extents = 1.0
 script = ExtResource("13_a8bto")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/Start"]
+visible = false
 
 [node name="ToPath1" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/Start/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
@@ -2129,13 +2075,12 @@ dialogue = ExtResource("46_lmcn1")
 metadata/_custom_type_script = "uid://c5wk5652ms1vn"
 
 [node name="BridgeMiddle" type="Marker3D" parent="CameraManager/CameraPreview/CamManagerSubViewport"]
-transform = Transform3D(-0.949659, 0.0103387, -0.313117, 0.0114459, 0.999934, -0.00169863, 0.313077, -0.00519689, -0.949712, 436.613, -26.143, 214.84)
+transform = Transform3D(-0.949659, 0.0103387, -0.313117, 0.0114459, 0.999934, -0.00169863, 0.313077, -0.00519689, -0.949712, 436.611, -26.143, 214.833)
 gizmo_extents = 1.0
 script = ExtResource("13_a8bto")
 metadata/_custom_type_script = "uid://c4vi6dxqujrrf"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeMiddle"]
-visible = false
 
 [node name="ToBridgeEntrance" type="Button" parent="CameraManager/CameraPreview/CamManagerSubViewport/BridgeMiddle/CanvasLayer" node_paths=PackedStringArray("links_to")]
 anchors_preset = -1
