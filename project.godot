@@ -43,6 +43,7 @@ config/name="Folklore Basque"
 run/main_scene="uid://78wgp66j7b2c"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://wgaeak5x2qwr"
+config/tags=PackedStringArray("abandonné", "protoype")
 
 [audio]
 
