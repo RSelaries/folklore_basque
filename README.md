@@ -1,3 +1,5 @@
+Il est possible de jouer à la présentation du jeu qui explique étape par étape comment j'ai conçu le jeu. Pour y jouer, il suffit d'ouvrir le projet dans Godot, d'ouvrir la scene : `"scenes/presentation/presentatcion.tscn"`, puis d'appyer sur F6.
+
 # Atributions
 
 ## Models
